@@ -63,7 +63,7 @@ export default async function ContactPage({
                   {t("whatsapp")}
                 </h2>
                 <p className="mt-1 text-base text-foreground/90">
-                  {contact.whatsappLabel}
+                  {t("whatsappLabel")}
                 </p>
                 <Button asChild variant="outline" className="mt-3 h-9">
                   <a href={contact.whatsappUrl}>{t("whatsappOpen")}</a>
@@ -86,7 +86,7 @@ export default async function ContactPage({
                   {contact.addressLine}
                 </p>
                 <p className="mt-2 text-sm text-muted-foreground">
-                  {contact.addressNote}
+                  {t("addressNote")}
                 </p>
               </div>
             </div>

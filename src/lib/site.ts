@@ -16,10 +16,8 @@ export const contact = {
   email: "export@greendiamondfarm.com",
   // TODO(client): provide WhatsApp business number (E.164). Placeholder intentionally non-functional.
   whatsappUrl: "#whatsapp-todo",
-  whatsappLabel: "WhatsApp (number TBD)",
   // TODO(client): full street address, city, postal code
   addressLine: "Motahari 52",
-  addressNote: "Full address pending — TODO for client",
 } as const;
 
 export const productSlugs = [

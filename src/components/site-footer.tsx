@@ -8,6 +8,7 @@ const navKeys = ["home", "about", "products", "contact"] as const;
 export async function SiteFooter() {
   const t = await getTranslations("Footer");
   const tNav = await getTranslations("Nav");
+  const tContact = await getTranslations("Contact");
 
   return (
     <footer className="mt-auto border-t border-border/80 bg-surface">
@@ -25,7 +26,7 @@ export async function SiteFooter() {
         </div>
 
         <div>
-          <p className="text-xs font-medium tracking-[0.14em] text-muted-foreground uppercase">
+          <p className="text-xs font-medium tracking-[0.14em] text-muted-foreground uppercase rtl:normal-case rtl:tracking-normal">
             {t("navigate")}
           </p>
           <ul className="mt-3 space-y-2 text-sm">
@@ -43,7 +44,7 @@ export async function SiteFooter() {
         </div>
 
         <div>
-          <p className="text-xs font-medium tracking-[0.14em] text-muted-foreground uppercase">
+          <p className="text-xs font-medium tracking-[0.14em] text-muted-foreground uppercase rtl:normal-case rtl:tracking-normal">
             {t("contact")}
           </p>
           <ul className="mt-3 space-y-2 text-sm text-foreground/80">
@@ -57,7 +58,7 @@ export async function SiteFooter() {
             </li>
             <li>{contact.addressLine}</li>
             <li className="text-xs text-muted-foreground">
-              {contact.addressNote}
+              {tContact("addressNote")}
             </li>
           </ul>
         </div>

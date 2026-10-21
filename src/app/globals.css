@@ -109,7 +109,8 @@
   h2,
   h3,
   .font-heading {
-    font-family: var(--font-fraunces), ui-serif, Georgia, serif;
+    /* Keep Noto Arabic / SC / Devanagari / Cyrillic in the stack for locales */
+    font-family: var(--font-heading);
   }
 }
 

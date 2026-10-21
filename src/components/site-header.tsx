@@ -112,6 +112,12 @@ export function SiteHeader() {
                 {t(navKeys[i])}
               </Link>
             ))}
+            <Button
+              asChild
+              className="mt-2 h-11 w-full bg-brand-foreground text-brand hover:bg-brand-foreground/90"
+            >
+              <Link href="/contact">{t("inquire")}</Link>
+            </Button>
           </nav>
         </div>
       ) : null}

@@ -31,8 +31,8 @@ export function LanguageSwitcher({
           router.replace(pathname, { locale: e.target.value as Locale });
         }}
         className={cn(
-          "h-8 max-w-[7.5rem] cursor-pointer appearance-none rounded-md border bg-transparent py-1 pe-7 ps-2 text-xs tracking-wide outline-none transition-colors",
-          "bg-[length:0.65rem] bg-[right_0.45rem_center] bg-no-repeat",
+          "h-8 max-w-[7.5rem] cursor-pointer appearance-none rounded-md border bg-transparent py-1 pe-7 ps-2 text-xs tracking-wide outline-none transition-colors focus-visible:ring-2 focus-visible:ring-brand-foreground/40",
+          "bg-[length:0.65rem] bg-no-repeat bg-[position:right_0.45rem_center] rtl:bg-[position:left_0.45rem_center]",
           onDark
             ? "border-brand-foreground/25 text-brand-foreground/90 hover:border-brand-foreground/45 focus-visible:border-brand-foreground/55"
             : "border-brand-foreground/30 text-brand-foreground/90 hover:border-brand-foreground/50 focus-visible:border-brand-foreground/60",
