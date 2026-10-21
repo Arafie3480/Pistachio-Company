@@ -1,0 +1,130 @@
+{
+  "Meta": {
+    "titleDefault": "Green Diamond Farm — Iranian Pistachio Export",
+    "titleTemplate": "%s · Green Diamond Farm",
+    "description": "Green Diamond Farm exports premium Iranian pistachios for international buyers — varieties, kernels, and roasted programs from Hosseini Naveh."
+  },
+  "Nav": {
+    "home": "Home",
+    "about": "About",
+    "products": "Products",
+    "contact": "Contact",
+    "inquire": "Inquire",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "primary": "Primary",
+    "mobile": "Mobile"
+  },
+  "Language": {
+    "label": "Language",
+    "switchTo": "Switch language"
+  },
+  "Home": {
+    "headline": "Iranian pistachios, packed for buyers who value consistency.",
+    "subhead": "Export partnership under {legalName} — clear grades, dependable supply, and a calm path from orchard to container.",
+    "ctaProducts": "View products",
+    "ctaContact": "Contact export desk",
+    "heroAlt": "Orchard landscape — placeholder until brand photography is provided",
+    "buyersTitle": "Built for foreign buyers",
+    "buyersLead": "Graded Iranian pistachios, clear communication, and a short path to the export desk — a brand you can put in front of your customers with confidence.",
+    "pillar1Title": "Varieties that matter",
+    "pillar1Body": "Ahmad Aghaei, Akbari, Fandoghi, Kaleh Ghouchi, Dahan Bast — plus kernels and roasted lines.",
+    "pillar2Title": "Export-minded",
+    "pillar2Body": "Documentation, packing, and grade clarity oriented toward international wholesale and private label.",
+    "pillar3Title": "Direct contact",
+    "pillar3Body": "Reach the export desk by email or WhatsApp when you need samples, specs, or a quote.",
+    "shipmentTitle": "From shell to shipment",
+    "shipmentLead": "Explore our full range — including in-shell varieties, kernels, and salted & roasted programs — then tell us what your market needs.",
+    "kernelsRoasted": "Kernels · Salted & roasted",
+    "productAlt": "Pistachios — placeholder product imagery pending brand assets",
+    "seeAll": "See all products",
+    "ctaTitle": "Ready to talk supply?",
+    "ctaLead": "Send your target variety, volume, and destination. We will respond from the export desk with next steps.",
+    "ctaButton": "Contact us"
+  },
+  "About": {
+    "metaTitle": "About",
+    "metaDescription": "About Green Diamond Farm — Iranian pistachio export under Hosseini Naveh.",
+    "title": "About the company",
+    "lead": "A pistachio export house built around clarity, grade discipline, and long-term buyer relationships.",
+    "heading": "Green Diamond Farm",
+    "p1": "{brand} is the export brand of {legalName} ({legalNameFa}) — focused on Iranian pistachios for importers, distributors, and private-label partners who need predictable quality more than a loud story.",
+    "p2": "We present varieties honestly, keep contact paths short, and aim for the kind of first impression foreign buyers trust: calm, competent, and ready to do business.",
+    "imageAlt": "Agricultural landscape — placeholder until company photography is provided",
+    "historyTitle": "History & credibility",
+    "historyNote": "The details below are provisional until the client confirms dates, certifications, and market history.",
+    "originLabel": "Origin",
+    "originBody": "Iranian pistachio trade under {legalName}. Exact founding year and ownership timeline — TODO for client.",
+    "standLabel": "What we stand on",
+    "standBody": "Grade consistency, clear export communication, and varieties that map to real buyer demand — from premium long kernels to volume Fandoghi and processed lines.",
+    "certsLabel": "Certifications",
+    "certsBody": "Certificates and audit documents will be listed here once provided. TODO: logos / PDF assets from client",
+    "marketsLabel": "Markets",
+    "marketsBody": "International wholesale focus. Destination countries and key partner types — TODO for client."
+  },
+  "Products": {
+    "metaTitle": "Products",
+    "metaDescription": "Pistachio varieties and programs from Green Diamond Farm: Ahmad Aghaei, Akbari, Fandoghi, Kaleh Ghouchi, Dahan Bast, kernels, salted & roasted.",
+    "title": "Products",
+    "lead": "In-shell varieties, kernels, and roasted programs — selected for international wholesale and private label.",
+    "outlineNote": "Product photography and detailed grade sheets will replace this outline once client assets arrive.",
+    "ctaTitle": "Need a specific grade or pack?",
+    "ctaLead": "Tell us variety, volume, and destination — we will confirm availability from the export desk.",
+    "ctaButton": "Request availability"
+  },
+  "Contact": {
+    "metaTitle": "Contact",
+    "metaDescription": "Contact the Green Diamond Farm export desk — email, WhatsApp, and office address.",
+    "title": "Contact",
+    "lead": "Reach the export desk for grades, samples, packing, and shipment planning.",
+    "email": "Email",
+    "emailTodo": "TODO: confirm spelling with client (domain uses diamond).",
+    "whatsapp": "WhatsApp",
+    "whatsappOpen": "Open WhatsApp (pending number)",
+    "whatsappNote": "Placeholder until the client provides the business number.",
+    "office": "Office",
+    "includeTitle": "What to include",
+    "includeLead": "To speed up a quote, mention variety, approximate volume, preferred packing, and destination port or country.",
+    "include1": "Variety / program (e.g. Akbari, kernels)",
+    "include2": "Volume and timing window",
+    "include3": "Destination and any label requirements",
+    "emailCta": "Email the export desk",
+    "emailSubject": "Export inquiry — Green Diamond Farm"
+  },
+  "Footer": {
+    "tagline": "Iranian pistachio export under {legalName} · {legalNameFa}. Reliable supply for international buyers.",
+    "navigate": "Navigate",
+    "contact": "Contact",
+    "rights": "© {year} {brand}. All rights reserved."
+  },
+  "products": {
+    "ahmad-aghaei": {
+      "name": "Ahmad Aghaei",
+      "summary": "Long, elegant kernels with a refined flavor profile — favored by premium retail and gift markets."
+    },
+    "akbari": {
+      "name": "Akbari",
+      "summary": "Large, elongated nuts with strong visual presence — a staple for high-end wholesale buyers."
+    },
+    "fandoghi": {
+      "name": "Fandoghi",
+      "summary": "Round, versatile Iranian pistachio — reliable volume for roasting, packing, and everyday trade."
+    },
+    "kaleh-ghouchi": {
+      "name": "Kaleh Ghouchi",
+      "summary": "Jumbo, bold shape with excellent shell appeal — selected for markets that value size and look."
+    },
+    "dahan-bast": {
+      "name": "Dahan Bast",
+      "summary": "Closed-shell pistachios suited to processing and kernel production where integrity matters."
+    },
+    "kernels": {
+      "name": "Kernels",
+      "summary": "Shelled pistachio kernels prepared for confectionery, ice cream, bakery, and industrial use."
+    },
+    "salted-roasted": {
+      "name": "Salted & roasted",
+      "summary": "Ready-to-eat roasted pistachios — salted or plain — for retail packs and private-label programs."
+    }
+  }
+}

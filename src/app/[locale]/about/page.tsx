@@ -1,44 +1,56 @@
-import type { Metadata } from "next";
 import Image from "next/image";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { PageHero } from "@/components/page-hero";
 import { brand, imagery } from "@/lib/site";
 
-export const metadata: Metadata = {
-  title: "About",
-  description: `About ${brand.name} — Iranian pistachio export under ${brand.legalNameEn}.`,
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "About" });
+  return {
+    title: t("metaTitle"),
+    description: t("metaDescription"),
+  };
+}
 
-export default function AboutPage() {
+export default async function AboutPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+  const t = await getTranslations("About");
+
   return (
     <>
-      <PageHero
-        title="About the company"
-        lead="A pistachio export house built around clarity, grade discipline, and long-term buyer relationships."
-      />
+      <PageHero title={t("title")} lead={t("lead")} />
 
       <section className="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-20">
         <div className="grid items-start gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
           <div className="max-w-2xl">
             <h2 className="font-heading text-2xl font-semibold tracking-tight text-ink sm:text-3xl">
-              Green Diamond Farm
+              {t("heading")}
             </h2>
             <p className="mt-4 text-base leading-relaxed text-muted-foreground">
-              {brand.name} is the export brand of {brand.legalNameEn} (
-              {brand.legalNameFa}) — focused on Iranian pistachios for
-              importers, distributors, and private-label partners who need
-              predictable quality more than a loud story.
+              {t("p1", {
+                brand: brand.name,
+                legalName: brand.legalNameEn,
+                legalNameFa: brand.legalNameFa,
+              })}
             </p>
             <p className="mt-4 text-base leading-relaxed text-muted-foreground">
-              We present varieties honestly, keep contact paths short, and aim
-              for the kind of first impression foreign buyers trust: calm,
-              competent, and ready to do business.
+              {t("p2")}
             </p>
           </div>
 
           <div className="relative aspect-[5/4] overflow-hidden rounded-sm">
             <Image
               src={imagery.orchard}
-              alt="Agricultural landscape — placeholder until company photography is provided"
+              alt={t("imageAlt")}
               fill
               sizes="(max-width: 1024px) 100vw, 40vw"
               className="object-cover"
@@ -50,55 +62,43 @@ export default function AboutPage() {
       <section className="border-y border-border/70 bg-surface/70">
         <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-20">
           <h2 className="font-heading text-2xl font-semibold tracking-tight text-ink sm:text-3xl">
-            History & credibility
+            {t("historyTitle")}
           </h2>
           <p className="mt-3 max-w-2xl text-sm text-muted-foreground">
-            {/* TODO(client): replace with verified founding year, milestones, certifications, and markets served */}
-            The details below are provisional until the client confirms dates,
-            certifications, and market history.
+            {t("historyNote")}
           </p>
 
           <dl className="mt-10 grid gap-8 sm:grid-cols-2">
             <div>
               <dt className="text-xs font-medium tracking-[0.14em] text-muted-foreground uppercase">
-                Origin
+                {t("originLabel")}
               </dt>
               <dd className="mt-2 text-base leading-relaxed text-foreground/90">
-                Iranian pistachio trade under {brand.legalNameEn}. Exact
-                founding year and ownership timeline —{" "}
-                <span className="text-muted-foreground">TODO for client</span>.
+                {t("originBody", { legalName: brand.legalNameEn })}
               </dd>
             </div>
             <div>
               <dt className="text-xs font-medium tracking-[0.14em] text-muted-foreground uppercase">
-                What we stand on
+                {t("standLabel")}
               </dt>
               <dd className="mt-2 text-base leading-relaxed text-foreground/90">
-                Grade consistency, clear export communication, and varieties
-                that map to real buyer demand — from premium long kernels to
-                volume Fandoghi and processed lines.
+                {t("standBody")}
               </dd>
             </div>
             <div>
               <dt className="text-xs font-medium tracking-[0.14em] text-muted-foreground uppercase">
-                Certifications
+                {t("certsLabel")}
               </dt>
               <dd className="mt-2 text-base leading-relaxed text-foreground/90">
-                Certificates and audit documents will be listed here once
-                provided.{" "}
-                <span className="text-muted-foreground">
-                  TODO: logos / PDF assets from client
-                </span>
+                {t("certsBody")}
               </dd>
             </div>
             <div>
               <dt className="text-xs font-medium tracking-[0.14em] text-muted-foreground uppercase">
-                Markets
+                {t("marketsLabel")}
               </dt>
               <dd className="mt-2 text-base leading-relaxed text-foreground/90">
-                International wholesale focus. Destination countries and key
-                partner types —{" "}
-                <span className="text-muted-foreground">TODO for client</span>.
+                {t("marketsBody")}
               </dd>
             </div>
           </dl>

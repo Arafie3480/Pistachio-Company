@@ -1,33 +1,45 @@
-import type { Metadata } from "next";
-import Link from "next/link";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { PageHero } from "@/components/page-hero";
 import { Button } from "@/components/ui/button";
-import { brand, products } from "@/lib/site";
+import { Link } from "@/i18n/navigation";
+import { productSlugs } from "@/lib/site";
 
-export const metadata: Metadata = {
-  title: "Products",
-  description: `Pistachio varieties and programs from ${brand.name}: Ahmad Aghaei, Akbari, Fandoghi, Kaleh Ghouchi, Dahan Bast, kernels, salted & roasted.`,
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "Products" });
+  return {
+    title: t("metaTitle"),
+    description: t("metaDescription"),
+  };
+}
 
-export default function ProductsPage() {
+export default async function ProductsPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+  const t = await getTranslations("Products");
+  const tProducts = await getTranslations("products");
+
   return (
     <>
-      <PageHero
-        title="Products"
-        lead="In-shell varieties, kernels, and roasted programs — selected for international wholesale and private label."
-      />
+      <PageHero title={t("title")} lead={t("lead")} />
 
       <section className="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-20">
         <p className="max-w-2xl text-sm text-muted-foreground">
-          {/* TODO(client): add grade specs, sizes, packing, and product photos per SKU */}
-          Product photography and detailed grade sheets will replace this
-          outline once client assets arrive.
+          {t("outlineNote")}
         </p>
 
         <ul className="mt-10 divide-y divide-border/80 border-y border-border/80">
-          {products.map((product, index) => (
+          {productSlugs.map((slug, index) => (
             <li
-              key={product.slug}
+              key={slug}
               className="grid gap-3 py-8 sm:grid-cols-[7rem_1fr] sm:gap-8"
             >
               <span className="font-mono text-xs tracking-wider text-muted-foreground tabular-nums">
@@ -35,10 +47,10 @@ export default function ProductsPage() {
               </span>
               <div>
                 <h2 className="font-heading text-xl font-semibold tracking-tight text-ink sm:text-2xl">
-                  {product.name}
+                  {tProducts(`${slug}.name`)}
                 </h2>
                 <p className="mt-2 max-w-2xl text-base leading-relaxed text-muted-foreground">
-                  {product.summary}
+                  {tProducts(`${slug}.summary`)}
                 </p>
               </div>
             </li>
@@ -47,14 +59,11 @@ export default function ProductsPage() {
 
         <div className="mt-14 max-w-xl">
           <h2 className="font-heading text-2xl font-semibold text-ink">
-            Need a specific grade or pack?
+            {t("ctaTitle")}
           </h2>
-          <p className="mt-3 text-muted-foreground">
-            Tell us variety, volume, and destination — we will confirm
-            availability from the export desk.
-          </p>
+          <p className="mt-3 text-muted-foreground">{t("ctaLead")}</p>
           <Button asChild className="mt-6 h-10">
-            <Link href="/contact">Request availability</Link>
+            <Link href="/contact">{t("ctaButton")}</Link>
           </Button>
         </div>
       </section>

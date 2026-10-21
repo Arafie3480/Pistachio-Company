@@ -1,0 +1,130 @@
+{
+  "Meta": {
+    "titleDefault": "Green Diamond Farm — İran Fıstığı İhracatı",
+    "titleTemplate": "%s · Green Diamond Farm",
+    "description": "Green Diamond Farm, uluslararası alıcılar için premium İran fıstığı ihraç eder — çeşitler, iç fıstık ve kavrulmuş programlar, Hosseini Naveh güvencesiyle."
+  },
+  "Nav": {
+    "home": "Ana sayfa",
+    "about": "Hakkımızda",
+    "products": "Ürünler",
+    "contact": "İletişim",
+    "inquire": "Talep",
+    "openMenu": "Menüyü aç",
+    "closeMenu": "Menüyü kapat",
+    "primary": "Ana",
+    "mobile": "Mobil"
+  },
+  "Language": {
+    "label": "Dil",
+    "switchTo": "Dili değiştir"
+  },
+  "Home": {
+    "headline": "Tutarlılığa değer veren alıcılar için paketlenmiş İran fıstığı.",
+    "subhead": "{legalName} altında ihracat ortaklığı — net kaliteler, güvenilir tedarik ve bahçeden konteynere sakin bir yol.",
+    "ctaProducts": "Ürünleri gör",
+    "ctaContact": "İhracat masası",
+    "heroAlt": "Bahçe manzarası — marka fotoğrafı sağlanana kadar yer tutucu",
+    "buyersTitle": "Yabancı alıcılar için tasarlandı",
+    "buyersLead": "Derecelendirilmiş İran fıstığı, net iletişim ve ihracat masasına kısa bir yol — müşterilerinizin önüne güvenle koyabileceğiniz bir marka.",
+    "pillar1Title": "Önemli çeşitler",
+    "pillar1Body": "Ahmad Aghaei, Akbari, Fandoghi, Kaleh Ghouchi, Dahan Bast — ayrıca iç fıstık ve kavrulmuş hatlar.",
+    "pillar2Title": "İhracat odaklı",
+    "pillar2Body": "Belgeler, paketleme ve kalite netliği uluslararası toptan satış ve özel markaya yöneliktir.",
+    "pillar3Title": "Doğrudan iletişim",
+    "pillar3Body": "Numune, spesifikasyon veya teklif gerektiğinde ihracat masasına e-posta veya WhatsApp ile ulaşın.",
+    "shipmentTitle": "Kabuktan sevkiyata",
+    "shipmentLead": "Kabuklu çeşitler, iç fıstık ve tuzlu & kavrulmuş programlar dahil tüm yelpazeyi inceleyin; ardından pazarınızın ihtiyacını bize bildirin.",
+    "kernelsRoasted": "İç fıstık · Tuzlu & kavrulmuş",
+    "productAlt": "Fıstık — marka varlıkları beklenirken yer tutucu ürün görseli",
+    "seeAll": "Tüm ürünler",
+    "ctaTitle": "Tedarik konuşmaya hazır mısınız?",
+    "ctaLead": "Hedef çeşit, miktar ve varış noktasını gönderin. İhracat masasından sonraki adımlarla yanıtlarız.",
+    "ctaButton": "Bize ulaşın"
+  },
+  "About": {
+    "metaTitle": "Hakkımızda",
+    "metaDescription": "Green Diamond Farm hakkında — Hosseini Naveh altında İran fıstığı ihracatı.",
+    "title": "Şirket hakkında",
+    "lead": "Netlik, kalite disiplini ve uzun vadeli alıcı ilişkileri üzerine kurulu bir fıstık ihracat evi.",
+    "heading": "Green Diamond Farm",
+    "p1": "{brand}, {legalName} ({legalNameFa}) ihracat markasıdır — gürültülü bir hikâyeden çok öngörülebilir kaliteye ihtiyaç duyan ithalatçılar, distribütörler ve özel marka ortakları için İran fıstığına odaklanır.",
+    "p2": "Çeşitleri dürüstçe sunar, iletişim yollarını kısa tutar ve yabancı alıcıların güvendiği ilk izlenimi hedefleriz: sakin, yetkin ve iş yapmaya hazır.",
+    "imageAlt": "Tarımsal manzara — şirket fotoğrafı sağlanana kadar yer tutucu",
+    "historyTitle": "Tarihçe ve güvenilirlik",
+    "historyNote": "Aşağıdaki ayrıntılar, müşteri tarihleri, sertifikaları ve pazar geçmişini onaylayana kadar geçicidir.",
+    "originLabel": "Köken",
+    "originBody": "{legalName} altında İran fıstığı ticareti. Kesin kuruluş yılı ve sahiplik zaman çizelgesi — müşteri onayı bekleniyor.",
+    "standLabel": "Dayanağımız",
+    "standBody": "Kalite tutarlılığı, net ihracat iletişimi ve gerçek alıcı talebine uyan çeşitler — premium uzun iç fıstıktan hacimli Fandoghi ve işlenmiş hatlara.",
+    "certsLabel": "Sertifikalar",
+    "certsBody": "Sertifikalar ve denetim belgeleri sağlandığında burada listelenecektir. Bekleniyor: müşteriden logolar / PDF varlıkları",
+    "marketsLabel": "Pazarlar",
+    "marketsBody": "Uluslararası toptan odak. Varış ülkeleri ve ana ortak türleri — müşteri onayı bekleniyor."
+  },
+  "Products": {
+    "metaTitle": "Ürünler",
+    "metaDescription": "Green Diamond Farm fıstık çeşitleri ve programları: Ahmad Aghaei, Akbari, Fandoghi, Kaleh Ghouchi, Dahan Bast, iç fıstık, tuzlu & kavrulmuş.",
+    "title": "Ürünler",
+    "lead": "Kabuklu çeşitler, iç fıstık ve kavrulmuş programlar — uluslararası toptan satış ve özel marka için seçilmiştir.",
+    "outlineNote": "Müşteri varlıkları geldiğinde ürün fotoğrafları ve ayrıntılı kalite fişleri bu özetin yerini alacaktır.",
+    "ctaTitle": "Belirli bir kalite veya paket mi lazım?",
+    "ctaLead": "Çeşit, miktar ve varış noktasını bildirin — ihracat masasından müsaitliği teyit ederiz.",
+    "ctaButton": "Müsaitlik talep et"
+  },
+  "Contact": {
+    "metaTitle": "İletişim",
+    "metaDescription": "Green Diamond Farm ihracat masasına ulaşın — e-posta, WhatsApp ve ofis adresi.",
+    "title": "İletişim",
+    "lead": "Kalite, numune, paketleme ve sevkiyat planlaması için ihracat masasına ulaşın.",
+    "email": "E-posta",
+    "emailTodo": "Bekleniyor: müşteri ile yazım onayı (alan adı diamond kullanır).",
+    "whatsapp": "WhatsApp",
+    "whatsappOpen": "WhatsApp’ı aç (numara bekleniyor)",
+    "whatsappNote": "Müşteri iş numarasını sağlayana kadar yer tutucu.",
+    "office": "Ofis",
+    "includeTitle": "Neleri belirtin",
+    "includeLead": "Teklifi hızlandırmak için çeşit, yaklaşık miktar, tercih edilen paketleme ve varış limanı veya ülkesini belirtin.",
+    "include1": "Çeşit / program (örn. Akbari, iç fıstık)",
+    "include2": "Miktar ve zaman penceresi",
+    "include3": "Varış ve etiket gereksinimleri",
+    "emailCta": "İhracat masasına yazın",
+    "emailSubject": "İhracat talebi — Green Diamond Farm"
+  },
+  "Footer": {
+    "tagline": "{legalName} · {legalNameFa} altında İran fıstığı ihracatı. Uluslararası alıcılar için güvenilir tedarik.",
+    "navigate": "Gezinme",
+    "contact": "İletişim",
+    "rights": "© {year} {brand}. Tüm hakları saklıdır."
+  },
+  "products": {
+    "ahmad-aghaei": {
+      "name": "Ahmad Aghaei",
+      "summary": "Zarif uzun iç fıstık, rafine tat profili — premium perakende ve hediye pazarlarının tercihi."
+    },
+    "akbari": {
+      "name": "Akbari",
+      "summary": "Güçlü görsel varlığa sahip büyük, uzun fıstık — üst segment toptan alıcılar için temel ürün."
+    },
+    "fandoghi": {
+      "name": "Fandoghi",
+      "summary": "Yuvarlak, çok yönlü İran fıstığı — kavurma, paketleme ve günlük ticaret için güvenilir hacim."
+    },
+    "kaleh-ghouchi": {
+      "name": "Kaleh Ghouchi",
+      "summary": "Jumbo, belirgin şekil ve mükemmel kabuk görünümü — boyut ve görünüme değer veren pazarlar için."
+    },
+    "dahan-bast": {
+      "name": "Dahan Bast",
+      "summary": "Bütünlüğün önemli olduğu işleme ve iç fıstık üretimi için kapalı kabuklu fıstık."
+    },
+    "kernels": {
+      "name": "İç fıstık",
+      "summary": "Şekerleme, dondurma, fırıncılık ve endüstriyel kullanım için hazırlanmış kabuksuz fıstık içi."
+    },
+    "salted-roasted": {
+      "name": "Tuzlu & kavrulmuş",
+      "summary": "Tüketime hazır kavrulmuş fıstık — tuzlu veya sade — perakende paketler ve özel marka programları için."
+    }
+  }
+}

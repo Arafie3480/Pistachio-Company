@@ -1,23 +1,38 @@
 import Image from "next/image";
-import Link from "next/link";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Button } from "@/components/ui/button";
-import { brand, imagery, products } from "@/lib/site";
+import { Link } from "@/i18n/navigation";
+import { brand, imagery, productSlugs } from "@/lib/site";
 
-export default function HomePage() {
+export default async function HomePage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+  const t = await getTranslations("Home");
+  const tProducts = await getTranslations("products");
+
+  const pillars = [
+    { title: t("pillar1Title"), body: t("pillar1Body") },
+    { title: t("pillar2Title"), body: t("pillar2Body") },
+    { title: t("pillar3Title"), body: t("pillar3Body") },
+  ] as const;
+
   return (
     <>
-      {/* One composition: brand, headline, line, CTAs, full-bleed visual */}
       <section className="relative min-h-[100svh] overflow-hidden bg-brand text-brand-foreground">
         <Image
           src={imagery.hero}
-          alt="Orchard landscape — placeholder until brand photography is provided"
+          alt={t("heroAlt")}
           fill
           priority
           sizes="100vw"
           className="object-cover"
         />
         <div
-          className="absolute inset-0 bg-gradient-to-r from-brand/92 via-brand/78 to-brand/45"
+          className="absolute inset-0 bg-gradient-to-r from-brand/92 via-brand/78 to-brand/45 rtl:bg-gradient-to-l"
           aria-hidden
         />
         <div
@@ -30,11 +45,10 @@ export default function HomePage() {
             {brand.name}
           </p>
           <h1 className="animate-gd-fade-up animate-gd-delay-1 mt-5 max-w-xl font-heading text-2xl font-medium tracking-tight text-balance text-brand-foreground/95 sm:text-3xl md:text-[2.15rem] md:leading-snug">
-            Iranian pistachios, packed for buyers who value consistency.
+            {t("headline")}
           </h1>
           <p className="animate-gd-fade-up animate-gd-delay-2 mt-4 max-w-md text-base leading-relaxed text-brand-foreground/75 sm:text-lg">
-            Export partnership under {brand.legalNameEn} — clear grades,
-            dependable supply, and a calm path from orchard to container.
+            {t("subhead", { legalName: brand.legalNameEn })}
           </p>
           <div className="animate-gd-fade-up animate-gd-delay-3 mt-8 flex flex-wrap gap-3">
             <Button
@@ -42,7 +56,7 @@ export default function HomePage() {
               size="lg"
               className="h-11 bg-brand-foreground px-5 text-brand hover:bg-brand-foreground/90"
             >
-              <Link href="/products">View products</Link>
+              <Link href="/products">{t("ctaProducts")}</Link>
             </Button>
             <Button
               asChild
@@ -50,7 +64,7 @@ export default function HomePage() {
               variant="outline"
               className="h-11 border-brand-foreground/35 bg-transparent px-5 text-brand-foreground hover:bg-brand-foreground/10 hover:text-brand-foreground"
             >
-              <Link href="/contact">Contact export desk</Link>
+              <Link href="/contact">{t("ctaContact")}</Link>
             </Button>
           </div>
         </div>
@@ -59,30 +73,15 @@ export default function HomePage() {
       <section className="mx-auto max-w-6xl px-5 py-20 sm:px-8 sm:py-24">
         <div className="max-w-2xl">
           <h2 className="font-heading text-3xl font-semibold tracking-tight text-ink sm:text-4xl">
-            Built for foreign buyers
+            {t("buyersTitle")}
           </h2>
           <p className="mt-4 text-base leading-relaxed text-muted-foreground sm:text-lg">
-            Graded Iranian pistachios, clear communication, and a short path to
-            the export desk — a brand you can put in front of your customers
-            with confidence.
+            {t("buyersLead")}
           </p>
         </div>
 
         <ul className="mt-12 grid gap-x-10 gap-y-8 sm:grid-cols-3">
-          {[
-            {
-              title: "Varieties that matter",
-              body: "Ahmad Aghaei, Akbari, Fandoghi, Kaleh Ghouchi, Dahan Bast — plus kernels and roasted lines.",
-            },
-            {
-              title: "Export-minded",
-              body: "Documentation, packing, and grade clarity oriented toward international wholesale and private label.",
-            },
-            {
-              title: "Direct contact",
-              body: "Reach the export desk by email or WhatsApp when you need samples, specs, or a quote.",
-            },
-          ].map((item) => (
+          {pillars.map((item) => (
             <li key={item.title}>
               <h3 className="font-heading text-lg font-semibold text-ink">
                 {item.title}
@@ -100,7 +99,7 @@ export default function HomePage() {
           <div className="relative aspect-[4/3] overflow-hidden rounded-sm">
             <Image
               src={imagery.product}
-              alt="Pistachios — placeholder product imagery pending brand assets"
+              alt={t("productAlt")}
               fill
               sizes="(max-width: 1024px) 100vw, 50vw"
               className="object-cover"
@@ -108,26 +107,25 @@ export default function HomePage() {
           </div>
           <div>
             <h2 className="font-heading text-3xl font-semibold tracking-tight text-ink">
-              From shell to shipment
+              {t("shipmentTitle")}
             </h2>
             <p className="mt-4 text-base leading-relaxed text-muted-foreground">
-              Explore our full range — including in-shell varieties, kernels, and
-              salted & roasted programs — then tell us what your market needs.
+              {t("shipmentLead")}
             </p>
             <ul className="mt-6 space-y-2 text-sm text-foreground/85">
-              {products.slice(0, 5).map((p) => (
-                <li key={p.slug} className="flex gap-2">
+              {productSlugs.slice(0, 5).map((slug) => (
+                <li key={slug} className="flex gap-2">
                   <span className="mt-2 size-1.5 shrink-0 rounded-full bg-brand" />
-                  {p.name}
+                  {tProducts(`${slug}.name`)}
                 </li>
               ))}
               <li className="flex gap-2 text-muted-foreground">
                 <span className="mt-2 size-1.5 shrink-0 rounded-full bg-brand-muted" />
-                Kernels · Salted & roasted
+                {t("kernelsRoasted")}
               </li>
             </ul>
             <Button asChild className="mt-8 h-10">
-              <Link href="/products">See all products</Link>
+              <Link href="/products">{t("seeAll")}</Link>
             </Button>
           </div>
         </div>
@@ -136,18 +134,13 @@ export default function HomePage() {
       <section className="mx-auto max-w-6xl px-5 py-20 sm:px-8 sm:py-24">
         <div className="max-w-xl">
           <h2 className="font-heading text-3xl font-semibold tracking-tight text-ink">
-            Ready to talk supply?
+            {t("ctaTitle")}
           </h2>
           <p className="mt-4 text-base leading-relaxed text-muted-foreground">
-            Send your target variety, volume, and destination. We will respond
-            from the export desk with next steps.
+            {t("ctaLead")}
           </p>
-          <Button
-            asChild
-            size="lg"
-            className="mt-8 h-11"
-          >
-            <Link href="/contact">Contact us</Link>
+          <Button asChild size="lg" className="mt-8 h-11">
+            <Link href="/contact">{t("ctaButton")}</Link>
           </Button>
         </div>
       </section>

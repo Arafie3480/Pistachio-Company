@@ -1,0 +1,130 @@
+{
+  "Meta": {
+    "titleDefault": "Green Diamond Farm — 伊朗开心果出口",
+    "titleTemplate": "%s · Green Diamond Farm",
+    "description": "Green Diamond Farm 为国际买家出口优质伊朗开心果 — 品种、果仁与烘焙产品线，由 Hosseini Naveh 运营。"
+  },
+  "Nav": {
+    "home": "首页",
+    "about": "关于我们",
+    "products": "产品",
+    "contact": "联系我们",
+    "inquire": "询价",
+    "openMenu": "打开菜单",
+    "closeMenu": "关闭菜单",
+    "primary": "主导航",
+    "mobile": "移动导航"
+  },
+  "Language": {
+    "label": "语言",
+    "switchTo": "切换语言"
+  },
+  "Home": {
+    "headline": "面向重视品质稳定的买家的伊朗开心果。",
+    "subhead": "在 {legalName} 旗下的出口合作 — 等级清晰、供应可靠，从果园到货柜的稳健路径。",
+    "ctaProducts": "查看产品",
+    "ctaContact": "联系出口部",
+    "heroAlt": "果园景观 — 品牌摄影到位前的占位图",
+    "buyersTitle": "专为海外买家打造",
+    "buyersLead": "分级伊朗开心果、清晰沟通、直达出口部 — 一份您可以自信展示给客户的品牌。",
+    "pillar1Title": "关键品种",
+    "pillar1Body": "Ahmad Aghaei、Akbari、Fandoghi、Kaleh Ghouchi、Dahan Bast — 以及果仁与烘焙系列。",
+    "pillar2Title": "出口导向",
+    "pillar2Body": "单证、包装与等级说明面向国际批发与贴牌业务。",
+    "pillar3Title": "直接联系",
+    "pillar3Body": "需要样品、规格或报价时，可通过邮件或 WhatsApp 联系出口部。",
+    "shipmentTitle": "从带壳到出货",
+    "shipmentLead": "了解我们的全线产品 — 含带壳品种、果仁以及咸味与烘焙方案 — 再告知您的市场需求。",
+    "kernelsRoasted": "果仁 · 咸味与烘焙",
+    "productAlt": "开心果 — 品牌素材到位前的产品占位图",
+    "seeAll": "查看全部产品",
+    "ctaTitle": "准备讨论供货？",
+    "ctaLead": "请告知目标品种、数量与目的地。出口部将回复后续步骤。",
+    "ctaButton": "联系我们"
+  },
+  "About": {
+    "metaTitle": "关于我们",
+    "metaDescription": "关于 Green Diamond Farm — Hosseini Naveh 旗下的伊朗开心果出口。",
+    "title": "关于公司",
+    "lead": "以清晰沟通、等级纪律与长期买家关系为核心的开心果出口商。",
+    "heading": "Green Diamond Farm",
+    "p1": "{brand} 是 {legalName}（{legalNameFa}）的出口品牌 — 面向需要可预期品质而非夸张故事的进口商、分销商与贴牌合作伙伴。",
+    "p2": "我们如实呈现品种、缩短沟通路径，并追求海外买家信赖的第一印象：沉稳、专业、随时可谈业务。",
+    "imageAlt": "农业景观 — 公司摄影到位前的占位图",
+    "historyTitle": "历史与信誉",
+    "historyNote": "以下内容为暂定，待客户确认日期、认证与市场履历后更新。",
+    "originLabel": "渊源",
+    "originBody": "在 {legalName} 旗下从事伊朗开心果贸易。确切成立年份与股权沿革 — 待客户确认。",
+    "standLabel": "我们的立足点",
+    "standBody": "等级稳定、出口沟通清晰，以及贴合真实买家需求的品种 — 从高端长果仁到大批量 Fandoghi 与加工产品线。",
+    "certsLabel": "认证",
+    "certsBody": "证书与审核文件一经提供将在此列出。待办：客户提供的标志 / PDF 素材",
+    "marketsLabel": "市场",
+    "marketsBody": "以国际批发为主。目的地国家与主要合作伙伴类型 — 待客户确认。"
+  },
+  "Products": {
+    "metaTitle": "产品",
+    "metaDescription": "Green Diamond Farm 开心果品种与产品线：Ahmad Aghaei、Akbari、Fandoghi、Kaleh Ghouchi、Dahan Bast、果仁、咸味与烘焙。",
+    "title": "产品",
+    "lead": "带壳品种、果仁与烘焙方案 — 面向国际批发与贴牌精选。",
+    "outlineNote": "客户素材到位后，产品摄影与详细等级表将替换本概要。",
+    "ctaTitle": "需要特定等级或包装？",
+    "ctaLead": "请告知品种、数量与目的地 — 出口部将确认可供货情况。",
+    "ctaButton": "查询可供货"
+  },
+  "Contact": {
+    "metaTitle": "联系我们",
+    "metaDescription": "联系 Green Diamond Farm 出口部 — 邮件、WhatsApp 与办公地址。",
+    "title": "联系我们",
+    "lead": "就等级、样品、包装与出货计划联系出口部。",
+    "email": "电子邮箱",
+    "emailTodo": "待办：与客户确认拼写（域名使用 diamond）。",
+    "whatsapp": "WhatsApp",
+    "whatsappOpen": "打开 WhatsApp（号码待定）",
+    "whatsappNote": "占位，直至客户提供业务号码。",
+    "office": "办公地址",
+    "includeTitle": "建议注明",
+    "includeLead": "为加快报价，请注明品种、大致数量、偏好包装以及目的港或国家。",
+    "include1": "品种 / 产品线（如 Akbari、果仁）",
+    "include2": "数量与时间窗口",
+    "include3": "目的地及任何贴标要求",
+    "emailCta": "邮件联系出口部",
+    "emailSubject": "出口询盘 — Green Diamond Farm"
+  },
+  "Footer": {
+    "tagline": "在 {legalName} · {legalNameFa} 旗下出口伊朗开心果。为国际买家提供可靠供应。",
+    "navigate": "导航",
+    "contact": "联系",
+    "rights": "© {year} {brand}。保留所有权利。"
+  },
+  "products": {
+    "ahmad-aghaei": {
+      "name": "Ahmad Aghaei",
+      "summary": "细长优雅的果仁，风味精致 — 深受高端零售与礼品市场青睐。"
+    },
+    "akbari": {
+      "name": "Akbari",
+      "summary": "颗粒大、形长，视觉表现突出 — 高端批发买家的主力品种。"
+    },
+    "fandoghi": {
+      "name": "Fandoghi",
+      "summary": "圆润、用途广泛的伊朗开心果 — 适合烘焙、包装与日常贸易的稳定货量。"
+    },
+    "kaleh-ghouchi": {
+      "name": "Kaleh Ghouchi",
+      "summary": "超大颗粒、外形醒目，壳面美观 — 适合重视规格与外观的市场。"
+    },
+    "dahan-bast": {
+      "name": "Dahan Bast",
+      "summary": "闭壳开心果，适合对完整性要求高的加工与果仁生产。"
+    },
+    "kernels": {
+      "name": "果仁",
+      "summary": "去壳开心果仁，适用于糖果、冰淇淋、烘焙与工业用途。"
+    },
+    "salted-roasted": {
+      "name": "咸味与烘焙",
+      "summary": "即食烘焙开心果 — 咸味或原味 — 适用于零售包装与贴牌项目。"
+    }
+  }
+}

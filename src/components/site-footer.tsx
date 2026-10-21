@@ -1,7 +1,14 @@
-import Link from "next/link";
-import { brand, contact, nav } from "@/lib/site";
+import { getTranslations } from "next-intl/server";
+import { Link } from "@/i18n/navigation";
+import { brand, contact } from "@/lib/site";
 
-export function SiteFooter() {
+const navHrefs = ["/", "/about", "/products", "/contact"] as const;
+const navKeys = ["home", "about", "products", "contact"] as const;
+
+export async function SiteFooter() {
+  const t = await getTranslations("Footer");
+  const tNav = await getTranslations("Nav");
+
   return (
     <footer className="mt-auto border-t border-border/80 bg-surface">
       <div className="mx-auto grid max-w-6xl gap-10 px-5 py-14 sm:px-8 md:grid-cols-[1.4fr_1fr_1fr]">
@@ -10,24 +17,25 @@ export function SiteFooter() {
             {brand.name}
           </p>
           <p className="mt-2 max-w-sm text-sm leading-relaxed text-muted-foreground">
-            Iranian pistachio export under {brand.legalNameEn}
-            <span className="mx-1 text-border">·</span>
-            {brand.legalNameFa}. Reliable supply for international buyers.
+            {t("tagline", {
+              legalName: brand.legalNameEn,
+              legalNameFa: brand.legalNameFa,
+            })}
           </p>
         </div>
 
         <div>
           <p className="text-xs font-medium tracking-[0.14em] text-muted-foreground uppercase">
-            Navigate
+            {t("navigate")}
           </p>
           <ul className="mt-3 space-y-2 text-sm">
-            {nav.map((item) => (
-              <li key={item.href}>
+            {navHrefs.map((href, i) => (
+              <li key={href}>
                 <Link
-                  href={item.href}
+                  href={href}
                   className="text-foreground/80 transition-colors hover:text-brand"
                 >
-                  {item.label}
+                  {tNav(navKeys[i])}
                 </Link>
               </li>
             ))}
@@ -36,7 +44,7 @@ export function SiteFooter() {
 
         <div>
           <p className="text-xs font-medium tracking-[0.14em] text-muted-foreground uppercase">
-            Contact
+            {t("contact")}
           </p>
           <ul className="mt-3 space-y-2 text-sm text-foreground/80">
             <li>
@@ -48,16 +56,16 @@ export function SiteFooter() {
               </a>
             </li>
             <li>{contact.addressLine}</li>
-            <li className="text-xs text-muted-foreground">{contact.addressNote}</li>
+            <li className="text-xs text-muted-foreground">
+              {contact.addressNote}
+            </li>
           </ul>
         </div>
       </div>
 
       <div className="border-t border-border/60">
         <div className="mx-auto flex max-w-6xl flex-col gap-2 px-5 py-5 text-xs text-muted-foreground sm:flex-row sm:items-center sm:justify-between sm:px-8">
-          <p>
-            © 2026 {brand.name}. All rights reserved.
-          </p>
+          <p>{t("rights", { year: 2026, brand: brand.name })}</p>
           <p>{brand.domain}</p>
         </div>
       </div>

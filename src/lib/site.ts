@@ -1,6 +1,7 @@
 /**
  * Shared site constants for Green Diamond Farm.
  * Mark client-supplied fields clearly until confirmed.
+ * UI copy lives in messages/*.json (next-intl).
  */
 
 export const brand = {
@@ -21,57 +22,17 @@ export const contact = {
   addressNote: "Full address pending — TODO for client",
 } as const;
 
-export const nav = [
-  { href: "/", label: "Home" },
-  { href: "/about", label: "About" },
-  { href: "/products", label: "Products" },
-  { href: "/contact", label: "Contact" },
+export const productSlugs = [
+  "ahmad-aghaei",
+  "akbari",
+  "fandoghi",
+  "kaleh-ghouchi",
+  "dahan-bast",
+  "kernels",
+  "salted-roasted",
 ] as const;
 
-export const products = [
-  {
-    slug: "ahmad-aghaei",
-    name: "Ahmad Aghaei",
-    summary:
-      "Long, elegant kernels with a refined flavor profile — favored by premium retail and gift markets.",
-  },
-  {
-    slug: "akbari",
-    name: "Akbari",
-    summary:
-      "Large, elongated nuts with strong visual presence — a staple for high-end wholesale buyers.",
-  },
-  {
-    slug: "fandoghi",
-    name: "Fandoghi",
-    summary:
-      "Round, versatile Iranian pistachio — reliable volume for roasting, packing, and everyday trade.",
-  },
-  {
-    slug: "kaleh-ghouchi",
-    name: "Kaleh Ghouchi",
-    summary:
-      "Jumbo, bold shape with excellent shell appeal — selected for markets that value size and look.",
-  },
-  {
-    slug: "dahan-bast",
-    name: "Dahan Bast",
-    summary:
-      "Closed-shell pistachios suited to processing and kernel production where integrity matters.",
-  },
-  {
-    slug: "kernels",
-    name: "Kernels",
-    summary:
-      "Shelled pistachio kernels prepared for confectionery, ice cream, bakery, and industrial use.",
-  },
-  {
-    slug: "salted-roasted",
-    name: "Salted & roasted",
-    summary:
-      "Ready-to-eat roasted pistachios — salted or plain — for retail packs and private-label programs.",
-  },
-] as const;
+export type ProductSlug = (typeof productSlugs)[number];
 
 /** Hero / atmosphere imagery — replace with brand photography when available. */
 export const imagery = {

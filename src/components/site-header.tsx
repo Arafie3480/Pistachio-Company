@@ -1,14 +1,19 @@
 "use client";
 
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
-import { brand, nav } from "@/lib/site";
-import { cn } from "@/lib/utils";
+import { LanguageSwitcher } from "@/components/language-switcher";
 import { Button } from "@/components/ui/button";
+import { Link, usePathname } from "@/i18n/navigation";
+import { brand } from "@/lib/site";
+import { cn } from "@/lib/utils";
+
+const navHrefs = ["/", "/about", "/products", "/contact"] as const;
+const navKeys = ["home", "about", "products", "contact"] as const;
 
 export function SiteHeader() {
+  const t = useTranslations("Nav");
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -34,7 +39,7 @@ export function SiteHeader() {
         solid ? "bg-brand/95 backdrop-blur-md shadow-sm" : "bg-transparent"
       )}
     >
-      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5 sm:h-[4.25rem] sm:px-8">
+      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-3 px-5 sm:h-[4.25rem] sm:px-8">
         <Link
           href="/"
           className="font-heading text-[0.95rem] font-semibold tracking-tight text-brand-foreground transition-opacity hover:opacity-90 sm:text-base"
@@ -42,16 +47,17 @@ export function SiteHeader() {
           {brand.name}
         </Link>
 
-        <nav className="hidden items-center gap-0.5 md:flex" aria-label="Primary">
-          {nav.map((item) => {
+        <nav
+          className="hidden items-center gap-0.5 md:flex"
+          aria-label={t("primary")}
+        >
+          {navHrefs.map((href, i) => {
             const active =
-              item.href === "/"
-                ? pathname === "/"
-                : pathname.startsWith(item.href);
+              href === "/" ? pathname === "/" : pathname.startsWith(href);
             return (
               <Link
-                key={item.href}
-                href={item.href}
+                key={href}
+                href={href}
                 className={cn(
                   "rounded-md px-3 py-2 text-sm transition-colors",
                   active
@@ -59,29 +65,33 @@ export function SiteHeader() {
                     : "text-brand-foreground/75 hover:text-brand-foreground"
                 )}
               >
-                {item.label}
+                {t(navKeys[i])}
               </Link>
             );
           })}
+          <LanguageSwitcher className="ms-2" onDark />
           <Button
             asChild
             size="sm"
-            className="ml-2 h-9 bg-brand-foreground text-brand hover:bg-brand-foreground/90"
+            className="ms-2 h-9 bg-brand-foreground text-brand hover:bg-brand-foreground/90"
           >
-            <Link href="/contact">Inquire</Link>
+            <Link href="/contact">{t("inquire")}</Link>
           </Button>
         </nav>
 
-        <button
-          type="button"
-          className="inline-flex size-10 items-center justify-center rounded-md text-brand-foreground md:hidden"
-          aria-expanded={open}
-          aria-controls="mobile-nav"
-          aria-label={open ? "Close menu" : "Open menu"}
-          onClick={() => setOpen((v) => !v)}
-        >
-          {open ? <X className="size-5" /> : <Menu className="size-5" />}
-        </button>
+        <div className="flex items-center gap-1 md:hidden">
+          <LanguageSwitcher onDark />
+          <button
+            type="button"
+            className="inline-flex size-10 items-center justify-center rounded-md text-brand-foreground"
+            aria-expanded={open}
+            aria-controls="mobile-nav"
+            aria-label={open ? t("closeMenu") : t("openMenu")}
+            onClick={() => setOpen((v) => !v)}
+          >
+            {open ? <X className="size-5" /> : <Menu className="size-5" />}
+          </button>
+        </div>
       </div>
 
       {open ? (
@@ -91,15 +101,15 @@ export function SiteHeader() {
         >
           <nav
             className="mx-auto flex max-w-6xl flex-col gap-1 px-5 py-4"
-            aria-label="Mobile"
+            aria-label={t("mobile")}
           >
-            {nav.map((item) => (
+            {navHrefs.map((href, i) => (
               <Link
-                key={item.href}
-                href={item.href}
+                key={href}
+                href={href}
                 className="rounded-md px-3 py-3 text-base text-brand-foreground/90 hover:bg-brand-foreground/10"
               >
-                {item.label}
+                {t(navKeys[i])}
               </Link>
             ))}
           </nav>
