@@ -4,25 +4,33 @@ Export website for **بازرگانی حسینی نوه** (Hosseini Naveh) — p
 
 - **Domain:** [greendiamondfarm.com](https://greendiamondfarm.com)
 - **GitHub:** [Arafie3480/Pistachio-Company](https://github.com/Arafie3480/Pistachio-Company)
-- **Origin (Cursor Project):** [amir-hossein-z42bm/genesis](https://cursor.com/codebase/amir-hossein-z42bm/genesis)
+- **Stack:** Next.js (App Router) · TypeScript · Tailwind CSS · shadcn/ui
 
 ## Goals
 
 - Clean, simple, chic B2B site (not flashy)
-- English default; add Arabic, Turkish, Chinese, Hindi, Russian
-- Pages: Home, About (intro + credibility), Products, Contact
+- English default; Arabic, Turkish, Chinese, Hindi, Russian later
+- Pages: Home, About, Products, Contact
 - Contact: export email, WhatsApp, Motahari 52
-- Delivery target: ~10 days; non-Iran host for LinkedIn use
-
-## Products
-
-Ahmad Aghaei · Akbari · Fandoghi · Kaleh Ghouchi · Dahan Bast · kernels · salted & roasted
 
 ## Local setup
 
 ```bash
 git clone https://github.com/Arafie3480/Pistachio-Company.git
 cd Pistachio-Company
+npm install
+npm run dev
 ```
 
-Site stack (WordPress polish vs modern rebuild) is decided in the Cursor Project.
+Open [http://127.0.0.1:4321](http://127.0.0.1:4321).
+
+## Products
+
+Ahmad Aghaei · Akbari · Fandoghi · Kaleh Ghouchi · Dahan Bast · kernels · salted & roasted
+
+## Client TODOs
+
+- WhatsApp business number
+- Full office address (beyond Motahari 52)
+- Confirm export email spelling (`greendiamond` vs `greendimond`)
+- Logo, product photos, certificates
