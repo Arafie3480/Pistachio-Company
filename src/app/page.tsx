@@ -14,7 +14,7 @@ export default function HomePage() {
           fill
           priority
           sizes="100vw"
-          className="animate-gd-hero-media object-cover"
+          className="object-cover"
         />
         <div
           className="absolute inset-0 bg-gradient-to-r from-brand/92 via-brand/78 to-brand/45"
@@ -40,7 +40,7 @@ export default function HomePage() {
             <Button
               asChild
               size="lg"
-              className="h-11 bg-brand-foreground px-5 text-brand transition-transform hover:scale-[1.02] hover:bg-brand-foreground/90 active:scale-[0.99]"
+              className="h-11 bg-brand-foreground px-5 text-brand hover:bg-brand-foreground/90"
             >
               <Link href="/products">View products</Link>
             </Button>
@@ -62,10 +62,9 @@ export default function HomePage() {
             Built for foreign buyers
           </h2>
           <p className="mt-4 text-base leading-relaxed text-muted-foreground sm:text-lg">
-            We keep the story simple: graded Iranian pistachios, transparent
-            communication, and a contact path that answers when you are ready to
-            inquire. No noise — just a brand you can put in front of your
-            customers.
+            Graded Iranian pistachios, clear communication, and a short path to
+            the export desk — a brand you can put in front of your customers
+            with confidence.
           </p>
         </div>
 
@@ -127,7 +126,7 @@ export default function HomePage() {
                 Kernels · Salted & roasted
               </li>
             </ul>
-            <Button asChild className="mt-8 h-10 transition-transform hover:scale-[1.02]">
+            <Button asChild className="mt-8 h-10">
               <Link href="/products">See all products</Link>
             </Button>
           </div>
@@ -146,7 +145,7 @@ export default function HomePage() {
           <Button
             asChild
             size="lg"
-            className="mt-8 h-11 transition-transform hover:scale-[1.02]"
+            className="mt-8 h-11"
           >
             <Link href="/contact">Contact us</Link>
           </Button>

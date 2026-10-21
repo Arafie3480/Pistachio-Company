@@ -77,9 +77,9 @@ export const products = [
 export const imagery = {
   // TODO(client): replace with owned orchard / warehouse / product photography
   hero:
-    "https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=2400&q=80",
+    "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=2400&q=80",
   orchard:
     "https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&w=1600&q=80",
   product:
-    "https://images.unsplash.com/photo-1599599810769-bcde5a160d32?auto=format&fit=crop&w=1600&q=80",
+    "https://images.unsplash.com/photo-1615485290382-441e4d049cb5?auto=format&fit=crop&w=1600&q=80",
 } as const;

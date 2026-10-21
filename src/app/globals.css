@@ -141,25 +141,12 @@
   }
 }
 
-@keyframes gd-ken-burns {
-  from {
-    transform: scale(1.06);
-  }
-  to {
-    transform: scale(1);
-  }
-}
-
 .animate-gd-fade-up {
-  animation: gd-fade-up 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation: gd-fade-up 0.75s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 .animate-gd-fade-in {
-  animation: gd-fade-in 1.1s ease-out both;
-}
-
-.animate-gd-hero-media {
-  animation: gd-ken-burns 12s ease-out both;
+  animation: gd-fade-in 0.9s ease-out both;
 }
 
 .animate-gd-delay-1 {
@@ -177,8 +164,7 @@
 
 @media (prefers-reduced-motion: reduce) {
   .animate-gd-fade-up,
-  .animate-gd-fade-in,
-  .animate-gd-hero-media {
+  .animate-gd-fade-in {
     animation: none !important;
   }
 }

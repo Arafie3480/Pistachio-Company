@@ -66,7 +66,7 @@ export function SiteHeader() {
           <Button
             asChild
             size="sm"
-            className="ml-2 h-9 bg-brand-foreground text-brand transition-transform hover:bg-brand-foreground/90 hover:scale-[1.02] active:scale-[0.99]"
+            className="ml-2 h-9 bg-brand-foreground text-brand hover:bg-brand-foreground/90"
           >
             <Link href="/contact">Inquire</Link>
           </Button>

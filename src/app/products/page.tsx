@@ -53,7 +53,7 @@ export default function ProductsPage() {
             Tell us variety, volume, and destination — we will confirm
             availability from the export desk.
           </p>
-          <Button asChild className="mt-6 h-10 transition-transform hover:scale-[1.02]">
+          <Button asChild className="mt-6 h-10">
             <Link href="/contact">Request availability</Link>
           </Button>
         </div>
