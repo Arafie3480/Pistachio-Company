@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 import { locales } from "@/i18n/routing";
-import { absoluteUrl, sitePathnames } from "@/lib/seo";
+import { absoluteUrl, languageAlternates, sitePathnames } from "@/lib/seo";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date();
@@ -12,9 +12,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: pathname === "" ? "weekly" : "monthly",
       priority: pathname === "" ? 1 : 0.8,
       alternates: {
-        languages: Object.fromEntries(
-          locales.map((l) => [l, absoluteUrl(l, pathname)]),
-        ),
+        languages: languageAlternates(pathname),
       },
     })),
   );
