@@ -77,19 +77,20 @@ export default async function AboutPage({
             {t("historyNote")}
           </p>
 
-          <div className="mt-10 grid gap-8 border-b border-border/60 pb-10 sm:grid-cols-3 sm:gap-6">
+          {/* Quiet experience list — avoid marketing-style stat strips */}
+          <ul className="mt-10 max-w-xl space-y-3 border-b border-border/60 pb-10">
             {experience.map((item) => (
-              <div key={item.years} className="min-w-0">
-                <p className="font-heading text-4xl font-semibold tracking-tight text-brand tabular-nums sm:text-5xl">
-                  {item.years}
-                  <span className="text-2xl text-brand-muted">+</span>
-                </p>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                  {item.label}
-                </p>
-              </div>
+              <li
+                key={item.label}
+                className="flex items-baseline gap-3 text-base text-foreground/90"
+              >
+                <span className="font-heading text-lg font-semibold tabular-nums text-brand">
+                  {item.years}+
+                </span>
+                <span className="text-muted-foreground">{item.label}</span>
+              </li>
             ))}
-          </div>
+          </ul>
 
           <dl className="mt-10 grid gap-8 sm:grid-cols-2">
             <div>

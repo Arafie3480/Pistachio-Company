@@ -69,6 +69,7 @@ export function SiteHeader() {
                     ? "text-brand-foreground after:absolute after:inset-x-3 after:bottom-1 after:h-px after:bg-brand-foreground/70"
                     : "text-brand-foreground/75 hover:text-brand-foreground"
                 )}
+                aria-current={active ? "page" : undefined}
               >
                 {t(navKeys[i])}
               </Link>
@@ -108,15 +109,25 @@ export function SiteHeader() {
             className="mx-auto flex max-w-6xl flex-col gap-1 px-5 py-4"
             aria-label={t("mobile")}
           >
-            {navHrefs.map((href, i) => (
-              <Link
-                key={href}
-                href={href}
-                className="rounded-md px-3 py-3 text-base text-brand-foreground/90 hover:bg-brand-foreground/10"
-              >
-                {t(navKeys[i])}
-              </Link>
-            ))}
+            {navHrefs.map((href, i) => {
+              const active =
+                href === "/" ? pathname === "/" : pathname.startsWith(href);
+              return (
+                <Link
+                  key={href}
+                  href={href}
+                  className={cn(
+                    "rounded-md px-3 py-3 text-base transition-colors hover:bg-brand-foreground/10",
+                    active
+                      ? "bg-brand-foreground/10 font-medium text-brand-foreground"
+                      : "text-brand-foreground/90"
+                  )}
+                  aria-current={active ? "page" : undefined}
+                >
+                  {t(navKeys[i])}
+                </Link>
+              );
+            })}
             <Button
               asChild
               className="mt-2 h-11 w-full bg-brand-foreground text-brand hover:bg-brand-foreground/90"

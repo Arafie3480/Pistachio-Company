@@ -30,7 +30,11 @@ export default async function ProductsPage({
   const t = await getTranslations("Products");
   const tProducts = await getTranslations("products");
 
-  let index = 0;
+  const numberBySlug = Object.fromEntries(
+    productGroups
+      .flatMap((group) => group.slugs)
+      .map((slug, i) => [slug, i + 1])
+  ) as Record<(typeof productGroups)[number]["slugs"][number], number>;
 
   return (
     <>
@@ -46,28 +50,24 @@ export default async function ProductsPage({
             <div key={group.id}>
               <h2 className="section-label">{t(`group.${group.id}`)}</h2>
               <ul className="mt-5 divide-y divide-border/70 border-y border-border/70">
-                {group.slugs.map((slug) => {
-                  index += 1;
-                  const n = index;
-                  return (
-                    <li
-                      key={slug}
-                      className="product-row group grid gap-3 py-7 sm:grid-cols-[5.5rem_1fr] sm:gap-10 sm:py-8"
-                    >
-                      <span className="font-mono text-xs tracking-wider text-muted-foreground tabular-nums transition-colors group-hover:text-brand">
-                        {String(n).padStart(2, "0")}
-                      </span>
-                      <div>
-                        <h3 className="font-heading text-xl font-semibold tracking-tight text-ink transition-colors group-hover:text-brand sm:text-2xl">
-                          {tProducts(`${slug}.name`)}
-                        </h3>
-                        <p className="mt-2 max-w-2xl text-base leading-relaxed text-muted-foreground">
-                          {tProducts(`${slug}.summary`)}
-                        </p>
-                      </div>
-                    </li>
-                  );
-                })}
+                {group.slugs.map((slug) => (
+                  <li
+                    key={slug}
+                    className="product-row group grid gap-3 py-7 sm:grid-cols-[5.5rem_1fr] sm:gap-10 sm:py-8"
+                  >
+                    <span className="font-mono text-xs tracking-wider text-muted-foreground tabular-nums transition-colors group-hover:text-brand">
+                      {String(numberBySlug[slug]).padStart(2, "0")}
+                    </span>
+                    <div>
+                      <h3 className="font-heading text-xl font-semibold tracking-tight text-ink transition-colors group-hover:text-brand sm:text-2xl">
+                        {tProducts(`${slug}.name`)}
+                      </h3>
+                      <p className="mt-2 max-w-2xl text-base leading-relaxed text-muted-foreground">
+                        {tProducts(`${slug}.summary`)}
+                      </p>
+                    </div>
+                  </li>
+                ))}
               </ul>
             </div>
           ))}
