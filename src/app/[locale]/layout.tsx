@@ -13,7 +13,12 @@ import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { rtlLocales, routing, type Locale } from "@/i18n/routing";
 import { brand } from "@/lib/site";
-import { absoluteUrl, buildPageMetadata, languageAlternates } from "@/lib/seo";
+import {
+  absoluteUrl,
+  buildPageMetadata,
+  languageAlternates,
+  siteUrl,
+} from "@/lib/seo";
 import "../globals.css";
 
 const dmSans = DM_Sans({
@@ -73,7 +78,7 @@ export async function generateMetadata({
   });
 
   return {
-    metadataBase: new URL(`https://${brand.domain}`),
+    metadataBase: new URL(siteUrl),
     title: {
       default: t("titleDefault"),
       template: t("titleTemplate"),

@@ -1,9 +1,14 @@
 import type { Metadata } from "next";
 import { locales, routing, type Locale } from "@/i18n/routing";
-import { brand, imagery } from "@/lib/site";
+import { brand } from "@/lib/site";
 
-/** Canonical production origin — DNS cutover still pending. */
-export const siteUrl = `https://${brand.domain}`;
+/**
+ * Canonical origin for absolute URLs / sitemap / robots.
+ * Override with NEXT_PUBLIC_SITE_URL on preview hosts before DNS cutover.
+ */
+export const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ||
+  `https://${brand.domain}`;
 
 /** App pathnames without locale prefix (home = ""). */
 export const sitePathnames = ["", "/about", "/products", "/contact"] as const;
@@ -43,12 +48,15 @@ export function languageAlternates(
   return languages;
 }
 
+/** Prefer generated OG card; Unsplash fallback only if callers override. */
+const defaultOgImage = `${siteUrl}/opengraph-image`;
+
 export function buildPageMetadata({
   locale,
   pathname = "",
   title,
   description,
-  imageUrl = imagery.og,
+  imageUrl = defaultOgImage,
 }: {
   locale: string;
   pathname?: SitePathname | string;
@@ -58,7 +66,6 @@ export function buildPageMetadata({
 }): Metadata {
   const url = absoluteUrl(locale, pathname);
   const ogLocale = ogLocaleMap[locale as Locale] ?? "en_US";
-
   return {
     title,
     description,

@@ -2,7 +2,7 @@
 
 Export website for **بازرگانی حسینی نوه** (Hosseini Naveh) — pistachio export brand **Green Diamond Farm**.
 
-- **Domain:** [greendiamondfarm.com](https://greendiamondfarm.com)
+- **Domain:** [greendiamondfarm.com](https://greendiamondfarm.com) (WordPress live today; this Next.js app is the cutover target)
 - **GitHub:** [Arafie3480/Pistachio-Company](https://github.com/Arafie3480/Pistachio-Company)
 - **Stack:** Next.js (App Router) · TypeScript · Tailwind CSS · next-intl · shadcn/ui
 
@@ -41,6 +41,8 @@ npm start       # serve build on :4321
 
 SEO check after build/start: `/sitemap.xml`, `/robots.txt`, `/opengraph-image`, `/icon`.
 
+Copy `.env.example` only if you add overrides — **no env vars are required** for this marketing site.
+
 ## Tunable company facts
 
 Edit `src/lib/site.ts`:
@@ -48,21 +50,30 @@ Edit `src/lib/site.ts`:
 - `historyYears` — provisional agriculture / trade / export years
 - `people` — founder & CEO names
 - `contact` — email, phone, WhatsApp URL, warehouse line
+- Suggested brand mark — `public/brand/mark.svg` + `src/components/brand-mark.tsx` (replace when client logo arrives)
 
 UI copy lives in `messages/*.json` (next-intl).
 
-## Deploy
+## Deploy (non-Iran host — LinkedIn-friendly)
 
-**Primary path (recommended):** import this GitHub repo in a host dashboard — no CLI login required.
+**Primary path:** import this GitHub repo in a host dashboard — no CLI login required.
 
-1. Open [Vercel → New Project](https://vercel.com/new) (or Netlify / Cloudflare Pages with Next.js support).
-2. Import **`Arafie3480/Pistachio-Company`** from GitHub.
-3. Framework: **Next.js**. Root directory: repo root. **No env vars** required for this marketing site.
-4. Deploy. Later pushes to `main` redeploy automatically when the project stays linked.
+### Vercel (recommended)
 
-**Deploy-ready signal:** GitHub Actions [CI](.github/workflows/ci.yml) runs `npm ci` + `npm run build` on every push/PR to `main`. Green CI means the tree is buildable for host import.
+1. Open [Vercel → New Project](https://vercel.com/new).
+2. Import **`Arafie3480/Pistachio-Company`** (GitHub).
+3. Framework preset: **Next.js**. Root: repo root. **Env vars:** none.
+4. Deploy. Later pushes to `main` redeploy automatically while the project stays linked.
+5. Preview URL appears on the first deploy; share that until DNS cutover.
 
-**Optional — Vercel CLI** (needs interactive login; not used in agent sessions):
+### Alternatives
+
+- **Netlify** — New site → Import from Git → same repo → Next.js runtime.
+- **Cloudflare Pages** — Connect GitHub → framework preset Next.js (or `@cloudflare/next-on-pages` if you standardize on that later).
+
+**Deploy-ready signal:** GitHub Actions [CI](.github/workflows/ci.yml) runs `npm ci` + `npm run build` on every push/PR to `main`.
+
+**Optional — Vercel CLI** (interactive login; not available in unattended agent sessions):
 
 ```bash
 npx vercel login
@@ -70,9 +81,15 @@ npx vercel          # preview
 npx vercel --prod   # production
 ```
 
-There is **no public preview URL** from this repo alone until someone imports it (or completes CLI auth) on a host account.
+### DNS cutover (when ready — do not change client DNS yet)
 
-DNS / custom domain (`greendiamondfarm.com`) is out of scope until cutover from WordPress. Prefer a **non-Iran** host for LinkedIn eligibility.
+1. Keep current Iran WordPress host serving `greendiamondfarm.com` until the Next.js preview is signed off.
+2. In the host dashboard, add custom domain `greendiamondfarm.com` (+ `www` if used).
+3. At the DNS provider, point apex / `www` to the host’s records (Vercel typically: `A` / `CNAME` as shown in the dashboard).
+4. Wait for TLS + propagation; then verify `/`, `/ar`, `/sitemap.xml`, WhatsApp/phone CTAs.
+5. Only then retire or redirect the WordPress install.
+
+Prefer a **non-Iran** host so the live site can be used on LinkedIn.
 
 ## Products
 
@@ -85,5 +102,7 @@ DNS / custom domain (`greendiamondfarm.com`) is out of scope until cutover from 
 - Dedicated virtual / business WhatsApp line (site currently uses temporary `+989361814577`)
 - Full office address beyond Motahari 52 warehouse
 - Confirm export email spelling (`greendiamond` vs `greendimond`)
-- Logo, product photos, certificates (favicon/OG use a green-diamond placeholder)
+- Official logo file (site ships a **suggested** diamond + pistachio mark for delivery)
+- Owned product / orchard photography; certificates
 - Confirm exact experience years (50 / 40 / 30 are provisional in `historyYears`)
+- Import repo on Vercel (or peer) and point DNS when signed off
