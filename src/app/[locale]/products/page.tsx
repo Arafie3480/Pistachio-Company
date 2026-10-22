@@ -3,6 +3,7 @@ import { PageHero } from "@/components/page-hero";
 import { Button } from "@/components/ui/button";
 import { Link } from "@/i18n/navigation";
 import { productSlugs } from "@/lib/site";
+import { buildPageMetadata } from "@/lib/seo";
 
 export async function generateMetadata({
   params,
@@ -11,10 +12,12 @@ export async function generateMetadata({
 }) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "Products" });
-  return {
+  return buildPageMetadata({
+    locale,
+    pathname: "/products",
     title: t("metaTitle"),
     description: t("metaDescription"),
-  };
+  });
 }
 
 export default async function ProductsPage({

@@ -3,6 +3,24 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Button } from "@/components/ui/button";
 import { Link } from "@/i18n/navigation";
 import { brand, imagery, productSlugs } from "@/lib/site";
+import { buildPageMetadata } from "@/lib/seo";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "Meta" });
+  const meta = buildPageMetadata({
+    locale,
+    pathname: "",
+    title: t("titleDefault"),
+    description: t("description"),
+  });
+  // Avoid template doubling the brand already present in titleDefault.
+  return { ...meta, title: { absolute: t("titleDefault") } };
+}
 
 export default async function HomePage({
   params,

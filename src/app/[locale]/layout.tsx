@@ -13,6 +13,7 @@ import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { rtlLocales, routing, type Locale } from "@/i18n/routing";
 import { brand } from "@/lib/site";
+import { absoluteUrl, buildPageMetadata, languageAlternates } from "@/lib/seo";
 import "../globals.css";
 
 const dmSans = DM_Sans({
@@ -64,14 +65,34 @@ export async function generateMetadata({
 }) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "Meta" });
+  const page = buildPageMetadata({
+    locale,
+    pathname: "",
+    title: t("titleDefault"),
+    description: t("description"),
+  });
 
   return {
+    metadataBase: new URL(`https://${brand.domain}`),
     title: {
       default: t("titleDefault"),
       template: t("titleTemplate"),
     },
     description: t("description"),
-    metadataBase: new URL(`https://${brand.domain}`),
+    applicationName: brand.name,
+    authors: [{ name: brand.name }],
+    creator: brand.name,
+    publisher: brand.legalNameEn,
+    alternates: {
+      canonical: absoluteUrl(locale, ""),
+      languages: languageAlternates(""),
+    },
+    openGraph: page.openGraph,
+    twitter: page.twitter,
+    robots: {
+      index: true,
+      follow: true,
+    },
   };
 }
 
