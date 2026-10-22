@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Green Diamond Farm">
+  <!-- Suggested mark: forest-green diamond with facet crown + pistachio kernel -->
+  <path fill="#00684C" d="M32 3.2 L60.8 32 L32 60.8 L3.2 32 Z"/>
+  <!-- Upper facets (white) -->
+  <polygon fill="#FFFFFF" points="32,8 46.5,29 32,29"/>
+  <polygon fill="#FFFFFF" points="32,8 17.5,29 32,29"/>
+  <!-- Soft facet seam -->
+  <path fill="#FFFFFF" d="M16 30.2 Q32 33.8 48 30.2 L47.2 32.6 Q32 36 16.8 32.6 Z"/>
+  <!-- Kernel -->
+  <ellipse fill="#FFFFFF" cx="32" cy="46.2" rx="9.2" ry="11.2"/>
+  <!-- Kernel cleft -->
+  <path fill="#00684C" d="M32 36.8
+    C34.6 39.2 35.6 42.2 35.4 45.4
+    C35.2 48.8 33.6 51.6 32 54.8
+    C30.4 51.6 28.8 48.8 28.6 45.4
+    C28.4 42.2 29.4 39.2 32 36.8 Z"/>
+</svg>

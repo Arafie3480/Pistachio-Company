@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { getTranslations, setRequestLocale } from "next-intl/server";
+import { BrandMark } from "@/components/brand-mark";
 import { Button } from "@/components/ui/button";
 import { Link } from "@/i18n/navigation";
 import { brand, imagery, productSlugs } from "@/lib/site";
@@ -61,10 +62,18 @@ export default async function HomePage({
         />
 
         <div className="relative mx-auto flex min-h-[100svh] max-w-6xl flex-col justify-end px-5 pt-28 pb-16 sm:justify-center sm:px-8 sm:pb-24">
-          <p className="animate-gd-fade-up font-heading text-3xl font-semibold tracking-tight text-balance sm:text-5xl md:text-6xl md:leading-[1.05]">
-            {brand.name}
-          </p>
-          <h1 className="animate-gd-fade-up animate-gd-delay-1 mt-5 max-w-xl font-heading text-2xl font-medium tracking-tight text-balance text-brand-foreground/95 sm:text-3xl md:text-[2.15rem] md:leading-snug">
+          <div className="animate-gd-fade-up flex items-center gap-3 sm:gap-4">
+            <BrandMark tone="onDark" className="size-11 sm:size-14" />
+            <div>
+              <p className="font-heading text-3xl font-semibold tracking-tight text-balance sm:text-5xl md:text-6xl md:leading-[1.05]">
+                {brand.name}
+              </p>
+              <p className="mt-1 text-xs tracking-[0.12em] text-brand-foreground/60 uppercase sm:text-sm sm:tracking-[0.16em]">
+                {brand.legalNameEn}
+              </p>
+            </div>
+          </div>
+          <h1 className="animate-gd-fade-up animate-gd-delay-1 mt-6 max-w-xl font-heading text-2xl font-medium tracking-tight text-balance text-brand-foreground/95 sm:mt-8 sm:text-3xl md:text-[2.15rem] md:leading-snug">
             {t("headline")}
           </h1>
           <p className="animate-gd-fade-up animate-gd-delay-2 mt-4 max-w-md text-base leading-relaxed text-brand-foreground/75 sm:text-lg">

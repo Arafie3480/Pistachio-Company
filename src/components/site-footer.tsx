@@ -1,4 +1,5 @@
 import { getTranslations } from "next-intl/server";
+import { BrandMark } from "@/components/brand-mark";
 import { Link } from "@/i18n/navigation";
 import { brand, contact } from "@/lib/site";
 
@@ -14,10 +15,24 @@ export async function SiteFooter() {
     <footer className="mt-auto border-t border-border/80 bg-surface">
       <div className="mx-auto grid max-w-6xl gap-10 px-5 py-14 sm:px-8 md:grid-cols-[1.4fr_1fr_1fr]">
         <div>
-          <p className="font-heading text-xl font-semibold tracking-tight text-ink">
-            {brand.name}
-          </p>
-          <p className="mt-2 max-w-sm text-sm leading-relaxed text-muted-foreground">
+          <div className="flex items-start gap-3">
+            <BrandMark tone="onLight" className="mt-0.5 size-9 text-brand" />
+            <div>
+              <p className="font-heading text-xl font-semibold tracking-tight text-ink">
+                {brand.name}
+              </p>
+              <p className="mt-1 text-sm text-foreground/80">
+                {brand.legalNameEn}
+                <span className="mx-1.5 text-border" aria-hidden>
+                  ·
+                </span>
+                <span lang="fa" dir="rtl">
+                  {brand.legalNameFa}
+                </span>
+              </p>
+            </div>
+          </div>
+          <p className="mt-4 max-w-sm text-sm leading-relaxed text-muted-foreground">
             {t("tagline", {
               legalName: brand.legalNameEn,
               legalNameFa: brand.legalNameFa,

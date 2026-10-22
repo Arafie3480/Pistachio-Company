@@ -1,8 +1,9 @@
+import Image from "next/image";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { PageHero } from "@/components/page-hero";
 import { Button } from "@/components/ui/button";
 import { Link } from "@/i18n/navigation";
-import { productGroups } from "@/lib/site";
+import { imagery, productGroups } from "@/lib/site";
 import { buildPageMetadata } from "@/lib/seo";
 
 export async function generateMetadata({
@@ -39,6 +40,21 @@ export default async function ProductsPage({
   return (
     <>
       <PageHero title={t("title")} lead={t("lead")} />
+
+      <div className="relative h-36 overflow-hidden border-b border-border/60 sm:h-44">
+        <Image
+          src={imagery.product}
+          alt=""
+          fill
+          sizes="100vw"
+          className="object-cover object-[center_40%]"
+          aria-hidden
+        />
+        <div
+          className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent"
+          aria-hidden
+        />
+      </div>
 
       <section className="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-20">
         <p className="max-w-2xl text-sm leading-relaxed text-muted-foreground">

@@ -5,7 +5,7 @@ export const alt = "Green Diamond Farm — Iranian pistachio export";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
-/** Default OG card until brand photography is supplied. */
+/** Default OG card with suggested diamond + pistachio mark. */
 export default function OpenGraphImage() {
   return new ImageResponse(
     (
@@ -17,31 +17,54 @@ export default function OpenGraphImage() {
           flexDirection: "column",
           justifyContent: "space-between",
           padding: 72,
-          background: "linear-gradient(145deg, #12291f 0%, #1a3d2e 48%, #2a5540 100%)",
+          background:
+            "linear-gradient(145deg, #0f241c 0%, #163528 48%, #1f4636 100%)",
           color: "#f4f7f4",
         }}
       >
-        <div style={{ display: "flex", alignItems: "center", gap: 20 }}>
+        <div style={{ display: "flex", alignItems: "center", gap: 22 }}>
           <div
             style={{
               display: "flex",
-              width: 44,
-              height: 44,
-              background: "#8bc48a",
-              transform: "rotate(45deg)",
-              borderRadius: 4,
-            }}
-          />
-          <div
-            style={{
-              display: "flex",
-              fontSize: 22,
-              letterSpacing: "0.16em",
-              textTransform: "uppercase",
-              opacity: 0.7,
+              width: 56,
+              height: 56,
+              alignItems: "center",
+              justifyContent: "center",
             }}
           >
-            Pistachio export
+            <div
+              style={{
+                display: "flex",
+                width: 40,
+                height: 40,
+                background: "#F4F7F4",
+                transform: "rotate(45deg)",
+                borderRadius: 3,
+                position: "relative",
+              }}
+            />
+          </div>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              gap: 4,
+            }}
+          >
+            <div
+              style={{
+                display: "flex",
+                fontSize: 20,
+                letterSpacing: "0.14em",
+                textTransform: "uppercase",
+                opacity: 0.65,
+              }}
+            >
+              Pistachio export
+            </div>
+            <div style={{ display: "flex", fontSize: 22, opacity: 0.8 }}>
+              {brand.legalNameEn}
+            </div>
           </div>
         </div>
         <div style={{ display: "flex", flexDirection: "column" }}>
@@ -66,7 +89,7 @@ export default function OpenGraphImage() {
               lineHeight: 1.35,
             }}
           >
-            Iranian pistachios for international buyers · {brand.legalNameEn}
+            Iranian pistachios for international buyers
           </div>
         </div>
         <div
