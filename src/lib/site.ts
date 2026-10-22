@@ -79,15 +79,15 @@ export const productGroups = [
 export const imagery = {
   // TODO(client): replace with owned orchard / warehouse / product photography
   /**
-   * Full-bleed pistachio kernels for brand-first hero.
+   * Full-bleed in-shell pistachios for brand-first hero.
    * Do not reuse Unsplash photo-1615485290382 — that asset is broccoli.
    */
   hero:
-    "https://images.unsplash.com/photo-1502825751399-28baa9b81efe?auto=format&fit=crop&w=2400&q=80",
+    "https://images.unsplash.com/photo-1704079662049-d00890d21a69?auto=format&fit=crop&w=2400&q=80",
   orchard:
     "https://images.unsplash.com/photo-1508747703725-719777637510?auto=format&fit=crop&w=1600&q=80",
   product:
     "https://images.unsplash.com/photo-1502825751399-28baa9b81efe?auto=format&fit=crop&w=1600&q=80",
   /** Social share fallback when generated OG image is unavailable. */
-  og: "https://images.unsplash.com/photo-1502825751399-28baa9b81efe?auto=format&fit=crop&w=1200&h=630&q=80",
+  og: "https://images.unsplash.com/photo-1704079662049-d00890d21a69?auto=format&fit=crop&w=1200&h=630&q=80",
 } as const;

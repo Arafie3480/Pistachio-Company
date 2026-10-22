@@ -52,11 +52,11 @@ export default async function HomePage({
           />
         </div>
         <div
-          className="absolute inset-0 bg-gradient-to-r from-brand/88 via-brand/68 to-brand/35 rtl:bg-gradient-to-l"
+          className="absolute inset-0 bg-gradient-to-r from-brand/82 via-brand/55 to-brand/28 rtl:bg-gradient-to-l"
           aria-hidden
         />
         <div
-          className="absolute inset-0 bg-gradient-to-t from-brand/70 via-transparent to-brand/30"
+          className="absolute inset-0 bg-gradient-to-t from-brand/65 via-transparent to-brand/25"
           aria-hidden
         />
 
