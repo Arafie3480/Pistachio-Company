@@ -9,7 +9,7 @@ type BrandMarkProps = {
 
 /**
  * Suggested Green Diamond Farm mark (diamond + pistachio) for initial delivery.
- * Replace when the client supplies a final logo file.
+ * Adapted from the drafted green-diamond-mark artwork; client may replace later.
  */
 export function BrandMark({
   className,
@@ -29,17 +29,20 @@ export function BrandMark({
       aria-label={title}
     >
       <title>{title}</title>
-      <path fill={diamond} d="M32 3.2 L60.8 32 L32 60.8 L3.2 32 Z" />
-      <polygon fill={cut} points="32,8 46.5,29 32,29" />
-      <polygon fill={cut} points="32,8 17.5,29 32,29" />
+      <path fill={diamond} d="M32 2 L62 32 L32 62 L2 32 Z" />
+      {/* Upper crown facets */}
+      <path fill={cut} d="M32 7 L47 30 H32 Z" />
+      <path fill={cut} d="M32 7 L17 30 H32 Z" />
+      {/* Facet girdle */}
       <path
         fill={cut}
-        d="M16 30.2 Q32 33.8 48 30.2 L47.2 32.6 Q32 36 16.8 32.6 Z"
+        d="M15 31.2 C24 35.2 40 35.2 49 31.2 L48.2 34 C39.5 37.6 24.5 37.6 15.8 34 Z"
       />
-      <ellipse fill={cut} cx="32" cy="46.2" rx="9.2" ry="11.2" />
+      {/* Pistachio kernel */}
+      <ellipse fill={cut} cx="32" cy="46.5" rx="10" ry="12" />
       <path
         fill={cleft}
-        d="M32 36.8 C34.6 39.2 35.6 42.2 35.4 45.4 C35.2 48.8 33.6 51.6 32 54.8 C30.4 51.6 28.8 48.8 28.6 45.4 C28.4 42.2 29.4 39.2 32 36.8 Z"
+        d="M32 36.5 C35 39.2 36.2 42.5 36 46 C35.8 49.8 34 52.8 32 56.2 C30 52.8 28.2 49.8 28 46 C27.8 42.5 29 39.2 32 36.5 Z"
       />
     </svg>
   );
