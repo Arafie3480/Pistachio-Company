@@ -78,9 +78,12 @@ export const productGroups = [
 /** Hero / atmosphere imagery — replace with brand photography when available. */
 export const imagery = {
   // TODO(client): replace with owned orchard / warehouse / product photography
-  /** Full-bleed pistachio atmosphere for brand-first hero. */
+  /**
+   * Full-bleed nut/orchard atmosphere for brand-first hero.
+   * TODO(client): replace with owned orchard / product photography.
+   */
   hero:
-    "https://images.unsplash.com/photo-1599599810769-bcde5a160d32?auto=format&fit=crop&w=2400&q=80",
+    "https://images.unsplash.com/photo-1615485290382-441e4d049cb5?auto=format&fit=crop&w=2400&q=80",
   orchard:
     "https://images.unsplash.com/photo-1508747703725-719777637510?auto=format&fit=crop&w=1600&q=80",
   product:
