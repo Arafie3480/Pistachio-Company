@@ -8,8 +8,8 @@ type BrandMarkProps = {
 };
 
 /**
- * Suggested Green Diamond Farm mark (diamond + pistachio) for initial delivery.
- * Adapted from the drafted green-diamond-mark artwork; client may replace later.
+ * Suggested Green Diamond Farm mark — diamond crown + pistachio kernel with cleft.
+ * Adapted from media/green-diamond-mark.jpg for initial delivery.
  */
 export function BrandMark({
   className,
@@ -18,7 +18,7 @@ export function BrandMark({
 }: BrandMarkProps) {
   const diamond = tone === "onDark" ? "#F4F7F4" : "#00684C";
   const cut = tone === "onDark" ? "#163528" : "#FFFFFF";
-  const cleft = tone === "onDark" ? "#00684C" : "#00684C";
+  const cleft = "#00684C";
 
   return (
     <svg
@@ -29,20 +29,25 @@ export function BrandMark({
       aria-label={title}
     >
       <title>{title}</title>
-      <path fill={diamond} d="M32 2 L62 32 L32 62 L2 32 Z" />
-      {/* Upper crown facets */}
-      <path fill={cut} d="M32 7 L47 30 H32 Z" />
-      <path fill={cut} d="M32 7 L17 30 H32 Z" />
-      {/* Facet girdle */}
+      <path fill={diamond} d="M32 2.5 L61.5 32 L32 61.5 L2.5 32 Z" />
+      {/* Gem crown — two facets meeting at apex (inverted V) */}
+      <path fill={cut} d="M32 8 L46 28.5 L32 28.5 Z" />
+      <path fill={cut} d="M32 8 L18 28.5 L32 28.5 Z" />
+      {/* Soft girdle between crown and kernel */}
       <path
         fill={cut}
-        d="M15 31.2 C24 35.2 40 35.2 49 31.2 L48.2 34 C39.5 37.6 24.5 37.6 15.8 34 Z"
+        d="M17 30 Q32 34.5 47 30 L46.2 32.8 Q32 37 17.8 32.8 Z"
       />
       {/* Pistachio kernel */}
-      <ellipse fill={cut} cx="32" cy="46.5" rx="10" ry="12" />
+      <ellipse fill={cut} cx="32" cy="46.8" rx="9.6" ry="11.6" />
+      {/* Natural shell cleft (S-curve) */}
       <path
         fill={cleft}
-        d="M32 36.5 C35 39.2 36.2 42.5 36 46 C35.8 49.8 34 52.8 32 56.2 C30 52.8 28.2 49.8 28 46 C27.8 42.5 29 39.2 32 36.5 Z"
+        d="M31.2 37.2
+          C34.6 39.4 35.8 42.2 35.2 45.2
+          C34.6 48.4 32.8 51.2 32.2 54.8
+          C29.4 51.6 28.2 48.6 28.6 45.4
+          C29 42.4 29.6 39.6 31.2 37.2 Z"
       />
     </svg>
   );
