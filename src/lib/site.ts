@@ -76,19 +76,23 @@ export const productGroups = [
 ] as const;
 
 /**
- * Hero / atmosphere imagery — local pistachio assets only.
+ * Hero / atmosphere imagery — verified pistachio Unsplash assets (+ local mirrors in public/imagery).
  * TODO(client): replace with owned orchard / warehouse / product photography.
- * Do not point at Unsplash photo-1508747703725 (onions) or photo-1615485290382 (broccoli).
+ * Banned IDs: photo-1508747703725 (onions), photo-1615485290382 (broccoli).
  */
 export const imagery = {
   /** Full-bleed in-shell pistachios for brand-first hero. */
-  hero: "/imagery/hero.jpg",
-  /** Harvest / packing atmosphere for About (pistachio kernels at export scale). */
-  orchard: "/imagery/packing.jpg",
+  hero:
+    "https://images.unsplash.com/photo-1704079662049-d00890d21a69?auto=format&fit=crop&w=2400&q=80",
+  /** Export-scale shelled kernels for About (on-topic stand-in until orchard photos). */
+  orchard:
+    "https://images.unsplash.com/photo-1502825751399-28baa9b81efe?auto=format&fit=crop&w=1600&q=80",
   /** Shelled kernels for catalog / shipment section. */
-  product: "/imagery/kernels.jpg",
-  /** Interior page atmosphere strip. */
-  harvest: "/imagery/harvest.jpg",
+  product:
+    "https://images.unsplash.com/photo-1502825751399-28baa9b81efe?auto=format&fit=crop&w=1600&q=80",
+  /** Interior page atmosphere — in-shell harvest texture. */
+  harvest:
+    "https://images.unsplash.com/photo-1704079662049-d00890d21a69?auto=format&fit=crop&w=1600&q=80",
   /** Social share fallback when generated OG image is unavailable. */
-  og: "/imagery/hero.jpg",
+  og: "https://images.unsplash.com/photo-1704079662049-d00890d21a69?auto=format&fit=crop&w=1200&h=630&q=80",
 } as const;
