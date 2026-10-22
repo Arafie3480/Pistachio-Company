@@ -163,6 +163,22 @@
   animation-delay: 0.48s;
 }
 
+/* Section labels: Latin caps + tracking; keep non-Latin scripts unforced */
+.section-label {
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted-foreground);
+}
+
+:lang(ar) .section-label,
+:lang(zh) .section-label,
+:lang(hi) .section-label {
+  letter-spacing: normal;
+  text-transform: none;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .animate-gd-fade-up,
   .animate-gd-fade-in {

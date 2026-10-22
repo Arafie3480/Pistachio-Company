@@ -1,6 +1,6 @@
 "use client";
 
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { LanguageSwitcher } from "@/components/language-switcher";
@@ -14,10 +14,19 @@ const navKeys = ["home", "about", "products", "contact"] as const;
 
 export function SiteHeader() {
   const t = useTranslations("Nav");
+  const locale = useLocale();
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [routeKey, setRouteKey] = useState(`${locale}:${pathname}`);
   const isHome = pathname === "/";
+
+  // Close the mobile drawer when the route or locale changes (render-time adjust).
+  const nextRouteKey = `${locale}:${pathname}`;
+  if (nextRouteKey !== routeKey) {
+    setRouteKey(nextRouteKey);
+    if (open) setOpen(false);
+  }
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -25,10 +34,6 @@ export function SiteHeader() {
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
-
-  useEffect(() => {
-    setOpen(false);
-  }, [pathname]);
 
   const solid = !isHome || scrolled || open;
 
@@ -83,7 +88,7 @@ export function SiteHeader() {
           <LanguageSwitcher onDark />
           <button
             type="button"
-            className="inline-flex size-10 items-center justify-center rounded-md text-brand-foreground"
+            className="inline-flex size-10 items-center justify-center rounded-md text-brand-foreground outline-none transition-colors hover:bg-brand-foreground/10 focus-visible:ring-2 focus-visible:ring-brand-foreground/40"
             aria-expanded={open}
             aria-controls="mobile-nav"
             aria-label={open ? t("closeMenu") : t("openMenu")}

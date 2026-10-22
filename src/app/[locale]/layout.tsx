@@ -47,7 +47,8 @@ const notoSansArabic = Noto_Sans_Arabic({
 
 const notoSansSC = Noto_Sans_SC({
   variable: "--font-noto-sc",
-  subsets: ["latin"],
+  // next/font lists Latin/Cyrillic subsets; SC glyphs ship with the family files
+  subsets: ["latin", "latin-ext", "cyrillic", "vietnamese"],
   weight: ["400", "500", "600", "700"],
   display: "swap",
 });

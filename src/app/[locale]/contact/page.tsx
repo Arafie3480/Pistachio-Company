@@ -65,9 +65,27 @@ export default async function ContactPage({
                 <p className="mt-1 text-base text-foreground/90">
                   {t("whatsappLabel")}
                 </p>
-                <Button asChild variant="outline" className="mt-3 h-9">
-                  <a href={contact.whatsappUrl}>{t("whatsappOpen")}</a>
-                </Button>
+                {contact.whatsappUrl.startsWith("http") ? (
+                  <Button asChild variant="outline" className="mt-3 h-9">
+                    <a
+                      href={contact.whatsappUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {t("whatsappOpen")}
+                    </a>
+                  </Button>
+                ) : (
+                  <Button
+                    type="button"
+                    variant="outline"
+                    className="mt-3 h-9"
+                    disabled
+                    aria-disabled="true"
+                  >
+                    {t("whatsappOpen")}
+                  </Button>
+                )}
                 <p className="mt-2 text-sm text-muted-foreground">
                   {t("whatsappNote")}
                 </p>

@@ -26,7 +26,7 @@ export async function SiteFooter() {
         </div>
 
         <div>
-          <p className="text-xs font-medium tracking-[0.14em] text-muted-foreground uppercase rtl:normal-case rtl:tracking-normal">
+          <p className="section-label">
             {t("navigate")}
           </p>
           <ul className="mt-3 space-y-2 text-sm">
@@ -44,7 +44,7 @@ export async function SiteFooter() {
         </div>
 
         <div>
-          <p className="text-xs font-medium tracking-[0.14em] text-muted-foreground uppercase rtl:normal-case rtl:tracking-normal">
+          <p className="section-label">
             {t("contact")}
           </p>
           <ul className="mt-3 space-y-2 text-sm text-foreground/80">

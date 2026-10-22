@@ -70,7 +70,7 @@ export default async function AboutPage({
 
           <dl className="mt-10 grid gap-8 sm:grid-cols-2">
             <div>
-              <dt className="text-xs font-medium tracking-[0.14em] text-muted-foreground uppercase rtl:normal-case rtl:tracking-normal">
+              <dt className="section-label">
                 {t("originLabel")}
               </dt>
               <dd className="mt-2 text-base leading-relaxed text-foreground/90">
@@ -78,7 +78,7 @@ export default async function AboutPage({
               </dd>
             </div>
             <div>
-              <dt className="text-xs font-medium tracking-[0.14em] text-muted-foreground uppercase rtl:normal-case rtl:tracking-normal">
+              <dt className="section-label">
                 {t("standLabel")}
               </dt>
               <dd className="mt-2 text-base leading-relaxed text-foreground/90">
@@ -86,7 +86,7 @@ export default async function AboutPage({
               </dd>
             </div>
             <div>
-              <dt className="text-xs font-medium tracking-[0.14em] text-muted-foreground uppercase rtl:normal-case rtl:tracking-normal">
+              <dt className="section-label">
                 {t("certsLabel")}
               </dt>
               <dd className="mt-2 text-base leading-relaxed text-foreground/90">
@@ -94,7 +94,7 @@ export default async function AboutPage({
               </dd>
             </div>
             <div>
-              <dt className="text-xs font-medium tracking-[0.14em] text-muted-foreground uppercase rtl:normal-case rtl:tracking-normal">
+              <dt className="section-label">
                 {t("marketsLabel")}
               </dt>
               <dd className="mt-2 text-base leading-relaxed text-foreground/90">
