@@ -34,21 +34,26 @@ npm start       # serve build on :4321
 
 SEO check after build/start: `/sitemap.xml`, `/robots.txt`.
 
-## Deploy (Vercel)
+## Deploy
 
-One-command preview (requires [Vercel CLI](https://vercel.com/docs/cli) login):
+**Primary path (recommended):** import this GitHub repo in a host dashboard — no CLI login required.
+
+1. Open [Vercel → New Project](https://vercel.com/new) (or Netlify / Cloudflare Pages with Next.js support).
+2. Import **`Arafie3480/Pistachio-Company`** from GitHub.
+3. Framework: **Next.js**. Root directory: repo root. **No env vars** required for this marketing site.
+4. Deploy. Later pushes to `main` redeploy automatically when the project stays linked.
+
+**Deploy-ready signal:** GitHub Actions [CI](.github/workflows/ci.yml) runs `npm ci` + `npm run build` on every push/PR to `main`. Green CI means the tree is buildable for host import.
+
+**Optional — Vercel CLI** (needs interactive login; not used in agent sessions):
 
 ```bash
-npx vercel
+npx vercel login
+npx vercel          # preview
+npx vercel --prod   # production
 ```
 
-Production:
-
-```bash
-npx vercel --prod
-```
-
-Or connect the GitHub repo in the [Vercel dashboard](https://vercel.com/new) → import `Arafie3480/Pistachio-Company` → Framework: Next.js → Deploy. No env vars required for the static marketing site.
+There is **no public preview URL** from this repo alone until someone imports it (or completes CLI auth) on a host account.
 
 DNS / custom domain (`greendiamondfarm.com`) is out of scope until cutover from WordPress.
 
