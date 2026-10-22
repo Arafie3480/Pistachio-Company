@@ -68,7 +68,10 @@
     "certsLabel": "Certifications",
     "certsBody": "Certificates and audit documents will be listed here once provided. TODO: logos / PDF assets from client",
     "marketsLabel": "Markets",
-    "marketsBody": "International wholesale focus. Destination countries and key partner types — TODO for client."
+    "marketsBody": "International wholesale focus. Destination countries and key partner types — TODO for client.",
+    "expAgriculture": "Agriculture",
+    "expTrade": "Pistachio buying & selling",
+    "expExport": "Export"
   },
   "Products": {
     "metaTitle": "Products",
@@ -78,7 +81,11 @@
     "outlineNote": "Product photography and detailed grade sheets will replace this outline once client assets arrive.",
     "ctaTitle": "Need a specific grade or pack?",
     "ctaLead": "Tell us variety, volume, and destination — we will confirm availability from the export desk.",
-    "ctaButton": "Request availability"
+    "ctaButton": "Request availability",
+    "group": {
+      "inShell": "In-shell varieties",
+      "processed": "Kernels & roasted"
+    }
   },
   "Contact": {
     "metaTitle": "Contact",

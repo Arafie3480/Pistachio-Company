@@ -2,7 +2,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { PageHero } from "@/components/page-hero";
 import { Button } from "@/components/ui/button";
 import { Link } from "@/i18n/navigation";
-import { productSlugs } from "@/lib/site";
+import { productGroups } from "@/lib/site";
 import { buildPageMetadata } from "@/lib/seo";
 
 export async function generateMetadata({
@@ -30,41 +30,56 @@ export default async function ProductsPage({
   const t = await getTranslations("Products");
   const tProducts = await getTranslations("products");
 
+  let index = 0;
+
   return (
     <>
       <PageHero title={t("title")} lead={t("lead")} />
 
       <section className="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-20">
-        <p className="max-w-2xl text-sm text-muted-foreground">
+        <p className="max-w-2xl text-sm leading-relaxed text-muted-foreground">
           {t("outlineNote")}
         </p>
 
-        <ul className="mt-10 divide-y divide-border/80 border-y border-border/80">
-          {productSlugs.map((slug, index) => (
-            <li
-              key={slug}
-              className="grid gap-3 py-8 sm:grid-cols-[7rem_1fr] sm:gap-8"
-            >
-              <span className="font-mono text-xs tracking-wider text-muted-foreground tabular-nums">
-                {String(index + 1).padStart(2, "0")}
-              </span>
-              <div>
-                <h2 className="font-heading text-xl font-semibold tracking-tight text-ink sm:text-2xl">
-                  {tProducts(`${slug}.name`)}
-                </h2>
-                <p className="mt-2 max-w-2xl text-base leading-relaxed text-muted-foreground">
-                  {tProducts(`${slug}.summary`)}
-                </p>
-              </div>
-            </li>
+        <div className="mt-12 space-y-14">
+          {productGroups.map((group) => (
+            <div key={group.id}>
+              <h2 className="section-label">{t(`group.${group.id}`)}</h2>
+              <ul className="mt-5 divide-y divide-border/70 border-y border-border/70">
+                {group.slugs.map((slug) => {
+                  index += 1;
+                  const n = index;
+                  return (
+                    <li
+                      key={slug}
+                      className="product-row group grid gap-3 py-7 sm:grid-cols-[5.5rem_1fr] sm:gap-10 sm:py-8"
+                    >
+                      <span className="font-mono text-xs tracking-wider text-muted-foreground tabular-nums transition-colors group-hover:text-brand">
+                        {String(n).padStart(2, "0")}
+                      </span>
+                      <div>
+                        <h3 className="font-heading text-xl font-semibold tracking-tight text-ink transition-colors group-hover:text-brand sm:text-2xl">
+                          {tProducts(`${slug}.name`)}
+                        </h3>
+                        <p className="mt-2 max-w-2xl text-base leading-relaxed text-muted-foreground">
+                          {tProducts(`${slug}.summary`)}
+                        </p>
+                      </div>
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
           ))}
-        </ul>
+        </div>
 
-        <div className="mt-14 max-w-xl">
-          <h2 className="font-heading text-2xl font-semibold text-ink">
+        <div className="mt-16 max-w-xl border-t border-border/60 pt-12">
+          <h2 className="font-heading text-2xl font-semibold tracking-tight text-ink sm:text-3xl">
             {t("ctaTitle")}
           </h2>
-          <p className="mt-3 text-muted-foreground">{t("ctaLead")}</p>
+          <p className="mt-3 text-base leading-relaxed text-muted-foreground">
+            {t("ctaLead")}
+          </p>
           <Button asChild className="mt-6 h-10">
             <Link href="/contact">{t("ctaButton")}</Link>
           </Button>

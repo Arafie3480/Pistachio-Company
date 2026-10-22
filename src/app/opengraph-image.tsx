@@ -15,51 +15,66 @@ export default function OpenGraphImage() {
           height: "100%",
           display: "flex",
           flexDirection: "column",
-          justifyContent: "center",
+          justifyContent: "space-between",
           padding: 72,
-          background: "linear-gradient(135deg, #1a3d2e 0%, #2d5a45 55%, #3d6b52 100%)",
+          background: "linear-gradient(145deg, #12291f 0%, #1a3d2e 48%, #2a5540 100%)",
           color: "#f4f7f4",
         }}
       >
-        <div
-          style={{
-            display: "flex",
-            width: 56,
-            height: 56,
-            background: "#7cb87a",
-            transform: "rotate(45deg)",
-            marginBottom: 40,
-            borderRadius: 6,
-          }}
-        />
-        <div
-          style={{
-            display: "flex",
-            fontSize: 64,
-            fontWeight: 600,
-            letterSpacing: "-0.02em",
-            lineHeight: 1.1,
-          }}
-        >
-          {brand.name}
+        <div style={{ display: "flex", alignItems: "center", gap: 20 }}>
+          <div
+            style={{
+              display: "flex",
+              width: 44,
+              height: 44,
+              background: "#8bc48a",
+              transform: "rotate(45deg)",
+              borderRadius: 4,
+            }}
+          />
+          <div
+            style={{
+              display: "flex",
+              fontSize: 22,
+              letterSpacing: "0.16em",
+              textTransform: "uppercase",
+              opacity: 0.7,
+            }}
+          >
+            Pistachio export
+          </div>
+        </div>
+        <div style={{ display: "flex", flexDirection: "column" }}>
+          <div
+            style={{
+              display: "flex",
+              fontSize: 68,
+              fontWeight: 600,
+              letterSpacing: "-0.03em",
+              lineHeight: 1.05,
+            }}
+          >
+            {brand.name}
+          </div>
+          <div
+            style={{
+              display: "flex",
+              marginTop: 22,
+              fontSize: 28,
+              opacity: 0.82,
+              maxWidth: 820,
+              lineHeight: 1.35,
+            }}
+          >
+            Iranian pistachios for international buyers · {brand.legalNameEn}
+          </div>
         </div>
         <div
           style={{
             display: "flex",
-            marginTop: 20,
-            fontSize: 28,
-            opacity: 0.85,
-            maxWidth: 800,
-          }}
-        >
-          Iranian pistachio export · {brand.legalNameEn}
-        </div>
-        <div
-          style={{
-            display: "flex",
-            marginTop: 48,
             fontSize: 22,
-            opacity: 0.65,
+            opacity: 0.55,
+            letterSpacing: "0.04em",
           }}
         >
           {brand.domain}

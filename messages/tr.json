@@ -68,7 +68,10 @@
     "certsLabel": "Sertifikalar",
     "certsBody": "Sertifikalar ve denetim belgeleri sağlandığında burada listelenecektir. Bekleniyor: müşteriden logolar / PDF varlıkları",
     "marketsLabel": "Pazarlar",
-    "marketsBody": "Uluslararası toptan odak. Varış ülkeleri ve ana ortak türleri — müşteri onayı bekleniyor."
+    "marketsBody": "Uluslararası toptan odak. Varış ülkeleri ve ana ortak türleri — müşteri onayı bekleniyor.",
+    "expAgriculture": "Tarım",
+    "expTrade": "Fıstık alım-satımı",
+    "expExport": "İhracat"
   },
   "Products": {
     "metaTitle": "Ürünler",
@@ -78,7 +81,11 @@
     "outlineNote": "Müşteri varlıkları geldiğinde ürün fotoğrafları ve ayrıntılı kalite fişleri bu özetin yerini alacaktır.",
     "ctaTitle": "Belirli bir kalite veya paket mi lazım?",
     "ctaLead": "Çeşit, miktar ve varış noktasını bildirin — ihracat masasından müsaitliği teyit ederiz.",
-    "ctaButton": "Müsaitlik talep et"
+    "ctaButton": "Müsaitlik talep et",
+    "group": {
+      "inShell": "Kabuklu çeşitler",
+      "processed": "İç fıstık ve kavrulmuş"
+    }
   },
   "Contact": {
     "metaTitle": "İletişim",

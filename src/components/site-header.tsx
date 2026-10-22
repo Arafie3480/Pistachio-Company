@@ -64,9 +64,9 @@ export function SiteHeader() {
                 key={href}
                 href={href}
                 className={cn(
-                  "rounded-md px-3 py-2 text-sm transition-colors",
+                  "relative rounded-md px-3 py-2 text-sm transition-colors",
                   active
-                    ? "text-brand-foreground"
+                    ? "text-brand-foreground after:absolute after:inset-x-3 after:bottom-1 after:h-px after:bg-brand-foreground/70"
                     : "text-brand-foreground/75 hover:text-brand-foreground"
                 )}
               >

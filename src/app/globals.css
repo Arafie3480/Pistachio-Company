@@ -55,20 +55,20 @@
 }
 
 :root {
-  /* Cool mist background + forest primary */
-  --background: oklch(0.975 0.012 145);
-  --foreground: oklch(0.22 0.03 155);
-  --ink: oklch(0.2 0.028 155);
-  --surface: oklch(0.995 0.006 145);
-  --brand: oklch(0.38 0.07 155);
-  --brand-foreground: oklch(0.98 0.01 145);
-  --brand-muted: oklch(0.72 0.05 145);
+  /* Cool mist + deep pistachio — refined for export-desk calm */
+  --background: oklch(0.972 0.011 148);
+  --foreground: oklch(0.21 0.028 155);
+  --ink: oklch(0.185 0.03 155);
+  --surface: oklch(0.993 0.005 148);
+  --brand: oklch(0.355 0.068 155);
+  --brand-foreground: oklch(0.985 0.008 145);
+  --brand-muted: oklch(0.68 0.045 148);
   --card: oklch(0.995 0.006 145);
   --card-foreground: oklch(0.22 0.03 155);
   --popover: oklch(0.995 0.006 145);
   --popover-foreground: oklch(0.22 0.03 155);
-  --primary: oklch(0.38 0.07 155);
-  --primary-foreground: oklch(0.98 0.01 145);
+  --primary: oklch(0.355 0.068 155);
+  --primary-foreground: oklch(0.985 0.008 145);
   --secondary: oklch(0.94 0.02 145);
   --secondary-foreground: oklch(0.28 0.04 155);
   --muted: oklch(0.94 0.015 145);
@@ -142,12 +142,27 @@
   }
 }
 
+/* Calm hero atmosphere — barely perceptible scale (respect reduced-motion) */
+@keyframes gd-ken {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.04);
+  }
+}
+
 .animate-gd-fade-up {
   animation: gd-fade-up 0.75s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 .animate-gd-fade-in {
   animation: gd-fade-in 0.9s ease-out both;
+}
+
+.animate-gd-ken {
+  animation: gd-ken 18s ease-out both;
+  will-change: transform;
 }
 
 .animate-gd-delay-1 {
@@ -161,6 +176,19 @@
 }
 .animate-gd-delay-4 {
   animation-delay: 0.48s;
+}
+
+/* Products list: soft hover, not card chrome */
+.product-row {
+  transition: background-color 0.25s ease, padding-inline-start 0.25s ease;
+}
+.product-row:hover {
+  background-color: oklch(0.96 0.015 148 / 0.55);
+}
+@supports (padding-inline-start: 0) {
+  .product-row:hover {
+    padding-inline-start: 0.35rem;
+  }
 }
 
 /* Section labels: Latin caps + tracking; keep non-Latin scripts unforced */
@@ -181,7 +209,11 @@
 
 @media (prefers-reduced-motion: reduce) {
   .animate-gd-fade-up,
-  .animate-gd-fade-in {
+  .animate-gd-fade-in,
+  .animate-gd-ken {
     animation: none !important;
+  }
+  .product-row {
+    transition: none;
   }
 }

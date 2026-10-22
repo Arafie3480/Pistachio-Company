@@ -11,8 +11,8 @@ Export website for **بازرگانی حسینی نوه** (Hosseini Naveh) — p
 - Clean, simple, chic B2B site (not flashy)
 - Locales: English (default), Arabic (RTL), Turkish, Chinese, Hindi, Russian
 - Pages: Home, About, Products, Contact
-- Contact: export email, WhatsApp placeholder, Motahari 52
-- SEO: per-locale meta, `hreflang` alternates, Open Graph, `sitemap.xml`, `robots.txt`
+- Contact: export email, temporary phone / WhatsApp, warehouse Motahari 52
+- SEO: per-locale meta, `hreflang` alternates, Open Graph, favicon, `sitemap.xml`, `robots.txt`
 
 ## Local setup
 
@@ -25,14 +25,31 @@ npm run dev
 
 Open [http://127.0.0.1:4321](http://127.0.0.1:4321).
 
-Locale paths: `/` (EN), `/ar`, `/tr`, `/zh`, `/hi`, `/ru` — plus `/about`, `/products`, `/contact` under each.
+| Locale | Path prefix |
+|--------|-------------|
+| English (default) | `/`, `/about`, `/products`, `/contact` |
+| Arabic (RTL) | `/ar`, `/ar/about`, … |
+| Turkish | `/tr` … |
+| Chinese | `/zh` … |
+| Hindi | `/hi` … |
+| Russian | `/ru` … |
 
 ```bash
 npm run build   # production build
 npm start       # serve build on :4321
 ```
 
-SEO check after build/start: `/sitemap.xml`, `/robots.txt`.
+SEO check after build/start: `/sitemap.xml`, `/robots.txt`, `/opengraph-image`, `/icon`.
+
+## Tunable company facts
+
+Edit `src/lib/site.ts`:
+
+- `historyYears` — provisional agriculture / trade / export years
+- `people` — founder & CEO names
+- `contact` — email, phone, WhatsApp URL, warehouse line
+
+UI copy lives in `messages/*.json` (next-intl).
 
 ## Deploy
 
@@ -55,16 +72,18 @@ npx vercel --prod   # production
 
 There is **no public preview URL** from this repo alone until someone imports it (or completes CLI auth) on a host account.
 
-DNS / custom domain (`greendiamondfarm.com`) is out of scope until cutover from WordPress.
+DNS / custom domain (`greendiamondfarm.com`) is out of scope until cutover from WordPress. Prefer a **non-Iran** host for LinkedIn eligibility.
 
 ## Products
 
-Ahmad Aghaei · Akbari · Fandoghi · Kaleh Ghouchi · Dahan Bast · kernels · salted & roasted
+**In-shell:** Ahmad Aghaei · Akbari · Fandoghi · Kaleh Ghouchi · Dahan Bast  
 
-## Client TODOs
+**Processed:** kernels · salted & roasted
 
-- WhatsApp business number
-- Full office address (beyond Motahari 52)
+## Client TODOs (go-live)
+
+- Dedicated virtual / business WhatsApp line (site currently uses temporary `+989361814577`)
+- Full office address beyond Motahari 52 warehouse
 - Confirm export email spelling (`greendiamond` vs `greendimond`)
-- Logo, product photos, certificates (favicon/OG currently use a green-diamond placeholder)
-- Final company history facts for About
+- Logo, product photos, certificates (favicon/OG use a green-diamond placeholder)
+- Confirm exact experience years (50 / 40 / 30 are provisional in `historyYears`)

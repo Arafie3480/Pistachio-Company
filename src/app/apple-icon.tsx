@@ -14,17 +14,18 @@ export default function AppleIcon() {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          background: "#1a3d2e",
-          borderRadius: 36,
+          background: "#163528",
         }}
       >
         <div
           style={{
-            width: 88,
-            height: 88,
-            background: "#7cb87a",
+            display: "flex",
+            width: 72,
+            height: 72,
+            background: "#8bc48a",
             transform: "rotate(45deg)",
-            borderRadius: 8,
+            borderRadius: 6,
+            boxShadow: "0 0 0 8px #163528, 0 0 0 12px #5a9a68",
           }}
         />
       </div>

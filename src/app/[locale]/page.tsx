@@ -41,25 +41,27 @@ export default async function HomePage({
   return (
     <>
       <section className="relative min-h-[100svh] overflow-hidden bg-brand text-brand-foreground">
-        <Image
-          src={imagery.hero}
-          alt={t("heroAlt")}
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover"
-        />
+        <div className="absolute inset-0 animate-gd-ken">
+          <Image
+            src={imagery.hero}
+            alt={t("heroAlt")}
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover object-[center_40%]"
+          />
+        </div>
         <div
-          className="absolute inset-0 bg-gradient-to-r from-brand/92 via-brand/78 to-brand/45 rtl:bg-gradient-to-l"
+          className="absolute inset-0 bg-gradient-to-r from-brand/94 via-brand/82 to-brand/50 rtl:bg-gradient-to-l"
           aria-hidden
         />
         <div
-          className="absolute inset-0 bg-gradient-to-t from-brand/70 via-transparent to-brand/35"
+          className="absolute inset-0 bg-gradient-to-t from-brand/75 via-transparent to-brand/40"
           aria-hidden
         />
 
         <div className="relative mx-auto flex min-h-[100svh] max-w-6xl flex-col justify-end px-5 pt-28 pb-16 sm:justify-center sm:px-8 sm:pb-24">
-          <p className="animate-gd-fade-up font-heading text-3xl font-semibold tracking-tight text-balance sm:text-5xl md:text-6xl">
+          <p className="animate-gd-fade-up font-heading text-3xl font-semibold tracking-tight text-balance sm:text-5xl md:text-6xl md:leading-[1.05]">
             {brand.name}
           </p>
           <h1 className="animate-gd-fade-up animate-gd-delay-1 mt-5 max-w-xl font-heading text-2xl font-medium tracking-tight text-balance text-brand-foreground/95 sm:text-3xl md:text-[2.15rem] md:leading-snug">
@@ -88,23 +90,23 @@ export default async function HomePage({
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-5 py-20 sm:px-8 sm:py-24">
+      <section className="mx-auto max-w-6xl px-5 py-20 sm:px-8 sm:py-28">
         <div className="max-w-2xl">
           <h2 className="font-heading text-3xl font-semibold tracking-tight text-ink sm:text-4xl">
             {t("buyersTitle")}
           </h2>
-          <p className="mt-4 text-base leading-relaxed text-muted-foreground sm:text-lg">
+          <p className="mt-5 text-base leading-relaxed text-muted-foreground sm:text-lg">
             {t("buyersLead")}
           </p>
         </div>
 
-        <ul className="mt-12 grid gap-x-10 gap-y-8 sm:grid-cols-3">
+        <ul className="mt-14 grid gap-x-12 gap-y-10 sm:grid-cols-3">
           {pillars.map((item) => (
-            <li key={item.title}>
+            <li key={item.title} className="border-t border-border/70 pt-6">
               <h3 className="font-heading text-lg font-semibold text-ink">
                 {item.title}
               </h3>
-              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
                 {item.body}
               </p>
             </li>
@@ -149,12 +151,12 @@ export default async function HomePage({
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-5 py-20 sm:px-8 sm:py-24">
+      <section className="mx-auto max-w-6xl px-5 py-20 sm:px-8 sm:py-28">
         <div className="max-w-xl">
-          <h2 className="font-heading text-3xl font-semibold tracking-tight text-ink">
+          <h2 className="font-heading text-3xl font-semibold tracking-tight text-ink sm:text-4xl">
             {t("ctaTitle")}
           </h2>
-          <p className="mt-4 text-base leading-relaxed text-muted-foreground">
+          <p className="mt-5 text-base leading-relaxed text-muted-foreground sm:text-lg">
             {t("ctaLead")}
           </p>
           <Button asChild size="lg" className="mt-8 h-11">

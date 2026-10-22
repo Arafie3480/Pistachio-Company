@@ -28,6 +28,12 @@ export default async function AboutPage({
   setRequestLocale(locale);
   const t = await getTranslations("About");
 
+  const experience = [
+    { years: historyYears.agriculture, label: t("expAgriculture") },
+    { years: historyYears.pistachioTrade, label: t("expTrade") },
+    { years: historyYears.export, label: t("expExport") },
+  ] as const;
+
   return (
     <>
       <PageHero title={t("title")} lead={t("lead")} />
@@ -38,7 +44,7 @@ export default async function AboutPage({
             <h2 className="font-heading text-2xl font-semibold tracking-tight text-ink sm:text-3xl">
               {t("heading")}
             </h2>
-            <p className="mt-4 text-base leading-relaxed text-muted-foreground">
+            <p className="mt-5 text-base leading-relaxed text-muted-foreground sm:text-lg">
               {t("p1", {
                 brand: brand.name,
                 legalName: brand.legalNameEn,
@@ -67,9 +73,23 @@ export default async function AboutPage({
           <h2 className="font-heading text-2xl font-semibold tracking-tight text-ink sm:text-3xl">
             {t("historyTitle")}
           </h2>
-          <p className="mt-3 max-w-2xl text-sm text-muted-foreground">
+          <p className="mt-3 max-w-2xl text-sm leading-relaxed text-muted-foreground">
             {t("historyNote")}
           </p>
+
+          <div className="mt-10 grid gap-8 border-b border-border/60 pb-10 sm:grid-cols-3 sm:gap-6">
+            {experience.map((item) => (
+              <div key={item.years} className="min-w-0">
+                <p className="font-heading text-4xl font-semibold tracking-tight text-brand tabular-nums sm:text-5xl">
+                  {item.years}
+                  <span className="text-2xl text-brand-muted">+</span>
+                </p>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                  {item.label}
+                </p>
+              </div>
+            ))}
+          </div>
 
           <dl className="mt-10 grid gap-8 sm:grid-cols-2">
             <div>
@@ -88,26 +108,6 @@ export default async function AboutPage({
                   nameEn: people.ceo.nameEn,
                   nameFa: people.ceo.nameFa,
                 })}
-              </dd>
-            </div>
-            <div>
-              <dt className="section-label">{t("experienceLabel")}</dt>
-              <dd className="mt-2 text-base leading-relaxed text-foreground/90">
-                <ul className="space-y-2">
-                  <li>
-                    {t("yearsAgriculture", {
-                      years: historyYears.agriculture,
-                    })}
-                  </li>
-                  <li>
-                    {t("yearsTrade", {
-                      years: historyYears.pistachioTrade,
-                    })}
-                  </li>
-                  <li>
-                    {t("yearsExport", { years: historyYears.export })}
-                  </li>
-                </ul>
               </dd>
             </div>
             <div>

@@ -3,7 +3,7 @@ import { ImageResponse } from "next/og";
 export const size = { width: 32, height: 32 };
 export const contentType = "image/png";
 
-/** Simple green-diamond mark until client logo arrives. */
+/** Green-diamond mark until client logo arrives. */
 export default function Icon() {
   return new ImageResponse(
     (
@@ -14,16 +14,18 @@ export default function Icon() {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          background: "#1a3d2e",
+          background: "#163528",
         }}
       >
         <div
           style={{
-            width: 18,
-            height: 18,
-            background: "#7cb87a",
+            display: "flex",
+            width: 14,
+            height: 14,
+            background: "#8bc48a",
             transform: "rotate(45deg)",
-            borderRadius: 2,
+            borderRadius: 1,
+            boxShadow: "0 0 0 2px #163528, 0 0 0 3px #5a9a68",
           }}
         />
       </div>

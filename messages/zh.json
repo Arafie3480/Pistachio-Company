@@ -68,7 +68,10 @@
     "certsLabel": "认证",
     "certsBody": "证书与审核文件一经提供将在此列出。待办：客户提供的标志 / PDF 素材",
     "marketsLabel": "市场",
-    "marketsBody": "以国际批发为主。目的地国家与主要合作伙伴类型 — 待客户确认。"
+    "marketsBody": "以国际批发为主。目的地国家与主要合作伙伴类型 — 待客户确认。",
+    "expAgriculture": "农业",
+    "expTrade": "开心果购销",
+    "expExport": "出口"
   },
   "Products": {
     "metaTitle": "产品",
@@ -78,7 +81,11 @@
     "outlineNote": "客户素材到位后，产品摄影与详细等级表将替换本概要。",
     "ctaTitle": "需要特定等级或包装？",
     "ctaLead": "请告知品种、数量与目的地 — 出口部将确认可供货情况。",
-    "ctaButton": "查询可供货"
+    "ctaButton": "查询可供货",
+    "group": {
+      "inShell": "带壳品种",
+      "processed": "果仁与烘焙"
+    }
   },
   "Contact": {
     "metaTitle": "联系我们",
