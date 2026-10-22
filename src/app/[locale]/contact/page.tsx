@@ -1,4 +1,4 @@
-import { Mail, MapPin, MessageCircle } from "lucide-react";
+import { Mail, MapPin, MessageCircle, Phone } from "lucide-react";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { PageHero } from "@/components/page-hero";
 import { Button } from "@/components/ui/button";
@@ -59,36 +59,45 @@ export default async function ContactPage({
 
             <div className="flex gap-4">
               <span className="mt-1 flex size-10 shrink-0 items-center justify-center rounded-md bg-secondary text-brand">
+                <Phone className="size-4" aria-hidden />
+              </span>
+              <div>
+                <h2 className="font-heading text-lg font-semibold text-ink">
+                  {t("phone")}
+                </h2>
+                <a
+                  href={`tel:${contact.phone}`}
+                  className="mt-1 inline-block text-base text-foreground/90 transition-colors hover:text-brand"
+                  dir="ltr"
+                >
+                  {contact.phoneDisplay}
+                </a>
+                <p className="mt-2 text-sm text-muted-foreground">
+                  {t("phoneNote")}
+                </p>
+              </div>
+            </div>
+
+            <div className="flex gap-4">
+              <span className="mt-1 flex size-10 shrink-0 items-center justify-center rounded-md bg-secondary text-brand">
                 <MessageCircle className="size-4" aria-hidden />
               </span>
               <div>
                 <h2 className="font-heading text-lg font-semibold text-ink">
                   {t("whatsapp")}
                 </h2>
-                <p className="mt-1 text-base text-foreground/90">
-                  {t("whatsappLabel")}
+                <p className="mt-1 text-base text-foreground/90" dir="ltr">
+                  {contact.phoneDisplay}
                 </p>
-                {contact.whatsappUrl.startsWith("http") ? (
-                  <Button asChild variant="outline" className="mt-3 h-9">
-                    <a
-                      href={contact.whatsappUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      {t("whatsappOpen")}
-                    </a>
-                  </Button>
-                ) : (
-                  <Button
-                    type="button"
-                    variant="outline"
-                    className="mt-3 h-9"
-                    disabled
-                    aria-disabled="true"
+                <Button asChild variant="outline" className="mt-3 h-9">
+                  <a
+                    href={contact.whatsappUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     {t("whatsappOpen")}
-                  </Button>
-                )}
+                  </a>
+                </Button>
                 <p className="mt-2 text-sm text-muted-foreground">
                   {t("whatsappNote")}
                 </p>
@@ -105,6 +114,13 @@ export default async function ContactPage({
                 </h2>
                 <p className="mt-1 text-base text-foreground/90">
                   {contact.addressLine}
+                </p>
+                <p
+                  className="mt-1 text-sm text-foreground/75"
+                  lang="fa"
+                  dir="rtl"
+                >
+                  {contact.addressLineFa}
                 </p>
                 <p className="mt-2 text-sm text-muted-foreground">
                   {t("addressNote")}
@@ -134,11 +150,22 @@ export default async function ContactPage({
                 {t("include3")}
               </li>
             </ul>
-            <Button asChild className="mt-8 h-10 w-full sm:w-auto">
-              <a href={`mailto:${contact.email}?subject=${subject}`}>
-                {t("emailCta")}
-              </a>
-            </Button>
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              <Button asChild className="h-10 w-full sm:w-auto">
+                <a href={`mailto:${contact.email}?subject=${subject}`}>
+                  {t("emailCta")}
+                </a>
+              </Button>
+              <Button asChild variant="outline" className="h-10 w-full sm:w-auto">
+                <a
+                  href={contact.whatsappUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {t("whatsappOpen")}
+                </a>
+              </Button>
+            </div>
           </aside>
         </div>
       </section>

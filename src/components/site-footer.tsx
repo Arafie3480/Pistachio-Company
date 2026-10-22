@@ -26,9 +26,7 @@ export async function SiteFooter() {
         </div>
 
         <div>
-          <p className="section-label">
-            {t("navigate")}
-          </p>
+          <p className="section-label">{t("navigate")}</p>
           <ul className="mt-3 space-y-2 text-sm">
             {navHrefs.map((href, i) => (
               <li key={href}>
@@ -44,9 +42,7 @@ export async function SiteFooter() {
         </div>
 
         <div>
-          <p className="section-label">
-            {t("contact")}
-          </p>
+          <p className="section-label">{t("contact")}</p>
           <ul className="mt-3 space-y-2 text-sm text-foreground/80">
             <li>
               <a
@@ -54,6 +50,25 @@ export async function SiteFooter() {
                 className="transition-colors hover:text-brand"
               >
                 {contact.email}
+              </a>
+            </li>
+            <li>
+              <a
+                href={`tel:${contact.phone}`}
+                className="transition-colors hover:text-brand"
+                dir="ltr"
+              >
+                {contact.phoneDisplay}
+              </a>
+            </li>
+            <li>
+              <a
+                href={contact.whatsappUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="transition-colors hover:text-brand"
+              >
+                {tContact("whatsapp")}
               </a>
             </li>
             <li>{contact.addressLine}</li>

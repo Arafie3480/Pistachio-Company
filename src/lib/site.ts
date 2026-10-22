@@ -11,13 +11,38 @@ export const brand = {
   domain: "greendiamondfarm.com",
 } as const;
 
+/** Leadership — names from client (2026-10-22). */
+export const people = {
+  founder: {
+    nameFa: "اصغر حسینی نوه",
+    nameEn: "Asghar Hosseini Naveh",
+  },
+  ceo: {
+    nameFa: "فرامرز حسینی نوه",
+    nameEn: "Faramarz Hosseini Naveh",
+  },
+} as const;
+
+/**
+ * Provisional experience years — TODO(client): refine when exact timeline is confirmed.
+ * Edit these numbers only; About page + all locales interpolate them.
+ */
+export const historyYears = {
+  agriculture: 50,
+  pistachioTrade: 40,
+  export: 30,
+} as const;
+
 export const contact = {
   // TODO(client): confirm spelling — client once typed "greendimond"; defaulting to diamond to match domain
   email: "export@greendiamondfarm.com",
-  // TODO(client): provide WhatsApp business number (E.164). Placeholder intentionally non-functional.
-  whatsappUrl: "#whatsapp-todo",
-  // TODO(client): full street address, city, postal code
-  addressLine: "Motahari 52",
+  /** Temporary personal line until a virtual / business number is ready. */
+  phone: "+989361814577",
+  phoneDisplay: "+98 936 181 4577",
+  whatsappUrl: "https://wa.me/989361814577",
+  /** Honest warehouse location only — no invented city/postal beyond Motahari 52. */
+  addressLine: "Warehouse, Motahari 52",
+  addressLineFa: "انبار، مطهری ۵۲",
 } as const;
 
 export const productSlugs = [

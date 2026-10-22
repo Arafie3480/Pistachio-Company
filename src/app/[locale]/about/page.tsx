@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { PageHero } from "@/components/page-hero";
-import { brand, imagery } from "@/lib/site";
+import { brand, historyYears, imagery, people } from "@/lib/site";
 import { buildPageMetadata } from "@/lib/seo";
 
 export async function generateMetadata({
@@ -73,33 +73,63 @@ export default async function AboutPage({
 
           <dl className="mt-10 grid gap-8 sm:grid-cols-2">
             <div>
-              <dt className="section-label">
-                {t("originLabel")}
-              </dt>
+              <dt className="section-label">{t("founderLabel")}</dt>
+              <dd className="mt-2 text-base leading-relaxed text-foreground/90">
+                {t("founderBody", {
+                  nameEn: people.founder.nameEn,
+                  nameFa: people.founder.nameFa,
+                })}
+              </dd>
+            </div>
+            <div>
+              <dt className="section-label">{t("ceoLabel")}</dt>
+              <dd className="mt-2 text-base leading-relaxed text-foreground/90">
+                {t("ceoBody", {
+                  nameEn: people.ceo.nameEn,
+                  nameFa: people.ceo.nameFa,
+                })}
+              </dd>
+            </div>
+            <div>
+              <dt className="section-label">{t("experienceLabel")}</dt>
+              <dd className="mt-2 text-base leading-relaxed text-foreground/90">
+                <ul className="space-y-2">
+                  <li>
+                    {t("yearsAgriculture", {
+                      years: historyYears.agriculture,
+                    })}
+                  </li>
+                  <li>
+                    {t("yearsTrade", {
+                      years: historyYears.pistachioTrade,
+                    })}
+                  </li>
+                  <li>
+                    {t("yearsExport", { years: historyYears.export })}
+                  </li>
+                </ul>
+              </dd>
+            </div>
+            <div>
+              <dt className="section-label">{t("originLabel")}</dt>
               <dd className="mt-2 text-base leading-relaxed text-foreground/90">
                 {t("originBody", { legalName: brand.legalNameEn })}
               </dd>
             </div>
             <div>
-              <dt className="section-label">
-                {t("standLabel")}
-              </dt>
+              <dt className="section-label">{t("standLabel")}</dt>
               <dd className="mt-2 text-base leading-relaxed text-foreground/90">
                 {t("standBody")}
               </dd>
             </div>
             <div>
-              <dt className="section-label">
-                {t("certsLabel")}
-              </dt>
+              <dt className="section-label">{t("certsLabel")}</dt>
               <dd className="mt-2 text-base leading-relaxed text-foreground/90">
                 {t("certsBody")}
               </dd>
             </div>
             <div>
-              <dt className="section-label">
-                {t("marketsLabel")}
-              </dt>
+              <dt className="section-label">{t("marketsLabel")}</dt>
               <dd className="mt-2 text-base leading-relaxed text-foreground/90">
                 {t("marketsBody")}
               </dd>
