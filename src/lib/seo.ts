@@ -1,9 +1,16 @@
 import type { Metadata } from "next";
 import { locales, routing, type Locale } from "@/i18n/routing";
-import { brand, imagery } from "@/lib/site";
+import { brand } from "@/lib/site";
 
 /** Canonical production origin — DNS cutover still pending. */
 export const siteUrl = `https://${brand.domain}`;
+
+/**
+ * First-party OG card from `src/app/opengraph-image.tsx`.
+ * Prefer this over third-party Unsplash URLs so social crawlers do not hit
+ * an external CDN (and so the share image is under our control).
+ */
+export const ogImagePath = "/opengraph-image" as const;
 
 /** App pathnames without locale prefix (home = ""). */
 export const sitePathnames = ["", "/about", "/products", "/contact"] as const;
@@ -48,7 +55,7 @@ export function buildPageMetadata({
   pathname = "",
   title,
   description,
-  imageUrl = imagery.og,
+  imageUrl = ogImagePath,
 }: {
   locale: string;
   pathname?: SitePathname | string;

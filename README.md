@@ -41,13 +41,15 @@ npm start       # serve build on :4321
 
 SEO check after build/start: `/sitemap.xml`, `/robots.txt`, `/opengraph-image`, `/icon`.
 
+Social cards use the first-party `/opengraph-image` route (not a third-party CDN URL).
+
 ## Tunable company facts
 
 Edit `src/lib/site.ts`:
 
 - `historyYears` — provisional agriculture / trade / export years
 - `people` — founder & CEO names
-- `contact` — email, phone, WhatsApp URL, warehouse line
+- `contact` — email, phone, WhatsApp URL, warehouse line (do not paste phone digits into README or issues)
 
 UI copy lives in `messages/*.json` (next-intl).
 
@@ -82,7 +84,7 @@ DNS / custom domain (`greendiamondfarm.com`) is out of scope until cutover from 
 
 ## Client TODOs (go-live)
 
-- Dedicated virtual / business WhatsApp line (site currently uses temporary `+989361814577`)
+- Dedicated virtual / business WhatsApp line (replace the provisional number in `src/lib/site.ts` → `contact`)
 - Full office address beyond Motahari 52 warehouse
 - Confirm export email spelling (`greendiamond` vs `greendimond`)
 - Logo, product photos, certificates (favicon/OG use a green-diamond placeholder)

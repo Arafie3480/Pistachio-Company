@@ -36,7 +36,10 @@ export const historyYears = {
 export const contact = {
   // TODO(client): confirm spelling — client once typed "greendimond"; defaulting to diamond to match domain
   email: "export@greendiamondfarm.com",
-  /** Temporary personal line until a virtual / business number is ready. */
+  /**
+   * Provisional export phone / WhatsApp until a dedicated business line is ready.
+   * Kept only in site config (not README) so docs do not republish the digits.
+   */
   phone: "+989361814577",
   phoneDisplay: "+98 936 181 4577",
   whatsappUrl: "https://wa.me/989361814577",
@@ -88,6 +91,4 @@ export const imagery = {
     "https://images.unsplash.com/photo-1508747703725-719777637510?auto=format&fit=crop&w=1600&q=80",
   product:
     "https://images.unsplash.com/photo-1502825751399-28baa9b81efe?auto=format&fit=crop&w=1600&q=80",
-  /** Social share fallback when generated OG image is unavailable. */
-  og: "https://images.unsplash.com/photo-1704079662049-d00890d21a69?auto=format&fit=crop&w=1200&h=630&q=80",
 } as const;
