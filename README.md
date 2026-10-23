@@ -25,6 +25,22 @@ npm run dev
 
 Open [http://127.0.0.1:4321](http://127.0.0.1:4321).
 
+## Client demo pack
+
+Verified local show path (port **4321**, tip `353bdc6` lineage):
+
+| Page | URL |
+|------|-----|
+| Home EN | http://127.0.0.1:4321/en |
+| Products | http://127.0.0.1:4321/en/products |
+| Home AR (RTL) | http://127.0.0.1:4321/ar |
+| Contact | http://127.0.0.1:4321/en/contact |
+
+- Handoff: [docs/client-demo-handoff.md](docs/client-demo-handoff.md)
+- Paste-ready client message: [docs/demo-message-for-client.md](docs/demo-message-for-client.md)
+- Public URL without Claim SMS: [docs/vercel-sms-bypass.md](docs/vercel-sms-bypass.md) (Vercel → Continue with GitHub → Import this repo)
+- Screenshots: `media/demo-home-en.png`, `media/demo-products-en.png`, `media/demo-home-ar.png`, `media/demo-contact-en.png`
+
 | Locale | Path prefix |
 |--------|-------------|
 | English (default) | `/`, `/about`, `/products`, `/contact` |
