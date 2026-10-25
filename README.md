@@ -64,7 +64,7 @@ npm run smoke    # HTTP acceptance checks against :4321 (start must be running)
 npm run smoke:ci # start server, smoke, tear down (used by CI)
 ```
 
-Smoke after build/start: `/sitemap.xml`, `/robots.txt`, `/opengraph-image`, `/icon`, `/contact`, `/privacy`, `/ar` — or run `npm run smoke` / `npm run smoke:ci`.
+Smoke after build/start: locales, contact CTAs (`mailto` / `tel` / WhatsApp), SEO routes, security headers, 404 — or run `npm run smoke` / `npm run smoke:ci`.
 
 Copy `.env.example` only if you add overrides — **no env vars are required** for this marketing site.
 

@@ -10,12 +10,28 @@ const base = (process.env.SMOKE_BASE || "http://127.0.0.1:4321").replace(
   "",
 );
 
-/** @type {{ path: string; expect?: number; includes?: string[] }[]} */
+/** Headers required on every marketing response (see next.config.ts). */
+const requiredHeaders = [
+  ["x-content-type-options", "nosniff"],
+  ["x-frame-options", "DENY"],
+  ["referrer-policy", "strict-origin-when-cross-origin"],
+  ["permissions-policy", "camera=(), microphone=(), geolocation=(), payment=()"],
+];
+
+/** @type {{ path: string; expect?: number; includes?: string[]; headers?: boolean; redirect?: "follow" | "manual" }[]} */
 const checks = [
-  { path: "/en", includes: ["Green Diamond Farm"] },
+  { path: "/en", includes: ["Green Diamond Farm"], headers: true },
   { path: "/en/products", includes: ["Ahmad Aghaei"] },
   { path: "/en/about", includes: ["About"] },
-  { path: "/en/contact", includes: ["Contact"] },
+  {
+    path: "/en/contact",
+    includes: [
+      "Contact",
+      "mailto:export@greendiamondfarm.com",
+      "tel:+989361814577",
+      "wa.me/989361814577",
+    ],
+  },
   { path: "/en/privacy", includes: ["Privacy"] },
   { path: "/ar", includes: ["lang=\"ar\"", "dir=\"rtl\""] },
   { path: "/tr" },
@@ -31,6 +47,9 @@ const checks = [
   { path: "/definitely-missing-page-xyz", expect: 404 },
 ];
 
+/**
+ * @param {{ path: string; expect?: number; includes?: string[]; headers?: boolean }} item
+ */
 async function checkOne(item) {
   const url = `${base}${item.path}`;
   const expect = item.expect ?? 200;
@@ -45,6 +64,20 @@ async function checkOne(item) {
   for (const needle of item.includes ?? []) {
     if (!text.includes(needle)) {
       failures.push(`missing "${needle}"`);
+    }
+  }
+  if (item.headers) {
+    for (const [name, value] of requiredHeaders) {
+      const actual = res.headers.get(name);
+      if (!actual) {
+        failures.push(`missing header ${name}`);
+      } else if (actual !== value) {
+        failures.push(`header ${name}="${actual}" (expected "${value}")`);
+      }
+    }
+    const csp = res.headers.get("content-security-policy") || "";
+    if (!csp.includes("default-src 'self'") || !csp.includes("frame-ancestors 'none'")) {
+      failures.push("incomplete Content-Security-Policy");
     }
   }
   return { url, ok: failures.length === 0, failures, status };

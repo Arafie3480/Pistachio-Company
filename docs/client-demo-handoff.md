@@ -28,7 +28,7 @@ npm run start
 
 راهنما (بدون SMS): [vercel-sms-bypass.md](./vercel-sms-bypass.md)
 
-**ممنوع:** Claim/SMS ایران · لینک مولک/خراب Workers یا `*.tmp.now`
+**ممنوع:** Claim/SMS ایران · لینک مولک/خراب Workers یا `*.tmp.now` · Netlify deploy-preview با Access/401 (فقط بعد از خاموش‌کردن password یا Import پایدار)
 
 ## اسکرین‌شات‌های تازه دمو
 
