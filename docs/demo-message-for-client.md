@@ -20,7 +20,7 @@
 
 اگر همین مسیر را تأیید کنید، برای دامنه نهایی (دامنه/DNS، عکس محصول، لوگو نهایی) جلو می‌رویم.
 
-کد: https://github.com/Arafie3480/Pistachio-Company (`main` @ `353bdc6`)
+کد: https://github.com/Arafie3480/Pistachio-Company
 
 ---
 

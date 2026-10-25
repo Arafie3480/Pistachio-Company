@@ -64,5 +64,5 @@ npm run start
 ## پیام کوتاه
 
 دموی اولیهٔ سایت آماده نمایش است — چندزبانه، برند، تماس.  
-**الان (نمایش لوکال):** http://127.0.0.1:4321/en · tip `353bdc6`  
+**الان (نمایش لوکال):** http://127.0.0.1:4321/en · branch `cursor/security-harden-handoff-91c0`  
 **عمومی:** بعد از Vercel Import → `*.vercel.app`
