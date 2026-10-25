@@ -11,7 +11,7 @@
 | **Home AR (RTL)** | http://127.0.0.1:4321/ar |
 | **Contact** | http://127.0.0.1:4321/en/contact |
 | پیام آماده ارسال | [demo-message-for-client.md](./demo-message-for-client.md) |
-| ریپو | https://github.com/Arafie3480/Pistachio-Company (`cursor/security-harden-handoff-91c0`) |
+| ریپو | https://github.com/Arafie3480/Pistachio-Company (`main`) |
 | دامنه نهایی | https://greendiamondfarm.com (بعد از تأیید کارفرما + DNS) |
 
 ```powershell
@@ -20,7 +20,7 @@ npm run start
 # یا: npm run dev
 ```
 
-پورت: **4321** · branch: `cursor/security-harden-handoff-91c0` · checkout: `Desktop\projects\Pistachio-Company` (نه radfelez)
+پورت: **4321** · branch: `main` · checkout: `Desktop\projects\Pistachio-Company` (نه radfelez)
 
 ## URL عمومی پایدار
 
@@ -64,5 +64,5 @@ npm run start
 ## پیام کوتاه
 
 دموی اولیهٔ سایت آماده نمایش است — چندزبانه، برند، تماس.  
-**الان (نمایش لوکال):** http://127.0.0.1:4321/en · branch `cursor/security-harden-handoff-91c0`  
+**الان (نمایش لوکال):** http://127.0.0.1:4321/en · branch `main`  
 **عمومی:** بعد از Vercel Import → `*.vercel.app`

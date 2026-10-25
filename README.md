@@ -60,9 +60,10 @@ Open [http://127.0.0.1:4321](http://127.0.0.1:4321).
 ```bash
 npm run build   # production build
 npm start       # serve build on :4321
+npm run smoke   # HTTP acceptance checks against :4321 (start must be running)
 ```
 
-Smoke after build/start: `/sitemap.xml`, `/robots.txt`, `/opengraph-image`, `/icon`, `/contact`, `/privacy`, `/ar`.
+Smoke after build/start: `/sitemap.xml`, `/robots.txt`, `/opengraph-image`, `/icon`, `/contact`, `/privacy`, `/ar` — or run `npm run smoke`.
 
 Copy `.env.example` only if you add overrides — **no env vars are required** for this marketing site.
 
