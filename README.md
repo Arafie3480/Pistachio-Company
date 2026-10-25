@@ -6,13 +6,19 @@ Export website for **بازرگانی حسینی نوه** (Hosseini Naveh) — p
 - **GitHub:** [Arafie3480/Pistachio-Company](https://github.com/Arafie3480/Pistachio-Company)
 - **Stack:** Next.js (App Router) · TypeScript · Tailwind CSS · next-intl · shadcn/ui
 
-## Goals
+## Delivery status
 
-- Clean, simple, chic B2B site (not flashy)
-- Locales: English (default), Arabic (RTL), Turkish, Chinese, Hindi, Russian
-- Pages: Home, About, Products, Contact
-- Contact: export email, temporary phone / WhatsApp, warehouse Motahari 52
-- SEO: per-locale meta, `hreflang` alternates, Open Graph, favicon, `sitemap.xml`, `robots.txt`
+Ready for host import and client review. The marketing site is multilingual, indexed for SEO, and build-verified by CI.
+
+| Area | Status |
+|------|--------|
+| Pages (Home, About, Products, Contact) | Done — 6 locales (EN default + AR RTL, TR, ZH, HI, RU) |
+| Contact (email, phone, WhatsApp, warehouse) | Live from `src/lib/site.ts` |
+| SEO (canonical, hreflang, sitemap, robots, OG, JSON-LD) | Done |
+| Security baseline (headers, CI least-privilege, first-party OG) | Done |
+| A11y (skip link, `aria-current`, reduced motion, locale not-found) | Done |
+| Custom logo / owned photography / certificates | Client assets pending |
+| DNS cutover from WordPress | Out of scope until host + domain ready |
 
 ## Local setup
 
@@ -39,42 +45,30 @@ npm run build   # production build
 npm start       # serve build on :4321
 ```
 
-SEO check after build/start: `/sitemap.xml`, `/robots.txt`, `/opengraph-image`, `/icon`.
-
-Social cards use the first-party `/opengraph-image` route (not a third-party CDN URL).
+Smoke after build/start: `/sitemap.xml`, `/robots.txt`, `/opengraph-image`, `/icon`, `/contact`, `/ar`.
 
 ## Tunable company facts
 
-Edit `src/lib/site.ts`:
+Edit `src/lib/site.ts` only:
 
-- `historyYears` — provisional agriculture / trade / export years
+- `historyYears` — agriculture / trade / export years
 - `people` — founder & CEO names
-- `contact` — email, phone, WhatsApp URL, warehouse line (do not paste phone digits into README or issues)
+- `contact` — email, phone, WhatsApp URL, warehouse line (**do not paste phone digits into README or issues**)
 
 UI copy lives in `messages/*.json` (next-intl).
 
 ## Deploy
 
-**Primary path (recommended):** import this GitHub repo in a host dashboard — no CLI login required.
+**Primary path:** import this GitHub repo in a host dashboard.
 
 1. Open [Vercel → New Project](https://vercel.com/new) (or Netlify / Cloudflare Pages with Next.js support).
-2. Import **`Arafie3480/Pistachio-Company`** from GitHub.
-3. Framework: **Next.js**. Root directory: repo root. **No env vars** required for this marketing site.
-4. Deploy. Later pushes to `main` redeploy automatically when the project stays linked.
+2. Import **`Arafie3480/Pistachio-Company`**.
+3. Framework: **Next.js**. Root: repo root. **No env vars** required.
+4. Deploy. Later pushes to `main` redeploy when the project stays linked.
 
-**Deploy-ready signal:** GitHub Actions [CI](.github/workflows/ci.yml) runs `npm ci` + `npm run build` on every push/PR to `main`. Green CI means the tree is buildable for host import.
+CI (`.github/workflows/ci.yml`) runs `npm ci` + `npm run build` on push/PR to `main` with `contents: read`.
 
-**Optional — Vercel CLI** (needs interactive login; not used in agent sessions):
-
-```bash
-npx vercel login
-npx vercel          # preview
-npx vercel --prod   # production
-```
-
-There is **no public preview URL** from this repo alone until someone imports it (or completes CLI auth) on a host account.
-
-DNS / custom domain (`greendiamondfarm.com`) is out of scope until cutover from WordPress. Prefer a **non-Iran** host for LinkedIn eligibility.
+Prefer a **non-Iran** host if LinkedIn eligibility matters. Custom domain (`greendiamondfarm.com`) waits on WordPress cutover.
 
 ## Products
 
@@ -82,10 +76,12 @@ DNS / custom domain (`greendiamondfarm.com`) is out of scope until cutover from 
 
 **Processed:** kernels · salted & roasted
 
-## Client TODOs (go-live)
+## Client follow-ups (optional polish)
 
-- Dedicated virtual / business WhatsApp line (replace the provisional number in `src/lib/site.ts` → `contact`)
+These do not block deploy; they improve go-live accuracy:
+
+- Dedicated virtual / business WhatsApp line (replace provisional number in `src/lib/site.ts` → `contact`)
 - Full office address beyond Motahari 52 warehouse
 - Confirm export email spelling (`greendiamond` vs `greendimond`)
-- Logo, product photos, certificates (favicon/OG use a green-diamond placeholder)
-- Confirm exact experience years (50 / 40 / 30 are provisional in `historyYears`)
+- Owned logo, product photos, certificates
+- Confirm exact experience years in `historyYears`

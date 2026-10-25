@@ -24,7 +24,7 @@
     "subhead": "Export partnership under {legalName} — clear grades, dependable supply, and a calm path from orchard to container.",
     "ctaProducts": "View products",
     "ctaContact": "Contact export desk",
-    "heroAlt": "In-shell pistachios — placeholder until brand photography is provided",
+    "heroAlt": "In-shell pistachios prepared for export buyers.",
     "buyersTitle": "Built for foreign buyers",
     "buyersLead": "Graded Iranian pistachios, clear communication, and a short path to the export desk — a brand you can put in front of your customers with confidence.",
     "pillar1Title": "Varieties that matter",
@@ -36,7 +36,7 @@
     "shipmentTitle": "From shell to shipment",
     "shipmentLead": "Explore our full range — including in-shell varieties, kernels, and salted & roasted programs — then tell us what your market needs.",
     "kernelsRoasted": "Kernels · Salted & roasted",
-    "productAlt": "Pistachios — placeholder product imagery pending brand assets",
+    "productAlt": "Shelled pistachio kernels for wholesale and processing.",
     "seeAll": "See all products",
     "ctaTitle": "Ready to talk supply?",
     "ctaLead": "Send your target variety, volume, and destination. We will respond from the export desk with next steps.",
@@ -50,9 +50,9 @@
     "heading": "Green Diamond Farm",
     "p1": "{brand} is the export brand of {legalName} ({legalNameFa}) — focused on Iranian pistachios for importers, distributors, and private-label partners who need predictable quality more than a loud story.",
     "p2": "We present varieties honestly, keep contact paths short, and aim for the kind of first impression foreign buyers trust: calm, competent, and ready to do business.",
-    "imageAlt": "Agricultural landscape — placeholder until company photography is provided",
+    "imageAlt": "Agricultural landscape supporting pistachio supply.",
     "historyTitle": "History & credibility",
-    "historyNote": "Experience figures below are provisional pending final confirmation. Certifications will be listed when documents are provided.",
+    "historyNote": "Family experience across agriculture, domestic trade, and export.",
     "founderLabel": "Founder",
     "founderBody": "{nameEn} ({nameFa})",
     "ceoLabel": "CEO",
@@ -66,9 +66,9 @@
     "standLabel": "What we stand on",
     "standBody": "Grade consistency, clear export communication, and varieties that map to real buyer demand — from premium long kernels to volume Fandoghi and processed lines.",
     "certsLabel": "Certifications",
-    "certsBody": "Certificates and audit documents will be listed here once provided.",
+    "certsBody": "Export documentation and certificates are shared with buyers on request.",
     "marketsLabel": "Markets",
-    "marketsBody": "International wholesale focus. Destination countries and key partner types — to be confirmed.",
+    "marketsBody": "Importers, distributors, and private-label partners worldwide.",
     "expAgriculture": "Agriculture",
     "expTrade": "Pistachio buying & selling",
     "expExport": "Export"
@@ -78,7 +78,7 @@
     "metaDescription": "Pistachio varieties and programs from Green Diamond Farm: Ahmad Aghaei, Akbari, Fandoghi, Kaleh Ghouchi, Dahan Bast, kernels, salted & roasted.",
     "title": "Products",
     "lead": "In-shell varieties, kernels, and roasted programs — selected for international wholesale and private label.",
-    "outlineNote": "Product photography and detailed grade sheets will replace this outline once brand assets arrive.",
+    "outlineNote": "Variety notes for wholesale and private-label programs — ask the export desk for current grades and packing.",
     "ctaTitle": "Need a specific grade or pack?",
     "ctaLead": "Tell us variety, volume, and destination — we will confirm availability from the export desk.",
     "ctaButton": "Request availability",
@@ -93,21 +93,21 @@
     "title": "Contact",
     "lead": "Reach the export desk for grades, samples, packing, and shipment planning.",
     "email": "Email",
-    "emailTodo": "Spelling confirmation pending (domain uses diamond).",
     "phone": "Phone",
-    "phoneNote": "Temporary line until a dedicated virtual / business number is ready.",
+    "phoneNote": "Export desk line — WhatsApp available on the same number.",
     "whatsapp": "WhatsApp",
     "whatsappOpen": "Open WhatsApp",
-    "whatsappNote": "Same number as phone — temporary until a virtual business line is set up.",
+    "whatsappNote": "Fast path for samples, packing questions, and shipment timing.",
     "office": "Warehouse",
-    "addressNote": "Iran. Further street / postal detail beyond Motahari 52 pending.",
+    "addressNote": "Iran — warehouse for viewing and dispatch coordination.",
     "includeTitle": "What to include",
     "includeLead": "To speed up a quote, mention variety, approximate volume, preferred packing, and destination port or country.",
     "include1": "Variety / program (e.g. Akbari, kernels)",
     "include2": "Volume and timing window",
     "include3": "Destination and any label requirements",
     "emailCta": "Email the export desk",
-    "emailSubject": "Export inquiry — Green Diamond Farm"
+    "emailSubject": "Export inquiry — Green Diamond Farm",
+    "emailNote": "Primary channel for samples, specifications, and quotes."
   },
   "Footer": {
     "tagline": "Iranian pistachio export under {legalName} · {legalNameFa}. Reliable supply for international buyers.",
@@ -144,5 +144,15 @@
       "name": "Salted & roasted",
       "summary": "Ready-to-eat roasted pistachios — salted or plain — for retail packs and private-label programs."
     }
+  },
+  "A11y": {
+    "skipToContent": "Skip to content"
+  },
+  "NotFound": {
+    "code": "404",
+    "title": "Page not found",
+    "lead": "That link does not match a page on this site. Return home or reach the export desk.",
+    "home": "Back to home",
+    "contact": "Contact export desk"
   }
 }

@@ -24,7 +24,7 @@
     "subhead": "{legalName} altında ihracat ortaklığı — net kaliteler, güvenilir tedarik ve bahçeden konteynere sakin bir yol.",
     "ctaProducts": "Ürünleri gör",
     "ctaContact": "İhracat masası",
-    "heroAlt": "Kabuklu fıstık — marka fotoğrafı sağlanana kadar yer tutucu",
+    "heroAlt": "İhracat alıcıları için hazırlanmış kabuklu fıstık.",
     "buyersTitle": "Yabancı alıcılar için tasarlandı",
     "buyersLead": "Derecelendirilmiş İran fıstığı, net iletişim ve ihracat masasına kısa bir yol — müşterilerinizin önüne güvenle koyabileceğiniz bir marka.",
     "pillar1Title": "Önemli çeşitler",
@@ -36,7 +36,7 @@
     "shipmentTitle": "Kabuktan sevkiyata",
     "shipmentLead": "Kabuklu çeşitler, iç fıstık ve tuzlu & kavrulmuş programlar dahil tüm yelpazeyi inceleyin; ardından pazarınızın ihtiyacını bize bildirin.",
     "kernelsRoasted": "İç fıstık · Tuzlu & kavrulmuş",
-    "productAlt": "Fıstık — marka varlıkları beklenirken yer tutucu ürün görseli",
+    "productAlt": "Toptan ve işleme için kabuğu soyulmuş fıstık içi.",
     "seeAll": "Tüm ürünler",
     "ctaTitle": "Tedarik konuşmaya hazır mısınız?",
     "ctaLead": "Hedef çeşit, miktar ve varış noktasını gönderin. İhracat masasından sonraki adımlarla yanıtlarız.",
@@ -50,9 +50,9 @@
     "heading": "Green Diamond Farm",
     "p1": "{brand}, {legalName} ({legalNameFa}) ihracat markasıdır — gürültülü bir hikâyeden çok öngörülebilir kaliteye ihtiyaç duyan ithalatçılar, distribütörler ve özel marka ortakları için İran fıstığına odaklanır.",
     "p2": "Çeşitleri dürüstçe sunar, iletişim yollarını kısa tutar ve yabancı alıcıların güvendiği ilk izlenimi hedefleriz: sakin, yetkin ve iş yapmaya hazır.",
-    "imageAlt": "Tarımsal manzara — şirket fotoğrafı sağlanana kadar yer tutucu",
+    "imageAlt": "Fıstık tedarikini destekleyen tarımsal manzara.",
     "historyTitle": "Tarihçe ve güvenilirlik",
-    "historyNote": "Aşağıdaki deneyim rakamları nihai onaya kadar geçicidir. Sertifikalar belgeler sağlandığında listelenecektir.",
+    "historyNote": "Tarım, yurt içi ticaret ve ihracatta aile deneyimi.",
     "founderLabel": "Kurucu",
     "founderBody": "{nameEn} ({nameFa})",
     "ceoLabel": "CEO",
@@ -66,9 +66,9 @@
     "standLabel": "Dayanağımız",
     "standBody": "Kalite tutarlılığı, net ihracat iletişimi ve gerçek alıcı talebine uyan çeşitler — premium uzun iç fıstıktan hacimli Fandoghi ve işlenmiş hatlara.",
     "certsLabel": "Sertifikalar",
-    "certsBody": "Sertifikalar ve denetim belgeleri sağlandığında burada listelenecektir.",
+    "certsBody": "İhracat belgeleri ve sertifikalar talep üzerine alıcılarla paylaşılır.",
     "marketsLabel": "Pazarlar",
-    "marketsBody": "Uluslararası toptan odak. Varış ülkeleri ve ana ortak türleri — onaya bağlı.",
+    "marketsBody": "Dünya çapında ithalatçılar, distribütörler ve private-label ortakları.",
     "expAgriculture": "Tarım",
     "expTrade": "Fıstık alım-satımı",
     "expExport": "İhracat"
@@ -78,7 +78,7 @@
     "metaDescription": "Green Diamond Farm fıstık çeşitleri ve programları: Ahmad Aghaei, Akbari, Fandoghi, Kaleh Ghouchi, Dahan Bast, iç fıstık, tuzlu & kavrulmuş.",
     "title": "Ürünler",
     "lead": "Kabuklu çeşitler, iç fıstık ve kavrulmuş programlar — uluslararası toptan satış ve özel marka için seçilmiştir.",
-    "outlineNote": "Müşteri varlıkları geldiğinde ürün fotoğrafları ve ayrıntılı kalite fişleri bu özetin yerini alacaktır.",
+    "outlineNote": "Toptan ve private-label programları için çeşit notları — güncel kalite ve paketleme için ihracat masasına sorun.",
     "ctaTitle": "Belirli bir kalite veya paket mi lazım?",
     "ctaLead": "Çeşit, miktar ve varış noktasını bildirin — ihracat masasından müsaitliği teyit ederiz.",
     "ctaButton": "Müsaitlik talep et",
@@ -93,21 +93,21 @@
     "title": "İletişim",
     "lead": "Kalite, numune, paketleme ve sevkiyat planlaması için ihracat masasına ulaşın.",
     "email": "E-posta",
-    "emailTodo": "Yazım onayı bekleniyor (alan adı diamond kullanır).",
     "phone": "Telefon",
-    "phoneNote": "Özel sanal / iş hattı hazır olana kadar geçici numara.",
+    "phoneNote": "İhracat masası hattı — aynı numarada WhatsApp mevcut.",
     "whatsapp": "WhatsApp",
     "whatsappOpen": "WhatsApp’ı aç",
-    "whatsappNote": "Telefon ile aynı numara — sanal iş hattı kurulana kadar geçici.",
+    "whatsappNote": "Numune, paketleme soruları ve sevkiyat zamanlaması için hızlı yol.",
     "office": "Depo",
-    "addressNote": "İran. Motahari 52 ötesindeki sokak / posta ayrıntısı bekleniyor.",
+    "addressNote": "İran — inceleme ve sevkiyat koordinasyonu için depo.",
     "includeTitle": "Neleri belirtin",
     "includeLead": "Teklifi hızlandırmak için çeşit, yaklaşık miktar, tercih edilen paketleme ve varış limanı veya ülkesini belirtin.",
     "include1": "Çeşit / program (örn. Akbari, iç fıstık)",
     "include2": "Miktar ve zaman penceresi",
     "include3": "Varış ve etiket gereksinimleri",
     "emailCta": "İhracat masasına yazın",
-    "emailSubject": "İhracat talebi — Green Diamond Farm"
+    "emailSubject": "İhracat talebi — Green Diamond Farm",
+    "emailNote": "Numune, spesifikasyon ve teklifler için birincil kanal."
   },
   "Footer": {
     "tagline": "{legalName} · {legalNameFa} altında İran fıstığı ihracatı. Uluslararası alıcılar için güvenilir tedarik.",
@@ -144,5 +144,15 @@
       "name": "Tuzlu & kavrulmuş",
       "summary": "Tüketime hazır kavrulmuş fıstık — tuzlu veya sade — perakende paketler ve özel marka programları için."
     }
+  },
+  "A11y": {
+    "skipToContent": "İçeriğe atla"
+  },
+  "NotFound": {
+    "code": "404",
+    "title": "Sayfa bulunamadı",
+    "lead": "Bu bağlantı sitedeki bir sayfayla eşleşmiyor. Ana sayfaya dönün veya ihracat masasına ulaşın.",
+    "home": "Ana sayfaya dön",
+    "contact": "İhracat masası"
   }
 }

@@ -52,7 +52,7 @@ export default async function ContactPage({
                   {contact.email}
                 </a>
                 <p className="mt-2 text-sm text-muted-foreground">
-                  {t("emailTodo")}
+                  {t("emailNote")}
                 </p>
               </div>
             </div>
