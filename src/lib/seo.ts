@@ -10,8 +10,21 @@ export const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ||
   `https://${brand.domain}`;
 
+/**
+ * First-party OG card from `src/app/opengraph-image.tsx`.
+ * Prefer this over third-party Unsplash URLs so social crawlers do not hit
+ * an external CDN (and so the share image is under our control).
+ */
+export const ogImagePath = "/opengraph-image" as const;
+
 /** App pathnames without locale prefix (home = ""). */
-export const sitePathnames = ["", "/about", "/products", "/contact"] as const;
+export const sitePathnames = [
+  "",
+  "/about",
+  "/products",
+  "/contact",
+  "/privacy",
+] as const;
 export type SitePathname = (typeof sitePathnames)[number];
 
 const ogLocaleMap: Record<Locale, string> = {
@@ -48,15 +61,13 @@ export function languageAlternates(
   return languages;
 }
 
-/** Prefer generated OG card; Unsplash fallback only if callers override. */
-const defaultOgImage = `${siteUrl}/opengraph-image`;
-
 export function buildPageMetadata({
   locale,
   pathname = "",
   title,
   description,
-  imageUrl = defaultOgImage,
+  /** Relative path preferred — Next resolves against metadataBase. */
+  imageUrl = ogImagePath,
 }: {
   locale: string;
   pathname?: SitePathname | string;

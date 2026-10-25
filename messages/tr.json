@@ -52,12 +52,11 @@
     "p2": "Çeşitleri dürüstçe sunar, iletişim yollarını kısa tutar ve yabancı alıcıların güvendiği ilk izlenimi hedefleriz: sakin, yetkin ve iş yapmaya hazır.",
     "imageAlt": "İhracat paketlemesi için hazırlanmış fıstık içleri",
     "historyTitle": "Tarihçe ve güvenilirlik",
-    "historyNote": "Aşağıdaki deneyim rakamları nihai onaya kadar geçicidir. Sertifikalar belgeler sağlandığında listelenecektir.",
+    "historyNote": "Tarım, iç ticaret ve ihracatta uzun soluklu aile pratiği.",
     "founderLabel": "Kurucu",
     "founderBody": "{nameEn} ({nameFa})",
     "ceoLabel": "CEO",
     "ceoBody": "{nameEn} ({nameFa})",
-    "experienceLabel": "Deneyim",
     "yearsAgriculture": "{years}+ yıl tarım",
     "yearsTrade": "{years}+ yıl fıstık alım-satımı",
     "yearsExport": "{years}+ yıl ihracat",
@@ -66,19 +65,16 @@
     "standLabel": "Dayanağımız",
     "standBody": "Kalite tutarlılığı, net ihracat iletişimi ve gerçek alıcı talebine uyan çeşitler — premium uzun iç fıstıktan hacimli Fandoghi ve işlenmiş hatlara.",
     "certsLabel": "Sertifikalar",
-    "certsBody": "Sertifikalar ve denetim belgeleri sağlandığında burada listelenecektir.",
+    "certsBody": "İhracat belgeleri ve sertifikalar talep üzerine alıcılarla paylaşılır.",
     "marketsLabel": "Pazarlar",
-    "marketsBody": "Uluslararası toptan odak. Varış ülkeleri ve ana ortak türleri — onaya bağlı.",
-    "expAgriculture": "Tarım",
-    "expTrade": "Fıstık alım-satımı",
-    "expExport": "İhracat"
+    "marketsBody": "Dünya çapında ithalatçılar, distribütörler ve private-label ortakları."
   },
   "Products": {
     "metaTitle": "Ürünler",
     "metaDescription": "Green Diamond Farm fıstık çeşitleri ve programları: Ahmad Aghaei, Akbari, Fandoghi, Kaleh Ghouchi, Dahan Bast, iç fıstık, tuzlu & kavrulmuş.",
     "title": "Ürünler",
     "lead": "Kabuklu çeşitler, iç fıstık ve kavrulmuş programlar — uluslararası toptan satış ve özel marka için seçilmiştir.",
-    "outlineNote": "Müşteri varlıkları geldiğinde ürün fotoğrafları ve ayrıntılı kalite fişleri bu özetin yerini alacaktır.",
+    "outlineNote": "Toptan ve private-label programları için çeşit notları — güncel kalite ve paketleme için ihracat masasına sorun.",
     "ctaTitle": "Belirli bir kalite veya paket mi lazım?",
     "ctaLead": "Çeşit, miktar ve varış noktasını bildirin — ihracat masasından müsaitliği teyit ederiz.",
     "ctaButton": "Müsaitlik talep et",
@@ -89,31 +85,32 @@
   },
   "Contact": {
     "metaTitle": "İletişim",
-    "metaDescription": "Green Diamond Farm ihracat masasına ulaşın — e-posta, WhatsApp ve ofis adresi.",
+    "metaDescription": "Green Diamond Farm ihracat masasına ulaşın — e-posta, WhatsApp ve depo konumu.",
     "title": "İletişim",
     "lead": "Kalite, numune, paketleme ve sevkiyat planlaması için ihracat masasına ulaşın.",
     "email": "E-posta",
-    "emailTodo": "Yazım onayı bekleniyor (alan adı diamond kullanır).",
     "phone": "Telefon",
-    "phoneNote": "Özel sanal / iş hattı hazır olana kadar geçici numara.",
+    "phoneNote": "İhracat masası hattı — aynı numarada WhatsApp mevcut.",
     "whatsapp": "WhatsApp",
     "whatsappOpen": "WhatsApp’ı aç",
-    "whatsappNote": "Telefon ile aynı numara — sanal iş hattı kurulana kadar geçici.",
+    "whatsappNote": "Numune, paketleme soruları ve sevkiyat zamanlaması için hızlı yol.",
     "office": "Depo",
-    "addressNote": "İran. Motahari 52 ötesindeki sokak / posta ayrıntısı bekleniyor.",
+    "addressNote": "İran — inceleme ve sevkiyat koordinasyonu için depo.",
     "includeTitle": "Neleri belirtin",
     "includeLead": "Teklifi hızlandırmak için çeşit, yaklaşık miktar, tercih edilen paketleme ve varış limanı veya ülkesini belirtin.",
     "include1": "Çeşit / program (örn. Akbari, iç fıstık)",
     "include2": "Miktar ve zaman penceresi",
     "include3": "Varış ve etiket gereksinimleri",
     "emailCta": "İhracat masasına yazın",
-    "emailSubject": "İhracat talebi — Green Diamond Farm"
+    "emailSubject": "İhracat talebi — Green Diamond Farm",
+    "emailNote": "Numune, spesifikasyon ve teklifler için birincil kanal."
   },
   "Footer": {
     "tagline": "{legalName} · {legalNameFa} altında İran fıstığı ihracatı. Uluslararası alıcılar için güvenilir tedarik.",
     "navigate": "Gezinme",
     "contact": "İletişim",
-    "rights": "© {year} {brand}. Tüm hakları saklıdır."
+    "rights": "© {year} {brand}. Tüm hakları saklıdır.",
+    "privacy": "Gizlilik"
   },
   "products": {
     "ahmad-aghaei": {
@@ -144,5 +141,40 @@
       "name": "Tuzlu & kavrulmuş",
       "summary": "Tüketime hazır kavrulmuş fıstık — tuzlu veya sade — perakende paketler ve özel marka programları için."
     }
+  },
+  "A11y": {
+    "skipToContent": "İçeriğe atla"
+  },
+  "NotFound": {
+    "code": "404",
+    "title": "Sayfa bulunamadı",
+    "lead": "Bu bağlantı sitedeki bir sayfayla eşleşmiyor. Ana sayfaya dönün veya ihracat masasına ulaşın.",
+    "home": "Ana sayfaya dön",
+    "contact": "İhracat masası"
+  },
+  "Privacy": {
+    "metaTitle": "Gizlilik",
+    "metaDescription": "Green Diamond Farm pazarlama sitesinde iletişim bilgilerini nasıl işler — hesap yok, analitik çerez yok.",
+    "title": "Gizlilik",
+    "lead": "{brand} statik bir pazarlama sitesidir. Bu sayfa ne topladığımızı — ve toplamadığımızı — açıklar.",
+    "collectTitle": "Ne topluyoruz",
+    "collectBody": "Bu sitede hesap girişi, iletişim formu veya birinci taraf analitik yoktur. E-posta, telefon veya WhatsApp ile yazarsanız görüşme sizin uygulamalarınızda gerçekleşir — burada bir form üzerinden değil.",
+    "cookiesTitle": "Çerezler ve izleme",
+    "cookiesBody": "Pazarlama veya analitik çerezleri koymuyoruz. Barındırıcı, siteyi güvenli sunmak için yalnızca gerekli teknik çerezler kullanabilir.",
+    "contactTitle": "Sitedeki iletişim bilgileri",
+    "contactBody": "İletişim sayfasındaki e-posta, telefon ve WhatsApp bağlantıları alıcıların ihracat masasına doğrudan ulaşması içindir.",
+    "thirdTitle": "Üçüncü taraf hizmetler",
+    "thirdBody": "WhatsApp, mailto veya tel bağlantılarını açmak bu siteden çıkar ve ilgili uygulamaların gizlilik koşullarına tabidir. Bazı atmosfer fotoğrafları, şirketin kendi ürün fotoğrafları yayımlanana kadar bir stok görsel CDN’inden yüklenir.",
+    "reachTitle": "Sorular",
+    "reachBody": "Bu siteyle ilgili gizlilik soruları için ihracat masasına yazın.",
+    "contactPage": "İletişim sayfası"
+  },
+  "Error": {
+    "code": "Hata",
+    "title": "Bir şeyler ters gitti",
+    "lead": "Bu sayfa yüklenemedi. Yeniden deneyin, ana sayfaya dönün veya ihracat masasına yazın.",
+    "retry": "Yeniden dene",
+    "home": "Ana sayfaya dön",
+    "contact": "İhracat masası"
   }
 }

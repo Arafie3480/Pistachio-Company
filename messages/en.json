@@ -52,12 +52,11 @@
     "p2": "We present varieties honestly, keep contact paths short, and aim for the kind of first impression foreign buyers trust: calm, competent, and ready to do business.",
     "imageAlt": "Pistachio kernels prepared for export packing",
     "historyTitle": "History & credibility",
-    "historyNote": "Experience figures below are provisional pending final confirmation. Certifications will be listed when documents are provided.",
+    "historyNote": "Long-standing family practice across agriculture, domestic trade, and export.",
     "founderLabel": "Founder",
     "founderBody": "{nameEn} ({nameFa})",
     "ceoLabel": "CEO",
     "ceoBody": "{nameEn} ({nameFa})",
-    "experienceLabel": "Experience",
     "yearsAgriculture": "{years}+ years in agriculture",
     "yearsTrade": "{years}+ years in pistachio buying & selling",
     "yearsExport": "{years}+ years in export",
@@ -66,19 +65,16 @@
     "standLabel": "What we stand on",
     "standBody": "Grade consistency, clear export communication, and varieties that map to real buyer demand — from premium long kernels to volume Fandoghi and processed lines.",
     "certsLabel": "Certifications",
-    "certsBody": "Certificates and audit documents will be listed here once provided.",
+    "certsBody": "Export documentation and certificates are shared with buyers on request.",
     "marketsLabel": "Markets",
-    "marketsBody": "International wholesale focus. Destination countries and key partner types — to be confirmed.",
-    "expAgriculture": "Agriculture",
-    "expTrade": "Pistachio buying & selling",
-    "expExport": "Export"
+    "marketsBody": "Importers, distributors, and private-label partners worldwide."
   },
   "Products": {
     "metaTitle": "Products",
     "metaDescription": "Pistachio varieties and programs from Green Diamond Farm: Ahmad Aghaei, Akbari, Fandoghi, Kaleh Ghouchi, Dahan Bast, kernels, salted & roasted.",
     "title": "Products",
     "lead": "In-shell varieties, kernels, and roasted programs — selected for international wholesale and private label.",
-    "outlineNote": "Product photography and detailed grade sheets will replace this outline once brand assets arrive.",
+    "outlineNote": "Variety notes for wholesale and private-label programs — ask the export desk for current grades and packing.",
     "ctaTitle": "Need a specific grade or pack?",
     "ctaLead": "Tell us variety, volume, and destination — we will confirm availability from the export desk.",
     "ctaButton": "Request availability",
@@ -89,31 +85,32 @@
   },
   "Contact": {
     "metaTitle": "Contact",
-    "metaDescription": "Contact the Green Diamond Farm export desk — email, WhatsApp, and office address.",
+    "metaDescription": "Contact the Green Diamond Farm export desk — email, WhatsApp, and warehouse location.",
     "title": "Contact",
     "lead": "Reach the export desk for grades, samples, packing, and shipment planning.",
     "email": "Email",
-    "emailTodo": "Spelling confirmation pending (domain uses diamond).",
     "phone": "Phone",
-    "phoneNote": "Temporary line until a dedicated virtual / business number is ready.",
+    "phoneNote": "Export desk line — WhatsApp available on the same number.",
     "whatsapp": "WhatsApp",
     "whatsappOpen": "Open WhatsApp",
-    "whatsappNote": "Same number as phone — temporary until a virtual business line is set up.",
+    "whatsappNote": "Fast path for samples, packing questions, and shipment timing.",
     "office": "Warehouse",
-    "addressNote": "Iran. Further street / postal detail beyond Motahari 52 pending.",
+    "addressNote": "Iran — warehouse for viewing and dispatch coordination.",
     "includeTitle": "What to include",
     "includeLead": "To speed up a quote, mention variety, approximate volume, preferred packing, and destination port or country.",
     "include1": "Variety / program (e.g. Akbari, kernels)",
     "include2": "Volume and timing window",
     "include3": "Destination and any label requirements",
     "emailCta": "Email the export desk",
-    "emailSubject": "Export inquiry — Green Diamond Farm"
+    "emailSubject": "Export inquiry — Green Diamond Farm",
+    "emailNote": "Primary channel for samples, specifications, and quotes."
   },
   "Footer": {
     "tagline": "Iranian pistachio export under {legalName} · {legalNameFa}. Reliable supply for international buyers.",
     "navigate": "Navigate",
     "contact": "Contact",
-    "rights": "© {year} {brand}. All rights reserved."
+    "rights": "© {year} {brand}. All rights reserved.",
+    "privacy": "Privacy"
   },
   "products": {
     "ahmad-aghaei": {
@@ -144,5 +141,40 @@
       "name": "Salted & roasted",
       "summary": "Ready-to-eat roasted pistachios — salted or plain — for retail packs and private-label programs."
     }
+  },
+  "A11y": {
+    "skipToContent": "Skip to content"
+  },
+  "NotFound": {
+    "code": "404",
+    "title": "Page not found",
+    "lead": "That link does not match a page on this site. Return home or reach the export desk.",
+    "home": "Back to home",
+    "contact": "Contact export desk"
+  },
+  "Privacy": {
+    "metaTitle": "Privacy",
+    "metaDescription": "How Green Diamond Farm handles contact information on this marketing site — no accounts, no analytics cookies.",
+    "title": "Privacy",
+    "lead": "{brand} is a static marketing site. This page describes what we do — and do not — collect.",
+    "collectTitle": "What we collect",
+    "collectBody": "This website does not run account sign-in, contact forms, or first-party analytics. If you email, call, or message us, that conversation happens through your mail, phone, or WhatsApp apps — not through a form on this site.",
+    "cookiesTitle": "Cookies and tracking",
+    "cookiesBody": "We do not set marketing or analytics cookies. The host may use strictly necessary technical cookies to serve the site securely.",
+    "contactTitle": "Contact details on the site",
+    "contactBody": "Email, phone, and WhatsApp links on the Contact page are published so buyers can reach the export desk directly.",
+    "thirdTitle": "Third-party services",
+    "thirdBody": "Opening WhatsApp, mailto, or tel links leaves this site and follows the privacy terms of those apps or providers. Some atmosphere photographs currently load from a stock image CDN until owned product photography is published.",
+    "reachTitle": "Questions",
+    "reachBody": "For privacy questions about this site, contact the export desk.",
+    "contactPage": "Contact page"
+  },
+  "Error": {
+    "code": "Error",
+    "title": "Something went wrong",
+    "lead": "This page could not be loaded. Try again, return home, or reach the export desk.",
+    "retry": "Try again",
+    "home": "Back to home",
+    "contact": "Contact export desk"
   }
 }

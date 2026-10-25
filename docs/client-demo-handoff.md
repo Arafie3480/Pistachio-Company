@@ -11,7 +11,7 @@
 | **Home AR (RTL)** | http://127.0.0.1:4321/ar |
 | **Contact** | http://127.0.0.1:4321/en/contact |
 | پیام آماده ارسال | [demo-message-for-client.md](./demo-message-for-client.md) |
-| ریپو | https://github.com/Arafie3480/Pistachio-Company (`main` @ `353bdc6`) |
+| ریپو | https://github.com/Arafie3480/Pistachio-Company (`cursor/security-harden-handoff-91c0`) |
 | دامنه نهایی | https://greendiamondfarm.com (بعد از تأیید کارفرما + DNS) |
 
 ```powershell
@@ -20,7 +20,7 @@ npm run start
 # یا: npm run dev
 ```
 
-پورت: **4321** · tip: `353bdc6` · checkout: `Desktop\projects\Pistachio-Company` (نه radfelez)
+پورت: **4321** · branch: `cursor/security-harden-handoff-91c0` · checkout: `Desktop\projects\Pistachio-Company` (نه radfelez)
 
 ## URL عمومی پایدار
 
@@ -40,11 +40,11 @@ npm run start
 ## محتوای آماده کارفرما
 
 - برند **Green Diamond Farm** + بازرگانی **حسینی نوه** + لوگوی پیش‌فرض
-- مسیر: Home · About · Products · Contact
+- مسیر: Home · About · Products · Contact · Privacy
 - زبان‌ها: EN · AR (RTL) · TR · ZH · HI · RU
 - محصولات: احمدآقایی، اکبری، فندقی، کله‌قوچی، دهن‌بست، مغز، شور و بوداده
-- تماس: ایمیل · واتساپ/تلفن `+98 936 181 4577` · انبار مطهری ۵۲
-- SEO: sitemap · robots · OG · favicon · security headers
+- تماس: ایمیل · واتساپ/تلفن · انبار مطهری ۵۲ (ارقام در `src/lib/site.ts` → `contact`)
+- SEO / امنیت: sitemap · robots · OG · favicon · security headers · صفحه Privacy
 
 ## مسیر پایدار عمومی (بدون SMS)
 
@@ -64,5 +64,5 @@ npm run start
 ## پیام کوتاه
 
 دموی اولیهٔ سایت آماده نمایش است — چندزبانه، برند، تماس.  
-**الان (نمایش لوکال):** http://127.0.0.1:4321/en · tip `353bdc6`  
+**الان (نمایش لوکال):** http://127.0.0.1:4321/en · branch `cursor/security-harden-handoff-91c0`  
 **عمومی:** بعد از Vercel Import → `*.vercel.app`

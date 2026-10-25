@@ -1,6 +1,8 @@
-import { getTranslations } from "next-intl/server";
+import { getLocale, getTranslations } from "next-intl/server";
 import { BrandMark } from "@/components/brand-mark";
 import { Link } from "@/i18n/navigation";
+import { rtlLocales } from "@/i18n/routing";
+import { whatsappHref } from "@/lib/json-ld";
 import { brand, contact } from "@/lib/site";
 
 const navHrefs = ["/", "/about", "/products", "/contact"] as const;
@@ -10,6 +12,9 @@ export async function SiteFooter() {
   const t = await getTranslations("Footer");
   const tNav = await getTranslations("Nav");
   const tContact = await getTranslations("Contact");
+  const locale = await getLocale();
+  const waHref = whatsappHref(tContact("emailSubject"));
+  const preferFaAddress = (rtlLocales as readonly string[]).includes(locale);
 
   return (
     <footer className="mt-auto border-t border-border/80 bg-surface">
@@ -78,7 +83,7 @@ export async function SiteFooter() {
             </li>
             <li>
               <a
-                href={contact.whatsappUrl}
+                href={waHref}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="transition-colors hover:text-brand"
@@ -86,7 +91,9 @@ export async function SiteFooter() {
                 {tContact("whatsapp")}
               </a>
             </li>
-            <li>{contact.addressLine}</li>
+            <li lang={preferFaAddress ? "fa" : undefined} dir={preferFaAddress ? "rtl" : undefined}>
+              {preferFaAddress ? contact.addressLineFa : contact.addressLine}
+            </li>
             <li className="text-xs text-muted-foreground">
               {tContact("addressNote")}
             </li>
@@ -96,8 +103,19 @@ export async function SiteFooter() {
 
       <div className="border-t border-border/60">
         <div className="mx-auto flex max-w-6xl flex-col gap-2 px-5 py-5 text-xs text-muted-foreground sm:flex-row sm:items-center sm:justify-between sm:px-8">
-          <p>{t("rights", { year: 2026, brand: brand.name })}</p>
-          <p>{brand.domain}</p>
+          <p>{t("rights", { year: brand.copyrightYear, brand: brand.name })}</p>
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-1">
+            <Link
+              href="/privacy"
+              className="transition-colors hover:text-brand"
+            >
+              {t("privacy")}
+            </Link>
+            <span aria-hidden className="text-border">
+              ·
+            </span>
+            <p>{brand.domain}</p>
+          </div>
         </div>
       </div>
     </footer>

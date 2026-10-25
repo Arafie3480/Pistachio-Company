@@ -6,13 +6,22 @@ Export website for **بازرگانی حسینی نوه** (Hosseini Naveh) — p
 - **GitHub:** [Arafie3480/Pistachio-Company](https://github.com/Arafie3480/Pistachio-Company)
 - **Stack:** Next.js (App Router) · TypeScript · Tailwind CSS · next-intl · shadcn/ui
 
-## Goals
+## Delivery status
 
-- Clean, simple, chic B2B site (not flashy)
-- Locales: English (default), Arabic (RTL), Turkish, Chinese, Hindi, Russian
-- Pages: Home, About, Products, Contact
-- Contact: export email, temporary phone / WhatsApp, warehouse Motahari 52
-- SEO: per-locale meta, `hreflang` alternates, Open Graph, favicon, `sitemap.xml`, `robots.txt`
+Ready for host import and client review. The marketing site is multilingual, indexed for SEO, and build-verified by CI.
+
+| Area | Status |
+|------|--------|
+| Pages (Home, About, Products, Contact, Privacy) | Done — 6 locales (EN default + AR RTL, TR, ZH, HI, RU) |
+| Contact (email, phone, WhatsApp, warehouse) | Live from `src/lib/site.ts` |
+| SEO (canonical, hreflang, sitemap, robots, OG, Organization + catalog JSON-LD) | Done |
+| Security / privacy (headers, CI least-privilege, first-party OG, privacy page) | Done |
+| A11y (skip link, `aria-current`, reduced motion, locale + root 404/error) | Done |
+| Brand mark (suggested diamond + pistachio) | Shipped — replace when client logo arrives |
+| Contact CTAs (mailto, tel, WhatsApp with inquiry prefill) | Done |
+| CI (`npm run lint` + `npm run build`, `contents: read`) | Done |
+| Custom logo / owned photography / certificates | Client assets pending |
+| DNS cutover from WordPress | Out of scope until host + domain ready |
 
 ## Local setup
 
@@ -26,8 +35,6 @@ npm run dev
 Open [http://127.0.0.1:4321](http://127.0.0.1:4321).
 
 ## Client demo pack
-
-Verified local show path (port **4321**, tip `353bdc6` lineage):
 
 | Page | URL |
 |------|-----|
@@ -55,17 +62,17 @@ npm run build   # production build
 npm start       # serve build on :4321
 ```
 
-SEO check after build/start: `/sitemap.xml`, `/robots.txt`, `/opengraph-image`, `/icon`.
+Smoke after build/start: `/sitemap.xml`, `/robots.txt`, `/opengraph-image`, `/icon`, `/contact`, `/privacy`, `/ar`.
 
 Copy `.env.example` only if you add overrides — **no env vars are required** for this marketing site.
 
 ## Tunable company facts
 
-Edit `src/lib/site.ts`:
+Edit `src/lib/site.ts` only:
 
-- `historyYears` — provisional agriculture / trade / export years
+- `historyYears` — agriculture / trade / export years
 - `people` — founder & CEO names
-- `contact` — email, phone, WhatsApp URL, warehouse line
+- `contact` — email, phone, WhatsApp URL, warehouse line (**do not paste phone digits into README or issues**)
 - Suggested brand mark — `public/brand/mark.svg` + `src/components/brand-mark.tsx` (replace when client logo arrives)
 
 UI copy lives in `messages/*.json` (next-intl).
@@ -77,9 +84,9 @@ UI copy lives in `messages/*.json` (next-intl).
 ### Vercel (recommended)
 
 1. Open [Vercel → New Project](https://vercel.com/new).
-2. Import **`Arafie3480/Pistachio-Company`** (GitHub).
-3. Framework preset: **Next.js**. Root: repo root. **Env vars:** none.
-4. Deploy. Later pushes to `main` redeploy automatically while the project stays linked.
+2. Import **`Arafie3480/Pistachio-Company`**.
+3. Framework: **Next.js**. Root: repo root. **No env vars** required.
+4. Deploy. Later pushes to `main` redeploy when the project stays linked.
 5. Preview URL appears on the first deploy; share that until DNS cutover.
 
 ### Alternatives
@@ -87,25 +94,17 @@ UI copy lives in `messages/*.json` (next-intl).
 - **Netlify** — New site → Import from Git → same repo → Next.js runtime.
 - **Cloudflare Pages** — Connect GitHub → framework preset Next.js (or `@cloudflare/next-on-pages` if you standardize on that later).
 
-**Deploy-ready signal:** GitHub Actions [CI](.github/workflows/ci.yml) runs `npm ci` + `npm run build` on every push/PR to `main`.
-
-**Optional — Vercel CLI** (interactive login; not available in unattended agent sessions):
-
-```bash
-npx vercel login
-npx vercel          # preview
-npx vercel --prod   # production
-```
+CI (`.github/workflows/ci.yml`) runs `npm ci` + `npm run build` on push/PR to `main` with `contents: read`.
 
 ### DNS cutover (when ready — do not change client DNS yet)
 
 1. Keep current Iran WordPress host serving `greendiamondfarm.com` until the Next.js preview is signed off.
 2. In the host dashboard, add custom domain `greendiamondfarm.com` (+ `www` if used).
-3. At the DNS provider, point apex / `www` to the host’s records (Vercel typically: `A` / `CNAME` as shown in the dashboard).
-4. Wait for TLS + propagation; then verify `/`, `/ar`, `/sitemap.xml`, WhatsApp/phone CTAs.
+3. At the DNS provider, point apex / `www` to the host’s records.
+4. Wait for TLS + propagation; then verify `/`, `/ar`, `/sitemap.xml`, and contact CTAs.
 5. Only then retire or redirect the WordPress install.
 
-Prefer a **non-Iran** host so the live site can be used on LinkedIn.
+Prefer a **non-Iran** host if LinkedIn eligibility matters.
 
 ## Products
 
@@ -113,12 +112,14 @@ Prefer a **non-Iran** host so the live site can be used on LinkedIn.
 
 **Processed:** kernels · salted & roasted
 
-## Client TODOs (go-live)
+## Client follow-ups (optional polish)
 
-- Dedicated virtual / business WhatsApp line (site currently uses temporary `+989361814577`)
+These do not block deploy; they improve go-live accuracy:
+
+- Dedicated virtual / business WhatsApp line (replace provisional number in `src/lib/site.ts` → `contact`)
 - Full office address beyond Motahari 52 warehouse
 - Confirm export email spelling (`greendiamond` vs `greendimond`)
 - Official logo file (site ships a **suggested** diamond + pistachio mark for delivery)
 - Owned product / orchard photography; certificates
-- Confirm exact experience years (50 / 40 / 30 are provisional in `historyYears`)
+- Confirm exact experience years in `historyYears`
 - Import repo on Vercel (or peer) and point DNS when signed off

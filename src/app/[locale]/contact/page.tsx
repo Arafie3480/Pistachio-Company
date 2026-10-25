@@ -3,7 +3,9 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { PageHero } from "@/components/page-hero";
 import { Button } from "@/components/ui/button";
 import { contact } from "@/lib/site";
+import { whatsappHref } from "@/lib/json-ld";
 import { buildPageMetadata } from "@/lib/seo";
+import { rtlLocales } from "@/i18n/routing";
 
 export async function generateMetadata({
   params,
@@ -29,6 +31,8 @@ export default async function ContactPage({
   setRequestLocale(locale);
   const t = await getTranslations("Contact");
   const subject = encodeURIComponent(t("emailSubject"));
+  const waHref = whatsappHref(t("emailSubject"));
+  const preferFaAddress = (rtlLocales as readonly string[]).includes(locale);
 
   return (
     <>
@@ -52,7 +56,7 @@ export default async function ContactPage({
                   {contact.email}
                 </a>
                 <p className="mt-2 text-sm text-muted-foreground">
-                  {t("emailTodo")}
+                  {t("emailNote")}
                 </p>
               </div>
             </div>
@@ -90,11 +94,7 @@ export default async function ContactPage({
                   {contact.phoneDisplay}
                 </p>
                 <Button asChild variant="outline" className="mt-3 h-9">
-                  <a
-                    href={contact.whatsappUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
+                  <a href={waHref} target="_blank" rel="noopener noreferrer">
                     {t("whatsappOpen")}
                   </a>
                 </Button>
@@ -112,16 +112,33 @@ export default async function ContactPage({
                 <h2 className="font-heading text-lg font-semibold text-ink">
                   {t("office")}
                 </h2>
-                <p className="mt-1 text-base text-foreground/90">
-                  {contact.addressLine}
-                </p>
-                <p
-                  className="mt-1 text-sm text-foreground/75"
-                  lang="fa"
-                  dir="rtl"
-                >
-                  {contact.addressLineFa}
-                </p>
+                {preferFaAddress ? (
+                  <>
+                    <p
+                      className="mt-1 text-base text-foreground/90"
+                      lang="fa"
+                      dir="rtl"
+                    >
+                      {contact.addressLineFa}
+                    </p>
+                    <p className="mt-1 text-sm text-foreground/75" dir="ltr">
+                      {contact.addressLine}
+                    </p>
+                  </>
+                ) : (
+                  <>
+                    <p className="mt-1 text-base text-foreground/90">
+                      {contact.addressLine}
+                    </p>
+                    <p
+                      className="mt-1 text-sm text-foreground/75"
+                      lang="fa"
+                      dir="rtl"
+                    >
+                      {contact.addressLineFa}
+                    </p>
+                  </>
+                )}
                 <p className="mt-2 text-sm text-muted-foreground">
                   {t("addressNote")}
                 </p>
@@ -157,11 +174,7 @@ export default async function ContactPage({
                 </a>
               </Button>
               <Button asChild variant="outline" className="h-10 w-full sm:w-auto">
-                <a
-                  href={contact.whatsappUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+                <a href={waHref} target="_blank" rel="noopener noreferrer">
                   {t("whatsappOpen")}
                 </a>
               </Button>

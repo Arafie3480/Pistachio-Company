@@ -29,9 +29,18 @@ export default async function AboutPage({
   const t = await getTranslations("About");
 
   const experience = [
-    { years: historyYears.agriculture, label: t("expAgriculture") },
-    { years: historyYears.pistachioTrade, label: t("expTrade") },
-    { years: historyYears.export, label: t("expExport") },
+    {
+      key: "yearsAgriculture" as const,
+      years: historyYears.agriculture,
+    },
+    {
+      key: "yearsTrade" as const,
+      years: historyYears.pistachioTrade,
+    },
+    {
+      key: "yearsExport" as const,
+      years: historyYears.export,
+    },
   ] as const;
 
   return (
@@ -77,17 +86,16 @@ export default async function AboutPage({
             {t("historyNote")}
           </p>
 
-          {/* Quiet experience list — avoid marketing-style stat strips */}
+          {/* Quiet experience list — full locale sentences, not bare stat chips */}
           <ul className="mt-10 max-w-xl space-y-3 border-b border-border/60 pb-10">
             {experience.map((item) => (
               <li
-                key={item.label}
-                className="flex items-baseline gap-3 text-base text-foreground/90"
+                key={item.key}
+                className="text-base leading-relaxed text-foreground/90"
               >
-                <span className="font-heading text-lg font-semibold tabular-nums text-brand">
-                  {item.years}+
+                <span className="font-heading font-semibold text-brand">
+                  {t(item.key, { years: item.years })}
                 </span>
-                <span className="text-muted-foreground">{item.label}</span>
               </li>
             ))}
           </ul>

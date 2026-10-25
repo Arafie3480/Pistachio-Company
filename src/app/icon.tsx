@@ -1,4 +1,5 @@
 import { ImageResponse } from "next/og";
+import { BrandMarkOg } from "@/lib/brand-mark-og";
 
 export const size = { width: 32, height: 32 };
 export const contentType = "image/png";
@@ -17,16 +18,7 @@ export default function Icon() {
           background: "#00684C",
         }}
       >
-        <div
-          style={{
-            display: "flex",
-            width: 16,
-            height: 16,
-            background: "#F4F7F4",
-            transform: "rotate(45deg)",
-            borderRadius: 1,
-          }}
-        />
+        <BrandMarkOg size={22} diamond="#F4F7F4" cut="#00684C" cleft="#F4F7F4" />
       </div>
     ),
     { ...size },

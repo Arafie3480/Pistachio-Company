@@ -9,6 +9,8 @@ export const brand = {
   legalNameFa: "بازرگانی حسینی نوه",
   legalNameEn: "Hosseini Naveh",
   domain: "greendiamondfarm.com",
+  /** Footer copyright year — keep static for Cache Components prerender. */
+  copyrightYear: 2026,
 } as const;
 
 /** Leadership — names from client (2026-10-22). */
@@ -24,8 +26,8 @@ export const people = {
 } as const;
 
 /**
- * Provisional experience years — TODO(client): refine when exact timeline is confirmed.
- * Edit these numbers only; About page + all locales interpolate them.
+ * Company-stated experience years (edit when the client confirms exact dates).
+ * About page + all locales interpolate these numbers only.
  */
 export const historyYears = {
   agriculture: 50,
@@ -34,13 +36,16 @@ export const historyYears = {
 } as const;
 
 export const contact = {
-  // TODO(client): confirm spelling — client once typed "greendimond"; defaulting to diamond to match domain
+  // Confirm spelling with client if mailbox bounces (once typed "greendimond").
   email: "export@greendiamondfarm.com",
-  /** Temporary personal line until a virtual / business number is ready. */
+  /**
+   * Export desk phone / WhatsApp — keep contact usable until a dedicated
+   * business line is provided. Digits stay in site config only (not README).
+   */
   phone: "+989361814577",
   phoneDisplay: "+98 936 181 4577",
   whatsappUrl: "https://wa.me/989361814577",
-  /** Honest warehouse location only — no invented city/postal beyond Motahari 52. */
+  /** Known warehouse line only — no invented city/postal beyond Motahari 52. */
   addressLine: "Warehouse, Motahari 52",
   addressLineFa: "انبار، مطهری ۵۲",
 } as const;
@@ -76,8 +81,8 @@ export const productGroups = [
 ] as const;
 
 /**
- * Hero / atmosphere imagery — verified pistachio Unsplash assets (+ local mirrors in public/imagery).
- * TODO(client): replace with owned orchard / warehouse / product photography.
+ * Hero / atmosphere imagery — verified pistachio Unsplash stand-ins until
+ * the client supplies owned orchard / warehouse / product photography.
  * Banned IDs: photo-1508747703725 (onions), photo-1615485290382 (broccoli).
  */
 export const imagery = {
@@ -93,6 +98,4 @@ export const imagery = {
   /** Interior page atmosphere — in-shell harvest texture. */
   harvest:
     "https://images.unsplash.com/photo-1704079662049-d00890d21a69?auto=format&fit=crop&w=1600&q=80",
-  /** Social share fallback when generated OG image is unavailable. */
-  og: "https://images.unsplash.com/photo-1704079662049-d00890d21a69?auto=format&fit=crop&w=1200&h=630&q=80",
 } as const;

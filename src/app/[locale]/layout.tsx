@@ -1,3 +1,4 @@
+import type { Viewport } from "next";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { getMessages, getTranslations, setRequestLocale } from "next-intl/server";
 import {
@@ -12,6 +13,7 @@ import { notFound } from "next/navigation";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { rtlLocales, routing, type Locale } from "@/i18n/routing";
+import { organizationJsonLd } from "@/lib/json-ld";
 import { brand } from "@/lib/site";
 import {
   absoluteUrl,
@@ -20,6 +22,13 @@ import {
   siteUrl,
 } from "@/lib/seo";
 import "../globals.css";
+
+/** theme-color belongs on viewport (not metadata.other) per Next.js Metadata API. */
+export const viewport: Viewport = {
+  themeColor: "#1a3d2e",
+  width: "device-width",
+  initialScale: 1,
+};
 
 const dmSans = DM_Sans({
   variable: "--font-dm-sans",
@@ -115,9 +124,11 @@ export default async function LocaleLayout({
 
   setRequestLocale(locale);
   const messages = await getMessages();
+  const tA11y = await getTranslations("A11y");
   const dir = (rtlLocales as readonly string[]).includes(locale)
     ? "rtl"
     : "ltr";
+  const jsonLd = organizationJsonLd();
 
   return (
     <html
@@ -126,9 +137,21 @@ export default async function LocaleLayout({
       className={`${dmSans.variable} ${fraunces.variable} ${geistMono.variable} ${notoSans.variable} ${notoSansArabic.variable} ${notoSansSC.variable} h-full`}
     >
       <body className="site-atmosphere flex min-h-full flex-col font-sans">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <NextIntlClientProvider locale={locale as Locale} messages={messages}>
+          <a
+            href="#main-content"
+            className="sr-only focus:not-sr-only focus:absolute focus:start-4 focus:top-4 focus:z-50 focus:rounded-md focus:bg-brand focus:px-4 focus:py-2 focus:text-sm focus:text-brand-foreground focus:shadow-md"
+          >
+            {tA11y("skipToContent")}
+          </a>
           <SiteHeader />
-          <main className="flex flex-1 flex-col">{children}</main>
+          <main id="main-content" className="flex flex-1 flex-col">
+            {children}
+          </main>
           <SiteFooter />
         </NextIntlClientProvider>
       </body>
