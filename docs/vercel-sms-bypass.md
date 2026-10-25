@@ -25,9 +25,10 @@ Claim موقت (`*.tmp.now`) و فلو claim با شماره ایران **SMS ن
 ## Fallback فوری (همین الان کار می‌کند)
 
 ```powershell
-cd $env:USERPROFILE\OneDrive\Desktop\projects\Pistachio-Company
-git checkout main
-git pull origin main
+git clone https://github.com/Arafie3480/Pistachio-Company.git
+cd Pistachio-Company
+# یا در کلون موجود: git checkout main && git pull origin main
+npm install
 npm run dev
 ```
 

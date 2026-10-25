@@ -16,14 +16,17 @@
 | دامنه نهایی | https://greendiamondfarm.com (بعد از تأیید کارفرما + DNS) |
 
 ```powershell
-cd $env:USERPROFILE\OneDrive\Desktop\projects\Pistachio-Company
+git clone https://github.com/Arafie3480/Pistachio-Company.git
+cd Pistachio-Company
+# یا در کلون موجود:
 git checkout main
 git pull origin main
+npm install
 npm run start
 # یا: npm run dev
 ```
 
-پورت: **4321** · branch: `main` · clone از GitHub: `Arafie3480/Pistachio-Company`
+پورت: **4321** · branch: `main` · ریپو: `Arafie3480/Pistachio-Company`
 
 ## URL عمومی پایدار
 

@@ -95,7 +95,7 @@ UI copy lives in `messages/*.json` (next-intl).
 - **Netlify** — New site → Import from Git → same repo → Next.js runtime.
 - **Cloudflare Pages** — Connect GitHub → framework preset Next.js (or `@cloudflare/next-on-pages` if you standardize on that later).
 
-CI (`.github/workflows/ci.yml`) runs `npm ci` + `npm run build` on push/PR to `main` with `contents: read`.
+CI (`.github/workflows/ci.yml`) runs `npm ci` + `npm run lint` + `npm run build` on push/PR to `main` with `contents: read`.
 
 ### DNS cutover (when ready — do not change client DNS yet)
 

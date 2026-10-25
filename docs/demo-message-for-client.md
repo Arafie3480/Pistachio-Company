@@ -27,7 +27,7 @@
 
 ## برای خودت قبل از ارسال
 
-1. لوکال را باز کن: http://127.0.0.1:4321/en → products → /ar → contact — همه باید ۲۰۰ باشند  
+1. لوکال را باز کن: http://127.0.0.1:4321/en → products → /ar → contact → privacy — همه باید ۲۰۰ باشند  
 2. اسکرین‌شات: `media/demo-home-en.png` · `demo-products-en.png` · `demo-home-ar.png` · `demo-contact-en.png`  
 3. برای URL ماندگار: Vercel → **Continue with GitHub** → Import `Arafie3480/Pistachio-Company` — راهنما: `docs/vercel-sms-bypass.md`  
 4. **ممنوع:** Claim/SMS و لینک Workers/`tmp.now` خراب  
