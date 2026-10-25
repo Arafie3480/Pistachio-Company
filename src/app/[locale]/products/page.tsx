@@ -2,7 +2,8 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { PageHero } from "@/components/page-hero";
 import { Button } from "@/components/ui/button";
 import { Link } from "@/i18n/navigation";
-import { productGroups } from "@/lib/site";
+import { productCatalogJsonLd } from "@/lib/json-ld";
+import { productGroups, productSlugs } from "@/lib/site";
 import { buildPageMetadata } from "@/lib/seo";
 
 export async function generateMetadata({
@@ -36,8 +37,17 @@ export default async function ProductsPage({
       .map((slug, i) => [slug, i + 1])
   ) as Record<(typeof productGroups)[number]["slugs"][number], number>;
 
+  const productNames = Object.fromEntries(
+    productSlugs.map((slug) => [slug, tProducts(`${slug}.name`)]),
+  ) as Record<(typeof productSlugs)[number], string>;
+  const catalogLd = productCatalogJsonLd(productNames);
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(catalogLd) }}
+      />
       <PageHero title={t("title")} lead={t("lead")} />
 
       <section className="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-20">

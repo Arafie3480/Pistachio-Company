@@ -3,6 +3,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { PageHero } from "@/components/page-hero";
 import { Button } from "@/components/ui/button";
 import { contact } from "@/lib/site";
+import { whatsappHref } from "@/lib/json-ld";
 import { buildPageMetadata } from "@/lib/seo";
 
 export async function generateMetadata({
@@ -29,6 +30,7 @@ export default async function ContactPage({
   setRequestLocale(locale);
   const t = await getTranslations("Contact");
   const subject = encodeURIComponent(t("emailSubject"));
+  const waHref = whatsappHref(t("emailSubject"));
 
   return (
     <>
@@ -90,11 +92,7 @@ export default async function ContactPage({
                   {contact.phoneDisplay}
                 </p>
                 <Button asChild variant="outline" className="mt-3 h-9">
-                  <a
-                    href={contact.whatsappUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
+                  <a href={waHref} target="_blank" rel="noopener noreferrer">
                     {t("whatsappOpen")}
                   </a>
                 </Button>
@@ -157,11 +155,7 @@ export default async function ContactPage({
                 </a>
               </Button>
               <Button asChild variant="outline" className="h-10 w-full sm:w-auto">
-                <a
-                  href={contact.whatsappUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+                <a href={waHref} target="_blank" rel="noopener noreferrer">
                   {t("whatsappOpen")}
                 </a>
               </Button>

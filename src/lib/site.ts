@@ -9,6 +9,8 @@ export const brand = {
   legalNameFa: "بازرگانی حسینی نوه",
   legalNameEn: "Hosseini Naveh",
   domain: "greendiamondfarm.com",
+  /** Footer copyright year — keep static for Cache Components prerender. */
+  copyrightYear: 2026,
 } as const;
 
 /** Leadership — names from client (2026-10-22). */

@@ -14,9 +14,10 @@ Ready for host import and client review. The marketing site is multilingual, ind
 |------|--------|
 | Pages (Home, About, Products, Contact) | Done — 6 locales (EN default + AR RTL, TR, ZH, HI, RU) |
 | Contact (email, phone, WhatsApp, warehouse) | Live from `src/lib/site.ts` |
-| SEO (canonical, hreflang, sitemap, robots, OG, JSON-LD) | Done |
+| SEO (canonical, hreflang, sitemap, robots, OG, Organization + catalog JSON-LD) | Done |
 | Security baseline (headers, CI least-privilege, first-party OG) | Done |
-| A11y (skip link, `aria-current`, reduced motion, locale not-found) | Done |
+| A11y (skip link, `aria-current`, reduced motion, locale + root 404) | Done |
+| Contact CTAs (mailto, tel, WhatsApp with inquiry prefill) | Done |
 | Custom logo / owned photography / certificates | Client assets pending |
 | DNS cutover from WordPress | Out of scope until host + domain ready |
 
