@@ -1,7 +1,11 @@
+import path from "node:path";
 import type { NextConfig } from "next";
 import createNextIntlPlugin from "next-intl/plugin";
 
 const withNextIntl = createNextIntlPlugin("./src/i18n/request.ts");
+
+/** Keep tracing / Turbopack rooted at this app (avoids parent-folder lockfile confusion). */
+const appRoot = path.resolve(process.cwd());
 
 /** Baseline response headers for a public marketing site (no auth / cookies). */
 const securityHeaders = [
@@ -33,6 +37,7 @@ const nextConfig: NextConfig = {
   cacheComponents: true,
   partialPrefetching: true,
   poweredByHeader: false,
+  outputFileTracingRoot: appRoot,
   images: {
     remotePatterns: [
       {
@@ -51,6 +56,7 @@ const nextConfig: NextConfig = {
     ];
   },
   turbopack: {
+    root: appRoot,
     rules: {
       "*.css": {
         loaders: ["@tailwindcss/turbopack"],
