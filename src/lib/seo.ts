@@ -2,8 +2,13 @@ import type { Metadata } from "next";
 import { locales, routing, type Locale } from "@/i18n/routing";
 import { brand } from "@/lib/site";
 
-/** Canonical production origin — DNS cutover still pending. */
-export const siteUrl = `https://${brand.domain}`;
+/**
+ * Canonical origin for absolute URLs / sitemap / robots.
+ * Override with NEXT_PUBLIC_SITE_URL on preview hosts before DNS cutover.
+ */
+export const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ||
+  `https://${brand.domain}`;
 
 /**
  * First-party OG card from `src/app/opengraph-image.tsx`.
@@ -55,6 +60,7 @@ export function buildPageMetadata({
   pathname = "",
   title,
   description,
+  /** Relative path preferred — Next resolves against metadataBase. */
   imageUrl = ogImagePath,
 }: {
   locale: string;
@@ -65,7 +71,6 @@ export function buildPageMetadata({
 }): Metadata {
   const url = absoluteUrl(locale, pathname);
   const ogLocale = ogLocaleMap[locale as Locale] ?? "en_US";
-
   return {
     title,
     description,

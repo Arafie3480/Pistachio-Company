@@ -3,6 +3,7 @@
 import { useLocale, useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
+import { BrandMark } from "@/components/brand-mark";
 import { LanguageSwitcher } from "@/components/language-switcher";
 import { Button } from "@/components/ui/button";
 import { Link, usePathname } from "@/i18n/navigation";
@@ -35,6 +36,20 @@ export function SiteHeader() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  useEffect(() => {
+    if (!open) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setOpen(false);
+    };
+    const prevOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    window.addEventListener("keydown", onKey);
+    return () => {
+      document.body.style.overflow = prevOverflow;
+      window.removeEventListener("keydown", onKey);
+    };
+  }, [open]);
+
   const solid = !isHome || scrolled || open;
 
   return (
@@ -47,9 +62,17 @@ export function SiteHeader() {
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-3 px-5 sm:h-[4.25rem] sm:px-8">
         <Link
           href="/"
-          className="font-heading text-[0.95rem] font-semibold tracking-tight text-brand-foreground transition-opacity hover:opacity-90 sm:text-base"
+          className="group flex min-w-0 items-center gap-2.5 text-brand-foreground transition-opacity hover:opacity-90"
         >
-          {brand.name}
+          <BrandMark tone="onDark" className="size-8 sm:size-9" />
+          <span className="min-w-0 leading-tight">
+            <span className="block font-heading text-[0.95rem] font-semibold tracking-tight sm:text-base">
+              {brand.name}
+            </span>
+            <span className="mt-0.5 block truncate text-[0.65rem] tracking-wide text-brand-foreground/65 sm:text-[0.7rem]">
+              {brand.legalNameEn}
+            </span>
+          </span>
         </Link>
 
         <nav

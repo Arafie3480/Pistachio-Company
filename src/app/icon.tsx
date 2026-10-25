@@ -3,7 +3,7 @@ import { ImageResponse } from "next/og";
 export const size = { width: 32, height: 32 };
 export const contentType = "image/png";
 
-/** Green-diamond mark until client logo arrives. */
+/** Favicon — suggested Green Diamond mark (diamond + pistachio cue). */
 export default function Icon() {
   return new ImageResponse(
     (
@@ -14,18 +14,17 @@ export default function Icon() {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          background: "#163528",
+          background: "#00684C",
         }}
       >
         <div
           style={{
             display: "flex",
-            width: 14,
-            height: 14,
-            background: "#8bc48a",
+            width: 16,
+            height: 16,
+            background: "#F4F7F4",
             transform: "rotate(45deg)",
             borderRadius: 1,
-            boxShadow: "0 0 0 2px #163528, 0 0 0 3px #5a9a68",
           }}
         />
       </div>

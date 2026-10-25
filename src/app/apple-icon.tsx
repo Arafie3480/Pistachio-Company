@@ -3,7 +3,7 @@ import { ImageResponse } from "next/og";
 export const size = { width: 180, height: 180 };
 export const contentType = "image/png";
 
-/** Apple touch icon — green diamond placeholder until client logo. */
+/** Apple touch icon — suggested Green Diamond mark. */
 export default function AppleIcon() {
   return new ImageResponse(
     (
@@ -14,18 +14,17 @@ export default function AppleIcon() {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          background: "#163528",
+          background: "#00684C",
         }}
       >
         <div
           style={{
             display: "flex",
-            width: 72,
-            height: 72,
-            background: "#8bc48a",
+            width: 88,
+            height: 88,
+            background: "#F4F7F4",
             transform: "rotate(45deg)",
             borderRadius: 6,
-            boxShadow: "0 0 0 8px #163528, 0 0 0 12px #5a9a68",
           }}
         />
       </div>
