@@ -1,6 +1,6 @@
 # بسته دمو / تحویل کارفرما — Green Diamond Farm
 
-وضعیت: دموی لوکال تأییدشده و آماده نمایش به کارفرما. URL عمومی پایدار بعد از Import OAuth.
+وضعیت: تحویل حرفه‌ای روی `main` ادغام شده است. دموی لوکال آماده نمایش؛ URL عمومی پایدار بعد از Import OAuth.
 
 ## دمو برای نمایش همین الان (لوکال)
 
@@ -10,17 +10,20 @@
 | **Products** | http://127.0.0.1:4321/en/products |
 | **Home AR (RTL)** | http://127.0.0.1:4321/ar |
 | **Contact** | http://127.0.0.1:4321/en/contact |
+| **Privacy** | http://127.0.0.1:4321/en/privacy |
 | پیام آماده ارسال | [demo-message-for-client.md](./demo-message-for-client.md) |
-| ریپو | https://github.com/Arafie3480/Pistachio-Company (`cursor/security-harden-handoff-91c0`) |
+| ریپو | https://github.com/Arafie3480/Pistachio-Company (`main`) |
 | دامنه نهایی | https://greendiamondfarm.com (بعد از تأیید کارفرما + DNS) |
 
 ```powershell
 cd $env:USERPROFILE\OneDrive\Desktop\projects\Pistachio-Company
+git checkout main
+git pull origin main
 npm run start
 # یا: npm run dev
 ```
 
-پورت: **4321** · branch: `cursor/security-harden-handoff-91c0` · checkout: `Desktop\projects\Pistachio-Company` (نه radfelez)
+پورت: **4321** · branch: `main` · clone از GitHub: `Arafie3480/Pistachio-Company`
 
 ## URL عمومی پایدار
 
@@ -43,13 +46,13 @@ npm run start
 - مسیر: Home · About · Products · Contact · Privacy
 - زبان‌ها: EN · AR (RTL) · TR · ZH · HI · RU
 - محصولات: احمدآقایی، اکبری، فندقی، کله‌قوچی، دهن‌بست، مغز، شور و بوداده
-- تماس: ایمیل · واتساپ/تلفن · انبار مطهری ۵۲ (ارقام در `src/lib/site.ts` → `contact`)
+- تماس: ایمیل · واتساپ/تلفن · انبار مطهری ۵۲ (ارقام فقط در `src/lib/site.ts` → `contact`)
 - SEO / امنیت: sitemap · robots · OG · favicon · security headers · صفحه Privacy
 
 ## مسیر پایدار عمومی (بدون SMS)
 
 1. https://vercel.com/signup → **Continue with GitHub** (`Arafie3480`)
-2. Import **`Arafie3480/Pistachio-Company`** → Next.js → Deploy
+2. Import **`Arafie3480/Pistachio-Company`** (branch `main`) → Next.js → Deploy
 3. لینک `*.vercel.app` را در پیام کارفرما جایگزین کن
 
 جایگزین: Netlify / Cloudflare Pages با همان OAuth.
@@ -58,11 +61,11 @@ npm run start
 
 - تأیید مسیر بصری دمو
 - لوگوی نهایی · عکس محصول · گواهی‌ها
-- تأیید املای ایمیل · آدرس کامل انبار · شماره اختصاصی
+- تأیید املای ایمیل · آدرس کامل انبار · شماره اختصاصی کسب‌وکار
 - دامنه یک‌ساله Cloudflare + DNS دامنه
 
 ## پیام کوتاه
 
-دموی اولیهٔ سایت آماده نمایش است — چندزبانه، برند، تماس.  
-**الان (نمایش لوکال):** http://127.0.0.1:4321/en · branch `cursor/security-harden-handoff-91c0`  
+دموی اولیهٔ سایت آماده نمایش است — چندزبانه، برند، تماس، حریم خصوصی.  
+**الان (نمایش لوکال):** http://127.0.0.1:4321/en · branch `main`  
 **عمومی:** بعد از Vercel Import → `*.vercel.app`

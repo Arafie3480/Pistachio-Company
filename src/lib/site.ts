@@ -36,16 +36,16 @@ export const historyYears = {
 } as const;
 
 export const contact = {
-  // Confirm spelling with client if mailbox bounces (once typed "greendimond").
+  /** Confirm with client if the mailbox bounces. */
   email: "export@greendiamondfarm.com",
   /**
-   * Export desk phone / WhatsApp — keep contact usable until a dedicated
-   * business line is provided. Digits stay in site config only (not README).
+   * Export desk phone / WhatsApp. Digits stay in site config only (not README).
+   * Replace when a dedicated business line is supplied.
    */
   phone: "+989361814577",
   phoneDisplay: "+98 936 181 4577",
   whatsappUrl: "https://wa.me/989361814577",
-  /** Known warehouse line only — no invented city/postal beyond Motahari 52. */
+  /** Known warehouse line only — do not invent city/postal beyond Motahari 52. */
   addressLine: "Warehouse, Motahari 52",
   addressLineFa: "انبار، مطهری ۵۲",
 } as const;

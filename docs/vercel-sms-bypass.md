@@ -7,7 +7,7 @@ Claim موقت (`*.tmp.now`) و فلو claim با شماره ایران **SMS ن
 ### A) Vercel — Continue with GitHub
 1. با VPN (در صورت نیاز) بروید به https://vercel.com/signup  
 2. **Continue with GitHub** بزنید و اکانت `Arafie3480` را وصل کنید (بدون شماره تلفن)  
-3. **Add New Project** → Import ریپو **`Arafie3480/Pistachio-Company`**  
+3. **Add New Project** → Import ریپو **`Arafie3480/Pistachio-Company`** (branch پیش‌فرض: `main`)  
 4. Framework: Next.js → Deploy  
 5. URL پایدار: `https://<project>.vercel.app` — برای LinkedIn و کارفرما همین را بفرستید  
 
@@ -26,6 +26,8 @@ Claim موقت (`*.tmp.now`) و فلو claim با شماره ایران **SMS ن
 
 ```powershell
 cd $env:USERPROFILE\OneDrive\Desktop\projects\Pistachio-Company
+git checkout main
+git pull origin main
 npm run dev
 ```
 
@@ -35,8 +37,9 @@ npm run dev
 - Products: http://127.0.0.1:4321/en/products
 - Home AR (RTL): http://127.0.0.1:4321/ar
 - Contact: http://127.0.0.1:4321/en/contact
+- Privacy: http://127.0.0.1:4321/en/privacy
 
-Tip: `cursor/security-harden-handoff-91c0`
+Tip: clone روی branch **`main`** (تحویل ادغام‌شده).
 
 ## Clone / remote
 
@@ -44,6 +47,8 @@ Tip: `cursor/security-harden-handoff-91c0`
 git clone https://github.com/Arafie3480/Pistachio-Company.git
 # or in an existing clone:
 git remote set-url origin https://github.com/Arafie3480/Pistachio-Company.git
+git checkout main
+git pull origin main
 ```
 
 SSH: `git@github.com:Arafie3480/Pistachio-Company.git`
@@ -52,7 +57,7 @@ SSH: `git@github.com:Arafie3480/Pistachio-Company.git`
 
 | مورد | وضعیت |
 |------|--------|
-| Delivery branch | `cursor/security-harden-handoff-91c0` همگام |
+| Source of truth | `main` (PR #1 merged) |
 | دمو نمایشی | لوکال `:4321` (اسکرین‌شات‌ها در `media/demo-*.png`) |
 | Vercel CLI / Claim SMS | ایران بلاک — از Import OAuth استفاده کنید |
 | URL عمومی پایدار | بعد از Import OAuth بالا → `*.vercel.app` |

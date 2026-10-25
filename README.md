@@ -8,7 +8,7 @@ Export website for **بازرگانی حسینی نوه** (Hosseini Naveh) — p
 
 ## Delivery status
 
-Ready for host import and client review. The marketing site is multilingual, indexed for SEO, and build-verified by CI.
+Merged to **`main`** and ready for host import and client review. The marketing site is multilingual, indexed for SEO, and build-verified by CI.
 
 | Area | Status |
 |------|--------|
@@ -42,6 +42,7 @@ Open [http://127.0.0.1:4321](http://127.0.0.1:4321).
 | Products | http://127.0.0.1:4321/en/products |
 | Home AR (RTL) | http://127.0.0.1:4321/ar |
 | Contact | http://127.0.0.1:4321/en/contact |
+| Privacy | http://127.0.0.1:4321/en/privacy |
 
 - Handoff: [docs/client-demo-handoff.md](docs/client-demo-handoff.md)
 - Paste-ready client message: [docs/demo-message-for-client.md](docs/demo-message-for-client.md)
@@ -50,7 +51,7 @@ Open [http://127.0.0.1:4321](http://127.0.0.1:4321).
 
 | Locale | Path prefix |
 |--------|-------------|
-| English (default) | `/`, `/about`, `/products`, `/contact` |
+| English (default) | `/`, `/about`, `/products`, `/contact`, `/privacy` |
 | Arabic (RTL) | `/ar`, `/ar/about`, … |
 | Turkish | `/tr` … |
 | Chinese | `/zh` … |
@@ -116,7 +117,7 @@ Prefer a **non-Iran** host if LinkedIn eligibility matters.
 
 These do not block deploy; they improve go-live accuracy:
 
-- Dedicated virtual / business WhatsApp line (replace provisional number in `src/lib/site.ts` → `contact`)
+- Dedicated business WhatsApp / phone line (edit `src/lib/site.ts` → `contact` when supplied)
 - Full office address beyond Motahari 52 warehouse
 - Confirm export email spelling (`greendiamond` vs `greendimond`)
 - Official logo file (site ships a **suggested** diamond + pistachio mark for delivery)
