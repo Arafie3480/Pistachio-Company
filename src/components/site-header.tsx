@@ -48,6 +48,11 @@ export function SiteHeader() {
     const prevOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
     window.addEventListener("keydown", onKey);
+    // Move focus into the drawer for keyboard / screen-reader users.
+    const firstLink = document.querySelector<HTMLElement>(
+      "#mobile-nav a, #mobile-nav button",
+    );
+    firstLink?.focus();
     return () => {
       document.body.style.overflow = prevOverflow;
       window.removeEventListener("keydown", onKey);

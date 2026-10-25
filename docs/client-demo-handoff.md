@@ -40,11 +40,11 @@ npm run start
 ## محتوای آماده کارفرما
 
 - برند **Green Diamond Farm** + بازرگانی **حسینی نوه** + لوگوی پیش‌فرض
-- مسیر: Home · About · Products · Contact
+- مسیر: Home · About · Products · Contact · Privacy
 - زبان‌ها: EN · AR (RTL) · TR · ZH · HI · RU
 - محصولات: احمدآقایی، اکبری، فندقی، کله‌قوچی، دهن‌بست، مغز، شور و بوداده
 - تماس: ایمیل · واتساپ/تلفن · انبار مطهری ۵۲ (ارقام در `src/lib/site.ts` → `contact`)
-- SEO: sitemap · robots · OG · favicon · security headers
+- SEO / امنیت: sitemap · robots · OG · favicon · security headers · صفحه Privacy
 
 ## مسیر پایدار عمومی (بدون SMS)
 

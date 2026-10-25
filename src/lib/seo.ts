@@ -18,7 +18,13 @@ export const siteUrl =
 export const ogImagePath = "/opengraph-image" as const;
 
 /** App pathnames without locale prefix (home = ""). */
-export const sitePathnames = ["", "/about", "/products", "/contact"] as const;
+export const sitePathnames = [
+  "",
+  "/about",
+  "/products",
+  "/contact",
+  "/privacy",
+] as const;
 export type SitePathname = (typeof sitePathnames)[number];
 
 const ogLocaleMap: Record<Locale, string> = {

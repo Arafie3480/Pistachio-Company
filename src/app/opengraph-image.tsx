@@ -1,4 +1,5 @@
 import { ImageResponse } from "next/og";
+import { BrandMarkOg } from "@/lib/brand-mark-og";
 import { brand } from "@/lib/site";
 
 export const alt = "Green Diamond Farm — Iranian pistachio export";
@@ -23,27 +24,7 @@ export default function OpenGraphImage() {
         }}
       >
         <div style={{ display: "flex", alignItems: "center", gap: 22 }}>
-          <div
-            style={{
-              display: "flex",
-              width: 56,
-              height: 56,
-              alignItems: "center",
-              justifyContent: "center",
-            }}
-          >
-            <div
-              style={{
-                display: "flex",
-                width: 40,
-                height: 40,
-                background: "#F4F7F4",
-                transform: "rotate(45deg)",
-                borderRadius: 3,
-                position: "relative",
-              }}
-            />
-          </div>
+          <BrandMarkOg size={56} />
           <div
             style={{
               display: "flex",

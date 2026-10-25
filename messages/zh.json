@@ -109,7 +109,8 @@
     "tagline": "在 {legalName} · {legalNameFa} 旗下出口伊朗开心果。为国际买家提供可靠供应。",
     "navigate": "导航",
     "contact": "联系",
-    "rights": "© {year} {brand}。保留所有权利。"
+    "rights": "© {year} {brand}。保留所有权利。",
+    "privacy": "隐私"
   },
   "products": {
     "ahmad-aghaei": {
@@ -148,6 +149,31 @@
     "code": "404",
     "title": "页面未找到",
     "lead": "该链接与本站页面不匹配。请返回首页或联系出口部。",
+    "home": "返回首页",
+    "contact": "联系出口部"
+  },
+  "Privacy": {
+    "metaTitle": "隐私",
+    "metaDescription": "Green Diamond Farm 营销站如何处理联系信息 — 无账户、无分析 Cookie。",
+    "title": "隐私",
+    "lead": "{brand} 为静态营销网站。本页说明我们收集与不收集的内容。",
+    "collectTitle": "我们收集什么",
+    "collectBody": "本站无账户登录、联系表单或第一方分析。若您通过邮件、电话或 WhatsApp 联系我们，对话发生在您的应用中，而非本站表单。",
+    "cookiesTitle": "Cookie 与跟踪",
+    "cookiesBody": "我们不设置营销或分析 Cookie。托管方可能使用严格必要的技术 Cookie 以安全提供网站。",
+    "contactTitle": "站点上的联系方式",
+    "contactBody": "联系页展示的邮箱、电话与 WhatsApp 链接便于买家直接联系出口部。",
+    "thirdTitle": "第三方服务",
+    "thirdBody": "打开 WhatsApp、mailto 或 tel 将离开本站，并遵循这些应用的隐私条款。在公司自有产品摄影发布前，部分氛围图片可能来自图库 CDN。",
+    "reachTitle": "疑问",
+    "reachBody": "关于本站隐私的问题，请联系出口部。",
+    "contactPage": "联系页面"
+  },
+  "Error": {
+    "code": "错误",
+    "title": "出了点问题",
+    "lead": "无法加载此页面。请重试、返回首页，或联系出口部。",
+    "retry": "重试",
     "home": "返回首页",
     "contact": "联系出口部"
   }

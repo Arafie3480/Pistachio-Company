@@ -104,7 +104,18 @@ export async function SiteFooter() {
       <div className="border-t border-border/60">
         <div className="mx-auto flex max-w-6xl flex-col gap-2 px-5 py-5 text-xs text-muted-foreground sm:flex-row sm:items-center sm:justify-between sm:px-8">
           <p>{t("rights", { year: brand.copyrightYear, brand: brand.name })}</p>
-          <p>{brand.domain}</p>
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-1">
+            <Link
+              href="/privacy"
+              className="transition-colors hover:text-brand"
+            >
+              {t("privacy")}
+            </Link>
+            <span aria-hidden className="text-border">
+              ·
+            </span>
+            <p>{brand.domain}</p>
+          </div>
         </div>
       </div>
     </footer>

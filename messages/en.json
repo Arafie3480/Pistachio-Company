@@ -109,7 +109,8 @@
     "tagline": "Iranian pistachio export under {legalName} · {legalNameFa}. Reliable supply for international buyers.",
     "navigate": "Navigate",
     "contact": "Contact",
-    "rights": "© {year} {brand}. All rights reserved."
+    "rights": "© {year} {brand}. All rights reserved.",
+    "privacy": "Privacy"
   },
   "products": {
     "ahmad-aghaei": {
@@ -148,6 +149,31 @@
     "code": "404",
     "title": "Page not found",
     "lead": "That link does not match a page on this site. Return home or reach the export desk.",
+    "home": "Back to home",
+    "contact": "Contact export desk"
+  },
+  "Privacy": {
+    "metaTitle": "Privacy",
+    "metaDescription": "How Green Diamond Farm handles contact information on this marketing site — no accounts, no analytics cookies.",
+    "title": "Privacy",
+    "lead": "{brand} is a static marketing site. This page describes what we do — and do not — collect.",
+    "collectTitle": "What we collect",
+    "collectBody": "This website does not run account sign-in, contact forms, or first-party analytics. If you email, call, or message us, that conversation happens through your mail, phone, or WhatsApp apps — not through a form on this site.",
+    "cookiesTitle": "Cookies and tracking",
+    "cookiesBody": "We do not set marketing or analytics cookies. The host may use strictly necessary technical cookies to serve the site securely.",
+    "contactTitle": "Contact details on the site",
+    "contactBody": "Email, phone, and WhatsApp links on the Contact page are published so buyers can reach the export desk directly.",
+    "thirdTitle": "Third-party services",
+    "thirdBody": "Opening WhatsApp, mailto, or tel links leaves this site and follows the privacy terms of those apps or providers. Some atmosphere photographs currently load from a stock image CDN until owned product photography is published.",
+    "reachTitle": "Questions",
+    "reachBody": "For privacy questions about this site, contact the export desk.",
+    "contactPage": "Contact page"
+  },
+  "Error": {
+    "code": "Error",
+    "title": "Something went wrong",
+    "lead": "This page could not be loaded. Try again, return home, or reach the export desk.",
+    "retry": "Try again",
     "home": "Back to home",
     "contact": "Contact export desk"
   }

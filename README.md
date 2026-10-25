@@ -12,11 +12,11 @@ Ready for host import and client review. The marketing site is multilingual, ind
 
 | Area | Status |
 |------|--------|
-| Pages (Home, About, Products, Contact) | Done — 6 locales (EN default + AR RTL, TR, ZH, HI, RU) |
+| Pages (Home, About, Products, Contact, Privacy) | Done — 6 locales (EN default + AR RTL, TR, ZH, HI, RU) |
 | Contact (email, phone, WhatsApp, warehouse) | Live from `src/lib/site.ts` |
 | SEO (canonical, hreflang, sitemap, robots, OG, Organization + catalog JSON-LD) | Done |
-| Security baseline (headers, CI least-privilege, first-party OG) | Done |
-| A11y (skip link, `aria-current`, reduced motion, locale + root 404) | Done |
+| Security / privacy (headers, CI least-privilege, first-party OG, privacy page) | Done |
+| A11y (skip link, `aria-current`, reduced motion, locale + root 404/error) | Done |
 | Brand mark (suggested diamond + pistachio) | Shipped — replace when client logo arrives |
 | Contact CTAs (mailto, tel, WhatsApp with inquiry prefill) | Done |
 | CI (`npm run lint` + `npm run build`, `contents: read`) | Done |
@@ -62,7 +62,7 @@ npm run build   # production build
 npm start       # serve build on :4321
 ```
 
-Smoke after build/start: `/sitemap.xml`, `/robots.txt`, `/opengraph-image`, `/icon`, `/contact`, `/ar`.
+Smoke after build/start: `/sitemap.xml`, `/robots.txt`, `/opengraph-image`, `/icon`, `/contact`, `/privacy`, `/ar`.
 
 Copy `.env.example` only if you add overrides — **no env vars are required** for this marketing site.
 
