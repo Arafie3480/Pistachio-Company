@@ -52,12 +52,11 @@
     "p2": "Çeşitleri dürüstçe sunar, iletişim yollarını kısa tutar ve yabancı alıcıların güvendiği ilk izlenimi hedefleriz: sakin, yetkin ve iş yapmaya hazır.",
     "imageAlt": "İhracat paketlemesi için hazırlanmış fıstık içleri",
     "historyTitle": "Tarihçe ve güvenilirlik",
-    "historyNote": "Tarım, yurt içi ticaret ve ihracatta aile deneyimi.",
+    "historyNote": "Tarım, iç ticaret ve ihracatta uzun soluklu aile pratiği.",
     "founderLabel": "Kurucu",
     "founderBody": "{nameEn} ({nameFa})",
     "ceoLabel": "CEO",
     "ceoBody": "{nameEn} ({nameFa})",
-    "experienceLabel": "Deneyim",
     "yearsAgriculture": "{years}+ yıl tarım",
     "yearsTrade": "{years}+ yıl fıstık alım-satımı",
     "yearsExport": "{years}+ yıl ihracat",
@@ -68,10 +67,7 @@
     "certsLabel": "Sertifikalar",
     "certsBody": "İhracat belgeleri ve sertifikalar talep üzerine alıcılarla paylaşılır.",
     "marketsLabel": "Pazarlar",
-    "marketsBody": "Dünya çapında ithalatçılar, distribütörler ve private-label ortakları.",
-    "expAgriculture": "Tarım",
-    "expTrade": "Fıstık alım-satımı",
-    "expExport": "İhracat"
+    "marketsBody": "Dünya çapında ithalatçılar, distribütörler ve private-label ortakları."
   },
   "Products": {
     "metaTitle": "Ürünler",

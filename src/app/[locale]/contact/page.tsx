@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { contact } from "@/lib/site";
 import { whatsappHref } from "@/lib/json-ld";
 import { buildPageMetadata } from "@/lib/seo";
+import { rtlLocales } from "@/i18n/routing";
 
 export async function generateMetadata({
   params,
@@ -31,6 +32,7 @@ export default async function ContactPage({
   const t = await getTranslations("Contact");
   const subject = encodeURIComponent(t("emailSubject"));
   const waHref = whatsappHref(t("emailSubject"));
+  const preferFaAddress = (rtlLocales as readonly string[]).includes(locale);
 
   return (
     <>
@@ -110,16 +112,33 @@ export default async function ContactPage({
                 <h2 className="font-heading text-lg font-semibold text-ink">
                   {t("office")}
                 </h2>
-                <p className="mt-1 text-base text-foreground/90">
-                  {contact.addressLine}
-                </p>
-                <p
-                  className="mt-1 text-sm text-foreground/75"
-                  lang="fa"
-                  dir="rtl"
-                >
-                  {contact.addressLineFa}
-                </p>
+                {preferFaAddress ? (
+                  <>
+                    <p
+                      className="mt-1 text-base text-foreground/90"
+                      lang="fa"
+                      dir="rtl"
+                    >
+                      {contact.addressLineFa}
+                    </p>
+                    <p className="mt-1 text-sm text-foreground/75" dir="ltr">
+                      {contact.addressLine}
+                    </p>
+                  </>
+                ) : (
+                  <>
+                    <p className="mt-1 text-base text-foreground/90">
+                      {contact.addressLine}
+                    </p>
+                    <p
+                      className="mt-1 text-sm text-foreground/75"
+                      lang="fa"
+                      dir="rtl"
+                    >
+                      {contact.addressLineFa}
+                    </p>
+                  </>
+                )}
                 <p className="mt-2 text-sm text-muted-foreground">
                   {t("addressNote")}
                 </p>

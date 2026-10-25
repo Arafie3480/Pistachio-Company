@@ -19,6 +19,7 @@ Ready for host import and client review. The marketing site is multilingual, ind
 | A11y (skip link, `aria-current`, reduced motion, locale + root 404) | Done |
 | Brand mark (suggested diamond + pistachio) | Shipped — replace when client logo arrives |
 | Contact CTAs (mailto, tel, WhatsApp with inquiry prefill) | Done |
+| CI (`npm run lint` + `npm run build`, `contents: read`) | Done |
 | Custom logo / owned photography / certificates | Client assets pending |
 | DNS cutover from WordPress | Out of scope until host + domain ready |
 

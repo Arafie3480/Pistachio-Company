@@ -1,7 +1,7 @@
 "use client";
 
 import { useLocale, useTranslations } from "next-intl";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { BrandMark } from "@/components/brand-mark";
 import { LanguageSwitcher } from "@/components/language-switcher";
@@ -20,6 +20,7 @@ export function SiteHeader() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [routeKey, setRouteKey] = useState(`${locale}:${pathname}`);
+  const menuButtonRef = useRef<HTMLButtonElement>(null);
   const isHome = pathname === "/";
 
   // Close the mobile drawer when the route or locale changes (render-time adjust).
@@ -39,7 +40,10 @@ export function SiteHeader() {
   useEffect(() => {
     if (!open) return;
     const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") setOpen(false);
+      if (e.key === "Escape") {
+        setOpen(false);
+        menuButtonRef.current?.focus();
+      }
     };
     const prevOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
@@ -111,10 +115,12 @@ export function SiteHeader() {
         <div className="flex items-center gap-1 md:hidden">
           <LanguageSwitcher onDark />
           <button
+            ref={menuButtonRef}
             type="button"
             className="inline-flex size-10 items-center justify-center rounded-md text-brand-foreground outline-none transition-colors hover:bg-brand-foreground/10 focus-visible:ring-2 focus-visible:ring-brand-foreground/40"
             aria-expanded={open}
             aria-controls="mobile-nav"
+            aria-haspopup="true"
             aria-label={open ? t("closeMenu") : t("openMenu")}
             onClick={() => setOpen((v) => !v)}
           >

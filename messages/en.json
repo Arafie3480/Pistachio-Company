@@ -52,12 +52,11 @@
     "p2": "We present varieties honestly, keep contact paths short, and aim for the kind of first impression foreign buyers trust: calm, competent, and ready to do business.",
     "imageAlt": "Pistachio kernels prepared for export packing",
     "historyTitle": "History & credibility",
-    "historyNote": "Family experience across agriculture, domestic trade, and export.",
+    "historyNote": "Long-standing family practice across agriculture, domestic trade, and export.",
     "founderLabel": "Founder",
     "founderBody": "{nameEn} ({nameFa})",
     "ceoLabel": "CEO",
     "ceoBody": "{nameEn} ({nameFa})",
-    "experienceLabel": "Experience",
     "yearsAgriculture": "{years}+ years in agriculture",
     "yearsTrade": "{years}+ years in pistachio buying & selling",
     "yearsExport": "{years}+ years in export",
@@ -68,10 +67,7 @@
     "certsLabel": "Certifications",
     "certsBody": "Export documentation and certificates are shared with buyers on request.",
     "marketsLabel": "Markets",
-    "marketsBody": "Importers, distributors, and private-label partners worldwide.",
-    "expAgriculture": "Agriculture",
-    "expTrade": "Pistachio buying & selling",
-    "expExport": "Export"
+    "marketsBody": "Importers, distributors, and private-label partners worldwide."
   },
   "Products": {
     "metaTitle": "Products",

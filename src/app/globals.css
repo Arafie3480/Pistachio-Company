@@ -203,7 +203,8 @@
 
 :lang(ar) .section-label,
 :lang(zh) .section-label,
-:lang(hi) .section-label {
+:lang(hi) .section-label,
+:lang(ru) .section-label {
   letter-spacing: normal;
   text-transform: none;
 }

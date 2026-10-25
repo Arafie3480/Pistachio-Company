@@ -52,12 +52,11 @@
     "p2": "我们如实呈现品种、缩短沟通路径，并追求海外买家信赖的第一印象：沉稳、专业、随时可谈业务。",
     "imageAlt": "准备出口包装的开心果仁",
     "historyTitle": "历史与信誉",
-    "historyNote": "家族经验覆盖农业、国内贸易与出口。",
+    "historyNote": "家族长期从事农业、国内贸易与出口。",
     "founderLabel": "创始人",
     "founderBody": "{nameEn}（{nameFa}）",
     "ceoLabel": "首席执行官",
     "ceoBody": "{nameEn}（{nameFa}）",
-    "experienceLabel": "经验",
     "yearsAgriculture": "{years}+ 年农业经验",
     "yearsTrade": "{years}+ 年开心果购销经验",
     "yearsExport": "{years}+ 年出口经验",
@@ -68,10 +67,7 @@
     "certsLabel": "认证",
     "certsBody": "出口文件与证书可应买家要求提供。",
     "marketsLabel": "市场",
-    "marketsBody": "服务全球进口商、经销商与贴牌合作伙伴。",
-    "expAgriculture": "农业",
-    "expTrade": "开心果购销",
-    "expExport": "出口"
+    "marketsBody": "服务全球进口商、经销商与贴牌合作伙伴。"
   },
   "Products": {
     "metaTitle": "产品",

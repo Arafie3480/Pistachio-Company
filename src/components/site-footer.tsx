@@ -1,6 +1,7 @@
-import { getTranslations } from "next-intl/server";
+import { getLocale, getTranslations } from "next-intl/server";
 import { BrandMark } from "@/components/brand-mark";
 import { Link } from "@/i18n/navigation";
+import { rtlLocales } from "@/i18n/routing";
 import { whatsappHref } from "@/lib/json-ld";
 import { brand, contact } from "@/lib/site";
 
@@ -11,7 +12,9 @@ export async function SiteFooter() {
   const t = await getTranslations("Footer");
   const tNav = await getTranslations("Nav");
   const tContact = await getTranslations("Contact");
+  const locale = await getLocale();
   const waHref = whatsappHref(tContact("emailSubject"));
+  const preferFaAddress = (rtlLocales as readonly string[]).includes(locale);
 
   return (
     <footer className="mt-auto border-t border-border/80 bg-surface">
@@ -88,7 +91,9 @@ export async function SiteFooter() {
                 {tContact("whatsapp")}
               </a>
             </li>
-            <li>{contact.addressLine}</li>
+            <li lang={preferFaAddress ? "fa" : undefined} dir={preferFaAddress ? "rtl" : undefined}>
+              {preferFaAddress ? contact.addressLineFa : contact.addressLine}
+            </li>
             <li className="text-xs text-muted-foreground">
               {tContact("addressNote")}
             </li>

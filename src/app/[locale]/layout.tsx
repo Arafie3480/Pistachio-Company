@@ -1,3 +1,4 @@
+import type { Viewport } from "next";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { getMessages, getTranslations, setRequestLocale } from "next-intl/server";
 import {
@@ -21,6 +22,13 @@ import {
   siteUrl,
 } from "@/lib/seo";
 import "../globals.css";
+
+/** theme-color belongs on viewport (not metadata.other) per Next.js Metadata API. */
+export const viewport: Viewport = {
+  themeColor: "#1a3d2e",
+  width: "device-width",
+  initialScale: 1,
+};
 
 const dmSans = DM_Sans({
   variable: "--font-dm-sans",
@@ -98,9 +106,6 @@ export async function generateMetadata({
     robots: {
       index: true,
       follow: true,
-    },
-    other: {
-      "theme-color": "#1a3d2e",
     },
   };
 }
