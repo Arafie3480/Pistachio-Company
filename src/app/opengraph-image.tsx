@@ -1,13 +1,17 @@
+import { readFile } from "node:fs/promises";
+import { join } from "node:path";
 import { ImageResponse } from "next/og";
-import { BrandMarkOg } from "@/lib/brand-mark-og";
 import { brand } from "@/lib/site";
 
 export const alt = "Green Diamond Farm — Iranian pistachio export";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
-/** Default OG card with suggested diamond + pistachio mark. */
-export default function OpenGraphImage() {
+/** Default OG card with the official client logo. */
+export default async function OpenGraphImage() {
+  const markBuf = await readFile(join(process.cwd(), "public/brand/mark.png"));
+  const markSrc = `data:image/png;base64,${markBuf.toString("base64")}`;
+
   return new ImageResponse(
     (
       <div
@@ -24,7 +28,14 @@ export default function OpenGraphImage() {
         }}
       >
         <div style={{ display: "flex", alignItems: "center", gap: 22 }}>
-          <BrandMarkOg size={56} />
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={markSrc}
+            width={72}
+            height={72}
+            alt=""
+            style={{ objectFit: "contain" }}
+          />
           <div
             style={{
               display: "flex",

@@ -75,7 +75,7 @@ Edit `src/lib/site.ts` only:
 - `historyYears` — agriculture / trade / export years
 - `people` — founder & CEO names
 - `contact` — email, phone, WhatsApp URL, warehouse line (**do not paste phone digits into README or issues**)
-- Suggested brand mark — `public/brand/mark.svg` + `src/components/brand-mark.tsx` (replace when client logo arrives)
+- Official logo — `public/brand/logo.png` (lockup) + `public/brand/mark.png` (emblem); wired via `src/components/brand-mark.tsx`
 
 UI copy lives in `messages/*.json` (next-intl).
 

@@ -62,16 +62,16 @@ export default async function HomePage({
         />
 
         <div className="relative mx-auto flex min-h-[100svh] max-w-6xl flex-col justify-end px-5 pt-28 pb-16 sm:justify-center sm:px-8 sm:pb-24">
-          <div className="animate-gd-fade-up flex items-center gap-3 sm:gap-4">
-            <BrandMark tone="onDark" className="size-11 sm:size-14" />
-            <div>
-              <p className="font-heading text-3xl font-semibold tracking-tight text-balance sm:text-5xl md:text-6xl md:leading-[1.05]">
-                {brand.name}
-              </p>
-              <p className="mt-1 text-xs tracking-[0.12em] text-brand-foreground/60 uppercase sm:text-sm sm:tracking-[0.16em]">
-                {brand.legalNameEn}
-              </p>
-            </div>
+          <div className="animate-gd-fade-up">
+            <BrandMark
+              tone="onDark"
+              variant="lockup"
+              priority
+              className="h-28 w-auto max-w-[min(100%,16rem)] drop-shadow-md sm:h-36 sm:max-w-[20rem] md:h-40 md:max-w-[22rem]"
+            />
+            <p className="mt-3 text-xs tracking-[0.12em] text-brand-foreground/60 uppercase sm:text-sm sm:tracking-[0.16em]">
+              {brand.legalNameEn}
+            </p>
           </div>
           <h1 className="animate-gd-fade-up animate-gd-delay-1 mt-6 max-w-xl font-heading text-2xl font-medium tracking-tight text-balance text-brand-foreground/95 sm:mt-8 sm:text-3xl md:text-[2.15rem] md:leading-snug">
             {t("headline")}

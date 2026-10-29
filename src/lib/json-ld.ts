@@ -9,7 +9,7 @@ export function organizationJsonLd() {
     name: brand.name,
     alternateName: [brand.legalNameEn, brand.legalNameFa],
     url: siteUrl,
-    logo: `${siteUrl}/brand/mark.svg`,
+    logo: `${siteUrl}/brand/logo.png`,
     image: `${siteUrl}/opengraph-image`,
     email: contact.email,
     telephone: contact.phone,

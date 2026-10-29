@@ -21,7 +21,11 @@ export async function SiteFooter() {
       <div className="mx-auto grid max-w-6xl gap-10 px-5 py-14 sm:px-8 md:grid-cols-[1.4fr_1fr_1fr]">
         <div>
           <div className="flex items-start gap-3">
-            <BrandMark tone="onLight" className="mt-0.5 size-9 text-brand" />
+            <BrandMark
+              tone="onLight"
+              variant="mark"
+              className="mt-0.5 size-11"
+            />
             <div>
               <p className="font-heading text-xl font-semibold tracking-tight text-ink">
                 {brand.name}

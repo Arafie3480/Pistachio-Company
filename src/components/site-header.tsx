@@ -73,7 +73,12 @@ export function SiteHeader() {
           href="/"
           className="group flex min-w-0 items-center gap-2.5 text-brand-foreground transition-opacity hover:opacity-90"
         >
-          <BrandMark tone="onDark" className="size-8 sm:size-9" />
+          <BrandMark
+            tone="onDark"
+            variant="mark"
+            className="size-9 sm:size-10 drop-shadow-sm"
+            priority
+          />
           <span className="min-w-0 leading-tight">
             <span className="block font-heading text-[0.95rem] font-semibold tracking-tight sm:text-base">
               {brand.name}
