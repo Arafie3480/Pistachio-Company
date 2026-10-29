@@ -36,3 +36,6 @@ jobs:
 
       - name: Production build
         run: npm run build
+
+      - name: Smoke (start + HTTP acceptance)
+        run: npm run smoke:ci

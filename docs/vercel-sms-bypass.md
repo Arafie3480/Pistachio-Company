@@ -36,7 +36,7 @@ npm run dev
 - Home AR (RTL): http://127.0.0.1:4321/ar
 - Contact: http://127.0.0.1:4321/en/contact
 
-Tip: `cursor/security-harden-handoff-91c0`
+Tip: use branch `main`
 
 ## Clone / remote
 
@@ -52,10 +52,11 @@ SSH: `git@github.com:Arafie3480/Pistachio-Company.git`
 
 | مورد | وضعیت |
 |------|--------|
-| Delivery branch | `cursor/security-harden-handoff-91c0` همگام |
+| Delivery branch | `main` (merged handoff) + PR closeout برای smoke CI |
 | دمو نمایشی | لوکال `:4321` (اسکرین‌شات‌ها در `media/demo-*.png`) |
 | Vercel CLI / Claim SMS | ایران بلاک — از Import OAuth استفاده کنید |
-| URL عمومی پایدار | بعد از Import OAuth بالا → `*.vercel.app` |
+| Netlify deploy preview | ساخته می‌شود ولی **Access control / 401** دارد — برای کارفرما نفرستید |
+| URL عمومی پایدار | بعد از Import OAuth (Vercel/Netlify بدون password) → `*.vercel.app` / `*.netlify.app` |
 
 ## ممنوع
 - Claim لینک موقت + SMS ایران  

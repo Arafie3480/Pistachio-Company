@@ -19,7 +19,7 @@ Ready for host import and client review. The marketing site is multilingual, ind
 | A11y (skip link, `aria-current`, reduced motion, locale + root 404/error) | Done |
 | Brand mark (suggested diamond + pistachio) | Shipped — replace when client logo arrives |
 | Contact CTAs (mailto, tel, WhatsApp with inquiry prefill) | Done |
-| CI (`npm run lint` + `npm run build`, `contents: read`) | Done |
+| CI (`npm run lint` + `npm run build` + `npm run smoke:ci`, `contents: read`) | Done |
 | Custom logo / owned photography / certificates | Client assets pending |
 | DNS cutover from WordPress | Out of scope until host + domain ready |
 
@@ -58,11 +58,13 @@ Open [http://127.0.0.1:4321](http://127.0.0.1:4321).
 | Russian | `/ru` … |
 
 ```bash
-npm run build   # production build
-npm start       # serve build on :4321
+npm run build    # production build
+npm start        # serve build on :4321
+npm run smoke    # HTTP acceptance checks against :4321 (start must be running)
+npm run smoke:ci # start server, smoke, tear down (used by CI)
 ```
 
-Smoke after build/start: `/sitemap.xml`, `/robots.txt`, `/opengraph-image`, `/icon`, `/contact`, `/privacy`, `/ar`.
+Smoke after build/start: locales, contact CTAs (`mailto` / `tel` / WhatsApp), SEO routes, security headers, 404 — or run `npm run smoke` / `npm run smoke:ci`.
 
 Copy `.env.example` only if you add overrides — **no env vars are required** for this marketing site.
 
@@ -94,7 +96,7 @@ UI copy lives in `messages/*.json` (next-intl).
 - **Netlify** — New site → Import from Git → same repo → Next.js runtime.
 - **Cloudflare Pages** — Connect GitHub → framework preset Next.js (or `@cloudflare/next-on-pages` if you standardize on that later).
 
-CI (`.github/workflows/ci.yml`) runs `npm ci` + `npm run build` on push/PR to `main` with `contents: read`.
+CI (`.github/workflows/ci.yml`) runs `npm ci` + `npm run lint` + `npm run build` + `npm run smoke:ci` on push/PR to `main` with `contents: read`.
 
 ### DNS cutover (when ready — do not change client DNS yet)
 
