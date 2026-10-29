@@ -44,6 +44,7 @@ Open [http://127.0.0.1:4321](http://127.0.0.1:4321).
 | Contact | http://127.0.0.1:4321/en/contact |
 
 - Client status (so far): [docs/client-project-status.md](docs/client-project-status.md)
+- Proforma (۱۰M تومان · ۵۰٪ پس از تأیید دمو): [docs/invoice-demo-approval.md](docs/invoice-demo-approval.md)
 - Handoff: [docs/client-demo-handoff.md](docs/client-demo-handoff.md)
 - Paste-ready client message: [docs/demo-message-for-client.md](docs/demo-message-for-client.md)
 - Public URL (preferred): [docs/netlify-public-demo.md](docs/netlify-public-demo.md) — disable Netlify password, share `*.netlify.app`
