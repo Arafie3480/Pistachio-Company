@@ -2,6 +2,8 @@
 
 وضعیت: دمو روی `main` تأییدشده (lint + build + smoke CI). مسیر عمومی پایدار: **Netlify بدون password** (Vercel فعلاً استفاده نمی‌شود).
 
+**وضعیت‌نامه برای کارفرما:** [client-project-status.md](./client-project-status.md)
+
 ## دمو برای نمایش همین الان (لوکال)
 
 | مورد | لینک |

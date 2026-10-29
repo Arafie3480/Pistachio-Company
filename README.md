@@ -8,7 +8,7 @@ Export website for **بازرگانی حسینی نوه** (Hosseini Naveh) — p
 
 ## Delivery status
 
-Ready for host import and client review. The marketing site is multilingual, indexed for SEO, and build-verified by CI.
+Ready for client review. Marketing site is multilingual, SEO-ready, and CI-verified (`lint` + `build` + `smoke:ci`). Share [docs/client-project-status.md](docs/client-project-status.md) for the status snapshot; make Netlify public for a durable demo URL.
 
 | Area | Status |
 |------|--------|
@@ -43,6 +43,7 @@ Open [http://127.0.0.1:4321](http://127.0.0.1:4321).
 | Home AR (RTL) | http://127.0.0.1:4321/ar |
 | Contact | http://127.0.0.1:4321/en/contact |
 
+- Client status (so far): [docs/client-project-status.md](docs/client-project-status.md)
 - Handoff: [docs/client-demo-handoff.md](docs/client-demo-handoff.md)
 - Paste-ready client message: [docs/demo-message-for-client.md](docs/demo-message-for-client.md)
 - Public URL (preferred): [docs/netlify-public-demo.md](docs/netlify-public-demo.md) — disable Netlify password, share `*.netlify.app`
