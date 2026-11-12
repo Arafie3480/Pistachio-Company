@@ -25,7 +25,8 @@ import "../globals.css";
 
 /** theme-color belongs on viewport (not metadata.other) per Next.js Metadata API. */
 export const viewport: Viewport = {
-  themeColor: "#1f4a38",
+  /** Matches richer forest brand from official lockup palette. */
+  themeColor: "#074328",
   width: "device-width",
   initialScale: 1,
 };

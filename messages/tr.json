@@ -12,8 +12,8 @@
     "inquire": "Talep",
     "openMenu": "Menüyü aç",
     "closeMenu": "Menüyü kapat",
-    "primary": "Ana",
-    "mobile": "Mobil"
+    "primary": "Ana gezinme",
+    "mobile": "Mobil gezinme"
   },
   "Language": {
     "label": "Dil",

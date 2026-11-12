@@ -9,6 +9,7 @@
 | مورد | لینک |
 |------|------|
 | **Home EN** | http://127.0.0.1:4321/en |
+| **Home FA (RTL)** | http://127.0.0.1:4321/fa |
 | **Products** | http://127.0.0.1:4321/en/products |
 | **Home AR (RTL)** | http://127.0.0.1:4321/ar |
 | **Contact** | http://127.0.0.1:4321/en/contact |
@@ -46,25 +47,28 @@ Netlify از قبل به ریپو وصل است، ولی **Access / password →
 ## اسکرین‌شات‌های تازه دمو
 
 - `media/demo-home-en.png`
+- `media/demo-home-fa.png`
 - `media/demo-products-en.png`
 - `media/demo-home-ar.png`
 - `media/demo-contact-en.png`
 
 ## محتوای آماده کارفرما
 
-- برند **Green Diamond Farm** + بازرگانی **حسینی نوه** + لوگوی پیش‌فرض
+- برند **Green Diamond Farm** + بازرگانی **حسینی نوه** + **لوگوی رسمی**
 - مسیر: Home · About · Products · Contact · Privacy
-- زبان‌ها: EN · AR (RTL) · TR · ZH · HI · RU
+- زبان‌ها: EN · **FA (RTL)** · AR (RTL) · TR · ZH · HI · RU
 - محصولات: احمدآقایی، اکبری، فندقی، کله‌قوچی، دهن‌بست، مغز، شور و بوداده
 - تماس: ایمیل · واتساپ/تلفن · انبار مطهری ۵۲ (ارقام در `src/lib/site.ts` → `contact`)
 - SEO / امنیت: sitemap · robots · OG · favicon · security headers · صفحه Privacy
+- پیش‌پرداخت ۵۰٪ دریافت شد — ادامه کار فعال
 
-## هنوز از کارفرما (بعد از تأیید دمو)
+## هنوز از کارفرما
 
-- تأیید مسیر بصری دمو
-- لوگوی نهایی · عکس محصول · گواهی‌ها
+- تأیید مسیر بصری دمو (با لوگو و FA)
+- عکس محصول / باغ / انبار · گواهی‌ها
 - تأیید املای ایمیل · آدرس کامل انبار · شماره اختصاصی
-- دامنه یک‌ساله Cloudflare + DNS دامنه
+- باز کردن Netlify بدون password
+- دامنه یک‌ساله Cloudflare + DNS دامنه (پس از مرحله ۲)
 
 ## پیام کوتاه
 

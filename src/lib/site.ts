@@ -10,6 +10,7 @@ export const brand = {
   legalNameEn: "Hosseini Naveh",
   /** Origin city shown on official lockup */
   region: "Rafsanjan",
+  regionFa: "رفسنجان",
   domain: "greendiamondfarm.com",
   /** Footer copyright year — keep static for Cache Components prerender. */
   copyrightYear: 2026,
@@ -17,6 +18,18 @@ export const brand = {
   logoPath: "/brand/logo-official-web.jpg",
   logoNavPath: "/brand/logo-nav.png",
 } as const;
+
+/** Prefer Persian legal name + region on RTL locales (FA/AR buyer review). */
+export function brandLegalForLocale(locale: string) {
+  const preferFa = locale === "fa" || locale === "ar";
+  return {
+    preferFa,
+    legalName: preferFa ? brand.legalNameFa : brand.legalNameEn,
+    legalNameEn: brand.legalNameEn,
+    legalNameFa: brand.legalNameFa,
+    region: preferFa ? brand.regionFa : brand.region,
+  } as const;
+}
 
 /** Leadership — names from client (2026-10-22). */
 export const people = {

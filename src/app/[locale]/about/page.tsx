@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { PageHero } from "@/components/page-hero";
-import { brand, historyYears, imagery, people } from "@/lib/site";
+import { brand, brandLegalForLocale, historyYears, imagery, people } from "@/lib/site";
 import { buildPageMetadata } from "@/lib/seo";
 
 export async function generateMetadata({
@@ -27,6 +27,7 @@ export default async function AboutPage({
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations("About");
+  const legal = brandLegalForLocale(locale);
 
   const experience = [
     {
@@ -122,7 +123,7 @@ export default async function AboutPage({
             <div>
               <dt className="section-label">{t("originLabel")}</dt>
               <dd className="mt-2 text-base leading-relaxed text-foreground/90">
-                {t("originBody", { legalName: brand.legalNameEn })}
+                {t("originBody", { legalName: legal.legalName })}
               </dd>
             </div>
             <div>

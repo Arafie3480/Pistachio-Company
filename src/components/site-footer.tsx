@@ -3,7 +3,7 @@ import { BrandLogo } from "@/components/brand-logo";
 import { Link } from "@/i18n/navigation";
 import { rtlLocales } from "@/i18n/routing";
 import { whatsappHref } from "@/lib/json-ld";
-import { brand, contact } from "@/lib/site";
+import { brand, brandLegalForLocale, contact } from "@/lib/site";
 
 const navHrefs = ["/", "/about", "/products", "/contact"] as const;
 const navKeys = ["home", "about", "products", "contact"] as const;
@@ -15,6 +15,7 @@ export async function SiteFooter() {
   const locale = await getLocale();
   const waHref = whatsappHref(tContact("emailSubject"));
   const preferFaAddress = (rtlLocales as readonly string[]).includes(locale);
+  const legal = brandLegalForLocale(locale);
 
   return (
     <footer className="mt-auto border-t border-border/80 bg-surface">
@@ -27,17 +28,35 @@ export async function SiteFooter() {
                 {brand.name}
               </p>
               <p className="mt-1 text-sm text-foreground/80">
-                {brand.legalNameEn}
-                <span className="mx-1.5 text-border" aria-hidden>
-                  ·
-                </span>
-                <span lang="fa" dir="rtl">
-                  {brand.legalNameFa}
-                </span>
+                {legal.preferFa ? (
+                  <>
+                    <span lang="fa" dir="rtl">
+                      {brand.legalNameFa}
+                    </span>
+                    <span className="mx-1.5 text-border" aria-hidden>
+                      ·
+                    </span>
+                    <span dir="ltr">{brand.legalNameEn}</span>
+                  </>
+                ) : (
+                  <>
+                    {brand.legalNameEn}
+                    <span className="mx-1.5 text-border" aria-hidden>
+                      ·
+                    </span>
+                    <span lang="fa" dir="rtl">
+                      {brand.legalNameFa}
+                    </span>
+                  </>
+                )}
               </p>
-              {brand.region ? (
-                <p className="mt-1 text-xs tracking-[0.12em] text-gold-foreground/80 uppercase">
-                  {brand.region}
+              {legal.region ? (
+                <p
+                  className="brand-eyebrow mt-1 text-xs text-gold-foreground/80"
+                  lang={legal.preferFa ? "fa" : undefined}
+                  dir={legal.preferFa ? "rtl" : undefined}
+                >
+                  {legal.region}
                 </p>
               ) : null}
             </div>

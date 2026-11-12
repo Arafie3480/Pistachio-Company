@@ -12,8 +12,8 @@
     "inquire": "Inquire",
     "openMenu": "Open menu",
     "closeMenu": "Close menu",
-    "primary": "Primary",
-    "mobile": "Mobile"
+    "primary": "Primary navigation",
+    "mobile": "Mobile navigation"
   },
   "Language": {
     "label": "Language",

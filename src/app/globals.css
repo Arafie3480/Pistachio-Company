@@ -208,11 +208,24 @@
   color: var(--muted-foreground);
 }
 
+/* Hero / footer brand eyebrow — same Latin vs non-Latin rule */
+.brand-eyebrow {
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
 :lang(fa) .section-label,
 :lang(ar) .section-label,
 :lang(zh) .section-label,
 :lang(hi) .section-label,
-:lang(ru) .section-label {
+:lang(ru) .section-label,
+:lang(fa) .brand-eyebrow,
+:lang(ar) .brand-eyebrow,
+:lang(zh) .brand-eyebrow,
+:lang(hi) .brand-eyebrow,
+:lang(ru) .brand-eyebrow,
+.brand-eyebrow[lang="fa"],
+.brand-eyebrow[lang="ar"] {
   letter-spacing: normal;
   text-transform: none;
 }

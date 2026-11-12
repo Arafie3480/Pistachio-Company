@@ -3,7 +3,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { BrandLogo } from "@/components/brand-logo";
 import { Button } from "@/components/ui/button";
 import { Link } from "@/i18n/navigation";
-import { brand, imagery, productSlugs } from "@/lib/site";
+import { brandLegalForLocale, imagery, productSlugs } from "@/lib/site";
 import { buildPageMetadata } from "@/lib/seo";
 
 export async function generateMetadata({
@@ -32,6 +32,7 @@ export default async function HomePage({
   setRequestLocale(locale);
   const t = await getTranslations("Home");
   const tProducts = await getTranslations("products");
+  const legal = brandLegalForLocale(locale);
 
   const pillars = [
     { title: t("pillar1Title"), body: t("pillar1Body") },
@@ -66,16 +67,20 @@ export default async function HomePage({
             <div className="inline-flex rounded-md bg-brand-foreground/95 p-2 shadow-md sm:p-2.5">
               <BrandLogo size="hero" priority className="h-24 w-auto sm:h-28 md:h-32" />
             </div>
-            <p className="mt-4 text-xs tracking-[0.14em] text-brand-foreground/70 uppercase sm:text-sm sm:tracking-[0.16em]">
-              {brand.legalNameEn}
-              {brand.region ? ` · ${brand.region}` : ""}
+            <p
+              className="brand-eyebrow mt-4 text-xs text-brand-foreground/70 sm:text-sm"
+              lang={legal.preferFa ? "fa" : undefined}
+              dir={legal.preferFa ? "rtl" : undefined}
+            >
+              {legal.legalName}
+              {legal.region ? ` · ${legal.region}` : ""}
             </p>
           </div>
           <h1 className="animate-gd-fade-up animate-gd-delay-1 mt-6 max-w-xl font-heading text-2xl font-medium tracking-tight text-balance text-brand-foreground/95 sm:mt-8 sm:text-3xl md:text-[2.15rem] md:leading-snug">
             {t("headline")}
           </h1>
           <p className="animate-gd-fade-up animate-gd-delay-2 mt-4 max-w-md text-base leading-relaxed text-brand-foreground/75 sm:text-lg">
-            {t("subhead", { legalName: brand.legalNameEn })}
+            {t("subhead", { legalName: legal.legalName })}
           </p>
           <div className="animate-gd-fade-up animate-gd-delay-3 mt-8 flex flex-wrap gap-3">
             <Button

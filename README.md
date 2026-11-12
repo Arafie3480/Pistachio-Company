@@ -14,14 +14,14 @@ Ready for client review. Marketing site is multilingual, SEO-ready, and CI-verif
 |------|--------|
 | Pages (Home, About, Products, Contact, Privacy) | Done — 7 locales (EN default + FA/AR RTL, TR, ZH, HI, RU) |
 | Official logo + richer green/gold palette | Done — client lockup in header/hero/footer |
+| FA/AR legal name + region on hero/footer | Done — `brandLegalForLocale` |
 | Contact (email, phone, WhatsApp, warehouse) | Live from `src/lib/site.ts` |
 | SEO (canonical, hreflang, sitemap, robots, OG, Organization + catalog JSON-LD) | Done |
 | Security / privacy (headers, CI least-privilege, first-party OG, privacy page) | Done |
-| A11y (skip link, `aria-current`, reduced motion, locale + root 404/error) | Done |
-| Brand mark (suggested diamond + pistachio) | Shipped — replace when client logo arrives |
+| A11y (skip link, mobile focus trap, `aria-current`, reduced motion, locale 404/error) | Done |
 | Contact CTAs (mailto, tel, WhatsApp with inquiry prefill) | Done |
 | CI (`npm run lint` + `npm run build` + `npm run smoke:ci`, `contents: read`) | Done |
-| Custom logo / owned photography / certificates | Client assets pending |
+| Owned photography / certificates | Client assets pending |
 | DNS cutover from WordPress | Out of scope until host + domain ready |
 
 ## Local setup
@@ -40,6 +40,7 @@ Open [http://127.0.0.1:4321](http://127.0.0.1:4321).
 | Page | URL |
 |------|-----|
 | Home EN | http://127.0.0.1:4321/en |
+| Home FA (RTL) | http://127.0.0.1:4321/fa |
 | Products | http://127.0.0.1:4321/en/products |
 | Home AR (RTL) | http://127.0.0.1:4321/ar |
 | Contact | http://127.0.0.1:4321/en/contact |
@@ -50,11 +51,12 @@ Open [http://127.0.0.1:4321](http://127.0.0.1:4321).
 - Paste-ready client message: [docs/demo-message-for-client.md](docs/demo-message-for-client.md)
 - Public URL (preferred): [docs/netlify-public-demo.md](docs/netlify-public-demo.md) — disable Netlify password, share `*.netlify.app`
 - Optional Vercel path (not used for this handoff): [docs/vercel-sms-bypass.md](docs/vercel-sms-bypass.md)
-- Screenshots: `media/demo-home-en.png`, `media/demo-products-en.png`, `media/demo-home-ar.png`, `media/demo-contact-en.png`
+- Screenshots: `media/demo-home-en.png`, `media/demo-home-fa.png`, `media/demo-products-en.png`, `media/demo-home-ar.png`, `media/demo-contact-en.png`
 
 | Locale | Path prefix |
 |--------|-------------|
 | English (default) | `/`, `/about`, `/products`, `/contact` |
+| Persian (RTL) | `/fa`, `/fa/about`, … |
 | Arabic (RTL) | `/ar`, `/ar/about`, … |
 | Turkish | `/tr` … |
 | Chinese | `/zh` … |
@@ -79,7 +81,7 @@ Edit `src/lib/site.ts` only:
 - `historyYears` — agriculture / trade / export years
 - `people` — founder & CEO names
 - `contact` — email, phone, WhatsApp URL, warehouse line (**do not paste phone digits into README or issues**)
-- Suggested brand mark — `public/brand/mark.svg` + `src/components/brand-mark.tsx` (replace when client logo arrives)
+- Official lockup — `public/brand/logo-official-web.jpg` + `logo-nav.png` via `BrandLogo`
 
 UI copy lives in `messages/*.json` (next-intl).
 
@@ -126,7 +128,6 @@ These do not block deploy; they improve go-live accuracy:
 - Dedicated virtual / business WhatsApp line (replace provisional number in `src/lib/site.ts` → `contact`)
 - Full office address beyond Motahari 52 warehouse
 - Confirm export email spelling (`greendiamond` vs `greendimond`)
-- Official logo file (site ships a **suggested** diamond + pistachio mark for delivery)
-- Owned product / orchard photography; certificates
+- Owned product / orchard photography; certificates (official logo already integrated)
 - Confirm exact experience years in `historyYears`
 - Make Netlify public (or peer host) and point DNS when signed off

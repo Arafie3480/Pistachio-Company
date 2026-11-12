@@ -38,20 +38,38 @@ export function SiteHeader() {
 
   useEffect(() => {
     if (!open) return;
+    const drawer = document.getElementById("mobile-nav");
+    const focusables = () =>
+      Array.from(
+        drawer?.querySelectorAll<HTMLElement>(
+          'a[href], button:not([disabled]), select, [tabindex]:not([tabindex="-1"])',
+        ) ?? [],
+      ).filter((el) => !el.hasAttribute("disabled") && el.tabIndex !== -1);
+
     const onKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
         setOpen(false);
         menuButtonRef.current?.focus();
+        return;
+      }
+      if (e.key !== "Tab") return;
+      const items = focusables();
+      if (items.length === 0) return;
+      const first = items[0];
+      const last = items[items.length - 1];
+      const active = document.activeElement as HTMLElement | null;
+      if (e.shiftKey && active === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && active === last) {
+        e.preventDefault();
+        first.focus();
       }
     };
     const prevOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
     window.addEventListener("keydown", onKey);
-    // Move focus into the drawer for keyboard / screen-reader users.
-    const firstLink = document.querySelector<HTMLElement>(
-      "#mobile-nav a, #mobile-nav button",
-    );
-    firstLink?.focus();
+    focusables()[0]?.focus();
     return () => {
       document.body.style.overflow = prevOverflow;
       window.removeEventListener("keydown", onKey);
@@ -70,7 +88,7 @@ export function SiteHeader() {
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-3 px-5 sm:h-[4.25rem] sm:px-8">
         <Link
           href="/"
-          className="group shrink-0 rounded-md bg-brand-foreground/95 px-1.5 py-1 shadow-sm transition-opacity hover:opacity-95"
+          className="group shrink-0 rounded-md bg-brand-foreground/95 px-1.5 py-1 shadow-sm outline-none transition-opacity hover:opacity-95 focus-visible:ring-2 focus-visible:ring-gold/70"
         >
           <BrandLogo size="nav" priority className="h-9 w-auto sm:h-10" />
         </Link>
@@ -116,7 +134,7 @@ export function SiteHeader() {
             className="inline-flex size-10 items-center justify-center rounded-md text-brand-foreground outline-none transition-colors hover:bg-brand-foreground/10 focus-visible:ring-2 focus-visible:ring-brand-foreground/40"
             aria-expanded={open}
             aria-controls="mobile-nav"
-            aria-haspopup="true"
+            aria-haspopup="menu"
             aria-label={open ? t("closeMenu") : t("openMenu")}
             onClick={() => setOpen((v) => !v)}
           >

@@ -9,9 +9,10 @@ type BrandLogoProps = {
 };
 
 const sizes = {
-  nav: { width: 148, height: 56, src: "/brand/logo-nav.png" as const },
+  // logo-nav.png is the square lockup crop (135×128); keep intrinsic ratio.
+  nav: { width: 135, height: 128, src: "/brand/logo-nav.png" as const },
   hero: { width: 280, height: 210, src: "/brand/logo-official-web.jpg" as const },
-  footer: { width: 168, height: 64, src: "/brand/logo-nav.png" as const },
+  footer: { width: 135, height: 128, src: "/brand/logo-nav.png" as const },
 };
 
 /**
