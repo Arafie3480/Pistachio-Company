@@ -8,9 +8,14 @@ export const brand = {
   name: "Green Diamond Farm",
   legalNameFa: "بازرگانی حسینی نوه",
   legalNameEn: "Hosseini Naveh",
+  /** Origin city shown on official lockup */
+  region: "Rafsanjan",
   domain: "greendiamondfarm.com",
   /** Footer copyright year — keep static for Cache Components prerender. */
   copyrightYear: 2026,
+  /** Client-supplied lockup (public/brand). */
+  logoPath: "/brand/logo-official-web.jpg",
+  logoNavPath: "/brand/logo-nav.png",
 } as const;
 
 /** Leadership — names from client (2026-10-22). */

@@ -34,6 +34,7 @@ const checks = [
   },
   { path: "/en/privacy", includes: ["Privacy"] },
   { path: "/ar", includes: ["lang=\"ar\"", "dir=\"rtl\""] },
+  { path: "/fa", includes: ["lang=\"fa\"", "dir=\"rtl\"", "گرین دایموند"] },
   { path: "/tr" },
   { path: "/zh" },
   { path: "/hi" },

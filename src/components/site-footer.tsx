@@ -1,5 +1,5 @@
 import { getLocale, getTranslations } from "next-intl/server";
-import { BrandMark } from "@/components/brand-mark";
+import { BrandLogo } from "@/components/brand-logo";
 import { Link } from "@/i18n/navigation";
 import { rtlLocales } from "@/i18n/routing";
 import { whatsappHref } from "@/lib/json-ld";
@@ -20,8 +20,8 @@ export async function SiteFooter() {
     <footer className="mt-auto border-t border-border/80 bg-surface">
       <div className="mx-auto grid max-w-6xl gap-10 px-5 py-14 sm:px-8 md:grid-cols-[1.4fr_1fr_1fr]">
         <div>
-          <div className="flex items-start gap-3">
-            <BrandMark tone="onLight" className="mt-0.5 size-9 text-brand" />
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-start">
+            <BrandLogo size="footer" className="h-12 w-auto" />
             <div>
               <p className="font-heading text-xl font-semibold tracking-tight text-ink">
                 {brand.name}
@@ -35,6 +35,11 @@ export async function SiteFooter() {
                   {brand.legalNameFa}
                 </span>
               </p>
+              {brand.region ? (
+                <p className="mt-1 text-xs tracking-[0.12em] text-gold-foreground/80 uppercase">
+                  {brand.region}
+                </p>
+              ) : null}
             </div>
           </div>
           <p className="mt-4 max-w-sm text-sm leading-relaxed text-muted-foreground">

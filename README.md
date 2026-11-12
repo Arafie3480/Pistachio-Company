@@ -12,7 +12,8 @@ Ready for client review. Marketing site is multilingual, SEO-ready, and CI-verif
 
 | Area | Status |
 |------|--------|
-| Pages (Home, About, Products, Contact, Privacy) | Done — 6 locales (EN default + AR RTL, TR, ZH, HI, RU) |
+| Pages (Home, About, Products, Contact, Privacy) | Done — 7 locales (EN default + FA/AR RTL, TR, ZH, HI, RU) |
+| Official logo + richer green/gold palette | Done — client lockup in header/hero/footer |
 | Contact (email, phone, WhatsApp, warehouse) | Live from `src/lib/site.ts` |
 | SEO (canonical, hreflang, sitemap, robots, OG, Organization + catalog JSON-LD) | Done |
 | Security / privacy (headers, CI least-privilege, first-party OG, privacy page) | Done |

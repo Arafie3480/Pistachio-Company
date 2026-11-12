@@ -25,7 +25,7 @@ import "../globals.css";
 
 /** theme-color belongs on viewport (not metadata.other) per Next.js Metadata API. */
 export const viewport: Viewport = {
-  themeColor: "#1a3d2e",
+  themeColor: "#1f4a38",
   width: "device-width",
   initialScale: 1,
 };

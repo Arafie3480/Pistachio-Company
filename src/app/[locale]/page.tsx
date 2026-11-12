@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { BrandMark } from "@/components/brand-mark";
+import { BrandLogo } from "@/components/brand-logo";
 import { Button } from "@/components/ui/button";
 import { Link } from "@/i18n/navigation";
 import { brand, imagery, productSlugs } from "@/lib/site";
@@ -62,16 +62,14 @@ export default async function HomePage({
         />
 
         <div className="relative mx-auto flex min-h-[100svh] max-w-6xl flex-col justify-end px-5 pt-28 pb-16 sm:justify-center sm:px-8 sm:pb-24">
-          <div className="animate-gd-fade-up flex items-center gap-3 sm:gap-4">
-            <BrandMark tone="onDark" className="size-11 sm:size-14" />
-            <div>
-              <p className="font-heading text-3xl font-semibold tracking-tight text-balance sm:text-5xl md:text-6xl md:leading-[1.05]">
-                {brand.name}
-              </p>
-              <p className="mt-1 text-xs tracking-[0.12em] text-brand-foreground/60 uppercase sm:text-sm sm:tracking-[0.16em]">
-                {brand.legalNameEn}
-              </p>
+          <div className="animate-gd-fade-up max-w-md">
+            <div className="inline-flex rounded-md bg-brand-foreground/95 p-2 shadow-md sm:p-2.5">
+              <BrandLogo size="hero" priority className="h-24 w-auto sm:h-28 md:h-32" />
             </div>
+            <p className="mt-4 text-xs tracking-[0.14em] text-brand-foreground/70 uppercase sm:text-sm sm:tracking-[0.16em]">
+              {brand.legalNameEn}
+              {brand.region ? ` · ${brand.region}` : ""}
+            </p>
           </div>
           <h1 className="animate-gd-fade-up animate-gd-delay-1 mt-6 max-w-xl font-heading text-2xl font-medium tracking-tight text-balance text-brand-foreground/95 sm:mt-8 sm:text-3xl md:text-[2.15rem] md:leading-snug">
             {t("headline")}
@@ -83,7 +81,7 @@ export default async function HomePage({
             <Button
               asChild
               size="lg"
-              className="h-11 bg-brand-foreground px-5 text-brand hover:bg-brand-foreground/90"
+              className="h-11 border border-gold/50 bg-gold px-5 text-gold-foreground hover:bg-gold/90"
             >
               <Link href="/products">{t("ctaProducts")}</Link>
             </Button>

@@ -9,7 +9,7 @@ export function organizationJsonLd() {
     name: brand.name,
     alternateName: [brand.legalNameEn, brand.legalNameFa],
     url: siteUrl,
-    logo: `${siteUrl}/brand/mark.svg`,
+    logo: `${siteUrl}${brand.logoPath}`,
     image: `${siteUrl}/opengraph-image`,
     email: contact.email,
     telephone: contact.phone,
@@ -24,7 +24,7 @@ export function organizationJsonLd() {
         contactType: "sales",
         email: contact.email,
         telephone: contact.phone,
-        availableLanguage: ["en", "ar", "tr", "zh", "hi", "ru", "fa"],
+        availableLanguage: ["en", "fa", "ar", "tr", "zh", "hi", "ru"],
       },
     ],
     founder: {

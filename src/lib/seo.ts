@@ -29,6 +29,7 @@ export type SitePathname = (typeof sitePathnames)[number];
 
 const ogLocaleMap: Record<Locale, string> = {
   en: "en_US",
+  fa: "fa_IR",
   ar: "ar_SA",
   tr: "tr_TR",
   zh: "zh_CN",

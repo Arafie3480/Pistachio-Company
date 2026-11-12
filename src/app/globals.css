@@ -14,6 +14,8 @@
   --color-brand: var(--brand);
   --color-brand-foreground: var(--brand-foreground);
   --color-brand-muted: var(--brand-muted);
+  --color-gold: var(--gold);
+  --color-gold-foreground: var(--gold-foreground);
   --color-surface: var(--surface);
   --color-ink: var(--ink);
   --color-sidebar-ring: var(--sidebar-ring);
@@ -55,45 +57,49 @@
 }
 
 :root {
-  /* Cool mist + deep pistachio — refined for export-desk calm */
-  --background: oklch(0.972 0.011 148);
-  --foreground: oklch(0.21 0.028 155);
-  --ink: oklch(0.185 0.03 155);
-  --surface: oklch(0.993 0.005 148);
-  /* Aligns with suggested mark green (#00684C) */
-  --brand: oklch(0.42 0.09 162);
-  --brand-foreground: oklch(0.985 0.008 145);
-  --brand-muted: oklch(0.68 0.05 155);
-  --card: oklch(0.995 0.006 145);
-  --card-foreground: oklch(0.22 0.03 155);
-  --popover: oklch(0.995 0.006 145);
-  --popover-foreground: oklch(0.22 0.03 155);
-  --primary: oklch(0.42 0.09 162);
-  --primary-foreground: oklch(0.985 0.008 145);
-  --secondary: oklch(0.94 0.02 145);
-  --secondary-foreground: oklch(0.28 0.04 155);
-  --muted: oklch(0.94 0.015 145);
-  --muted-foreground: oklch(0.48 0.025 155);
-  --accent: oklch(0.92 0.03 145);
-  --accent-foreground: oklch(0.28 0.04 155);
+  /*
+   * Official lockup palette: deep forest green + pistachio leaf greens + warm gold.
+   * Richer than flat “normal green”, still calm for export buyers.
+   */
+  --background: oklch(0.975 0.014 145);
+  --foreground: oklch(0.22 0.035 158);
+  --ink: oklch(0.2 0.04 160);
+  --surface: oklch(0.992 0.008 95);
+  --brand: oklch(0.34 0.075 158);
+  --brand-foreground: oklch(0.98 0.012 95);
+  --brand-muted: oklch(0.62 0.08 145);
+  --gold: oklch(0.78 0.09 85);
+  --gold-foreground: oklch(0.28 0.05 75);
+  --card: oklch(0.995 0.006 100);
+  --card-foreground: oklch(0.22 0.035 158);
+  --popover: oklch(0.995 0.006 100);
+  --popover-foreground: oklch(0.22 0.035 158);
+  --primary: oklch(0.36 0.08 158);
+  --primary-foreground: oklch(0.98 0.01 95);
+  --secondary: oklch(0.93 0.03 145);
+  --secondary-foreground: oklch(0.28 0.05 158);
+  --muted: oklch(0.945 0.018 140);
+  --muted-foreground: oklch(0.46 0.03 155);
+  --accent: oklch(0.93 0.04 95);
+  --accent-foreground: oklch(0.3 0.05 80);
   --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.88 0.02 145);
-  --input: oklch(0.88 0.02 145);
-  --ring: oklch(0.55 0.06 155);
-  --chart-1: oklch(0.55 0.08 155);
-  --chart-2: oklch(0.65 0.05 145);
-  --chart-3: oklch(0.45 0.06 160);
-  --chart-4: oklch(0.75 0.04 140);
-  --chart-5: oklch(0.35 0.05 155);
+  --border: oklch(0.86 0.025 145);
+  --input: oklch(0.86 0.025 145);
+  --ring: oklch(0.72 0.08 85);
+  --chart-1: oklch(0.45 0.09 158);
+  --chart-2: oklch(0.72 0.09 85);
+  --chart-3: oklch(0.55 0.08 145);
+  --chart-4: oklch(0.78 0.05 140);
+  --chart-5: oklch(0.32 0.06 160);
   --radius: 0.5rem;
-  --sidebar: oklch(0.98 0.01 145);
-  --sidebar-foreground: oklch(0.22 0.03 155);
-  --sidebar-primary: oklch(0.38 0.07 155);
-  --sidebar-primary-foreground: oklch(0.98 0.01 145);
-  --sidebar-accent: oklch(0.94 0.02 145);
-  --sidebar-accent-foreground: oklch(0.28 0.04 155);
-  --sidebar-border: oklch(0.88 0.02 145);
-  --sidebar-ring: oklch(0.55 0.06 155);
+  --sidebar: oklch(0.98 0.012 145);
+  --sidebar-foreground: oklch(0.22 0.035 158);
+  --sidebar-primary: oklch(0.34 0.075 158);
+  --sidebar-primary-foreground: oklch(0.98 0.01 95);
+  --sidebar-accent: oklch(0.94 0.03 95);
+  --sidebar-accent-foreground: oklch(0.28 0.05 80);
+  --sidebar-border: oklch(0.86 0.025 145);
+  --sidebar-ring: oklch(0.72 0.08 85);
 }
 
 @layer base {
@@ -115,12 +121,13 @@
   }
 }
 
-/* Atmosphere: soft orchard mist — not flat white */
+/* Atmosphere: orchard mist + warm gold wash from official lockup */
 .site-atmosphere {
   background:
-    radial-gradient(1200px 600px at 12% -10%, oklch(0.9 0.04 145 / 0.7), transparent 55%),
-    radial-gradient(900px 500px at 90% 8%, oklch(0.88 0.035 160 / 0.45), transparent 50%),
-    linear-gradient(180deg, oklch(0.975 0.012 145) 0%, oklch(0.96 0.018 150) 100%);
+    radial-gradient(1100px 560px at 10% -8%, oklch(0.9 0.05 145 / 0.75), transparent 55%),
+    radial-gradient(800px 480px at 92% 6%, oklch(0.9 0.06 85 / 0.35), transparent 48%),
+    radial-gradient(700px 420px at 70% 100%, oklch(0.88 0.04 160 / 0.28), transparent 55%),
+    linear-gradient(180deg, oklch(0.978 0.014 145) 0%, oklch(0.96 0.02 140) 100%);
 }
 
 @keyframes gd-fade-up {
@@ -201,6 +208,7 @@
   color: var(--muted-foreground);
 }
 
+:lang(fa) .section-label,
 :lang(ar) .section-label,
 :lang(zh) .section-label,
 :lang(hi) .section-label,

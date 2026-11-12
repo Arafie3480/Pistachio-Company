@@ -3,11 +3,10 @@
 import { useLocale, useTranslations } from "next-intl";
 import { useEffect, useRef, useState } from "react";
 import { Menu, X } from "lucide-react";
-import { BrandMark } from "@/components/brand-mark";
+import { BrandLogo } from "@/components/brand-logo";
 import { LanguageSwitcher } from "@/components/language-switcher";
 import { Button } from "@/components/ui/button";
 import { Link, usePathname } from "@/i18n/navigation";
-import { brand } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
 const navHrefs = ["/", "/about", "/products", "/contact"] as const;
@@ -71,17 +70,9 @@ export function SiteHeader() {
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-3 px-5 sm:h-[4.25rem] sm:px-8">
         <Link
           href="/"
-          className="group flex min-w-0 items-center gap-2.5 text-brand-foreground transition-opacity hover:opacity-90"
+          className="group shrink-0 rounded-md bg-brand-foreground/95 px-1.5 py-1 shadow-sm transition-opacity hover:opacity-95"
         >
-          <BrandMark tone="onDark" className="size-8 sm:size-9" />
-          <span className="min-w-0 leading-tight">
-            <span className="block font-heading text-[0.95rem] font-semibold tracking-tight sm:text-base">
-              {brand.name}
-            </span>
-            <span className="mt-0.5 block truncate text-[0.65rem] tracking-wide text-brand-foreground/65 sm:text-[0.7rem]">
-              {brand.legalNameEn}
-            </span>
-          </span>
+          <BrandLogo size="nav" priority className="h-9 w-auto sm:h-10" />
         </Link>
 
         <nav
@@ -111,7 +102,7 @@ export function SiteHeader() {
           <Button
             asChild
             size="sm"
-            className="ms-2 h-9 bg-brand-foreground text-brand hover:bg-brand-foreground/90"
+            className="ms-2 h-9 border border-gold/40 bg-gold text-gold-foreground hover:bg-gold/90"
           >
             <Link href="/contact">{t("inquire")}</Link>
           </Button>
@@ -164,7 +155,7 @@ export function SiteHeader() {
             })}
             <Button
               asChild
-              className="mt-2 h-11 w-full bg-brand-foreground text-brand hover:bg-brand-foreground/90"
+              className="mt-2 h-11 w-full border border-gold/40 bg-gold text-gold-foreground hover:bg-gold/90"
             >
               <Link href="/contact">{t("inquire")}</Link>
             </Button>
