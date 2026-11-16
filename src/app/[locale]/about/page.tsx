@@ -93,13 +93,15 @@ export default async function AboutPage({
           {/* Credibility figures — large years, short labels (client: show experience clearly) */}
           <ul className="mt-10 grid gap-8 border-b border-gold/30 pb-12 sm:grid-cols-3">
             {experience.map((item) => (
-              <li key={item.key}>
+              <li key={item.key} className="border-s-2 border-gold/50 ps-4">
                 <p
-                  className="experience-year font-heading text-4xl font-semibold sm:text-5xl"
+                  className="experience-year font-heading text-4xl font-semibold tabular-nums sm:text-5xl"
                   aria-label={t(item.key, { years: item.years })}
                 >
-                  {item.years}
-                  <span className="text-gold">+</span>
+                  <span>{item.years}</span>
+                  <span className="text-gold" aria-hidden>
+                    +
+                  </span>
                 </p>
                 <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                   {t(item.labelKey)}
