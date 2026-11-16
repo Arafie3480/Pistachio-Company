@@ -32,14 +32,17 @@ export default async function AboutPage({
   const experience = [
     {
       key: "yearsAgriculture" as const,
+      labelKey: "yearsAgricultureLabel" as const,
       years: historyYears.agriculture,
     },
     {
       key: "yearsTrade" as const,
+      labelKey: "yearsTradeLabel" as const,
       years: historyYears.pistachioTrade,
     },
     {
       key: "yearsExport" as const,
+      labelKey: "yearsExportLabel" as const,
       years: historyYears.export,
     },
   ] as const;
@@ -87,16 +90,20 @@ export default async function AboutPage({
             {t("historyNote")}
           </p>
 
-          {/* Quiet experience list — full locale sentences, not bare stat chips */}
-          <ul className="mt-10 max-w-xl space-y-3 border-b border-border/60 pb-10">
+          {/* Credibility figures — large years, short labels (client: show experience clearly) */}
+          <ul className="mt-10 grid gap-8 border-b border-gold/30 pb-12 sm:grid-cols-3">
             {experience.map((item) => (
-              <li
-                key={item.key}
-                className="text-base leading-relaxed text-foreground/90"
-              >
-                <span className="font-heading font-semibold text-brand">
-                  {t(item.key, { years: item.years })}
-                </span>
+              <li key={item.key}>
+                <p
+                  className="experience-year font-heading text-4xl font-semibold sm:text-5xl"
+                  aria-label={t(item.key, { years: item.years })}
+                >
+                  {item.years}
+                  <span className="text-gold">+</span>
+                </p>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                  {t(item.labelKey)}
+                </p>
               </li>
             ))}
           </ul>

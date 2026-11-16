@@ -54,11 +54,15 @@ export default async function HomePage({
           />
         </div>
         <div
-          className="absolute inset-0 bg-gradient-to-r from-brand/82 via-brand/55 to-brand/28 rtl:bg-gradient-to-l"
+          className="absolute inset-0 bg-gradient-to-r from-brand/88 via-brand/58 to-brand/22 rtl:bg-gradient-to-l"
           aria-hidden
         />
         <div
-          className="absolute inset-0 bg-gradient-to-t from-brand/65 via-transparent to-brand/25"
+          className="absolute inset-0 bg-gradient-to-t from-brand/70 via-transparent to-brand/30"
+          aria-hidden
+        />
+        <div
+          className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-gold/10 to-transparent"
           aria-hidden
         />
 
@@ -107,6 +111,7 @@ export default async function HomePage({
           <h2 className="font-heading text-3xl font-semibold tracking-tight text-ink sm:text-4xl">
             {t("buyersTitle")}
           </h2>
+          <div className="mt-5 h-px w-14 bg-gold/80" aria-hidden />
           <p className="mt-5 text-base leading-relaxed text-muted-foreground sm:text-lg">
             {t("buyersLead")}
           </p>
@@ -114,7 +119,7 @@ export default async function HomePage({
 
         <ul className="mt-14 grid gap-x-12 gap-y-10 sm:grid-cols-3">
           {pillars.map((item) => (
-            <li key={item.title} className="border-t border-border/70 pt-6">
+            <li key={item.title} className="border-t border-gold/35 pt-6">
               <h3 className="font-heading text-lg font-semibold text-ink">
                 {item.title}
               </h3>
@@ -156,24 +161,38 @@ export default async function HomePage({
                 {t("kernelsRoasted")}
               </li>
             </ul>
-            <Button asChild className="mt-8 h-10">
+            <Button
+              asChild
+              className="mt-8 h-10 border border-gold/40 bg-gold text-gold-foreground hover:bg-gold/90"
+            >
               <Link href="/products">{t("seeAll")}</Link>
             </Button>
           </div>
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-5 py-20 sm:px-8 sm:py-28">
-        <div className="max-w-xl">
-          <h2 className="font-heading text-3xl font-semibold tracking-tight text-ink sm:text-4xl">
-            {t("ctaTitle")}
-          </h2>
-          <p className="mt-5 text-base leading-relaxed text-muted-foreground sm:text-lg">
-            {t("ctaLead")}
-          </p>
-          <Button asChild size="lg" className="mt-8 h-11">
-            <Link href="/contact">{t("ctaButton")}</Link>
-          </Button>
+      <section className="relative overflow-hidden bg-brand text-brand-foreground">
+        <div
+          className="pointer-events-none absolute inset-0 bg-[radial-gradient(700px_280px_at_15%_0%,oklch(0.8_0.1_82/0.22),transparent_60%)]"
+          aria-hidden
+        />
+        <div className="relative mx-auto max-w-6xl px-5 py-20 sm:px-8 sm:py-28">
+          <div className="max-w-xl">
+            <h2 className="font-heading text-3xl font-semibold tracking-tight text-balance sm:text-4xl">
+              {t("ctaTitle")}
+            </h2>
+            <div className="mt-5 h-px w-14 bg-gold/85" aria-hidden />
+            <p className="mt-5 text-base leading-relaxed text-brand-foreground/75 sm:text-lg">
+              {t("ctaLead")}
+            </p>
+            <Button
+              asChild
+              size="lg"
+              className="mt-8 h-11 border border-gold/50 bg-gold text-gold-foreground hover:bg-gold/90"
+            >
+              <Link href="/contact">{t("ctaButton")}</Link>
+            </Button>
+          </div>
         </div>
       </section>
     </>

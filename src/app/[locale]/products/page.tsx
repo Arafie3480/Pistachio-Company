@@ -81,7 +81,7 @@ export default async function ProductsPage({
                     key={slug}
                     className="product-row group grid gap-3 py-7 sm:grid-cols-[5.5rem_1fr] sm:gap-10 sm:py-8"
                   >
-                    <span className="font-mono text-xs tracking-wider text-muted-foreground tabular-nums transition-colors group-hover:text-brand">
+                    <span className="font-mono text-xs tracking-wider text-muted-foreground tabular-nums transition-colors group-hover:text-gold-foreground">
                       {String(numberBySlug[slug]).padStart(2, "0")}
                     </span>
                     <div>
@@ -99,14 +99,17 @@ export default async function ProductsPage({
           ))}
         </div>
 
-        <div className="mt-16 max-w-xl border-t border-border/60 pt-12">
+        <div className="mt-16 max-w-xl border-t border-gold/35 pt-12">
           <h2 className="font-heading text-2xl font-semibold tracking-tight text-ink sm:text-3xl">
             {t("ctaTitle")}
           </h2>
           <p className="mt-3 text-base leading-relaxed text-muted-foreground">
             {t("ctaLead")}
           </p>
-          <Button asChild className="mt-6 h-10">
+          <Button
+            asChild
+            className="mt-6 h-10 border border-gold/40 bg-gold text-gold-foreground hover:bg-gold/90"
+          >
             <Link href="/contact">{t("ctaButton")}</Link>
           </Button>
         </div>

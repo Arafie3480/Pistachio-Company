@@ -65,11 +65,11 @@
   --foreground: oklch(0.22 0.035 158);
   --ink: oklch(0.2 0.04 160);
   --surface: oklch(0.992 0.008 95);
-  --brand: oklch(0.34 0.075 158);
-  --brand-foreground: oklch(0.98 0.012 95);
-  --brand-muted: oklch(0.62 0.08 145);
-  --gold: oklch(0.78 0.09 85);
-  --gold-foreground: oklch(0.28 0.05 75);
+  --brand: oklch(0.32 0.085 158);
+  --brand-foreground: oklch(0.985 0.01 95);
+  --brand-muted: oklch(0.58 0.09 148);
+  --gold: oklch(0.8 0.11 82);
+  --gold-foreground: oklch(0.26 0.055 70);
   --card: oklch(0.995 0.006 100);
   --card-foreground: oklch(0.22 0.035 158);
   --popover: oklch(0.995 0.006 100);
@@ -121,13 +121,13 @@
   }
 }
 
-/* Atmosphere: orchard mist + warm gold wash from official lockup */
+/* Atmosphere: deeper orchard greens + warmer gold wash (client: less “normal”) */
 .site-atmosphere {
   background:
-    radial-gradient(1100px 560px at 10% -8%, oklch(0.9 0.05 145 / 0.75), transparent 55%),
-    radial-gradient(800px 480px at 92% 6%, oklch(0.9 0.06 85 / 0.35), transparent 48%),
-    radial-gradient(700px 420px at 70% 100%, oklch(0.88 0.04 160 / 0.28), transparent 55%),
-    linear-gradient(180deg, oklch(0.978 0.014 145) 0%, oklch(0.96 0.02 140) 100%);
+    radial-gradient(1100px 560px at 8% -8%, oklch(0.88 0.06 150 / 0.8), transparent 55%),
+    radial-gradient(820px 500px at 94% 4%, oklch(0.9 0.08 82 / 0.42), transparent 50%),
+    radial-gradient(720px 440px at 68% 100%, oklch(0.86 0.05 160 / 0.32), transparent 55%),
+    linear-gradient(180deg, oklch(0.978 0.016 145) 0%, oklch(0.955 0.024 140) 100%);
 }
 
 @keyframes gd-fade-up {
@@ -191,7 +191,7 @@
   transition: background-color 0.25s ease, padding-inline-start 0.25s ease;
 }
 .product-row:hover {
-  background-color: oklch(0.96 0.015 148 / 0.55);
+  background-color: oklch(0.96 0.02 145 / 0.65);
 }
 @supports (padding-inline-start: 0) {
   .product-row:hover {
@@ -199,13 +199,34 @@
   }
 }
 
-/* Section labels: Latin caps + tracking; keep non-Latin scripts unforced */
+/* Section labels: Latin caps + gold start accent */
 .section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
   font-size: 0.75rem;
   font-weight: 500;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--muted-foreground);
+}
+.section-label::before {
+  content: "";
+  display: inline-block;
+  width: 1.1rem;
+  height: 1px;
+  background: var(--gold);
+  flex-shrink: 0;
+}
+
+/* Quiet credibility figures on About */
+.experience-year {
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
+  background: linear-gradient(135deg, var(--brand) 0%, oklch(0.42 0.09 155) 55%, var(--gold-foreground) 140%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 /* Hero / footer brand eyebrow — same Latin vs non-Latin rule */
