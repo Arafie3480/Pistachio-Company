@@ -70,8 +70,8 @@ const checks = [
   { path: "/privacy" },
   { path: "/contact" },
   { path: "/opengraph-image", expect: 200 },
-  { path: "/icon", expect: 200 },
-  { path: "/apple-icon", expect: 200 },
+  { path: "/icon.png", expect: 200 },
+  { path: "/apple-icon.png", expect: 200 },
   { path: "/brand/logo-nav.png", expect: 200 },
   { path: "/definitely-missing-page-xyz", expect: 404 },
 ];
