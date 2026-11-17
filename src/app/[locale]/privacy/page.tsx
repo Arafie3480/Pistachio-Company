@@ -1,7 +1,7 @@
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { PageHero } from "@/components/page-hero";
 import { Link } from "@/i18n/navigation";
-import { brand, contact } from "@/lib/site";
+import { brandLegalForLocale, contact } from "@/lib/site";
 import { buildPageMetadata } from "@/lib/seo";
 
 export async function generateMetadata({
@@ -27,6 +27,7 @@ export default async function PrivacyPage({
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations("Privacy");
+  const legal = brandLegalForLocale(locale);
 
   const sections = [
     { title: t("collectTitle"), body: t("collectBody") },
@@ -37,7 +38,10 @@ export default async function PrivacyPage({
 
   return (
     <>
-      <PageHero title={t("title")} lead={t("lead", { brand: brand.name })} />
+      <PageHero
+        title={t("title")}
+        lead={t("lead", { brand: legal.displayName })}
+      />
 
       <section className="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-20">
         <div className="max-w-2xl space-y-10">

@@ -42,9 +42,25 @@ const checks = [
       "گرین دایموند",
       "بازرگانی حسینی نوه",
       "رفسنجان",
+      "تماس با میز صادرات",
+      "/brand/logo-official-web.jpg",
+      "/brand/logo-nav.png",
     ],
   },
   { path: "/fa/products", includes: ["احمدآقایی"] },
+  {
+    path: "/fa/about",
+    includes: ["بازرگانی حسینی نوه", "کشاورزی", "صادرات"],
+  },
+  {
+    path: "/fa/contact",
+    includes: [
+      "mailto:export@greendiamondfarm.com",
+      "tel:+989361814577",
+      "wa.me/989361814577",
+      "رفسنجان",
+    ],
+  },
   { path: "/tr" },
   { path: "/zh" },
   { path: "/hi" },
@@ -55,6 +71,8 @@ const checks = [
   { path: "/contact" },
   { path: "/opengraph-image", expect: 200 },
   { path: "/icon", expect: 200 },
+  { path: "/apple-icon", expect: 200 },
+  { path: "/brand/logo-nav.png", expect: 200 },
   { path: "/definitely-missing-page-xyz", expect: 404 },
 ];
 

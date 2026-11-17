@@ -68,9 +68,11 @@ export default async function HomePage({
 
         <div className="relative mx-auto flex min-h-[100svh] max-w-6xl flex-col justify-end px-5 pt-28 pb-16 sm:justify-center sm:px-8 sm:pb-24">
           <div className="animate-gd-fade-up max-w-md">
-            <div className="inline-flex rounded-md bg-brand-foreground/95 p-2 shadow-md sm:p-2.5">
-              <BrandLogo size="hero" priority className="h-24 w-auto sm:h-28 md:h-32" />
-            </div>
+            <BrandLogo
+              size="hero"
+              priority
+              className="h-24 w-auto drop-shadow-sm sm:h-28 md:h-32"
+            />
             <p
               className="brand-eyebrow mt-4 text-xs text-brand-foreground/70 sm:text-sm"
               lang={legal.preferFa ? "fa" : undefined}
@@ -83,7 +85,7 @@ export default async function HomePage({
           <h1 className="animate-gd-fade-up animate-gd-delay-1 mt-6 max-w-xl font-heading text-2xl font-medium tracking-tight text-balance text-brand-foreground/95 sm:mt-8 sm:text-3xl md:text-[2.15rem] md:leading-snug">
             {t("headline")}
           </h1>
-          <p className="animate-gd-fade-up animate-gd-delay-2 mt-4 max-w-md text-base leading-relaxed text-brand-foreground/75 sm:text-lg">
+          <p className="animate-gd-fade-up animate-gd-delay-2 mt-4 max-w-md text-base leading-relaxed text-brand-foreground/80 sm:text-lg">
             {t("subhead", { legalName: legal.legalName })}
           </p>
           <div className="animate-gd-fade-up animate-gd-delay-3 mt-8 flex flex-wrap gap-3">
@@ -92,7 +94,7 @@ export default async function HomePage({
               size="lg"
               className="h-11 border border-gold/50 bg-gold px-5 text-gold-foreground hover:bg-gold/90"
             >
-              <Link href="/products">{t("ctaProducts")}</Link>
+              <Link href="/contact">{t("ctaContact")}</Link>
             </Button>
             <Button
               asChild
@@ -100,7 +102,7 @@ export default async function HomePage({
               variant="outline"
               className="h-11 border-brand-foreground/35 bg-transparent px-5 text-brand-foreground hover:bg-brand-foreground/10 hover:text-brand-foreground"
             >
-              <Link href="/contact">{t("ctaContact")}</Link>
+              <Link href="/products">{t("ctaProducts")}</Link>
             </Button>
           </div>
         </div>

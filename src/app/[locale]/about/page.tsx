@@ -59,9 +59,9 @@ export default async function AboutPage({
             </h2>
             <p className="mt-5 text-base leading-relaxed text-muted-foreground sm:text-lg">
               {t("p1", {
-                brand: brand.name,
-                legalName: brand.legalNameEn,
-                legalNameFa: brand.legalNameFa,
+                brand: legal.displayName,
+                legalName: legal.preferFa ? brand.legalNameFa : brand.legalNameEn,
+                legalNameFa: legal.preferFa ? brand.legalNameEn : brand.legalNameFa,
               })}
             </p>
             <p className="mt-4 text-base leading-relaxed text-muted-foreground">

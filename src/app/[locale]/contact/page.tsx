@@ -50,7 +50,7 @@ export default async function ContactPage({
                   {t("email")}
                 </h2>
                 <a
-                  href={`mailto:${contact.email}`}
+                  href={`mailto:${contact.email}?subject=${subject}`}
                   className="mt-1 inline-block text-base text-foreground/90 transition-colors hover:text-brand"
                 >
                   {contact.email}

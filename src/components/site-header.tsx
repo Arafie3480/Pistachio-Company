@@ -88,7 +88,7 @@ export function SiteHeader() {
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-3 px-5 sm:h-[4.25rem] sm:px-8">
         <Link
           href="/"
-          className="group shrink-0 rounded-md bg-brand-foreground/95 px-1.5 py-1 shadow-sm outline-none transition-opacity hover:opacity-95 focus-visible:ring-2 focus-visible:ring-gold/70"
+          className="group shrink-0 rounded-md outline-none transition-opacity hover:opacity-95 focus-visible:ring-2 focus-visible:ring-gold/70"
         >
           <BrandLogo size="nav" priority className="h-9 w-auto sm:h-10" />
         </Link>

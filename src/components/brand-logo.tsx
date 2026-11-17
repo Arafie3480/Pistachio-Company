@@ -1,4 +1,7 @@
+"use client";
+
 import Image from "next/image";
+import { useLocale } from "next-intl";
 import { cn } from "@/lib/utils";
 
 type BrandLogoProps = {
@@ -23,11 +26,17 @@ export function BrandLogo({
   size = "nav",
   priority = false,
 }: BrandLogoProps) {
+  const locale = useLocale();
   const cfg = sizes[size];
+  const alt =
+    locale === "fa" || locale === "ar"
+      ? "گرین دایموند فارم رفسنجان"
+      : "Green Diamond Farm Rafsanjan";
+
   return (
     <Image
       src={cfg.src}
-      alt="Green Diamond Farm Rafsanjan"
+      alt={alt}
       width={cfg.width}
       height={cfg.height}
       priority={priority}

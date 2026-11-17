@@ -24,8 +24,12 @@ export async function SiteFooter() {
           <div className="flex flex-col gap-3 sm:flex-row sm:items-start">
             <BrandLogo size="footer" className="h-12 w-auto" />
             <div>
-              <p className="font-heading text-xl font-semibold tracking-tight text-ink">
-                {brand.name}
+              <p
+                className="font-heading text-xl font-semibold tracking-tight text-ink"
+                lang={legal.preferFa ? "fa" : undefined}
+                dir={legal.preferFa ? "rtl" : undefined}
+              >
+                {legal.displayName}
               </p>
               <p className="mt-1 text-sm text-foreground/80">
                 {legal.preferFa ? (
@@ -63,8 +67,10 @@ export async function SiteFooter() {
           </div>
           <p className="mt-4 max-w-sm text-sm leading-relaxed text-muted-foreground">
             {t("tagline", {
-              legalName: brand.legalNameEn,
-              legalNameFa: brand.legalNameFa,
+              legalName: legal.legalName,
+              legalNameFa: legal.preferFa
+                ? brand.legalNameEn
+                : brand.legalNameFa,
             })}
           </p>
         </div>
@@ -90,7 +96,7 @@ export async function SiteFooter() {
           <ul className="mt-3 space-y-2 text-sm text-foreground/80">
             <li>
               <a
-                href={`mailto:${contact.email}`}
+                href={`mailto:${contact.email}?subject=${encodeURIComponent(tContact("emailSubject"))}`}
                 className="transition-colors hover:text-brand"
               >
                 {contact.email}
@@ -127,7 +133,12 @@ export async function SiteFooter() {
 
       <div className="border-t border-border/60">
         <div className="mx-auto flex max-w-6xl flex-col gap-2 px-5 py-5 text-xs text-muted-foreground sm:flex-row sm:items-center sm:justify-between sm:px-8">
-          <p>{t("rights", { year: brand.copyrightYear, brand: brand.name })}</p>
+          <p>
+            {t("rights", {
+              year: brand.copyrightYear,
+              brand: legal.displayName,
+            })}
+          </p>
           <div className="flex flex-wrap items-center gap-x-4 gap-y-1">
             <Link
               href="/privacy"

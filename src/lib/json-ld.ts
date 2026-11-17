@@ -15,8 +15,9 @@ export function organizationJsonLd() {
     telephone: contact.phone,
     address: {
       "@type": "PostalAddress",
-      streetAddress: contact.addressLine,
-      addressCountry: "IR",
+      streetAddress: "Warehouse, Motahari 52",
+      addressLocality: contact.addressLocality,
+      addressCountry: contact.addressCountry,
     },
     contactPoint: [
       {
