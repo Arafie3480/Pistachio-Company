@@ -8,19 +8,20 @@ Export website for **بازرگانی حسینی نوه** (Hosseini Naveh) — p
 
 ## Delivery status
 
-Ready for host import and client review. The marketing site is multilingual, indexed for SEO, and build-verified by CI.
+Ready for client review. Marketing site is multilingual, SEO-ready, and CI-verified (`lint` + `build` + `smoke:ci`). Share [docs/client-project-status.md](docs/client-project-status.md) for the status snapshot; make Netlify public for a durable demo URL.
 
 | Area | Status |
 |------|--------|
-| Pages (Home, About, Products, Contact, Privacy) | Done — 6 locales (EN default + AR RTL, TR, ZH, HI, RU) |
+| Pages (Home, About, Products, Contact, Privacy) | Done — 7 locales (EN default + FA/AR RTL, TR, ZH, HI, RU) |
+| Official logo + richer green/gold palette | Done — client lockup in header/hero/footer |
+| FA/AR legal name + region on hero/footer | Done — `brandLegalForLocale` |
 | Contact (email, phone, WhatsApp, warehouse) | Live from `src/lib/site.ts` |
 | SEO (canonical, hreflang, sitemap, robots, OG, Organization + catalog JSON-LD) | Done |
 | Security / privacy (headers, CI least-privilege, first-party OG, privacy page) | Done |
-| A11y (skip link, `aria-current`, reduced motion, locale + root 404/error) | Done |
-| Brand mark (suggested diamond + pistachio) | Shipped — replace when client logo arrives |
+| A11y (skip link, mobile focus trap, `aria-current`, reduced motion, locale 404/error) | Done |
 | Contact CTAs (mailto, tel, WhatsApp with inquiry prefill) | Done |
 | CI (`npm run lint` + `npm run build` + `npm run smoke:ci`, `contents: read`) | Done |
-| Custom logo / owned photography / certificates | Client assets pending |
+| Owned photography / certificates | Client assets pending |
 | DNS cutover from WordPress | Out of scope until host + domain ready |
 
 ## Local setup
@@ -39,18 +40,23 @@ Open [http://127.0.0.1:4321](http://127.0.0.1:4321).
 | Page | URL |
 |------|-----|
 | Home EN | http://127.0.0.1:4321/en |
+| Home FA (RTL) | http://127.0.0.1:4321/fa |
 | Products | http://127.0.0.1:4321/en/products |
 | Home AR (RTL) | http://127.0.0.1:4321/ar |
 | Contact | http://127.0.0.1:4321/en/contact |
 
+- Client status (so far): [docs/client-project-status.md](docs/client-project-status.md)
+- Proforma (۱۰M تومان · ۵۰٪ پس از تأیید دمو): [docs/invoice-demo-approval.md](docs/invoice-demo-approval.md)
 - Handoff: [docs/client-demo-handoff.md](docs/client-demo-handoff.md)
 - Paste-ready client message: [docs/demo-message-for-client.md](docs/demo-message-for-client.md)
-- Public URL without Claim SMS: [docs/vercel-sms-bypass.md](docs/vercel-sms-bypass.md) (Vercel → Continue with GitHub → Import this repo)
-- Screenshots: `media/demo-home-en.png`, `media/demo-products-en.png`, `media/demo-home-ar.png`, `media/demo-contact-en.png`
+- Public URL (preferred): [docs/netlify-public-demo.md](docs/netlify-public-demo.md) — disable Netlify password, share `*.netlify.app`
+- Optional Vercel path (not used for this handoff): [docs/vercel-sms-bypass.md](docs/vercel-sms-bypass.md)
+- Screenshots: `media/demo-home-en.png`, `media/demo-home-fa.png`, `media/demo-products-en.png`, `media/demo-home-ar.png`, `media/demo-contact-en.png`
 
 | Locale | Path prefix |
 |--------|-------------|
 | English (default) | `/`, `/about`, `/products`, `/contact` |
+| Persian (RTL) | `/fa`, `/fa/about`, … |
 | Arabic (RTL) | `/ar`, `/ar/about`, … |
 | Turkish | `/tr` … |
 | Chinese | `/zh` … |
@@ -75,7 +81,7 @@ Edit `src/lib/site.ts` only:
 - `historyYears` — agriculture / trade / export years
 - `people` — founder & CEO names
 - `contact` — email, phone, WhatsApp URL, warehouse line (**do not paste phone digits into README or issues**)
-- Suggested brand mark — `public/brand/mark.svg` + `src/components/brand-mark.tsx` (replace when client logo arrives)
+- Official lockup — `public/brand/logo-official-web.jpg` + `logo-nav.png` via `BrandLogo`
 
 UI copy lives in `messages/*.json` (next-intl).
 
@@ -83,18 +89,19 @@ UI copy lives in `messages/*.json` (next-intl).
 
 **Primary path:** import this GitHub repo in a host dashboard — no CLI login required.
 
-### Vercel (recommended)
+### Netlify (recommended for this handoff)
 
-1. Open [Vercel → New Project](https://vercel.com/new).
-2. Import **`Arafie3480/Pistachio-Company`**.
-3. Framework: **Next.js**. Root: repo root. **No env vars** required.
-4. Deploy. Later pushes to `main` redeploy when the project stays linked.
-5. Preview URL appears on the first deploy; share that until DNS cutover.
+Sites are already linked to this repo. For a **client-shareable** URL:
+
+1. Open the Netlify project → **Access control** → disable password / visitor access.
+2. Confirm production tracks **`main`** and is published.
+3. Share `https://<site>.netlify.app` (must return HTTP 200 anonymously).  
+   Step-by-step: [docs/netlify-public-demo.md](docs/netlify-public-demo.md).
 
 ### Alternatives
 
-- **Netlify** — New site → Import from Git → same repo → Next.js runtime.
-- **Cloudflare Pages** — Connect GitHub → framework preset Next.js (or `@cloudflare/next-on-pages` if you standardize on that later).
+- **Cloudflare Pages** — Connect GitHub → framework preset Next.js.
+- **Vercel** — optional; Import via GitHub OAuth if preferred later ([docs/vercel-sms-bypass.md](docs/vercel-sms-bypass.md)).
 
 CI (`.github/workflows/ci.yml`) runs `npm ci` + `npm run lint` + `npm run build` + `npm run smoke:ci` on push/PR to `main` with `contents: read`.
 
@@ -121,7 +128,6 @@ These do not block deploy; they improve go-live accuracy:
 - Dedicated virtual / business WhatsApp line (replace provisional number in `src/lib/site.ts` → `contact`)
 - Full office address beyond Motahari 52 warehouse
 - Confirm export email spelling (`greendiamond` vs `greendimond`)
-- Official logo file (site ships a **suggested** diamond + pistachio mark for delivery)
-- Owned product / orchard photography; certificates
+- Owned product / orchard photography; certificates (official logo already integrated)
 - Confirm exact experience years in `historyYears`
-- Import repo on Vercel (or peer) and point DNS when signed off
+- Make Netlify public (or peer host) and point DNS when signed off

@@ -33,7 +33,11 @@ export function PageHero({ title, lead }: PageHeroProps) {
         <h1 className="animate-gd-fade-up font-heading text-4xl font-semibold tracking-tight text-balance sm:text-5xl">
           {title}
         </h1>
-        <p className="animate-gd-fade-up animate-gd-delay-1 mt-4 max-w-2xl text-base leading-relaxed text-brand-foreground/80 sm:text-lg">
+        <div
+          className="animate-gd-fade-up animate-gd-delay-1 mt-5 h-px w-14 bg-gold/80"
+          aria-hidden
+        />
+        <p className="animate-gd-fade-up animate-gd-delay-2 mt-5 max-w-2xl text-base leading-relaxed text-brand-foreground/80 sm:text-lg">
           {lead}
         </p>
       </div>

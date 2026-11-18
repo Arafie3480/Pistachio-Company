@@ -42,7 +42,7 @@ export default async function ContactPage({
         <div className="grid gap-12 lg:grid-cols-[1fr_0.9fr] lg:gap-16">
           <div className="space-y-10">
             <div className="flex gap-4">
-              <span className="mt-1 flex size-10 shrink-0 items-center justify-center rounded-md bg-secondary text-brand">
+              <span className="mt-1 flex size-10 shrink-0 items-center justify-center rounded-md border border-gold/25 bg-secondary text-brand">
                 <Mail className="size-4" aria-hidden />
               </span>
               <div>
@@ -50,7 +50,7 @@ export default async function ContactPage({
                   {t("email")}
                 </h2>
                 <a
-                  href={`mailto:${contact.email}`}
+                  href={`mailto:${contact.email}?subject=${subject}`}
                   className="mt-1 inline-block text-base text-foreground/90 transition-colors hover:text-brand"
                 >
                   {contact.email}
@@ -62,7 +62,7 @@ export default async function ContactPage({
             </div>
 
             <div className="flex gap-4">
-              <span className="mt-1 flex size-10 shrink-0 items-center justify-center rounded-md bg-secondary text-brand">
+              <span className="mt-1 flex size-10 shrink-0 items-center justify-center rounded-md border border-gold/25 bg-secondary text-brand">
                 <Phone className="size-4" aria-hidden />
               </span>
               <div>
@@ -83,7 +83,7 @@ export default async function ContactPage({
             </div>
 
             <div className="flex gap-4">
-              <span className="mt-1 flex size-10 shrink-0 items-center justify-center rounded-md bg-secondary text-brand">
+              <span className="mt-1 flex size-10 shrink-0 items-center justify-center rounded-md border border-gold/25 bg-secondary text-brand">
                 <MessageCircle className="size-4" aria-hidden />
               </span>
               <div>
@@ -105,7 +105,7 @@ export default async function ContactPage({
             </div>
 
             <div className="flex gap-4">
-              <span className="mt-1 flex size-10 shrink-0 items-center justify-center rounded-md bg-secondary text-brand">
+              <span className="mt-1 flex size-10 shrink-0 items-center justify-center rounded-md border border-gold/25 bg-secondary text-brand">
                 <MapPin className="size-4" aria-hidden />
               </span>
               <div>
@@ -146,38 +146,52 @@ export default async function ContactPage({
             </div>
           </div>
 
-          <aside className="rounded-sm border border-border/80 bg-surface px-6 py-8 sm:px-8">
-            <h2 className="font-heading text-xl font-semibold text-ink">
-              {t("includeTitle")}
-            </h2>
-            <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-              {t("includeLead")}
-            </p>
-            <ul className="mt-6 space-y-3 text-sm text-foreground/85">
-              <li className="flex gap-2">
-                <span className="mt-2 size-1.5 shrink-0 rounded-full bg-brand" />
-                {t("include1")}
-              </li>
-              <li className="flex gap-2">
-                <span className="mt-2 size-1.5 shrink-0 rounded-full bg-brand" />
-                {t("include2")}
-              </li>
-              <li className="flex gap-2">
-                <span className="mt-2 size-1.5 shrink-0 rounded-full bg-brand" />
-                {t("include3")}
-              </li>
-            </ul>
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <Button asChild className="h-10 w-full sm:w-auto">
-                <a href={`mailto:${contact.email}?subject=${subject}`}>
-                  {t("emailCta")}
-                </a>
-              </Button>
-              <Button asChild variant="outline" className="h-10 w-full sm:w-auto">
-                <a href={waHref} target="_blank" rel="noopener noreferrer">
-                  {t("whatsappOpen")}
-                </a>
-              </Button>
+          <aside className="relative overflow-hidden rounded-sm border border-gold/30 bg-brand px-6 py-8 text-brand-foreground sm:px-8">
+            <div
+              className="pointer-events-none absolute inset-0 bg-[radial-gradient(420px_180px_at_90%_0%,oklch(0.8_0.1_82/0.2),transparent_65%)]"
+              aria-hidden
+            />
+            <div className="relative">
+              <h2 className="font-heading text-xl font-semibold">
+                {t("includeTitle")}
+              </h2>
+              <div className="mt-4 h-px w-12 bg-gold/80" aria-hidden />
+              <p className="mt-4 text-sm leading-relaxed text-brand-foreground/75">
+                {t("includeLead")}
+              </p>
+              <ul className="mt-6 space-y-3 text-sm text-brand-foreground/90">
+                <li className="flex gap-2">
+                  <span className="mt-2 size-1.5 shrink-0 rounded-full bg-gold" />
+                  {t("include1")}
+                </li>
+                <li className="flex gap-2">
+                  <span className="mt-2 size-1.5 shrink-0 rounded-full bg-gold" />
+                  {t("include2")}
+                </li>
+                <li className="flex gap-2">
+                  <span className="mt-2 size-1.5 shrink-0 rounded-full bg-gold" />
+                  {t("include3")}
+                </li>
+              </ul>
+              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+                <Button
+                  asChild
+                  className="h-10 w-full border border-gold/50 bg-gold text-gold-foreground hover:bg-gold/90 sm:w-auto"
+                >
+                  <a href={`mailto:${contact.email}?subject=${subject}`}>
+                    {t("emailCta")}
+                  </a>
+                </Button>
+                <Button
+                  asChild
+                  variant="outline"
+                  className="h-10 w-full border-brand-foreground/35 bg-transparent text-brand-foreground hover:bg-brand-foreground/10 hover:text-brand-foreground sm:w-auto"
+                >
+                  <a href={waHref} target="_blank" rel="noopener noreferrer">
+                    {t("whatsappOpen")}
+                  </a>
+                </Button>
+              </div>
             </div>
           </aside>
         </div>

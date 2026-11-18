@@ -34,6 +34,33 @@ const checks = [
   },
   { path: "/en/privacy", includes: ["Privacy"] },
   { path: "/ar", includes: ["lang=\"ar\"", "dir=\"rtl\""] },
+  {
+    path: "/fa",
+    includes: [
+      "lang=\"fa\"",
+      "dir=\"rtl\"",
+      "گرین دایموند",
+      "بازرگانی حسینی نوه",
+      "رفسنجان",
+      "تماس با میز صادرات",
+      "logo-lockup.png",
+      "logo-nav-trim.png",
+    ],
+  },
+  { path: "/fa/products", includes: ["احمدآقایی"] },
+  {
+    path: "/fa/about",
+    includes: ["بازرگانی حسینی نوه", "۱۳۶۶", "۱۳۷۵", "کشاورزی", "صادرات"],
+  },
+  {
+    path: "/fa/contact",
+    includes: [
+      "mailto:export@greendiamondfarm.com",
+      "tel:+989361814577",
+      "wa.me/989361814577",
+      "رفسنجان",
+    ],
+  },
   { path: "/tr" },
   { path: "/zh" },
   { path: "/hi" },
@@ -43,7 +70,10 @@ const checks = [
   { path: "/privacy" },
   { path: "/contact" },
   { path: "/opengraph-image", expect: 200 },
-  { path: "/icon", expect: 200 },
+  { path: "/icon.png", expect: 200 },
+  { path: "/apple-icon.png", expect: 200 },
+  { path: "/brand/logo-lockup.png", expect: 200 },
+  { path: "/brand/logo-nav-trim.png", expect: 200 },
   { path: "/definitely-missing-page-xyz", expect: 404 },
 ];
 

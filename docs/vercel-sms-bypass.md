@@ -52,11 +52,11 @@ SSH: `git@github.com:Arafie3480/Pistachio-Company.git`
 
 | مورد | وضعیت |
 |------|--------|
-| Delivery branch | `main` (merged handoff) + PR closeout برای smoke CI |
+| Delivery branch | `main` (closeout merge شده) |
 | دمو نمایشی | لوکال `:4321` (اسکرین‌شات‌ها در `media/demo-*.png`) |
-| Vercel CLI / Claim SMS | ایران بلاک — از Import OAuth استفاده کنید |
-| Netlify deploy preview | ساخته می‌شود ولی **Access control / 401** دارد — برای کارفرما نفرستید |
-| URL عمومی پایدار | بعد از Import OAuth (Vercel/Netlify بدون password) → `*.vercel.app` / `*.netlify.app` |
+| Vercel | فعلاً برای این تحویل **استفاده نمی‌شود** (رد شده) — مسیر اصلی: Netlify عمومی |
+| Netlify | متصل است ولی **Access/401** — راهنما: [netlify-public-demo.md](./netlify-public-demo.md) |
+| URL عمومی پایدار | بعد از خاموش‌کردن password در Netlify → `*.netlify.app` |
 
 ## ممنوع
 - Claim لینک موقت + SMS ایران  

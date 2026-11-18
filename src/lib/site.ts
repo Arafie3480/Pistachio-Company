@@ -6,12 +6,35 @@
 
 export const brand = {
   name: "Green Diamond Farm",
+  /** Persian display name for FA/AR chrome (official lockup still English mark). */
+  nameFa: "گرین دایموند فارم",
   legalNameFa: "بازرگانی حسینی نوه",
   legalNameEn: "Hosseini Naveh",
+  /** Origin city shown on official lockup */
+  region: "Rafsanjan",
+  regionFa: "رفسنجان",
   domain: "greendiamondfarm.com",
   /** Footer copyright year — keep static for Cache Components prerender. */
   copyrightYear: 2026,
+  /** Client-supplied lockup (public/brand). */
+  /** Transparent trimmed lockup — no white plate/border around the mark. */
+  logoPath: "/brand/logo-lockup.png",
+  logoNavPath: "/brand/logo-nav-trim.png",
+  logoSquarePath: "/brand/logo-lockup-sq.png",
 } as const;
+
+/** Prefer Persian legal name + region on RTL locales (FA/AR buyer review). */
+export function brandLegalForLocale(locale: string) {
+  const preferFa = locale === "fa" || locale === "ar";
+  return {
+    preferFa,
+    displayName: preferFa ? brand.nameFa : brand.name,
+    legalName: preferFa ? brand.legalNameFa : brand.legalNameEn,
+    legalNameEn: brand.legalNameEn,
+    legalNameFa: brand.legalNameFa,
+    region: preferFa ? brand.regionFa : brand.region,
+  } as const;
+}
 
 /** Leadership — names from client (2026-10-22). */
 export const people = {
@@ -26,13 +49,20 @@ export const people = {
 } as const;
 
 /**
- * Company-stated experience years (edit when the client confirms exact dates).
- * About page + all locales interpolate these numbers only.
+ * Client-stated start years (Telegram 2026-11-18):
+ * کشاورزی ۱۳۶۶ / ۱۹۸۷ · خریدوفروش ۱۳۷۱ / ۱۹۹۲ · صادرات ۱۳۷۵ / ۱۹۹۶.
  */
+export const historySince = {
+  agriculture: 1987,
+  pistachioTrade: 1992,
+  export: 1996,
+} as const;
+
+/** Years of practice derived from copyrightYear for display figures. */
 export const historyYears = {
-  agriculture: 50,
-  pistachioTrade: 40,
-  export: 30,
+  agriculture: brand.copyrightYear - historySince.agriculture,
+  pistachioTrade: brand.copyrightYear - historySince.pistachioTrade,
+  export: brand.copyrightYear - historySince.export,
 } as const;
 
 export const contact = {
@@ -45,9 +75,14 @@ export const contact = {
   phone: "+989361814577",
   phoneDisplay: "+98 936 181 4577",
   whatsappUrl: "https://wa.me/989361814577",
-  /** Known warehouse line only — no invented city/postal beyond Motahari 52. */
-  addressLine: "Warehouse, Motahari 52",
-  addressLineFa: "انبار، مطهری ۵۲",
+  /**
+   * Warehouse street known from client; city from official lockup (Rafsanjan).
+   * Expand street/postal only when the client confirms fuller address.
+   */
+  addressLine: "Warehouse, Motahari 52, Rafsanjan, Iran",
+  addressLineFa: "انبار، مطهری ۵۲، رفسنجان، ایران",
+  addressLocality: "Rafsanjan",
+  addressCountry: "IR",
 } as const;
 
 export const productSlugs = [
@@ -89,12 +124,12 @@ export const imagery = {
   /** Full-bleed in-shell pistachios for brand-first hero. */
   hero:
     "https://images.unsplash.com/photo-1704079662049-d00890d21a69?auto=format&fit=crop&w=2400&q=80",
-  /** Export-scale shelled kernels for About (on-topic stand-in until orchard photos). */
+  /** Shelled kernels for About (stand-in until owned orchard photos). */
   orchard:
     "https://images.unsplash.com/photo-1502825751399-28baa9b81efe?auto=format&fit=crop&w=1600&q=80",
-  /** Shelled kernels for catalog / shipment section. */
+  /** In-shell texture for catalog strip — distinct from About kernels. */
   product:
-    "https://images.unsplash.com/photo-1502825751399-28baa9b81efe?auto=format&fit=crop&w=1600&q=80",
+    "https://images.unsplash.com/photo-1704079662049-d00890d21a69?auto=format&fit=crop&w=1600&q=80",
   /** Interior page atmosphere — in-shell harvest texture. */
   harvest:
     "https://images.unsplash.com/photo-1704079662049-d00890d21a69?auto=format&fit=crop&w=1600&q=80",

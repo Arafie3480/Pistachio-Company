@@ -1,9 +1,9 @@
 import Image from "next/image";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { BrandMark } from "@/components/brand-mark";
+import { BrandLogo } from "@/components/brand-logo";
 import { Button } from "@/components/ui/button";
 import { Link } from "@/i18n/navigation";
-import { brand, imagery, productSlugs } from "@/lib/site";
+import { brandLegalForLocale, imagery, productSlugs } from "@/lib/site";
 import { buildPageMetadata } from "@/lib/seo";
 
 export async function generateMetadata({
@@ -32,6 +32,7 @@ export default async function HomePage({
   setRequestLocale(locale);
   const t = await getTranslations("Home");
   const tProducts = await getTranslations("products");
+  const legal = brandLegalForLocale(locale);
 
   const pillars = [
     { title: t("pillar1Title"), body: t("pillar1Body") },
@@ -53,39 +54,47 @@ export default async function HomePage({
           />
         </div>
         <div
-          className="absolute inset-0 bg-gradient-to-r from-brand/82 via-brand/55 to-brand/28 rtl:bg-gradient-to-l"
+          className="absolute inset-0 bg-gradient-to-r from-brand/88 via-brand/58 to-brand/22 rtl:bg-gradient-to-l"
           aria-hidden
         />
         <div
-          className="absolute inset-0 bg-gradient-to-t from-brand/65 via-transparent to-brand/25"
+          className="absolute inset-0 bg-gradient-to-t from-brand/70 via-transparent to-brand/30"
+          aria-hidden
+        />
+        <div
+          className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-gold/10 to-transparent"
           aria-hidden
         />
 
         <div className="relative mx-auto flex min-h-[100svh] max-w-6xl flex-col justify-end px-5 pt-28 pb-16 sm:justify-center sm:px-8 sm:pb-24">
-          <div className="animate-gd-fade-up flex items-center gap-3 sm:gap-4">
-            <BrandMark tone="onDark" className="size-11 sm:size-14" />
-            <div>
-              <p className="font-heading text-3xl font-semibold tracking-tight text-balance sm:text-5xl md:text-6xl md:leading-[1.05]">
-                {brand.name}
-              </p>
-              <p className="mt-1 text-xs tracking-[0.12em] text-brand-foreground/60 uppercase sm:text-sm sm:tracking-[0.16em]">
-                {brand.legalNameEn}
-              </p>
-            </div>
+          <div className="animate-gd-fade-up max-w-md">
+            <BrandLogo
+              size="hero"
+              priority
+              className="h-[5.5rem] w-auto sm:h-28 md:h-[7.5rem]"
+            />
+            <p
+              className="brand-eyebrow mt-4 text-xs text-brand-foreground/70 sm:text-sm"
+              lang={legal.preferFa ? "fa" : undefined}
+              dir={legal.preferFa ? "rtl" : undefined}
+            >
+              {legal.legalName}
+              {legal.region ? ` · ${legal.region}` : ""}
+            </p>
           </div>
           <h1 className="animate-gd-fade-up animate-gd-delay-1 mt-6 max-w-xl font-heading text-2xl font-medium tracking-tight text-balance text-brand-foreground/95 sm:mt-8 sm:text-3xl md:text-[2.15rem] md:leading-snug">
             {t("headline")}
           </h1>
-          <p className="animate-gd-fade-up animate-gd-delay-2 mt-4 max-w-md text-base leading-relaxed text-brand-foreground/75 sm:text-lg">
-            {t("subhead", { legalName: brand.legalNameEn })}
+          <p className="animate-gd-fade-up animate-gd-delay-2 mt-4 max-w-md text-base leading-relaxed text-brand-foreground/80 sm:text-lg">
+            {t("subhead", { legalName: legal.legalName })}
           </p>
           <div className="animate-gd-fade-up animate-gd-delay-3 mt-8 flex flex-wrap gap-3">
             <Button
               asChild
               size="lg"
-              className="h-11 bg-brand-foreground px-5 text-brand hover:bg-brand-foreground/90"
+              className="h-11 border border-gold/50 bg-gold px-5 text-gold-foreground hover:bg-gold/90"
             >
-              <Link href="/products">{t("ctaProducts")}</Link>
+              <Link href="/contact">{t("ctaContact")}</Link>
             </Button>
             <Button
               asChild
@@ -93,7 +102,7 @@ export default async function HomePage({
               variant="outline"
               className="h-11 border-brand-foreground/35 bg-transparent px-5 text-brand-foreground hover:bg-brand-foreground/10 hover:text-brand-foreground"
             >
-              <Link href="/contact">{t("ctaContact")}</Link>
+              <Link href="/products">{t("ctaProducts")}</Link>
             </Button>
           </div>
         </div>
@@ -104,6 +113,7 @@ export default async function HomePage({
           <h2 className="font-heading text-3xl font-semibold tracking-tight text-ink sm:text-4xl">
             {t("buyersTitle")}
           </h2>
+          <div className="mt-5 h-px w-14 bg-gold/80" aria-hidden />
           <p className="mt-5 text-base leading-relaxed text-muted-foreground sm:text-lg">
             {t("buyersLead")}
           </p>
@@ -111,7 +121,7 @@ export default async function HomePage({
 
         <ul className="mt-14 grid gap-x-12 gap-y-10 sm:grid-cols-3">
           {pillars.map((item) => (
-            <li key={item.title} className="border-t border-border/70 pt-6">
+            <li key={item.title} className="border-t border-gold/35 pt-6">
               <h3 className="font-heading text-lg font-semibold text-ink">
                 {item.title}
               </h3>
@@ -153,24 +163,38 @@ export default async function HomePage({
                 {t("kernelsRoasted")}
               </li>
             </ul>
-            <Button asChild className="mt-8 h-10">
+            <Button
+              asChild
+              className="mt-8 h-10 border border-gold/40 bg-gold text-gold-foreground hover:bg-gold/90"
+            >
               <Link href="/products">{t("seeAll")}</Link>
             </Button>
           </div>
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-5 py-20 sm:px-8 sm:py-28">
-        <div className="max-w-xl">
-          <h2 className="font-heading text-3xl font-semibold tracking-tight text-ink sm:text-4xl">
-            {t("ctaTitle")}
-          </h2>
-          <p className="mt-5 text-base leading-relaxed text-muted-foreground sm:text-lg">
-            {t("ctaLead")}
-          </p>
-          <Button asChild size="lg" className="mt-8 h-11">
-            <Link href="/contact">{t("ctaButton")}</Link>
-          </Button>
+      <section className="relative overflow-hidden bg-brand text-brand-foreground">
+        <div
+          className="pointer-events-none absolute inset-0 bg-[radial-gradient(700px_280px_at_15%_0%,oklch(0.8_0.1_82/0.22),transparent_60%)]"
+          aria-hidden
+        />
+        <div className="relative mx-auto max-w-6xl px-5 py-20 sm:px-8 sm:py-28">
+          <div className="max-w-xl">
+            <h2 className="font-heading text-3xl font-semibold tracking-tight text-balance sm:text-4xl">
+              {t("ctaTitle")}
+            </h2>
+            <div className="mt-5 h-px w-14 bg-gold/85" aria-hidden />
+            <p className="mt-5 text-base leading-relaxed text-brand-foreground/75 sm:text-lg">
+              {t("ctaLead")}
+            </p>
+            <Button
+              asChild
+              size="lg"
+              className="mt-8 h-11 border border-gold/50 bg-gold text-gold-foreground hover:bg-gold/90"
+            >
+              <Link href="/contact">{t("ctaButton")}</Link>
+            </Button>
+          </div>
         </div>
       </section>
     </>

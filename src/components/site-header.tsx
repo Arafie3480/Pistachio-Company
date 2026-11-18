@@ -3,11 +3,10 @@
 import { useLocale, useTranslations } from "next-intl";
 import { useEffect, useRef, useState } from "react";
 import { Menu, X } from "lucide-react";
-import { BrandMark } from "@/components/brand-mark";
+import { BrandLogo } from "@/components/brand-logo";
 import { LanguageSwitcher } from "@/components/language-switcher";
 import { Button } from "@/components/ui/button";
 import { Link, usePathname } from "@/i18n/navigation";
-import { brand } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
 const navHrefs = ["/", "/about", "/products", "/contact"] as const;
@@ -39,20 +38,38 @@ export function SiteHeader() {
 
   useEffect(() => {
     if (!open) return;
+    const drawer = document.getElementById("mobile-nav");
+    const focusables = () =>
+      Array.from(
+        drawer?.querySelectorAll<HTMLElement>(
+          'a[href], button:not([disabled]), select, [tabindex]:not([tabindex="-1"])',
+        ) ?? [],
+      ).filter((el) => !el.hasAttribute("disabled") && el.tabIndex !== -1);
+
     const onKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
         setOpen(false);
         menuButtonRef.current?.focus();
+        return;
+      }
+      if (e.key !== "Tab") return;
+      const items = focusables();
+      if (items.length === 0) return;
+      const first = items[0];
+      const last = items[items.length - 1];
+      const active = document.activeElement as HTMLElement | null;
+      if (e.shiftKey && active === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && active === last) {
+        e.preventDefault();
+        first.focus();
       }
     };
     const prevOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
     window.addEventListener("keydown", onKey);
-    // Move focus into the drawer for keyboard / screen-reader users.
-    const firstLink = document.querySelector<HTMLElement>(
-      "#mobile-nav a, #mobile-nav button",
-    );
-    firstLink?.focus();
+    focusables()[0]?.focus();
     return () => {
       document.body.style.overflow = prevOverflow;
       window.removeEventListener("keydown", onKey);
@@ -71,17 +88,9 @@ export function SiteHeader() {
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-3 px-5 sm:h-[4.25rem] sm:px-8">
         <Link
           href="/"
-          className="group flex min-w-0 items-center gap-2.5 text-brand-foreground transition-opacity hover:opacity-90"
+          className="group shrink-0 rounded-md outline-none transition-opacity hover:opacity-95 focus-visible:ring-2 focus-visible:ring-gold/70"
         >
-          <BrandMark tone="onDark" className="size-8 sm:size-9" />
-          <span className="min-w-0 leading-tight">
-            <span className="block font-heading text-[0.95rem] font-semibold tracking-tight sm:text-base">
-              {brand.name}
-            </span>
-            <span className="mt-0.5 block truncate text-[0.65rem] tracking-wide text-brand-foreground/65 sm:text-[0.7rem]">
-              {brand.legalNameEn}
-            </span>
-          </span>
+          <BrandLogo size="nav" priority className="h-8 w-auto sm:h-9" />
         </Link>
 
         <nav
@@ -98,7 +107,7 @@ export function SiteHeader() {
                 className={cn(
                   "relative rounded-md px-3 py-2 text-sm transition-colors",
                   active
-                    ? "text-brand-foreground after:absolute after:inset-x-3 after:bottom-1 after:h-px after:bg-brand-foreground/70"
+                    ? "text-brand-foreground after:absolute after:inset-x-3 after:bottom-1 after:h-px after:bg-gold/90"
                     : "text-brand-foreground/75 hover:text-brand-foreground"
                 )}
                 aria-current={active ? "page" : undefined}
@@ -111,7 +120,7 @@ export function SiteHeader() {
           <Button
             asChild
             size="sm"
-            className="ms-2 h-9 bg-brand-foreground text-brand hover:bg-brand-foreground/90"
+            className="ms-2 h-9 border border-gold/40 bg-gold text-gold-foreground hover:bg-gold/90"
           >
             <Link href="/contact">{t("inquire")}</Link>
           </Button>
@@ -125,7 +134,7 @@ export function SiteHeader() {
             className="inline-flex size-10 items-center justify-center rounded-md text-brand-foreground outline-none transition-colors hover:bg-brand-foreground/10 focus-visible:ring-2 focus-visible:ring-brand-foreground/40"
             aria-expanded={open}
             aria-controls="mobile-nav"
-            aria-haspopup="true"
+            aria-haspopup="menu"
             aria-label={open ? t("closeMenu") : t("openMenu")}
             onClick={() => setOpen((v) => !v)}
           >
@@ -164,7 +173,7 @@ export function SiteHeader() {
             })}
             <Button
               asChild
-              className="mt-2 h-11 w-full bg-brand-foreground text-brand hover:bg-brand-foreground/90"
+              className="mt-2 h-11 w-full border border-gold/40 bg-gold text-gold-foreground hover:bg-gold/90"
             >
               <Link href="/contact">{t("inquire")}</Link>
             </Button>
