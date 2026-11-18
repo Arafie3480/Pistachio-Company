@@ -1,0 +1,8 @@
+# Keep internal handoff / commercial docs out of Cursor publish uploads.
+docs/invoice-demo-approval.md
+docs/client-demo-handoff.md
+docs/client-project-status.md
+docs/demo-message-for-client.md
+docs/netlify-public-demo.md
+docs/vercel-sms-bypass.md
+media/

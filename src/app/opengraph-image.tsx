@@ -10,7 +10,7 @@ export const contentType = "image/png";
 /** Default OG card using the official square lockup. */
 export default async function OpenGraphImage() {
   const logoBytes = await readFile(
-    join(process.cwd(), "public/brand/logo-square.png"),
+    join(process.cwd(), "public/brand/logo-lockup-sq.png"),
   );
   const logoSrc = `data:image/png;base64,${logoBytes.toString("base64")}`;
 
