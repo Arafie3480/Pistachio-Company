@@ -65,7 +65,7 @@ export default async function AboutPage({
               })}
             </p>
             <p className="mt-4 text-base leading-relaxed text-muted-foreground">
-              {t("p2")}
+              {t("p2", { brand: legal.displayName })}
             </p>
           </div>
 

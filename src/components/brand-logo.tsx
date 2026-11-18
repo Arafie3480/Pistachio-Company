@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useLocale } from "next-intl";
 import { cn } from "@/lib/utils";
+import { brand } from "@/lib/site";
 
 type BrandLogoProps = {
   className?: string;
@@ -12,14 +13,13 @@ type BrandLogoProps = {
 };
 
 const sizes = {
-  // logo-nav.png is the square lockup crop (135×128); keep intrinsic ratio.
-  nav: { width: 135, height: 128, src: "/brand/logo-nav.png" as const },
-  hero: { width: 280, height: 210, src: "/brand/logo-official-web.jpg" as const },
-  footer: { width: 135, height: 128, src: "/brand/logo-nav.png" as const },
-};
+  nav: { width: 135, height: 128, src: brand.logoNavPath },
+  hero: { width: 458, height: 440, src: brand.logoPath },
+  footer: { width: 135, height: 128, src: brand.logoNavPath },
+} as const;
 
 /**
- * Official Green Diamond Farm Rafsanjan lockup (client-supplied).
+ * Official Green Diamond Farm Rafsanjan lockup (client-supplied, border-trimmed).
  */
 export function BrandLogo({
   className,
@@ -40,7 +40,10 @@ export function BrandLogo({
       width={cfg.width}
       height={cfg.height}
       priority={priority}
-      className={cn("h-auto w-auto object-contain", className)}
+      className={cn(
+        "h-auto w-auto object-contain object-left rtl:object-right",
+        className,
+      )}
     />
   );
 }

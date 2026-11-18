@@ -56,6 +56,12 @@
   --radius-4xl: calc(var(--radius) * 2.6);
 }
 
+/* Persian/Arabic: prefer Noto — less “Latin template” feel for FA review */
+html[dir="rtl"] {
+  --font-sans: var(--font-noto-ar), var(--font-noto), ui-sans-serif, system-ui, sans-serif;
+  --font-heading: var(--font-noto-ar), var(--font-noto), ui-sans-serif, system-ui, sans-serif;
+}
+
 :root {
   /*
    * Official lockup palette: deep forest green + pistachio leaf greens + warm gold.

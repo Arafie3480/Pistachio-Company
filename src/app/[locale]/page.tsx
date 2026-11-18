@@ -71,7 +71,7 @@ export default async function HomePage({
             <BrandLogo
               size="hero"
               priority
-              className="h-24 w-auto drop-shadow-sm sm:h-28 md:h-32"
+              className="h-[5.5rem] w-auto sm:h-28 md:h-[7.5rem]"
             />
             <p
               className="brand-eyebrow mt-4 text-xs text-brand-foreground/70 sm:text-sm"

@@ -52,7 +52,7 @@
     "p2": "我们如实呈现品种、缩短沟通路径，并追求海外买家信赖的第一印象：沉稳、专业、随时可谈业务。",
     "imageAlt": "准备出口包装的开心果仁",
     "historyTitle": "历史与信誉",
-    "historyNote": "家族长期从事农业、国内贸易与出口。",
+    "historyNote": "1987 年起农业，1992 年进入国内贸易，1996 年开始出口。",
     "founderLabel": "创始人",
     "founderBody": "{nameEn}（{nameFa}）",
     "ceoLabel": "首席执行官",
@@ -60,9 +60,9 @@
     "yearsAgriculture": "{years}+ 年农业经验",
     "yearsTrade": "{years}+ 年开心果购销经验",
     "yearsExport": "{years}+ 年出口经验",
-    "yearsAgricultureLabel": "农业",
-    "yearsTradeLabel": "开心果贸易",
-    "yearsExportLabel": "出口",
+    "yearsAgricultureLabel": "农业（自 1987）",
+    "yearsTradeLabel": "开心果贸易（自 1992）",
+    "yearsExportLabel": "出口（自 1996）",
     "originLabel": "渊源",
     "originBody": "在 {legalName} 旗下从事伊朗开心果贸易 — 家族领导覆盖农业、国内贸易与国际出口。",
     "standLabel": "我们的立足点",
@@ -70,7 +70,7 @@
     "certsLabel": "认证",
     "certsBody": "出口文件与证书可应买家要求提供。",
     "marketsLabel": "市场",
-    "marketsBody": "服务全球进口商、经销商与贴牌合作伙伴。"
+    "marketsBody": "伊拉克、中国、俄罗斯、土库曼斯坦、沙特阿拉伯、德国及其他目标市场。"
   },
   "Products": {
     "metaTitle": "产品",

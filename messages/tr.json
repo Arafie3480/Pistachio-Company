@@ -52,7 +52,7 @@
     "p2": "Çeşitleri dürüstçe sunar, iletişim yollarını kısa tutar ve yabancı alıcıların güvendiği ilk izlenimi hedefleriz: sakin, yetkin ve iş yapmaya hazır.",
     "imageAlt": "İhracat paketlemesi için hazırlanmış fıstık içleri",
     "historyTitle": "Tarihçe ve güvenilirlik",
-    "historyNote": "Tarım, iç ticaret ve ihracatta uzun soluklu aile pratiği.",
+    "historyNote": "1987’den tarım, 1992’den yurt içi ticaret, 1996’dan ihracat.",
     "founderLabel": "Kurucu",
     "founderBody": "{nameEn} ({nameFa})",
     "ceoLabel": "CEO",
@@ -60,9 +60,9 @@
     "yearsAgriculture": "{years}+ yıl tarım",
     "yearsTrade": "{years}+ yıl fıstık alım-satımı",
     "yearsExport": "{years}+ yıl ihracat",
-    "yearsAgricultureLabel": "Tarım",
-    "yearsTradeLabel": "Fıstık ticareti",
-    "yearsExportLabel": "İhracat",
+    "yearsAgricultureLabel": "Tarım (1987’den)",
+    "yearsTradeLabel": "Fıstık ticareti (1992’den)",
+    "yearsExportLabel": "İhracat (1996’dan)",
     "originLabel": "Köken",
     "originBody": "{legalName} altında İran fıstığı ticareti — tarım, yurt içi ticaret ve uluslararası ihracatı kapsayan aile liderliği.",
     "standLabel": "Dayanağımız",
@@ -70,7 +70,7 @@
     "certsLabel": "Sertifikalar",
     "certsBody": "İhracat belgeleri ve sertifikalar talep üzerine alıcılarla paylaşılır.",
     "marketsLabel": "Pazarlar",
-    "marketsBody": "Dünya çapında ithalatçılar, distribütörler ve private-label ortakları."
+    "marketsBody": "Irak, Çin, Rusya, Türkmenistan, Suudi Arabistan, Almanya ve diğer hedef pazarlar."
   },
   "Products": {
     "metaTitle": "Ürünler",

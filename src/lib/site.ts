@@ -17,9 +17,10 @@ export const brand = {
   /** Footer copyright year — keep static for Cache Components prerender. */
   copyrightYear: 2026,
   /** Client-supplied lockup (public/brand). */
-  logoPath: "/brand/logo-official-web.jpg",
-  logoNavPath: "/brand/logo-nav.png",
-  logoSquarePath: "/brand/logo-square.png",
+  /** Transparent trimmed lockup — no white plate/border around the mark. */
+  logoPath: "/brand/logo-lockup.png",
+  logoNavPath: "/brand/logo-nav-trim.png",
+  logoSquarePath: "/brand/logo-lockup-sq.png",
 } as const;
 
 /** Prefer Persian legal name + region on RTL locales (FA/AR buyer review). */
@@ -48,13 +49,20 @@ export const people = {
 } as const;
 
 /**
- * Company-stated experience years (edit when the client confirms exact dates).
- * About page + all locales interpolate these numbers only.
+ * Client-stated start years (Telegram 2026-11-18):
+ * کشاورزی ۱۳۶۶ / ۱۹۸۷ · خریدوفروش ۱۳۷۱ / ۱۹۹۲ · صادرات ۱۳۷۵ / ۱۹۹۶.
  */
+export const historySince = {
+  agriculture: 1987,
+  pistachioTrade: 1992,
+  export: 1996,
+} as const;
+
+/** Years of practice derived from copyrightYear for display figures. */
 export const historyYears = {
-  agriculture: 50,
-  pistachioTrade: 40,
-  export: 30,
+  agriculture: brand.copyrightYear - historySince.agriculture,
+  pistachioTrade: brand.copyrightYear - historySince.pistachioTrade,
+  export: brand.copyrightYear - historySince.export,
 } as const;
 
 export const contact = {

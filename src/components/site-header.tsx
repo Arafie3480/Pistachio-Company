@@ -90,7 +90,7 @@ export function SiteHeader() {
           href="/"
           className="group shrink-0 rounded-md outline-none transition-opacity hover:opacity-95 focus-visible:ring-2 focus-visible:ring-gold/70"
         >
-          <BrandLogo size="nav" priority className="h-9 w-auto sm:h-10" />
+          <BrandLogo size="nav" priority className="h-8 w-auto sm:h-9" />
         </Link>
 
         <nav

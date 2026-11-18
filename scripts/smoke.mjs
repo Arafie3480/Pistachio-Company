@@ -43,14 +43,14 @@ const checks = [
       "بازرگانی حسینی نوه",
       "رفسنجان",
       "تماس با میز صادرات",
-      "brand/logo-official-web.jpg",
-      "logo-nav.png",
+      "logo-lockup.png",
+      "logo-nav-trim.png",
     ],
   },
   { path: "/fa/products", includes: ["احمدآقایی"] },
   {
     path: "/fa/about",
-    includes: ["بازرگانی حسینی نوه", "کشاورزی", "صادرات"],
+    includes: ["بازرگانی حسینی نوه", "۱۳۶۶", "۱۳۷۵", "کشاورزی", "صادرات"],
   },
   {
     path: "/fa/contact",
@@ -72,7 +72,8 @@ const checks = [
   { path: "/opengraph-image", expect: 200 },
   { path: "/icon.png", expect: 200 },
   { path: "/apple-icon.png", expect: 200 },
-  { path: "/brand/logo-nav.png", expect: 200 },
+  { path: "/brand/logo-lockup.png", expect: 200 },
+  { path: "/brand/logo-nav-trim.png", expect: 200 },
   { path: "/definitely-missing-page-xyz", expect: 404 },
 ];
 
