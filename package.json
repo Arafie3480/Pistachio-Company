@@ -11,7 +11,8 @@
     "start": "next start --port 4321",
     "lint": "eslint",
     "smoke": "node scripts/smoke.mjs",
-    "smoke:ci": "node scripts/smoke-ci.mjs"
+    "smoke:ci": "node scripts/smoke-ci.mjs",
+    "validate:wp": "node scripts/validate-wp-theme.mjs"
   },
   "dependencies": {
     "class-variance-authority": "^0.7.1",

@@ -2,27 +2,28 @@
 
 Export website for **بازرگانی حسینی نوه** (Hosseini Naveh) — pistachio export brand **Green Diamond Farm**.
 
-- **Domain:** [greendiamondfarm.com](https://greendiamondfarm.com) (WordPress live today; this Next.js app is the cutover target)
+- **Domain:** [greendiamondfarm.com](https://greendiamondfarm.com) — final delivery is the custom WordPress theme
 - **GitHub:** [Arafie3480/Pistachio-Company](https://github.com/Arafie3480/Pistachio-Company)
-- **Stack:** Next.js (App Router) · TypeScript · Tailwind CSS · next-intl · shadcn/ui
+- **Stack:** Next.js demo (approved) · WordPress theme `wordpress/green-diamond-farm/` (cutover)
 
 ## Delivery status
 
-Ready for client review. Marketing site is multilingual, SEO-ready, and CI-verified (`lint` + `build` + `smoke:ci`). Share [docs/client-project-status.md](docs/client-project-status.md) for the status snapshot; make Netlify public for a durable demo URL.
+Visual demo approved. WordPress theme (locked styles + content-only admin) is in-repo. Install on the client host after WP admin access + stage-2 payment. See [docs/wordpress-delivery.md](docs/wordpress-delivery.md).
 
 | Area | Status |
 |------|--------|
 | Pages (Home, About, Products, Contact, Privacy) | Done — 7 locales (EN default + FA/AR RTL, TR, ZH, HI, RU) |
 | Official logo + richer green/gold palette | Done — client lockup in header/hero/footer |
 | FA/AR legal name + region on hero/footer | Done — `brandLegalForLocale` |
-| Contact (email, phone, WhatsApp, warehouse) | Live from `src/lib/site.ts` |
-| SEO (canonical, hreflang, sitemap, robots, OG, Organization + catalog JSON-LD) | Done |
+| Contact (email, phone, WhatsApp, warehouse) | Live from `src/lib/site.ts` / WP Site Content |
+| SEO (canonical, hreflang, sitemap, robots, OG, Organization + catalog JSON-LD) | Done (Next demo); WP theme ships meta + hreflang |
 | Security / privacy (headers, CI least-privilege, first-party OG, privacy page) | Done |
 | A11y (skip link, mobile focus trap, `aria-current`, reduced motion, locale 404/error) | Done |
 | Contact CTAs (mailto, tel, WhatsApp with inquiry prefill) | Done |
-| CI (`npm run lint` + `npm run build` + `npm run smoke:ci`, `contents: read`) | Done |
+| CI (`npm run lint` + `npm run build` + `npm run smoke:ci` + `validate:wp`) | Done |
+| WordPress theme (locked CSS + Appearance → Site Content) | Done in `wordpress/green-diamond-farm/` |
 | Owned photography / certificates | Client assets pending |
-| DNS cutover from WordPress | Out of scope until host + domain ready |
+| Install on client WP + domain cutover | Waiting on WP admin access + stage 2 |
 
 ## Local setup
 
@@ -46,6 +47,8 @@ Open [http://127.0.0.1:4321](http://127.0.0.1:4321).
 | Contact | http://127.0.0.1:4321/en/contact |
 
 - Client status (so far): [docs/client-project-status.md](docs/client-project-status.md)
+- WordPress install + cutover: [docs/wordpress-delivery.md](docs/wordpress-delivery.md)
+- Client content-only guide (FA): [docs/wordpress-client-edit-guide.md](docs/wordpress-client-edit-guide.md)
 - Proforma (۱۰M تومان · ۵۰٪ پس از تأیید دمو): [docs/invoice-demo-approval.md](docs/invoice-demo-approval.md)
 - Handoff: [docs/client-demo-handoff.md](docs/client-demo-handoff.md)
 - Paste-ready client message: [docs/demo-message-for-client.md](docs/demo-message-for-client.md)

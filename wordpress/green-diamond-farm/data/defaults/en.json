@@ -1,0 +1,183 @@
+{
+  "Meta": {
+    "titleDefault": "Green Diamond Farm — Iranian Pistachio Export",
+    "titleTemplate": "%s · Green Diamond Farm",
+    "description": "Green Diamond Farm — Iranian pistachio export under Hosseini Naveh for international buyers."
+  },
+  "Nav": {
+    "home": "Home",
+    "about": "About",
+    "products": "Products",
+    "contact": "Contact",
+    "inquire": "Inquire",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "primary": "Primary navigation",
+    "mobile": "Mobile navigation"
+  },
+  "Language": {
+    "label": "Language",
+    "switchTo": "Switch language"
+  },
+  "Home": {
+    "headline": "Iranian pistachios from Rafsanjan for foreign buyers",
+    "subhead": "{legalName} — direct supply, clear grades, and a fast reply from the export desk.",
+    "ctaProducts": "View products",
+    "ctaContact": "Contact export desk",
+    "heroAlt": "In-shell Iranian pistachios ready for export",
+    "buyersTitle": "For importers and wholesalers",
+    "buyersLead": "Tell us variety, volume, and destination. We answer with grade and timing in plain terms.",
+    "pillar1Title": "Core varieties",
+    "pillar1Body": "Ahmad Aghaei, Akbari, Fandoghi, Kaleh Ghouchi, Dahan Bast, kernels, and salted & roasted.",
+    "pillar2Title": "Real export work",
+    "pillar2Body": "Documents, packing, and shipment coordination for wholesale and private label.",
+    "pillar3Title": "Direct contact",
+    "pillar3Body": "Email or WhatsApp to the same export desk — no long forms.",
+    "shipmentTitle": "From shell to shipment",
+    "shipmentLead": "Browse the list, then tell us what your market needs.",
+    "kernelsRoasted": "Kernels · Salted & roasted",
+    "productAlt": "Shelled pistachio kernels — green diamond grade",
+    "seeAll": "See all products",
+    "ctaTitle": "Ready to inquire?",
+    "ctaLead": "Send variety, approximate volume, and destination. We reply from the export desk.",
+    "ctaButton": "Email or WhatsApp"
+  },
+  "About": {
+    "metaTitle": "About",
+    "metaDescription": "Hosseini Naveh history and the Green Diamond Farm export brand — from farming to pistachio export.",
+    "title": "About the company",
+    "lead": "A family path from farming to pistachio export.",
+    "heading": "Hosseini Naveh",
+    "p1": "Hosseini Naveh began under Mr. Asghar Hosseini Naveh in 1987 with agricultural work. In 1992 the family entered domestic pistachio trade, and from 1996 started international pistachio export.",
+    "p2": "Green Diamond Farm ({brand}) continues that work today — clear grades and direct buyer contact.",
+    "imageAlt": "Pistachio kernels prepared for export packing",
+    "historyTitle": "History & credibility",
+    "historyNote": "Farming since 1987, domestic trade since 1992, export since 1996.",
+    "founderLabel": "Founder",
+    "founderBody": "{nameEn} ({nameFa})",
+    "ceoLabel": "CEO",
+    "ceoBody": "{nameEn} ({nameFa})",
+    "yearsAgriculture": "{years}+ years in agriculture",
+    "yearsTrade": "{years}+ years in pistachio buying & selling",
+    "yearsExport": "{years}+ years in export",
+    "yearsAgricultureLabel": "Agriculture (since 1987)",
+    "yearsTradeLabel": "Pistachio trade (since 1992)",
+    "yearsExportLabel": "Export (since 1996)",
+    "originLabel": "Origin",
+    "originBody": "Rafsanjan — operating under {legalName}.",
+    "standLabel": "What we do",
+    "standBody": "Supply graded pistachios, answer inquiries clearly, and prepare export documents and packing.",
+    "certsLabel": "Certifications",
+    "certsBody": "Export documents and certificates are provided when buyers need them.",
+    "marketsLabel": "Markets",
+    "marketsBody": "Iraq, China, Russia, Turkmenistan, Saudi Arabia, Germany, and other target markets."
+  },
+  "Products": {
+    "metaTitle": "Products",
+    "metaDescription": "Pistachio varieties and programs from Green Diamond Farm: Ahmad Aghaei, Akbari, Fandoghi, Kaleh Ghouchi, Dahan Bast, kernels, salted & roasted.",
+    "title": "Products",
+    "lead": "In-shell varieties, kernels, and roasted lines for wholesale and private label.",
+    "outlineNote": "Ask the export desk for current grades and packing.",
+    "ctaTitle": "Need a grade or pack?",
+    "ctaLead": "Tell us variety, volume, and destination — we confirm availability.",
+    "ctaButton": "Request availability",
+    "group": {
+      "inShell": "In-shell varieties",
+      "processed": "Kernels & roasted"
+    }
+  },
+  "Contact": {
+    "metaTitle": "Contact",
+    "metaDescription": "Contact the Green Diamond Farm export desk — email, WhatsApp, and warehouse location.",
+    "title": "Contact",
+    "lead": "Contact the export desk for grades, samples, packing, and shipment timing.",
+    "email": "Email",
+    "phone": "Phone",
+    "phoneNote": "Export desk line — WhatsApp available on the same number.",
+    "whatsapp": "WhatsApp",
+    "whatsappOpen": "Open WhatsApp",
+    "whatsappNote": "Fast path for samples, packing questions, and shipment timing.",
+    "office": "Warehouse",
+    "addressNote": "Iran — warehouse for viewing and dispatch coordination.",
+    "includeTitle": "What to write",
+    "includeLead": "Include variety, approximate volume, packing, and destination country or port.",
+    "include1": "Variety / program (e.g. Akbari, kernels)",
+    "include2": "Volume and timing window",
+    "include3": "Destination and any label requirements",
+    "emailCta": "Email the export desk",
+    "emailSubject": "Export inquiry — Green Diamond Farm",
+    "emailNote": "Primary channel for samples, specifications, and quotes."
+  },
+  "Footer": {
+    "tagline": "Iranian pistachio export — {legalName} · {legalNameFa}.",
+    "navigate": "Navigate",
+    "contact": "Contact",
+    "rights": "© {year} {brand}. All rights reserved.",
+    "privacy": "Privacy"
+  },
+  "products": {
+    "ahmad-aghaei": {
+      "name": "Ahmad Aghaei",
+      "summary": "Long, elegant kernels with a refined flavor profile — favored by premium retail and gift markets."
+    },
+    "akbari": {
+      "name": "Akbari",
+      "summary": "Large, elongated nuts with strong visual presence — a staple for high-end wholesale buyers."
+    },
+    "fandoghi": {
+      "name": "Fandoghi",
+      "summary": "Round, versatile Iranian pistachio — reliable volume for roasting, packing, and everyday trade."
+    },
+    "kaleh-ghouchi": {
+      "name": "Kaleh Ghouchi",
+      "summary": "Jumbo, bold shape with excellent shell appeal — selected for markets that value size and look."
+    },
+    "dahan-bast": {
+      "name": "Dahan Bast",
+      "summary": "Closed-shell pistachios suited to processing and kernel production where integrity matters."
+    },
+    "kernels": {
+      "name": "Kernels",
+      "summary": "Shelled pistachio kernels prepared for confectionery, ice cream, bakery, and industrial use."
+    },
+    "salted-roasted": {
+      "name": "Salted & roasted",
+      "summary": "Ready-to-eat roasted pistachios — salted or plain — for retail packs and private-label programs."
+    }
+  },
+  "A11y": {
+    "skipToContent": "Skip to content"
+  },
+  "NotFound": {
+    "code": "404",
+    "title": "Page not found",
+    "lead": "That link does not match a page on this site. Return home or reach the export desk.",
+    "home": "Back to home",
+    "contact": "Contact export desk"
+  },
+  "Privacy": {
+    "metaTitle": "Privacy",
+    "metaDescription": "How Green Diamond Farm handles contact information on this marketing site — no accounts, no analytics cookies.",
+    "title": "Privacy",
+    "lead": "{brand} is a static marketing site. This page describes what we do — and do not — collect.",
+    "collectTitle": "What we collect",
+    "collectBody": "This website does not run account sign-in, contact forms, or first-party analytics. If you email, call, or message us, that conversation happens through your mail, phone, or WhatsApp apps — not through a form on this site.",
+    "cookiesTitle": "Cookies and tracking",
+    "cookiesBody": "We do not set marketing or analytics cookies. The host may use strictly necessary technical cookies to serve the site securely.",
+    "contactTitle": "Contact details on the site",
+    "contactBody": "Email, phone, and WhatsApp links on the Contact page are published so buyers can reach the export desk directly.",
+    "thirdTitle": "Third-party services",
+    "thirdBody": "Opening WhatsApp, mailto, or tel links leaves this site and follows the privacy terms of those apps or providers. Some atmosphere photographs currently load from a stock image CDN until owned product photography is published.",
+    "reachTitle": "Questions",
+    "reachBody": "For privacy questions about this site, contact the export desk.",
+    "contactPage": "Contact page"
+  },
+  "Error": {
+    "code": "Error",
+    "title": "Something went wrong",
+    "lead": "This page could not be loaded. Try again, return home, or reach the export desk.",
+    "retry": "Try again",
+    "home": "Back to home",
+    "contact": "Contact export desk"
+  }
+}
