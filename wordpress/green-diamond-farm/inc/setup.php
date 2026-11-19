@@ -150,6 +150,9 @@ add_filter('pre_get_document_title', static function ($title) {
 	return str_replace('%s', $part, $tpl);
 });
 
+// Locale-aware canonical (path-prefix i18n), not WP page permalink alone.
+remove_action('wp_head', 'rel_canonical');
+
 add_action('wp_head', static function (): void {
 	$page = gdf_current_page_key();
 	$desc = match ($page) {
@@ -160,7 +163,27 @@ add_action('wp_head', static function (): void {
 		'privacy' => gdf_t('Privacy.metaDescription'),
 		default => gdf_t('Meta.description'),
 	};
+	$title = wp_get_document_title();
+	$url = gdf_url($page);
+	$locale = gdf_locale();
+	$og_locale = match ($locale) {
+		'fa' => 'fa_IR',
+		'ar' => 'ar_AR',
+		'tr' => 'tr_TR',
+		'zh' => 'zh_CN',
+		'hi' => 'hi_IN',
+		'ru' => 'ru_RU',
+		default => 'en_US',
+	};
+
 	echo '<meta name="description" content="' . esc_attr($desc) . '" />' . "\n";
+	echo '<link rel="canonical" href="' . esc_url($url) . '" />' . "\n";
+	echo '<meta property="og:type" content="website" />' . "\n";
+	echo '<meta property="og:title" content="' . esc_attr($title) . '" />' . "\n";
+	echo '<meta property="og:description" content="' . esc_attr($desc) . '" />' . "\n";
+	echo '<meta property="og:url" content="' . esc_url($url) . '" />' . "\n";
+	echo '<meta property="og:locale" content="' . esc_attr($og_locale) . '" />' . "\n";
+	echo '<meta property="og:site_name" content="Green Diamond Farm" />' . "\n";
 
 	foreach (gdf_locales() as $loc) {
 		$hreflang = $loc;

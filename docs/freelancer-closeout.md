@@ -26,6 +26,7 @@
 - [x] سند رسید تحویل  
 - [x] رفع تداخل Blocksy/Stackable روی زنده (v1.0.1 → v1.0.2)  
 - [x] رفع سوییچر زبان FA/EN (منوی لینکی خوانا، روی زنده)  
+- [x] SEO پایه روی زنده (canonical + OG + hreflang) — قالب **v1.0.3**  
 - [x] فهرست تحویل: [FREELANCER_HANDOFF.md](./FREELANCER_HANDOFF.md)  
 - [x] گزارش کارفرما: [client-final-report.md](./client-final-report.md)  
 

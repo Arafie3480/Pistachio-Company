@@ -18,10 +18,11 @@
 | جایگزینی Blocksy روی `greendiamondfarm.com` | ✅ |
 | پیوندهای یکتا | ✅ |
 | بسته کد / PR تحویل cutover | https://github.com/Arafie3480/Pistachio-Company/pull/4 (merged) |
-| پایداری ضد Blocksy/Stackable + سوییچر زبان | https://github.com/Arafie3480/Pistachio-Company/pull/5 |
+| پایداری ضد Blocksy/Stackable + سوییچر زبان + SEO پایه | https://github.com/Arafie3480/Pistachio-Company/pull/5 |
+| SEO پایه (canonical + Open Graph + hreflang) | ✅ روی زنده v1.0.3 |
 | فهرست تحویل فریلنسر | [FREELANCER_HANDOFF.md](./FREELANCER_HANDOFF.md) |
 
-**آدرس زنده:** https://greendiamondfarm.com · قالب **v1.0.2**
+**آدرس زنده:** https://greendiamondfarm.com · قالب **v1.0.3**
 
 ---
 
