@@ -6,7 +6,7 @@
 
 ## خلاصه یک‌خطی
 
-ظاهر دمو **تأیید** شده. قالب وردپرس هم‌ظاهر با دمو در ریپو آماده است (`wordpress/green-diamond-farm/` — ویرایش فقط محتوا). نصب روی هاست کارفرما + مرحله ۲ برای cutover دامنه باقی است. جزئیات: [wordpress-delivery.md](./wordpress-delivery.md) · [scope-and-wordpress-proposal.md](./scope-and-wordpress-proposal.md).
+**تحویل فنی کامل.** سایت زنده روی https://greendiamondfarm.com با قالب قفل‌شده و Site Content. رسید: [delivery-receipt.md](./delivery-receipt.md) · پیام کارفرما: [client-message-live.md](./client-message-live.md).
 
 ---
 

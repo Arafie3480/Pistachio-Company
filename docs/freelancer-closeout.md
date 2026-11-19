@@ -1,38 +1,35 @@
 # چک‌لیست بستن کار — سمت فریلنسر  
-تاریخ: ۱۹ نوامبر ۲۰۲۶ (Asia/Tehran)
+تاریخ: ۱۹ نوامبر ۲۰۲۶ (Asia/Tehran)  
+وضعیت: **تحویل فنی کامل**
 
 ## وضعیت
 
 | مورد | وضعیت |
 |------|--------|
 | دمو Next تأیید ظاهری | ✅ |
-| قالب WP (ظاهر قفل + Site Content) | ✅ در ریپو / PR #4 |
+| قالب WP + Site Content | ✅ |
 | CI | ✅ |
-| دامنه زنده | ✅ قالب **Green Diamond Farm** فعال روی `greendiamondfarm.com` (جایگزین Blocksy) |
-| پرداخت مرحله ۲ | در انتظار کارفرما (در صورت شرط قرارداد) |
+| دامنه زنده | ✅ https://greendiamondfarm.com |
+| رسید تحویل | [delivery-receipt.md](./delivery-receipt.md) |
+| پیام کارفرما | [client-message-live.md](./client-message-live.md) |
+| پرداخت مرحله ۲ | کارفرما (مالی، خارج از کار فنی go-live) |
 
-## دانلود مستقیم بسته نصب (شاخه تحویل)
+## go-live
 
-- نصب‌کننده:  
-  https://raw.githubusercontent.com/Arafie3480/Pistachio-Company/cursor/wordpress-theme-delivery-3e66/wordpress/gdf-install.php  
-- زیپ قالب:  
-  https://github.com/Arafie3480/Pistachio-Company/raw/cursor/wordpress-theme-delivery-3e66/wordpress/dist/green-diamond-farm.zip  
+- [x] نصب و فعال‌سازی قالب  
+- [x] حذف مسیر Blocksy از فرانت  
+- [x] permalinks  
+- [x] QA صفحات EN/FA/AR  
+- [x] About ۳۹+/۳۴+/۳۰+  
+- [x] Contact / WhatsApp  
+- [x] Site Content  
+- [x] سند رسید تحویل  
 
-راهنما: [wordpress-install-now.md](./wordpress-install-now.md)  
-پیام کارفرما: [client-message-install-now.md](./client-message-install-now.md)
+## کارفرما
 
-## go-live انجام‌شده (۱۹ نوامبر ۲۰۲۶)
-
-- [x] قالب نصب و فعال شد (دیگر Blocksy نیست)  
-- [x] پیوندهای یکتا ذخیره شد  
-- [x] FA / EN / Contact / About (۳۹+/۳۴+/۳۰+) تأیید شد  
-- [x] Site Content در پیشخوان در دسترس است  
-
-باقی‌ماندهٔ اختیاری:
-
-- [ ] آموزش کوتاه Site Content به کارفرما  
-- [ ] **تعویض رمز wp-admin** (رمز قبلاً در تلگرام ارسال شده بود)  
-- [ ] عکس اختصاصی محصول/باغ  
-- [ ] مرحله ۲ + بستن قرارداد  
+- [ ] تعویض رمز wp-admin  
+- [ ] بازبینی نهایی + اصلاح جزئی متن در صورت نیاز  
+- [ ] عکس اختصاصی (اختیاری)  
+- [ ] مرحله ۲ مالی  
 
 PR: https://github.com/Arafie3480/Pistachio-Company/pull/4

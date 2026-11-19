@@ -8,7 +8,7 @@ Export website for **بازرگانی حسینی نوه** (Hosseini Naveh) — p
 
 ## Delivery status
 
-Visual demo approved. WordPress theme (locked styles + content-only admin) is in-repo. Install on the client host after WP admin access + stage-2 payment. See [docs/wordpress-delivery.md](docs/wordpress-delivery.md).
+**Live:** https://greendiamondfarm.com — custom WordPress theme delivered (locked styles + Site Content). Freelancer technical handoff complete: [docs/delivery-receipt.md](docs/delivery-receipt.md).
 
 | Area | Status |
 |------|--------|
@@ -23,7 +23,7 @@ Visual demo approved. WordPress theme (locked styles + content-only admin) is in
 | CI (`npm run lint` + `npm run build` + `npm run smoke:ci` + `validate:wp`) | Done |
 | WordPress theme (locked CSS + Appearance → Site Content) | Done in `wordpress/green-diamond-farm/` |
 | Owned photography / certificates | Client assets pending |
-| Install on client WP + domain cutover | Waiting on WP admin access + stage 2 |
+| Install on client WP + domain cutover | Done — live on greendiamondfarm.com |
 
 ## Local setup
 
