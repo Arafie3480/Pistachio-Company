@@ -39,4 +39,4 @@
 - [ ] Blocksy / Companion / Stackable را دوباره روشن نکند  
 
 PR cutover: https://github.com/Arafie3480/Pistachio-Company/pull/4 (merged)  
-PR پایداری + زبان: https://github.com/Arafie3480/Pistachio-Company/pull/5
+PR پایداری + زبان + SEO: https://github.com/Arafie3480/Pistachio-Company/pull/5
