@@ -18,7 +18,8 @@
 | سند | کاربرد |
 |-----|--------|
 | [delivery-receipt.md](./delivery-receipt.md) | رسید تحویل رسمی |
-| [client-message-live.md](./client-message-live.md) | پیام آماده برای کارفرما |
+| [client-final-report.md](./client-final-report.md) | **گزارش کامل قابل‌ارسال به کارفرما** |
+| [client-message-live.md](./client-message-live.md) | پیام کوتاه تلگرام/ایمیل |
 | [wordpress-client-edit-guide.md](./wordpress-client-edit-guide.md) | آموزش کوتاه فقط‌محتوا |
 | [conflict-fix-blocksy.md](./conflict-fix-blocksy.md) | رفع تداخل Blocksy/Stackable |
 | [freelancer-closeout.md](./freelancer-closeout.md) | چک‌لیست بستن |

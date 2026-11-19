@@ -54,9 +54,10 @@
 
 ---
 
-## پیام آماده برای کارفرما
+## گزارش و پیام کارفرما
 
-[client-message-live.md](./client-message-live.md)
+- گزارش کامل: [client-final-report.md](./client-final-report.md)  
+- پیام کوتاه: [client-message-live.md](./client-message-live.md)
 
 ---
 
