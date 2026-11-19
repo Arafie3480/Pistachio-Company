@@ -1,77 +1,41 @@
 # بسته دمو / تحویل کارفرما — Green Diamond Farm
 
-وضعیت: دمو روی `main` تأییدشده (lint + build + smoke CI). مسیر عمومی پایدار: **Netlify بدون password** (Vercel فعلاً استفاده نمی‌شود).
+وضعیت: دمو روی شاخه تحویل تأییدشده (lint + build + smoke). مسیر عمومی پایدار هدف: **Netlify بدون password**.
 
-**وضعیت‌نامه برای کارفرما:** [client-project-status.md](./client-project-status.md)
+**وضعیت‌نامه:** [client-project-status.md](./client-project-status.md)
 
-## دمو برای نمایش همین الان (لوکال)
+## دمو لوکال (تیم)
 
-| مورد | لینک |
+| مورد | مسیر |
 |------|------|
-| **Home EN** | http://127.0.0.1:4321/en |
-| **Home FA (RTL)** | http://127.0.0.1:4321/fa |
-| **Products** | http://127.0.0.1:4321/en/products |
-| **Home AR (RTL)** | http://127.0.0.1:4321/ar |
-| **Contact** | http://127.0.0.1:4321/en/contact |
-| پیام آماده ارسال | [demo-message-for-client.md](./demo-message-for-client.md) |
-| ریپو | https://github.com/Arafie3480/Pistachio-Company (`main`) |
-| دامنه نهایی | https://greendiamondfarm.com (بعد از تأیید کارفرما + DNS) |
+| Home EN | `/en` |
+| Home FA (RTL) | `/fa` |
+| Products | `/en/products` |
+| Contact | `/en/contact` |
+| پیام آماده | [demo-message-for-client.md](./demo-message-for-client.md) |
+| ریپو | https://github.com/Arafie3480/Pistachio-Company |
+| دامنه نهایی | greendiamondfarm.com (پس از تأیید + DNS) |
 
-```powershell
-cd $env:USERPROFILE\OneDrive\Desktop\projects\Pistachio-Company
-git checkout main
-git pull
-npm run build
-npm run start
+```bash
+npm run build && npm run start
 # یا: npm run smoke:ci
 ```
 
-پورت: **4321** · branch: `main` · checkout: `Desktop\projects\Pistachio-Company` (نه radfelez)
+پورت پیش‌فرض: **4321**
 
-## URL عمومی پایدار (بدون Vercel)
+## URL عمومی پایدار
 
-Netlify از قبل به ریپو وصل است، ولی **Access / password → HTTP 401** دارد و برای کارفرما قابل‌اشتراک نیست.
+Netlify ممکن است هنوز password داشته باشد (401). برای اشتراک با کارفرما:
 
-1. https://app.netlify.com → پروژهٔ متصل به `Arafie3480/Pistachio-Company`
-2. **Site configuration → Access control / Visitor access** → Password protection را خاموش کنید
-3. Production deploy از `main` را Publish کنید
-4. URL عمومی (مثلاً `https://hosseininavehcompany.netlify.app`) را تست کنید تا بدون لاگین **200** بدهد
-5. همان لینک را در [demo-message-for-client.md](./demo-message-for-client.md) جای «لینک عمومی» بگذارید
+1. Netlify → پروژهٔ متصل به ریپو  
+2. Access control / Password protection را خاموش کنید  
+3. Production از `main` را Publish کنید  
+4. URL را در پیام دمو قرار دهید  
 
-جایگزین پایدار: Cloudflare Pages → Connect to Git → همان ریپو (نه Workers اد-هاک).
+جزئیات بیشتر: [netlify-public-demo.md](./netlify-public-demo.md)
 
-راهنمای قدیمی Vercel (اختیاری، فعلاً رد شده): [vercel-sms-bypass.md](./vercel-sms-bypass.md)
+## هنوز با کارفرما
 
-**ممنوع:** Claim/SMS ایران · لینک مولک/خراب Workers یا `*.tmp.now` · Netlify با Access/401 · تونل موقت به‌عنوان دامنهٔ نهایی
-
-## اسکرین‌شات‌های تازه دمو
-
-- `media/demo-home-en.png`
-- `media/demo-home-fa.png`
-- `media/demo-products-en.png`
-- `media/demo-home-ar.png`
-- `media/demo-contact-en.png`
-
-## محتوای آماده کارفرما
-
-- برند **Green Diamond Farm** + بازرگانی **حسینی نوه** + **لوگوی رسمی**
-- مسیر: Home · About · Products · Contact · Privacy
-- زبان‌ها: EN · **FA (RTL)** · AR (RTL) · TR · ZH · HI · RU
-- محصولات: احمدآقایی، اکبری، فندقی، کله‌قوچی، دهن‌بست، مغز، شور و بوداده
-- تماس: ایمیل · واتساپ/تلفن · انبار مطهری ۵۲ (ارقام در `src/lib/site.ts` → `contact`)
-- SEO / امنیت: sitemap · robots · OG · favicon · security headers · صفحه Privacy
-- پیش‌پرداخت ۵۰٪ دریافت شد — ادامه کار فعال
-
-## هنوز از کارفرما
-
-- تأیید مسیر بصری دمو (با لوگو و FA)
-- عکس محصول / باغ / انبار · گواهی‌ها
-- تأیید املای ایمیل · آدرس کامل انبار · شماره اختصاصی
-- باز کردن Netlify بدون password
-- دامنه یک‌ساله Cloudflare + DNS دامنه (پس از مرحله ۲)
-
-## پیام کوتاه
-
-دموی اولیهٔ سایت آماده نمایش است — چندزبانه، برند، تماس.  
-**لوکال:** http://127.0.0.1:4321/en · branch `main`  
-**عمومی پایدار:** بعد از خاموش‌کردن password در Netlify → `*.netlify.app`
+- عکس اختصاصی محصول / باغ  
+- تأیید تماس و آدرس کامل  
+- پرداخت مرحله ۲ قبل از cutover دامنه  

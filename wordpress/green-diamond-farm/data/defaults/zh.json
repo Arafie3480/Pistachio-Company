@@ -1,0 +1,183 @@
+{
+  "Meta": {
+    "titleDefault": "Green Diamond Farm — 伊朗开心果出口",
+    "titleTemplate": "%s · Green Diamond Farm",
+    "description": "Green Diamond Farm 为国际买家出口优质伊朗开心果 — 品种、果仁与烘焙产品线，由 Hosseini Naveh 运营。"
+  },
+  "Nav": {
+    "home": "首页",
+    "about": "关于我们",
+    "products": "产品",
+    "contact": "联系我们",
+    "inquire": "询价",
+    "openMenu": "打开菜单",
+    "closeMenu": "关闭菜单",
+    "primary": "主导航",
+    "mobile": "移动导航"
+  },
+  "Language": {
+    "label": "语言",
+    "switchTo": "切换语言"
+  },
+  "Home": {
+    "headline": "面向重视品质稳定的买家的伊朗开心果。",
+    "subhead": "在 {legalName} 旗下的出口合作 — 等级清晰、供应可靠，从果园到货柜的稳健路径。",
+    "ctaProducts": "查看产品",
+    "ctaContact": "联系出口部门",
+    "heroAlt": "待出口的伊朗带壳开心果",
+    "buyersTitle": "专为海外买家打造",
+    "buyersLead": "分级伊朗开心果、清晰沟通、直达出口部 — 一份您可以自信展示给客户的品牌。",
+    "pillar1Title": "关键品种",
+    "pillar1Body": "Ahmad Aghaei、Akbari、Fandoghi、Kaleh Ghouchi、Dahan Bast — 以及果仁与烘焙系列。",
+    "pillar2Title": "出口导向",
+    "pillar2Body": "单证、包装与等级说明面向国际批发与贴牌业务。",
+    "pillar3Title": "直接联系",
+    "pillar3Body": "需要样品、规格或报价时，可通过邮件或 WhatsApp 联系出口部。",
+    "shipmentTitle": "从带壳到出货",
+    "shipmentLead": "了解我们的全线产品 — 含带壳品种、果仁以及咸味与烘焙方案 — 再告知您的市场需求。",
+    "kernelsRoasted": "果仁 · 咸味与烘焙",
+    "productAlt": "开心果仁 — 绿钻级品质",
+    "seeAll": "查看全部产品",
+    "ctaTitle": "准备讨论供货？",
+    "ctaLead": "请告知目标品种、数量与目的地。出口部将回复后续步骤。",
+    "ctaButton": "联系我们"
+  },
+  "About": {
+    "metaTitle": "关于我们",
+    "metaDescription": "关于 Green Diamond Farm — Hosseini Naveh 旗下的伊朗开心果出口。",
+    "title": "关于公司",
+    "lead": "以清晰沟通、等级纪律与长期买家关系为核心的开心果出口商。",
+    "heading": "Green Diamond Farm",
+    "p1": "{brand} 是 {legalName}（{legalNameFa}）的出口品牌 — 面向需要可预期品质而非夸张故事的进口商、分销商与贴牌合作伙伴。",
+    "p2": "我们如实呈现品种、缩短沟通路径，并追求海外买家信赖的第一印象：沉稳、专业、随时可谈业务。",
+    "imageAlt": "准备出口包装的开心果仁",
+    "historyTitle": "历史与信誉",
+    "historyNote": "1987 年起农业，1992 年进入国内贸易，1996 年开始出口。",
+    "founderLabel": "创始人",
+    "founderBody": "{nameEn}（{nameFa}）",
+    "ceoLabel": "首席执行官",
+    "ceoBody": "{nameEn}（{nameFa}）",
+    "yearsAgriculture": "{years}+ 年农业经验",
+    "yearsTrade": "{years}+ 年开心果购销经验",
+    "yearsExport": "{years}+ 年出口经验",
+    "yearsAgricultureLabel": "农业（自 1987）",
+    "yearsTradeLabel": "开心果贸易（自 1992）",
+    "yearsExportLabel": "出口（自 1996）",
+    "originLabel": "渊源",
+    "originBody": "在 {legalName} 旗下从事伊朗开心果贸易 — 家族领导覆盖农业、国内贸易与国际出口。",
+    "standLabel": "我们的立足点",
+    "standBody": "等级稳定、出口沟通清晰，以及贴合真实买家需求的品种 — 从高端长果仁到大批量 Fandoghi 与加工产品线。",
+    "certsLabel": "认证",
+    "certsBody": "出口文件与证书可应买家要求提供。",
+    "marketsLabel": "市场",
+    "marketsBody": "伊拉克、中国、俄罗斯、土库曼斯坦、沙特阿拉伯、德国及其他目标市场。"
+  },
+  "Products": {
+    "metaTitle": "产品",
+    "metaDescription": "Green Diamond Farm 开心果品种与产品线：Ahmad Aghaei、Akbari、Fandoghi、Kaleh Ghouchi、Dahan Bast、果仁、咸味与烘焙。",
+    "title": "产品",
+    "lead": "带壳品种、果仁与烘焙方案 — 面向国际批发与贴牌精选。",
+    "outlineNote": "面向批发与贴牌项目的品种说明 — 请向出口部确认当前等级与包装。",
+    "ctaTitle": "需要特定等级或包装？",
+    "ctaLead": "请告知品种、数量与目的地 — 出口部将确认可供货情况。",
+    "ctaButton": "查询可供货",
+    "group": {
+      "inShell": "带壳品种",
+      "processed": "果仁与烘焙"
+    }
+  },
+  "Contact": {
+    "metaTitle": "联系我们",
+    "metaDescription": "联系 Green Diamond Farm 出口部 — 邮件、WhatsApp 与仓库地址。",
+    "title": "联系我们",
+    "lead": "就等级、样品、包装与出货计划联系出口部。",
+    "email": "电子邮箱",
+    "phone": "电话",
+    "phoneNote": "出口部电话 — 同一号码可用 WhatsApp。",
+    "whatsapp": "WhatsApp",
+    "whatsappOpen": "打开 WhatsApp",
+    "whatsappNote": "样品、包装与出货时间的快捷通道。",
+    "office": "仓库",
+    "addressNote": "伊朗 — 用于看货与发运协调的仓库。",
+    "includeTitle": "建议注明",
+    "includeLead": "为加快报价，请注明品种、大致数量、偏好包装以及目的港或国家。",
+    "include1": "品种 / 产品线（如 Akbari、果仁）",
+    "include2": "数量与时间窗口",
+    "include3": "目的地及任何贴标要求",
+    "emailCta": "邮件联系出口部",
+    "emailSubject": "出口询盘 — Green Diamond Farm",
+    "emailNote": "样品、规格与报价的主要渠道。"
+  },
+  "Footer": {
+    "tagline": "在 {legalName} · {legalNameFa} 旗下出口伊朗开心果。为国际买家提供可靠供应。",
+    "navigate": "导航",
+    "contact": "联系",
+    "rights": "© {year} {brand}。保留所有权利。",
+    "privacy": "隐私"
+  },
+  "products": {
+    "ahmad-aghaei": {
+      "name": "Ahmad Aghaei",
+      "summary": "细长优雅的果仁，风味精致 — 深受高端零售与礼品市场青睐。"
+    },
+    "akbari": {
+      "name": "Akbari",
+      "summary": "颗粒大、形长，视觉表现突出 — 高端批发买家的主力品种。"
+    },
+    "fandoghi": {
+      "name": "Fandoghi",
+      "summary": "圆润、用途广泛的伊朗开心果 — 适合烘焙、包装与日常贸易的稳定货量。"
+    },
+    "kaleh-ghouchi": {
+      "name": "Kaleh Ghouchi",
+      "summary": "超大颗粒、外形醒目，壳面美观 — 适合重视规格与外观的市场。"
+    },
+    "dahan-bast": {
+      "name": "Dahan Bast",
+      "summary": "闭壳开心果，适合对完整性要求高的加工与果仁生产。"
+    },
+    "kernels": {
+      "name": "果仁",
+      "summary": "去壳开心果仁，适用于糖果、冰淇淋、烘焙与工业用途。"
+    },
+    "salted-roasted": {
+      "name": "咸味与烘焙",
+      "summary": "即食烘焙开心果 — 咸味或原味 — 适用于零售包装与贴牌项目。"
+    }
+  },
+  "A11y": {
+    "skipToContent": "跳到正文"
+  },
+  "NotFound": {
+    "code": "404",
+    "title": "页面未找到",
+    "lead": "该链接与本站页面不匹配。请返回首页或联系出口部。",
+    "home": "返回首页",
+    "contact": "联系出口部"
+  },
+  "Privacy": {
+    "metaTitle": "隐私",
+    "metaDescription": "Green Diamond Farm 营销站如何处理联系信息 — 无账户、无分析 Cookie。",
+    "title": "隐私",
+    "lead": "{brand} 为静态营销网站。本页说明我们收集与不收集的内容。",
+    "collectTitle": "我们收集什么",
+    "collectBody": "本站无账户登录、联系表单或第一方分析。若您通过邮件、电话或 WhatsApp 联系我们，对话发生在您的应用中，而非本站表单。",
+    "cookiesTitle": "Cookie 与跟踪",
+    "cookiesBody": "我们不设置营销或分析 Cookie。托管方可能使用严格必要的技术 Cookie 以安全提供网站。",
+    "contactTitle": "站点上的联系方式",
+    "contactBody": "联系页展示的邮箱、电话与 WhatsApp 链接便于买家直接联系出口部。",
+    "thirdTitle": "第三方服务",
+    "thirdBody": "打开 WhatsApp、mailto 或 tel 将离开本站，并遵循这些应用的隐私条款。在公司自有产品摄影发布前，部分氛围图片可能来自图库 CDN。",
+    "reachTitle": "疑问",
+    "reachBody": "关于本站隐私的问题，请联系出口部。",
+    "contactPage": "联系页面"
+  },
+  "Error": {
+    "code": "错误",
+    "title": "出了点问题",
+    "lead": "无法加载此页面。请重试、返回首页，或联系出口部。",
+    "retry": "重试",
+    "home": "返回首页",
+    "contact": "联系出口部"
+  }
+}

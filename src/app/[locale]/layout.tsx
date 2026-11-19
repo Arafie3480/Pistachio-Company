@@ -57,7 +57,8 @@ const notoSans = Noto_Sans({
 const notoSansArabic = Noto_Sans_Arabic({
   variable: "--font-noto-ar",
   subsets: ["arabic"],
-  weight: ["400", "500", "600", "700"],
+  // Variable axis — array weights break Turbopack Google-font resolve in CI.
+  weight: "variable",
   display: "swap",
 });
 
@@ -65,7 +66,7 @@ const notoSansSC = Noto_Sans_SC({
   variable: "--font-noto-sc",
   // next/font lists Latin/Cyrillic subsets; SC glyphs ship with the family files
   subsets: ["latin", "latin-ext", "cyrillic", "vietnamese"],
-  weight: ["400", "500", "600", "700"],
+  weight: "variable",
   display: "swap",
 });
 
