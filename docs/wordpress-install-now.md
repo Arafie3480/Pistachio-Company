@@ -10,10 +10,12 @@
 
 ## روش A — یک فایل نصب‌کننده (پیشنهادی برای الان)
 
-فایل‌ها در ریپو / PR:
+### دانلود مستقیم
 
-- `wordpress/gdf-install.php` — نصب‌کننده یک‌بارمصرف  
-- `wordpress/dist/green-diamond-farm.zip` — بسته قالب  
+- نصب‌کننده: [gdf-install.php](https://raw.githubusercontent.com/Arafie3480/Pistachio-Company/cursor/wordpress-theme-delivery-3e66/wordpress/gdf-install.php)  
+- زیپ قالب: [green-diamond-farm.zip](https://github.com/Arafie3480/Pistachio-Company/raw/cursor/wordpress-theme-delivery-3e66/wordpress/dist/green-diamond-farm.zip)  
+
+(همان فایل‌ها در ریپو: `wordpress/gdf-install.php` · `wordpress/dist/green-diamond-farm.zip`)
 
 ### مراحل (۵ دقیقه)
 

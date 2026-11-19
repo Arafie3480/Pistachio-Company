@@ -39,3 +39,6 @@ jobs:
 
       - name: Smoke (start + HTTP acceptance)
         run: npm run smoke:ci
+
+      - name: Validate WordPress theme package
+        run: npm run validate:wp

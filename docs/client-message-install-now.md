@@ -13,9 +13,9 @@
 
 `https://greendiamondfarm.com/gdf-install.php`
 
-فایل‌ها از ریپو / PR:
-- `wordpress/gdf-install.php`
-- `wordpress/dist/green-diamond-farm.zip`
+دانلود:
+- https://raw.githubusercontent.com/Arafie3480/Pistachio-Company/cursor/wordpress-theme-delivery-3e66/wordpress/gdf-install.php
+- https://github.com/Arafie3480/Pistachio-Company/raw/cursor/wordpress-theme-delivery-3e66/wordpress/dist/green-diamond-farm.zip
 
 بعد از نصب موفق، همان دو فایل را از هاست حذف کنید و یک‌بار **تنظیمات → پیوندهای یکتا → ذخیره** را بزنید.
 
