@@ -77,7 +77,7 @@
 | باز کردن Netlify بدون password | لینک پایدار موقت |
 | پرداخت مرحله ۲ | شرط go-live / دامنه |
 | ~~ساخت قالب وردپرس (ظاهر قفل + ویرایش فقط محتوا)~~ | **آماده در ریپو** |
-| نصب قالب روی دامنه (الان Blocksy است) | راهنما + دانلود: [wordpress-install-now.md](./wordpress-install-now.md) · [freelancer-closeout.md](./freelancer-closeout.md) |
+| نصب قالب روی دامنه | ✅ **انجام شد** — `greendiamondfarm.com` روی Green Diamond Farm (دیگر Blocksy نیست) · [freelancer-closeout.md](./freelancer-closeout.md) |
 | پرداخت مرحله ۲ | شرط cutover دامنه |
 | دسترسی ادمین وردپرس | کارفرما (خصوصی) |
 
