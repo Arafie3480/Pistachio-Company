@@ -6,7 +6,7 @@
 
 ## خلاصه یک‌خطی
 
-**تحویل فنی کامل.** سایت زنده روی https://greendiamondfarm.com (قالب v1.0.4). فهرست تحویل: [FREELANCER_HANDOFF.md](./FREELANCER_HANDOFF.md) · رسید: [delivery-receipt.md](./delivery-receipt.md) · پیام: [client-message-live.md](./client-message-live.md).
+**تحویل فنی کامل.** سایت زنده روی https://greendiamondfarm.com (قالب v1.0.5). فهرست تحویل: [FREELANCER_HANDOFF.md](./FREELANCER_HANDOFF.md) · رسید: [delivery-receipt.md](./delivery-receipt.md) · پیام: [client-message-live.md](./client-message-live.md).
 
 ---
 

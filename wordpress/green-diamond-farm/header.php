@@ -25,9 +25,10 @@ $nav = [
 <head>
 	<meta charset="<?php bloginfo('charset'); ?>" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta name="google" content="notranslate" />
 	<?php wp_head(); ?>
 </head>
-<body <?php body_class(); ?>>
+<body <?php body_class(); ?> translate="no">
 <?php wp_body_open(); ?>
 <div class="gdf-site">
 	<a class="gdf-skip" href="#main"><?php echo esc_html(gdf_t('A11y.skipToContent')); ?></a>
