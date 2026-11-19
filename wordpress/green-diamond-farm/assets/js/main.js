@@ -2,7 +2,7 @@
   const header = document.querySelector("[data-gdf-header]");
   const menuBtn = document.querySelector("[data-gdf-menu]");
   const drawer = document.querySelector("[data-gdf-drawer]");
-  const langSelects = document.querySelectorAll("[data-gdf-lang]");
+  const langPanels = document.querySelectorAll("[data-gdf-lang]");
 
   const onScroll = () => {
     if (!header) return;
@@ -41,10 +41,21 @@
     });
   }
 
-  langSelects.forEach((langSelect) => {
-    langSelect.addEventListener("change", () => {
-      const url = langSelect.value;
-      if (url) window.location.href = url;
+  // Close "more languages" menus on outside click / Escape.
+  const closeLangMenus = () => {
+    document.querySelectorAll(".gdf-lang__more[open]").forEach((el) => {
+      if (el instanceof HTMLDetailsElement) el.open = false;
     });
+  };
+
+  document.addEventListener("click", (e) => {
+    document.querySelectorAll(".gdf-lang__more[open]").forEach((panel) => {
+      if (!(panel instanceof HTMLDetailsElement)) return;
+      if (!panel.contains(e.target)) panel.open = false;
+    });
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeLangMenus();
   });
 })();

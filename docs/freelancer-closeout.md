@@ -24,6 +24,11 @@
 - [x] Contact / WhatsApp  
 - [x] Site Content  
 - [x] سند رسید تحویل  
+- [x] رفع تداخل Blocksy/Stackable روی زنده (v1.0.1 → v1.0.2)  
+- [x] رفع سوییچر زبان FA/EN (منوی لینکی خوانا، روی زنده)  
+- [x] SEO پایه روی زنده (canonical + OG + hreflang) — قالب **v1.0.4**  
+- [x] فهرست تحویل: [FREELANCER_HANDOFF.md](./FREELANCER_HANDOFF.md)  
+- [x] گزارش کارفرما: [client-final-report.md](./client-final-report.md)  
 
 ## کارفرما
 
@@ -31,5 +36,7 @@
 - [ ] بازبینی نهایی + اصلاح جزئی متن در صورت نیاز  
 - [ ] عکس اختصاصی (اختیاری)  
 - [ ] مرحله ۲ مالی  
+- [ ] Blocksy / Companion / Stackable را دوباره روشن نکند  
 
-PR: https://github.com/Arafie3480/Pistachio-Company/pull/4
+PR cutover: https://github.com/Arafie3480/Pistachio-Company/pull/4 (merged)  
+PR پایداری + زبان + SEO: https://github.com/Arafie3480/Pistachio-Company/pull/5

@@ -13,12 +13,8 @@ add_action('after_setup_theme', static function (): void {
 	add_theme_support('title-tag');
 	add_theme_support('post-thumbnails');
 	add_theme_support('html5', ['search-form', 'comment-form', 'comment-list', 'gallery', 'caption', 'style', 'script']);
-	add_theme_support('custom-logo', [
-		'height' => 120,
-		'width' => 320,
-		'flex-height' => true,
-		'flex-width' => true,
-	]);
+	// Intentionally no custom-logo support: brand marks ship in assets/brand/
+	// and must not be overridden by leftover Customizer logos from Blocksy.
 
 	register_nav_menus([
 		'primary' => __('Primary', 'green-diamond-farm'),
@@ -154,6 +150,9 @@ add_filter('pre_get_document_title', static function ($title) {
 	return str_replace('%s', $part, $tpl);
 });
 
+// Locale-aware canonical (path-prefix i18n), not WP page permalink alone.
+remove_action('wp_head', 'rel_canonical');
+
 add_action('wp_head', static function (): void {
 	$page = gdf_current_page_key();
 	$desc = match ($page) {
@@ -164,7 +163,27 @@ add_action('wp_head', static function (): void {
 		'privacy' => gdf_t('Privacy.metaDescription'),
 		default => gdf_t('Meta.description'),
 	};
+	$title = wp_get_document_title();
+	$url = gdf_url($page);
+	$locale = gdf_locale();
+	$og_locale = match ($locale) {
+		'fa' => 'fa_IR',
+		'ar' => 'ar_AR',
+		'tr' => 'tr_TR',
+		'zh' => 'zh_CN',
+		'hi' => 'hi_IN',
+		'ru' => 'ru_RU',
+		default => 'en_US',
+	};
+
 	echo '<meta name="description" content="' . esc_attr($desc) . '" />' . "\n";
+	echo '<link rel="canonical" href="' . esc_url($url) . '" />' . "\n";
+	echo '<meta property="og:type" content="website" />' . "\n";
+	echo '<meta property="og:title" content="' . esc_attr($title) . '" />' . "\n";
+	echo '<meta property="og:description" content="' . esc_attr($desc) . '" />' . "\n";
+	echo '<meta property="og:url" content="' . esc_url($url) . '" />' . "\n";
+	echo '<meta property="og:locale" content="' . esc_attr($og_locale) . '" />' . "\n";
+	echo '<meta property="og:site_name" content="Green Diamond Farm" />' . "\n";
 
 	foreach (gdf_locales() as $loc) {
 		$hreflang = $loc;

@@ -11,14 +11,8 @@ if (!defined('ABSPATH')) {
 
 function gdf_logo_url(string $size = 'nav'): string
 {
-	$custom = get_theme_mod('custom_logo');
-	if ($custom) {
-		$url = wp_get_attachment_image_url((int) $custom, 'full');
-		if (is_string($url) && $url !== '') {
-			return $url;
-		}
-	}
-
+	// Always use theme brand assets. Never trust WP custom_logo leftovers
+	// from a previous theme (e.g. Blocksy "CREATIVEMINDS" SVG).
 	$file = match ($size) {
 		'hero', 'footer' => 'logo-lockup.png',
 		default => 'logo-nav-trim.png',
@@ -88,6 +82,56 @@ function gdf_btn(string $href, string $label, string $variant = 'gold'): void
 		$attrs,
 		esc_html($label)
 	);
+}
+
+/**
+ * Language switcher: always-visible FA / AR / EN + menu for other locales.
+ * Avoids invisible &lt;select&gt; options and makes Persian/Arabic obvious.
+ */
+function gdf_lang_switcher(): void
+{
+	$current = gdf_locale();
+	$labels = gdf_config()['locale_labels'];
+	$primary = ['fa', 'ar', 'en'];
+	$rest = array_values(array_filter(gdf_locales(), static fn(string $loc): bool => !in_array($loc, $primary, true)));
+	?>
+	<nav class="gdf-lang" data-gdf-lang aria-label="<?php echo esc_attr(gdf_t('Language.switchTo')); ?>">
+		<ul class="gdf-lang__primary" role="list">
+			<?php foreach ($primary as $loc) : ?>
+				<li>
+					<a
+						class="gdf-lang__chip<?php echo $loc === $current ? ' is-active' : ''; ?>"
+						href="<?php echo esc_url(gdf_switch_locale_url($loc)); ?>"
+						hreflang="<?php echo esc_attr($loc); ?>"
+						lang="<?php echo esc_attr($loc); ?>"
+						<?php echo $loc === $current ? 'aria-current="true"' : ''; ?>
+					>
+						<?php echo esc_html($labels[$loc] ?? $loc); ?>
+					</a>
+				</li>
+			<?php endforeach; ?>
+		</ul>
+		<?php if ($rest !== []) : ?>
+			<details class="gdf-lang__more">
+				<summary class="gdf-lang__summary" aria-label="<?php echo esc_attr(gdf_t('Language.switchTo')); ?>">+</summary>
+				<ul class="gdf-lang__menu" role="list">
+					<?php foreach ($rest as $loc) : ?>
+						<li>
+							<a
+								href="<?php echo esc_url(gdf_switch_locale_url($loc)); ?>"
+								hreflang="<?php echo esc_attr($loc); ?>"
+								lang="<?php echo esc_attr($loc); ?>"
+								<?php echo $loc === $current ? 'aria-current="true"' : ''; ?>
+							>
+								<?php echo esc_html($labels[$loc] ?? $loc); ?>
+							</a>
+						</li>
+					<?php endforeach; ?>
+				</ul>
+			</details>
+		<?php endif; ?>
+	</nav>
+	<?php
 }
 
 function gdf_icon(string $name): void

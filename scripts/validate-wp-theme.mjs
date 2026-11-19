@@ -29,6 +29,7 @@ const required = [
   "inc/i18n.php",
   "inc/content.php",
   "inc/setup.php",
+  "inc/compat.php",
   "inc/assets.php",
   "inc/template-tags.php",
   "inc/admin-content.php",
