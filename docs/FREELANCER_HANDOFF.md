@@ -9,7 +9,7 @@
 سایت زنده است، قالب قفل است، محتوا از Site Content عوض می‌شود. کار فنی فریلنسر برای این قرارداد (تا go-live دامنه) تمام است.
 
 **زنده:** https://greendiamondfarm.com  
-**قالب:** `green-diamond-farm` v1.0.1  
+**قالب:** `green-diamond-farm` **v1.0.2**  
 
 ---
 
@@ -25,7 +25,7 @@
 | [freelancer-closeout.md](./freelancer-closeout.md) | چک‌لیست بستن |
 | [invoice-demo-approval.md](./invoice-demo-approval.md) | مالی / مرحله ۲ |
 
-کد: PR #4 (cutover) مِرج شده · PR #5 (پایداری ضد Blocksy) آماده merge  
+کد: PR #4 (cutover) مِرج شده · PR #5 (پایداری + سوییچر زبان) آماده merge  
 
 ---
 
@@ -33,6 +33,7 @@
 
 - Home / About / Products / Contact / Privacy  
 - `/fa/*` راست‌چین · `/` انگلیسی `ltr`  
+- منوی زبان: همه ۷ زبان خوانا · EN ↔ FA روی home و about  
 - لوگو از `assets/brand/` (نه لوگوی CREATIVEMINDS)  
 - بدون Blocksy / Stackable روی فرانت  
 - About: ۳۹+ / ۳۴+ / ۳۰+  
@@ -47,6 +48,7 @@
 3. عکس اختصاصی (اختیاری)  
 4. پرداخت مرحله ۲ طبق پیش‌فاکتور  
 5. Blocksy / Companion / Stackable را دوباره فعال نکند  
+6. اگر منوی زبان قدیمی می‌بیند: یک‌بار رفرش سخت / خالی کردن کش  
 
 ---
 

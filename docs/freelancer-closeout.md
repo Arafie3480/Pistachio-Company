@@ -24,8 +24,10 @@
 - [x] Contact / WhatsApp  
 - [x] Site Content  
 - [x] سند رسید تحویل  
-- [x] رفع تداخل Blocksy/Stackable روی زنده (v1.0.1)  
+- [x] رفع تداخل Blocksy/Stackable روی زنده (v1.0.1 → v1.0.2)  
+- [x] رفع سوییچر زبان FA/EN (منوی لینکی خوانا، روی زنده)  
 - [x] فهرست تحویل: [FREELANCER_HANDOFF.md](./FREELANCER_HANDOFF.md)  
+- [x] گزارش کارفرما: [client-final-report.md](./client-final-report.md)  
 
 ## کارفرما
 
@@ -36,4 +38,4 @@
 - [ ] Blocksy / Companion / Stackable را دوباره روشن نکند  
 
 PR cutover: https://github.com/Arafie3480/Pistachio-Company/pull/4 (merged)  
-PR پایداری: https://github.com/Arafie3480/Pistachio-Company/pull/5
+PR پایداری + زبان: https://github.com/Arafie3480/Pistachio-Company/pull/5
