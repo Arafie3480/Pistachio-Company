@@ -30,7 +30,6 @@ export default async function OpenGraphImage() {
         }}
       >
         <div style={{ display: "flex", alignItems: "center", gap: 22 }}>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={logoSrc}
             width={88}
