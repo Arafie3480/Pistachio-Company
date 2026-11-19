@@ -9,7 +9,7 @@
 سایت زنده است، قالب قفل است، محتوا از Site Content عوض می‌شود. کار فنی فریلنسر برای این قرارداد (تا go-live دامنه) تمام است.
 
 **زنده:** https://greendiamondfarm.com  
-**قالب:** `green-diamond-farm` **v1.0.3**  
+**قالب:** `green-diamond-farm` **v1.0.4**  
 
 ---
 
@@ -25,7 +25,7 @@
 | [freelancer-closeout.md](./freelancer-closeout.md) | چک‌لیست بستن |
 | [invoice-demo-approval.md](./invoice-demo-approval.md) | مالی / مرحله ۲ |
 
-کد: PR #4 (cutover) مِرج شده · PR #5 (پایداری + زبان + SEO پایه v1.0.3) آماده merge  
+کد: PR #4 (cutover) مِرج شده · PR #5 (پایداری + زبان + SEO پایه v1.0.4) آماده merge  
 
 ---
 

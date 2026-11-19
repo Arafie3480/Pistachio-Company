@@ -85,18 +85,34 @@ h1, h2, h3, .font-heading {
   :root { --pad: 2rem; }
 }
 
+/* Clip-based hide — left:-9999px expands RTL scrollWidth (~11k px) and breaks FA/AR. */
 .gdf-skip {
   position: absolute;
-  left: -9999px;
-  top: 0;
+  inset-inline-start: 1rem;
+  top: 1rem;
   z-index: 100;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
   background: var(--gold);
   color: var(--gold-foreground);
-  padding: 0.5rem 1rem;
 }
-.gdf-skip:focus {
-  left: 1rem;
-  top: 1rem;
+.gdf-skip:focus,
+.gdf-skip:focus-visible {
+  width: auto;
+  height: auto;
+  margin: 0;
+  padding: 0.5rem 1rem;
+  overflow: visible;
+  clip: auto;
+  clip-path: none;
+  white-space: normal;
 }
 
 .screen-reader-text {
@@ -223,42 +239,66 @@ h1, h2, h3, .font-heading {
 
 .gdf-lang {
   position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
   margin-inline-start: 0.5rem;
 }
-.gdf-lang__summary {
+.gdf-lang__primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.gdf-lang__chip {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2rem;
+  padding: 0.3rem 0.55rem;
+  border-radius: 0.375rem;
+  border: 1px solid color-mix(in oklab, var(--brand-foreground) 22%, transparent);
+  background: color-mix(in oklab, var(--brand-foreground) 8%, transparent);
+  color: var(--brand-foreground);
+  font-size: 0.72rem;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+.gdf-lang__chip:hover,
+.gdf-lang__chip:focus-visible {
+  background: color-mix(in oklab, var(--brand-foreground) 16%, transparent);
+  outline: none;
+}
+.gdf-lang__chip.is-active,
+.gdf-lang__chip[aria-current="true"] {
+  background: color-mix(in oklab, var(--gold) 88%, white);
+  border-color: color-mix(in oklab, var(--gold) 55%, transparent);
+  color: var(--gold-foreground);
+  font-weight: 600;
+}
+.gdf-lang__more {
   position: relative;
+}
+.gdf-lang__summary {
   list-style: none;
   display: inline-flex;
   align-items: center;
-  gap: 0.35rem;
+  justify-content: center;
+  min-width: 2rem;
   min-height: 2rem;
-  padding: 0.35rem 1.6rem 0.35rem 0.65rem;
+  padding: 0.3rem 0.45rem;
   border-radius: 0.375rem;
   border: 1px solid color-mix(in oklab, var(--brand-foreground) 20%, transparent);
   background: color-mix(in oklab, var(--brand-foreground) 8%, transparent);
   color: var(--brand-foreground);
-  font-size: 0.75rem;
+  font-size: 0.85rem;
+  line-height: 1;
   cursor: pointer;
   user-select: none;
 }
 .gdf-lang__summary::-webkit-details-marker {
   display: none;
-}
-.gdf-lang__summary::after {
-  content: "";
-  position: absolute;
-  inset-inline-end: 0.55rem;
-  top: 50%;
-  width: 0.4rem;
-  height: 0.4rem;
-  border-inline-end: 1.5px solid currentColor;
-  border-bottom: 1.5px solid currentColor;
-  transform: translateY(-65%) rotate(45deg);
-  opacity: 0.85;
-  pointer-events: none;
-}
-.gdf-lang[open] .gdf-lang__summary::after {
-  transform: translateY(-20%) rotate(225deg);
 }
 .gdf-lang__menu {
   position: absolute;

@@ -41,19 +41,21 @@
     });
   }
 
-  // Close language menus on outside click / Escape (links work without JS).
+  // Close "more languages" menus on outside click / Escape.
+  const closeLangMenus = () => {
+    document.querySelectorAll(".gdf-lang__more[open]").forEach((el) => {
+      if (el instanceof HTMLDetailsElement) el.open = false;
+    });
+  };
+
   document.addEventListener("click", (e) => {
-    langPanels.forEach((panel) => {
+    document.querySelectorAll(".gdf-lang__more[open]").forEach((panel) => {
       if (!(panel instanceof HTMLDetailsElement)) return;
-      if (!panel.open) return;
       if (!panel.contains(e.target)) panel.open = false;
     });
   });
 
   document.addEventListener("keydown", (e) => {
-    if (e.key !== "Escape") return;
-    langPanels.forEach((panel) => {
-      if (panel instanceof HTMLDetailsElement) panel.open = false;
-    });
+    if (e.key === "Escape") closeLangMenus();
   });
 })();
