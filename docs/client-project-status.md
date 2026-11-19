@@ -6,7 +6,7 @@
 
 ## خلاصه یک‌خطی
 
-**تحویل فنی کامل.** سایت زنده روی https://greendiamondfarm.com با قالب قفل‌شده و Site Content. رسید: [delivery-receipt.md](./delivery-receipt.md) · پیام کارفرما: [client-message-live.md](./client-message-live.md).
+**تحویل فنی کامل.** سایت زنده روی https://greendiamondfarm.com (قالب v1.0.1). فهرست تحویل: [FREELANCER_HANDOFF.md](./FREELANCER_HANDOFF.md) · رسید: [delivery-receipt.md](./delivery-receipt.md) · پیام: [client-message-live.md](./client-message-live.md).
 
 ---
 

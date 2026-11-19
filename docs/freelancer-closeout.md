@@ -24,6 +24,8 @@
 - [x] Contact / WhatsApp  
 - [x] Site Content  
 - [x] سند رسید تحویل  
+- [x] رفع تداخل Blocksy/Stackable روی زنده (v1.0.1)  
+- [x] فهرست تحویل: [FREELANCER_HANDOFF.md](./FREELANCER_HANDOFF.md)  
 
 ## کارفرما
 
@@ -31,5 +33,7 @@
 - [ ] بازبینی نهایی + اصلاح جزئی متن در صورت نیاز  
 - [ ] عکس اختصاصی (اختیاری)  
 - [ ] مرحله ۲ مالی  
+- [ ] Blocksy / Companion / Stackable را دوباره روشن نکند  
 
-PR: https://github.com/Arafie3480/Pistachio-Company/pull/4
+PR cutover: https://github.com/Arafie3480/Pistachio-Company/pull/4 (merged)  
+PR پایداری: https://github.com/Arafie3480/Pistachio-Company/pull/5

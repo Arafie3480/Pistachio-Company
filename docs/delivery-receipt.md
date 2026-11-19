@@ -17,9 +17,11 @@
 | About: ۳۹+ / ۳۴+ / ۳۰+ و متن تاریخچه کارفرما | ✅ |
 | جایگزینی Blocksy روی `greendiamondfarm.com` | ✅ |
 | پیوندهای یکتا | ✅ |
-| بسته کد / PR تحویل | https://github.com/Arafie3480/Pistachio-Company/pull/4 |
+| بسته کد / PR تحویل cutover | https://github.com/Arafie3480/Pistachio-Company/pull/4 (merged) |
+| پایداری ضد Blocksy/Stackable (v1.0.1) | https://github.com/Arafie3480/Pistachio-Company/pull/5 |
+| فهرست تحویل فریلنسر | [FREELANCER_HANDOFF.md](./FREELANCER_HANDOFF.md) |
 
-**آدرس زنده:** https://greendiamondfarm.com
+**آدرس زنده:** https://greendiamondfarm.com · قالب v1.0.1
 
 ---
 

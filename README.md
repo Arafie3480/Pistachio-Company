@@ -8,7 +8,7 @@ Export website for **بازرگانی حسینی نوه** (Hosseini Naveh) — p
 
 ## Delivery status
 
-**Live:** https://greendiamondfarm.com — custom WordPress theme delivered (locked styles + Site Content). Freelancer technical handoff complete: [docs/delivery-receipt.md](docs/delivery-receipt.md).
+**Live:** https://greendiamondfarm.com — custom WordPress theme v1.0.1 (locked styles + Site Content). Freelancer technical handoff complete: [docs/FREELANCER_HANDOFF.md](docs/FREELANCER_HANDOFF.md) · [docs/delivery-receipt.md](docs/delivery-receipt.md).
 
 | Area | Status |
 |------|--------|
