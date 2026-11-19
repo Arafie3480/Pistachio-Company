@@ -7,7 +7,7 @@
   },
   "scripts": {
     "dev": "next dev --port 4321",
-    "build": "next build",
+    "build": "next build --webpack",
     "start": "next start --port 4321",
     "lint": "eslint",
     "smoke": "node scripts/smoke.mjs",
