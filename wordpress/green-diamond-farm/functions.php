@@ -12,7 +12,7 @@ if (!defined('ABSPATH')) {
 	exit;
 }
 
-define('GDF_VERSION', '1.0.0');
+define('GDF_VERSION', '1.0.1');
 define('GDF_DIR', get_template_directory());
 define('GDF_URI', get_template_directory_uri());
 
@@ -20,6 +20,7 @@ require_once GDF_DIR . '/inc/config.php';
 require_once GDF_DIR . '/inc/i18n.php';
 require_once GDF_DIR . '/inc/content.php';
 require_once GDF_DIR . '/inc/setup.php';
+require_once GDF_DIR . '/inc/compat.php';
 require_once GDF_DIR . '/inc/assets.php';
 require_once GDF_DIR . '/inc/template-tags.php';
 require_once GDF_DIR . '/inc/admin-content.php';

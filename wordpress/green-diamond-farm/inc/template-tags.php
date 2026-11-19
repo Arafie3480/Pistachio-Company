@@ -11,14 +11,8 @@ if (!defined('ABSPATH')) {
 
 function gdf_logo_url(string $size = 'nav'): string
 {
-	$custom = get_theme_mod('custom_logo');
-	if ($custom) {
-		$url = wp_get_attachment_image_url((int) $custom, 'full');
-		if (is_string($url) && $url !== '') {
-			return $url;
-		}
-	}
-
+	// Always use theme brand assets. Never trust WP custom_logo leftovers
+	// from a previous theme (e.g. Blocksy "CREATIVEMINDS" SVG).
 	$file = match ($size) {
 		'hero', 'footer' => 'logo-lockup.png',
 		default => 'logo-nav-trim.png',
