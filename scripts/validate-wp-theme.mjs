@@ -8,8 +8,6 @@ import { join } from "node:path";
 const root = join(process.cwd(), "wordpress/green-diamond-farm");
 const bundleZip = join(process.cwd(), "wordpress/dist/green-diamond-farm.zip");
 const installer = join(process.cwd(), "wordpress/gdf-install.php");
-existsSync(bundleZip) ? pass("dist/green-diamond-farm.zip") : fail("missing dist/green-diamond-farm.zip");
-existsSync(installer) ? pass("gdf-install.php") : fail("missing gdf-install.php");
 
 const required = [
   "style.css",
@@ -48,6 +46,12 @@ function pass(msg) {
   console.log(`PASS  ${msg}`);
 }
 
+if (existsSync(bundleZip)) pass("dist/green-diamond-farm.zip");
+else fail("missing dist/green-diamond-farm.zip");
+
+if (existsSync(installer)) pass("gdf-install.php");
+else fail("missing gdf-install.php");
+
 if (!existsSync(root)) {
   fail(`theme missing: ${root}`);
   process.exit(1);
@@ -55,7 +59,8 @@ if (!existsSync(root)) {
 
 for (const rel of required) {
   const p = join(root, rel);
-  existsSync(p) ? pass(rel) : fail(`missing ${rel}`);
+  if (existsSync(p)) pass(rel);
+  else fail(`missing ${rel}`);
 }
 
 const style = readFileSync(join(root, "style.css"), "utf8");
