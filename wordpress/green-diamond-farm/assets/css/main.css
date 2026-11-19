@@ -225,15 +225,72 @@ h1, h2, h3, .font-heading {
   position: relative;
   margin-inline-start: 0.5rem;
 }
-.gdf-lang select {
-  appearance: none;
+.gdf-lang__summary {
+  position: relative;
+  list-style: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  min-height: 2rem;
+  padding: 0.35rem 1.6rem 0.35rem 0.65rem;
+  border-radius: 0.375rem;
+  border: 1px solid color-mix(in oklab, var(--brand-foreground) 20%, transparent);
   background: color-mix(in oklab, var(--brand-foreground) 8%, transparent);
   color: var(--brand-foreground);
-  border: 1px solid color-mix(in oklab, var(--brand-foreground) 20%, transparent);
-  border-radius: 0.375rem;
-  padding: 0.35rem 1.75rem 0.35rem 0.6rem;
   font-size: 0.75rem;
   cursor: pointer;
+  user-select: none;
+}
+.gdf-lang__summary::-webkit-details-marker {
+  display: none;
+}
+.gdf-lang__summary::after {
+  content: "";
+  position: absolute;
+  inset-inline-end: 0.55rem;
+  top: 50%;
+  width: 0.4rem;
+  height: 0.4rem;
+  border-inline-end: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: translateY(-65%) rotate(45deg);
+  opacity: 0.85;
+  pointer-events: none;
+}
+.gdf-lang[open] .gdf-lang__summary::after {
+  transform: translateY(-20%) rotate(225deg);
+}
+.gdf-lang__menu {
+  position: absolute;
+  inset-inline-end: 0;
+  top: calc(100% + 0.35rem);
+  z-index: 50;
+  margin: 0;
+  padding: 0.35rem;
+  min-width: 9.5rem;
+  list-style: none;
+  border-radius: 0.5rem;
+  border: 1px solid var(--border);
+  background: #fff;
+  box-shadow: 0 12px 28px oklch(0.25 0.04 160 / 0.18);
+}
+.gdf-lang__menu a {
+  display: block;
+  padding: 0.5rem 0.7rem;
+  border-radius: 0.35rem;
+  color: #1c2a22;
+  font-size: 0.8125rem;
+  line-height: 1.3;
+  white-space: nowrap;
+}
+.gdf-lang__menu a:hover,
+.gdf-lang__menu a:focus-visible {
+  background: color-mix(in oklab, var(--brand) 10%, white);
+  outline: none;
+}
+.gdf-lang__menu a[aria-current="true"] {
+  background: color-mix(in oklab, var(--gold) 28%, white);
+  font-weight: 600;
 }
 
 /* Buttons */

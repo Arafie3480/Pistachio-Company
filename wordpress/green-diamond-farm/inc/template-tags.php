@@ -84,6 +84,39 @@ function gdf_btn(string $href, string $label, string $variant = 'gold'): void
 	);
 }
 
+/**
+ * Language switcher: real links (not a styled &lt;select&gt;).
+ * Native select options inherited near-white header text and were invisible
+ * on light OS dropdowns — clients could not pick FA/EN.
+ */
+function gdf_lang_switcher(): void
+{
+	$current = gdf_locale();
+	$labels = gdf_config()['locale_labels'];
+	$current_label = $labels[$current] ?? $current;
+	?>
+	<details class="gdf-lang" data-gdf-lang>
+		<summary class="gdf-lang__summary" aria-label="<?php echo esc_attr(gdf_t('Language.switchTo')); ?>">
+			<span class="gdf-lang__current"><?php echo esc_html($current_label); ?></span>
+		</summary>
+		<ul class="gdf-lang__menu" role="list">
+			<?php foreach (gdf_locales() as $loc) : ?>
+				<li>
+					<a
+						href="<?php echo esc_url(gdf_switch_locale_url($loc)); ?>"
+						hreflang="<?php echo esc_attr($loc); ?>"
+						<?php echo $loc === $current ? 'aria-current="true"' : ''; ?>
+						lang="<?php echo esc_attr($loc); ?>"
+					>
+						<?php echo esc_html($labels[$loc] ?? $loc); ?>
+					</a>
+				</li>
+			<?php endforeach; ?>
+		</ul>
+	</details>
+	<?php
+}
+
 function gdf_icon(string $name): void
 {
 	$icons = [
