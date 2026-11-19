@@ -6,6 +6,11 @@ import { existsSync, readFileSync, readdirSync } from "node:fs";
 import { join } from "node:path";
 
 const root = join(process.cwd(), "wordpress/green-diamond-farm");
+const bundleZip = join(process.cwd(), "wordpress/dist/green-diamond-farm.zip");
+const installer = join(process.cwd(), "wordpress/gdf-install.php");
+existsSync(bundleZip) ? pass("dist/green-diamond-farm.zip") : fail("missing dist/green-diamond-farm.zip");
+existsSync(installer) ? pass("gdf-install.php") : fail("missing gdf-install.php");
+
 const required = [
   "style.css",
   "functions.php",

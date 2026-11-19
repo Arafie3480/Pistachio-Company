@@ -12,7 +12,9 @@
     "lint": "eslint",
     "smoke": "node scripts/smoke.mjs",
     "smoke:ci": "node scripts/smoke-ci.mjs",
-    "validate:wp": "node scripts/validate-wp-theme.mjs"
+    "validate:wp": "node scripts/validate-wp-theme.mjs",
+    "wp:zip": "mkdir -p wordpress/dist && cd wordpress && zip -qr dist/green-diamond-farm.zip green-diamond-farm -x '*.DS_Store'",
+    "wp:install": "node scripts/wp-remote-install.mjs"
   },
   "dependencies": {
     "class-variance-authority": "^0.7.1",

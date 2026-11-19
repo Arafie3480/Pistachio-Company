@@ -20,17 +20,13 @@
 
 ## نصب روی وردپرس کارفرما
 
-1. دسترسی ادمین دامنه را **خصوصی** بگیرید (در گیت ذخیره نکنید).  
-2. از ریشهٔ ریپو زیپ بسازید:
-   ```bash
-   cd wordpress && zip -r green-diamond-farm.zip green-diamond-farm \
-     -x "*.DS_Store" -x "*/.git/*"
-   ```
-3. پیشخوان → پوسته‌ها → افزودن → بارگذاری `green-diamond-farm.zip` → فعال‌سازی.  
-4. تنظیمات → پیوندهای یکتا → «نام نوشته» → ذخیره (برای `/fa/about/` و …).  
-5. Appearance → Site Content: زبان پیش‌فرض، تماس، در صورت نیاز متن‌ها.  
-6. لوگو: در صورت تمایل Appearance → Customize → Logo (وگرنه لوگوی داخل قالب می‌ماند).  
-7. روی استیجینگ یا زیر دامنه تست کنید؛ بعد از تأیید + پرداخت مرحله ۲، روی `greendiamondfarm.com` cutover.
+**نصب فوری (پیشنهادی):** [wordpress-install-now.md](./wordpress-install-now.md) — فایل `wordpress/gdf-install.php` + زیپ `wordpress/dist/green-diamond-farm.zip`.
+
+1. لاگین پیشخوان دامنه (رمز در گیت ذخیره نشود).  
+2. روش A (نصب‌کننده) یا بارگذاری زیپ از پوسته‌ها.  
+3. تنظیمات → پیوندهای یکتا → «نام نوشته» → ذخیره.  
+4. Appearance → Site Content: زبان پیش‌فرض، تماس، در صورت نیاز متن‌ها.  
+5. بعد از تأیید + مرحله ۲، cutover نهایی روی `greendiamondfarm.com` (اگر روی استیجینگ بود).
 
 ---
 
