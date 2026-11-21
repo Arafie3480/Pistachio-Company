@@ -40,7 +40,11 @@
     "seeAll": "Вся продукция",
     "ctaTitle": "Готовы обсудить поставки?",
     "ctaLead": "Укажите целевой сорт, объём и направление. Экспортный отдел ответит со следующими шагами.",
-    "ctaButton": "Связаться с нами"
+    "ctaButton": "Связаться с нами",
+    "catalogInShellTitle": "Сорта в скорлупе",
+    "catalogInShellLead": "У каждого сорта своё место для фото — нажмите для размеров и деталей.",
+    "catalogProcessedTitle": "Ядра и обжарка",
+    "catalogProcessedLead": "Отдельные программы для ядер и солёно-обжаренных линий."
   },
   "About": {
     "metaTitle": "О компании",
@@ -84,7 +88,14 @@
     "group": {
       "inShell": "Сорта в скорлупе",
       "processed": "Ядра и обжарка"
-    }
+    },
+    "viewDetails": "Подробнее",
+    "backToProducts": "Все продукты",
+    "sizesTitle": "Размеры и сорта",
+    "samplesTitle": "Фото образцов",
+    "samplesNote": "Временные фото до публикации ваших снимков фермы/продукции. Замените URL в Внешний вид → Site Content.",
+    "inquireAbout": "Запрос по {name}",
+    "photoSlot": "Место для фото — добавьте изображение фисташек"
   },
   "Contact": {
     "metaTitle": "Контакты",
@@ -118,31 +129,52 @@
   "products": {
     "ahmad-aghaei": {
       "name": "Ahmad Aghaei",
-      "summary": "Длинные изящные ядра с изысканным вкусом — востребованы премиальной розницей и подарочными рынками."
+      "summary": "Длинные изящные ядра с изысканным вкусом — востребованы премиальной розницей и подарочными рынками.",
+      "description": "Ahmad Aghaei is a long, elegant Iranian in-shell pistachio with a refined flavor. Buyers choose it for premium retail, gift packs, and markets that want a slender kernel look.",
+      "sizes": "Common counts: 20/22, 22/24, 24/26 per ounce. Confirm current crop grades with the export desk.",
+      "imageAlt": "Ahmad Aghaei in-shell pistachios"
     },
     "akbari": {
       "name": "Akbari",
-      "summary": "Крупные удлинённые орехи с сильным визуальным присутствием — основа для высококлассного опта."
+      "summary": "Крупные удлинённые орехи с сильным визуальным присутствием — основа для высококлассного опта.",
+      "description": "Akbari is a large, elongated variety with strong visual presence on the shell. It is a staple for high-end wholesale and private-label programs.",
+      "sizes": "Common counts: 18/20, 20/22, 22/24 per ounce. Ask for available lots and packing.",
+      "imageAlt": "Akbari in-shell pistachios"
     },
     "fandoghi": {
       "name": "Fandoghi",
-      "summary": "Круглая универсальная иранская фисташка — надёжные объёмы для обжарки, фасовки и повседневной торговли."
+      "summary": "Круглая универсальная иранская фисташка — надёжные объёмы для обжарки, фасовки и повседневной торговли.",
+      "description": "Fandoghi is the classic round Iranian pistachio — versatile volume for roasting, everyday retail packs, and steady wholesale demand.",
+      "sizes": "Common counts: 28/30, 30/32, 32/34 per ounce. Grades confirmed per shipment.",
+      "imageAlt": "Fandoghi in-shell pistachios"
     },
     "kaleh-ghouchi": {
       "name": "Kaleh Ghouchi",
-      "summary": "Крупная выразительная форма и отличный вид скорлупы — для рынков, где важны размер и внешний вид."
+      "summary": "Крупная выразительная форма и отличный вид скорлупы — для рынков, где важны размер и внешний вид.",
+      "description": "Kaleh Ghouchi (Jumbo) has a bold shell shape and strong size appeal for markets that buy on appearance and caliber.",
+      "sizes": "Common counts: 18/20, 20/22 per ounce (jumbo focus). Confirm lot sizes with the desk.",
+      "imageAlt": "Kaleh Ghouchi jumbo pistachios"
     },
     "dahan-bast": {
       "name": "Dahan Bast",
-      "summary": "Фисташка с закрытой скорлупой для переработки и производства ядер, где важна целостность."
+      "summary": "Фисташка с закрытой скорлупой для переработки и производства ядер, где важна целостность.",
+      "description": "Dahan Bast is closed-shell pistachio suited to processing and kernel production where shell integrity and clean cracking matter.",
+      "sizes": "Sized by lot for cracking / kernel yield. Specs confirmed with the export desk.",
+      "imageAlt": "Dahan Bast closed-shell pistachios"
     },
     "kernels": {
       "name": "Ядра",
-      "summary": "Очищенные ядра фисташки для кондитерских изделий, мороженого, выпечки и промышленного использования."
+      "summary": "Очищенные ядра фисташки для кондитерских изделий, мороженого, выпечки и промышленного использования.",
+      "description": "Shelled pistachio kernels prepared for confectionery, ice cream, bakery, and industrial use — green diamond grade focus when available.",
+      "sizes": "Whole, broken, and grade mixes by buyer brief. Sample packs available on request.",
+      "imageAlt": "Shelled pistachio kernels"
     },
     "salted-roasted": {
       "name": "Солёные и обжаренные",
-      "summary": "Готовая к употреблению обжаренная фисташка — солёная или без соли — для розничных упаковок и программ private label."
+      "summary": "Готовая к употреблению обжаренная фисташка — солёная или без соли — для розничных упаковок и программ private label.",
+      "description": "Ready-to-eat roasted pistachios — salted or plain — for retail packs and private-label programs with clear packing options.",
+      "sizes": "Retail and bulk pack options. Salt level and roast profile confirmed per order.",
+      "imageAlt": "Salted and roasted pistachios"
     }
   },
   "A11y": {

@@ -35,7 +35,7 @@ if (!function_exists('current_user_can') || !is_user_logged_in() || !current_use
 header('Content-Type: text/html; charset=utf-8');
 
 const GDF_THEME_SLUG = 'green-diamond-farm';
-const GDF_REMOTE_ZIP = 'https://raw.githubusercontent.com/Arafie3480/Pistachio-Company/cursor/wordpress-theme-delivery-3e66/wordpress/dist/green-diamond-farm.zip';
+const GDF_REMOTE_ZIP = 'https://raw.githubusercontent.com/Arafie3480/Pistachio-Company/main/wordpress/dist/green-diamond-farm.zip';
 
 /**
  * @return array{ok:bool,messages:list<string>}

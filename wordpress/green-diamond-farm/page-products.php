@@ -1,30 +1,24 @@
 <?php
 /**
- * Products template.
+ * Products template — open cards with photo slots + links to detail pages.
  *
  * @package Green_Diamond_Farm
  */
 
 declare(strict_types=1);
 
+// Fallback when page-product.php is not yet on the host (theme-editor deploy).
+if (gdf_current_page_key() === 'product') {
+	gdf_render_product_detail_page();
+	return;
+}
+
 get_header();
 
-$imagery = gdf_imagery();
 $groups = gdf_config()['product_groups'];
-$n = 1;
-$index = [];
-foreach ($groups as $slugs) {
-	foreach ($slugs as $slug) {
-		$index[$slug] = $n++;
-	}
-}
 
 gdf_page_hero(gdf_t('Products.title'), gdf_t('Products.lead'));
 ?>
-
-<div class="gdf-products-strip" aria-hidden="true">
-	<img src="<?php echo esc_url($imagery['product']); ?>" alt="" />
-</div>
 
 <section class="gdf-section" style="padding-block:4rem;">
 	<div class="gdf-wrap">
@@ -33,14 +27,25 @@ gdf_page_hero(gdf_t('Products.title'), gdf_t('Products.lead'));
 		<?php foreach ($groups as $group_id => $slugs) : ?>
 			<div class="gdf-product-group">
 				<h2 class="gdf-section-label"><?php echo esc_html(gdf_t('Products.group.' . $group_id)); ?></h2>
-				<ul class="gdf-product-list">
-					<?php foreach ($slugs as $slug) : ?>
-						<li class="gdf-product-row">
-							<span class="idx"><?php echo esc_html(str_pad((string) $index[$slug], 2, '0', STR_PAD_LEFT)); ?></span>
-							<div>
-								<h3><?php echo esc_html(gdf_t('products.' . $slug . '.name')); ?></h3>
-								<p><?php echo esc_html(gdf_t('products.' . $slug . '.summary')); ?></p>
-							</div>
+				<ul class="gdf-catalog-grid" role="list">
+					<?php foreach ($slugs as $slug) :
+						$name = gdf_t('products.' . $slug . '.name');
+						$summary = gdf_t('products.' . $slug . '.summary');
+						$alt = gdf_t('products.' . $slug . '.imageAlt');
+						$url = gdf_product_url($slug);
+						$img = gdf_product_image($slug);
+						?>
+						<li>
+							<a class="gdf-catalog-card" href="<?php echo esc_url($url); ?>">
+								<span class="gdf-catalog-card__media">
+									<img src="<?php echo esc_url($img); ?>" alt="<?php echo esc_attr($alt); ?>" width="800" height="600" loading="lazy" />
+								</span>
+								<span class="gdf-catalog-card__body">
+									<span class="gdf-catalog-card__title"><?php echo esc_html($name); ?></span>
+									<span class="gdf-catalog-card__summary"><?php echo esc_html($summary); ?></span>
+									<span class="gdf-catalog-card__more"><?php echo esc_html(gdf_t('Products.viewDetails')); ?></span>
+								</span>
+							</a>
 						</li>
 					<?php endforeach; ?>
 				</ul>

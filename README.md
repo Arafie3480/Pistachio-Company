@@ -8,7 +8,7 @@ Export website for **بازرگانی حسینی نوه** (Hosseini Naveh) — p
 
 ## Delivery status
 
-**Live:** https://greendiamondfarm.com — custom WordPress theme delivered (locked styles + Site Content). Freelancer technical handoff complete: [docs/delivery-receipt.md](docs/delivery-receipt.md).
+**Live:** https://greendiamondfarm.com — custom WordPress theme **v1.0.5** (locked styles + Site Content + language menu + locale SEO). Freelancer technical handoff complete: [docs/FREELANCER_HANDOFF.md](docs/FREELANCER_HANDOFF.md) · [docs/delivery-receipt.md](docs/delivery-receipt.md).
 
 | Area | Status |
 |------|--------|
@@ -16,7 +16,7 @@ Export website for **بازرگانی حسینی نوه** (Hosseini Naveh) — p
 | Official logo + richer green/gold palette | Done — client lockup in header/hero/footer |
 | FA/AR legal name + region on hero/footer | Done — `brandLegalForLocale` |
 | Contact (email, phone, WhatsApp, warehouse) | Live from `src/lib/site.ts` / WP Site Content |
-| SEO (canonical, hreflang, sitemap, robots, OG, Organization + catalog JSON-LD) | Done (Next demo); WP theme ships meta + hreflang |
+| SEO (canonical, hreflang, sitemap, robots, OG, Organization + catalog JSON-LD) | Done — Next demo + WP live v1.0.5 (canonical + OG + hreflang) |
 | Security / privacy (headers, CI least-privilege, first-party OG, privacy page) | Done |
 | A11y (skip link, mobile focus trap, `aria-current`, reduced motion, locale 404/error) | Done |
 | Contact CTAs (mailto, tel, WhatsApp with inquiry prefill) | Done |

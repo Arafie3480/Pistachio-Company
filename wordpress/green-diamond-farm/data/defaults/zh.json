@@ -40,7 +40,11 @@
     "seeAll": "查看全部产品",
     "ctaTitle": "准备讨论供货？",
     "ctaLead": "请告知目标品种、数量与目的地。出口部将回复后续步骤。",
-    "ctaButton": "联系我们"
+    "ctaButton": "联系我们",
+    "catalogInShellTitle": "带壳品种",
+    "catalogInShellLead": "每个品种都有独立照片位 — 点进查看规格与详情。",
+    "catalogProcessedTitle": "果仁与烘焙",
+    "catalogProcessedLead": "去壳果仁与咸烤产品分开展示。"
   },
   "About": {
     "metaTitle": "关于我们",
@@ -84,7 +88,14 @@
     "group": {
       "inShell": "带壳品种",
       "processed": "果仁与烘焙"
-    }
+    },
+    "viewDetails": "查看详情",
+    "backToProducts": "全部产品",
+    "sizesTitle": "规格与等级",
+    "samplesTitle": "样品照片",
+    "samplesNote": "在自有农场/产品照片发布前使用占位图。可在外观 → 站点内容中更换网址。",
+    "inquireAbout": "询盘：{name}",
+    "photoSlot": "照片位 — 添加您的开心果图片"
   },
   "Contact": {
     "metaTitle": "联系我们",
@@ -118,31 +129,52 @@
   "products": {
     "ahmad-aghaei": {
       "name": "Ahmad Aghaei",
-      "summary": "细长优雅的果仁，风味精致 — 深受高端零售与礼品市场青睐。"
+      "summary": "细长优雅的果仁，风味精致 — 深受高端零售与礼品市场青睐。",
+      "description": "Ahmad Aghaei is a long, elegant Iranian in-shell pistachio with a refined flavor. Buyers choose it for premium retail, gift packs, and markets that want a slender kernel look.",
+      "sizes": "Common counts: 20/22, 22/24, 24/26 per ounce. Confirm current crop grades with the export desk.",
+      "imageAlt": "Ahmad Aghaei in-shell pistachios"
     },
     "akbari": {
       "name": "Akbari",
-      "summary": "颗粒大、形长，视觉表现突出 — 高端批发买家的主力品种。"
+      "summary": "颗粒大、形长，视觉表现突出 — 高端批发买家的主力品种。",
+      "description": "Akbari is a large, elongated variety with strong visual presence on the shell. It is a staple for high-end wholesale and private-label programs.",
+      "sizes": "Common counts: 18/20, 20/22, 22/24 per ounce. Ask for available lots and packing.",
+      "imageAlt": "Akbari in-shell pistachios"
     },
     "fandoghi": {
       "name": "Fandoghi",
-      "summary": "圆润、用途广泛的伊朗开心果 — 适合烘焙、包装与日常贸易的稳定货量。"
+      "summary": "圆润、用途广泛的伊朗开心果 — 适合烘焙、包装与日常贸易的稳定货量。",
+      "description": "Fandoghi is the classic round Iranian pistachio — versatile volume for roasting, everyday retail packs, and steady wholesale demand.",
+      "sizes": "Common counts: 28/30, 30/32, 32/34 per ounce. Grades confirmed per shipment.",
+      "imageAlt": "Fandoghi in-shell pistachios"
     },
     "kaleh-ghouchi": {
       "name": "Kaleh Ghouchi",
-      "summary": "超大颗粒、外形醒目，壳面美观 — 适合重视规格与外观的市场。"
+      "summary": "超大颗粒、外形醒目，壳面美观 — 适合重视规格与外观的市场。",
+      "description": "Kaleh Ghouchi (Jumbo) has a bold shell shape and strong size appeal for markets that buy on appearance and caliber.",
+      "sizes": "Common counts: 18/20, 20/22 per ounce (jumbo focus). Confirm lot sizes with the desk.",
+      "imageAlt": "Kaleh Ghouchi jumbo pistachios"
     },
     "dahan-bast": {
       "name": "Dahan Bast",
-      "summary": "闭壳开心果，适合对完整性要求高的加工与果仁生产。"
+      "summary": "闭壳开心果，适合对完整性要求高的加工与果仁生产。",
+      "description": "Dahan Bast is closed-shell pistachio suited to processing and kernel production where shell integrity and clean cracking matter.",
+      "sizes": "Sized by lot for cracking / kernel yield. Specs confirmed with the export desk.",
+      "imageAlt": "Dahan Bast closed-shell pistachios"
     },
     "kernels": {
       "name": "果仁",
-      "summary": "去壳开心果仁，适用于糖果、冰淇淋、烘焙与工业用途。"
+      "summary": "去壳开心果仁，适用于糖果、冰淇淋、烘焙与工业用途。",
+      "description": "Shelled pistachio kernels prepared for confectionery, ice cream, bakery, and industrial use — green diamond grade focus when available.",
+      "sizes": "Whole, broken, and grade mixes by buyer brief. Sample packs available on request.",
+      "imageAlt": "Shelled pistachio kernels"
     },
     "salted-roasted": {
       "name": "咸味与烘焙",
-      "summary": "即食烘焙开心果 — 咸味或原味 — 适用于零售包装与贴牌项目。"
+      "summary": "即食烘焙开心果 — 咸味或原味 — 适用于零售包装与贴牌项目。",
+      "description": "Ready-to-eat roasted pistachios — salted or plain — for retail packs and private-label programs with clear packing options.",
+      "sizes": "Retail and bulk pack options. Salt level and roast profile confirmed per order.",
+      "imageAlt": "Salted and roasted pistachios"
     }
   },
   "A11y": {

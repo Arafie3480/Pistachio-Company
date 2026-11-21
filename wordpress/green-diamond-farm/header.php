@@ -25,9 +25,10 @@ $nav = [
 <head>
 	<meta charset="<?php bloginfo('charset'); ?>" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta name="google" content="notranslate" />
 	<?php wp_head(); ?>
 </head>
-<body <?php body_class(); ?>>
+<body <?php body_class(); ?> translate="no">
 <?php wp_body_open(); ?>
 <div class="gdf-site">
 	<a class="gdf-skip" href="#main"><?php echo esc_html(gdf_t('A11y.skipToContent')); ?></a>
@@ -45,31 +46,13 @@ $nav = [
 					</a>
 				<?php endforeach; ?>
 
-				<label class="gdf-lang visually-hidden-label">
-					<span class="screen-reader-text"><?php echo esc_html(gdf_t('Language.label')); ?></span>
-					<select data-gdf-lang aria-label="<?php echo esc_attr(gdf_t('Language.switchTo')); ?>">
-						<?php foreach (gdf_locales() as $loc) : ?>
-							<option value="<?php echo esc_url(gdf_switch_locale_url($loc)); ?>" <?php selected(gdf_locale(), $loc); ?>>
-								<?php echo esc_html(gdf_config()['locale_labels'][$loc] ?? $loc); ?>
-							</option>
-						<?php endforeach; ?>
-					</select>
-				</label>
+				<?php gdf_lang_switcher(); ?>
 
 				<?php gdf_btn(gdf_url('contact'), gdf_t('Nav.inquire'), 'gold'); ?>
 			</nav>
 
 			<div class="gdf-header__mobile">
-				<label class="gdf-lang">
-					<span class="screen-reader-text"><?php echo esc_html(gdf_t('Language.label')); ?></span>
-					<select data-gdf-lang aria-label="<?php echo esc_attr(gdf_t('Language.switchTo')); ?>">
-						<?php foreach (gdf_locales() as $loc) : ?>
-							<option value="<?php echo esc_url(gdf_switch_locale_url($loc)); ?>" <?php selected(gdf_locale(), $loc); ?>>
-								<?php echo esc_html(gdf_config()['locale_labels'][$loc] ?? $loc); ?>
-							</option>
-						<?php endforeach; ?>
-					</select>
-				</label>
+				<?php gdf_lang_switcher(); ?>
 				<button
 					type="button"
 					class="gdf-menu-btn"

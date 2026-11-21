@@ -83,6 +83,14 @@ function gdf_config(): array
 			'orchard' => 'https://images.unsplash.com/photo-1502825751399-28baa9b81efe?auto=format&fit=crop&w=1600&q=80',
 			'product' => 'https://images.unsplash.com/photo-1704079662049-d00890d21a69?auto=format&fit=crop&w=1600&q=80',
 			'harvest' => 'https://images.unsplash.com/photo-1704079662049-d00890d21a69?auto=format&fit=crop&w=1600&q=80',
+			// Per-product placeholders — replace via Appearance → Site Content → Images.
+			'product_ahmad-aghaei' => 'https://images.unsplash.com/photo-1704079662049-d00890d21a69?auto=format&fit=crop&w=1200&q=80&sat=-10',
+			'product_akbari' => 'https://images.unsplash.com/photo-1704079662049-d00890d21a69?auto=format&fit=crop&w=1200&q=80&sat=-5',
+			'product_fandoghi' => 'https://images.unsplash.com/photo-1704079662049-d00890d21a69?auto=format&fit=crop&w=1200&h=900&q=80',
+			'product_kaleh-ghouchi' => 'https://images.unsplash.com/photo-1704079662049-d00890d21a69?auto=format&fit=crop&w=1200&h=800&q=80',
+			'product_dahan-bast' => 'https://images.unsplash.com/photo-1502825751399-28baa9b81efe?auto=format&fit=crop&w=1200&q=80',
+			'product_kernels' => 'https://images.unsplash.com/photo-1704079662049-d00890d21a69?auto=format&fit=crop&w=1200&q=80',
+			'product_salted-roasted' => 'https://images.unsplash.com/photo-1704079662049-d00890d21a69?auto=format&fit=crop&w=1100&q=80',
 		],
 		'locales' => ['en', 'fa', 'ar', 'tr', 'zh', 'hi', 'ru'],
 		'rtl_locales' => ['fa', 'ar'],
@@ -136,4 +144,25 @@ function gdf_imagery(): array
 		$saved = [];
 	}
 	return array_merge($defaults, array_filter($saved, static fn($v) => is_string($v) && $v !== ''));
+}
+
+/**
+ * Whether a string is a known catalog product slug.
+ */
+function gdf_is_product_slug(string $slug): bool
+{
+	return in_array($slug, gdf_config()['product_slugs'], true);
+}
+
+/**
+ * Primary image URL for a product card / detail hero.
+ */
+function gdf_product_image(string $slug): string
+{
+	$imagery = gdf_imagery();
+	$key = 'product_' . $slug;
+	if (!empty($imagery[$key])) {
+		return (string) $imagery[$key];
+	}
+	return (string) ($imagery['product'] ?? '');
 }

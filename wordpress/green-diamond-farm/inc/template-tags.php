@@ -11,14 +11,8 @@ if (!defined('ABSPATH')) {
 
 function gdf_logo_url(string $size = 'nav'): string
 {
-	$custom = get_theme_mod('custom_logo');
-	if ($custom) {
-		$url = wp_get_attachment_image_url((int) $custom, 'full');
-		if (is_string($url) && $url !== '') {
-			return $url;
-		}
-	}
-
+	// Always use theme brand assets. Never trust WP custom_logo leftovers
+	// from a previous theme (e.g. Blocksy "CREATIVEMINDS" SVG).
 	$file = match ($size) {
 		'hero', 'footer' => 'logo-lockup.png',
 		default => 'logo-nav-trim.png',
@@ -88,6 +82,125 @@ function gdf_btn(string $href, string $label, string $variant = 'gold'): void
 		$attrs,
 		esc_html($label)
 	);
+}
+
+/**
+ * Language switcher: always-visible FA / AR / EN + menu for other locales.
+ * Avoids invisible &lt;select&gt; options and makes Persian/Arabic obvious.
+ */
+function gdf_lang_switcher(): void
+{
+	$current = gdf_locale();
+	$labels = gdf_config()['locale_labels'];
+	$primary = ['fa', 'ar', 'en'];
+	$rest = array_values(array_filter(gdf_locales(), static fn(string $loc): bool => !in_array($loc, $primary, true)));
+	?>
+	<nav class="gdf-lang" data-gdf-lang aria-label="<?php echo esc_attr(gdf_t('Language.switchTo')); ?>">
+		<ul class="gdf-lang__primary" role="list">
+			<?php foreach ($primary as $loc) : ?>
+				<li>
+					<a
+						class="gdf-lang__chip<?php echo $loc === $current ? ' is-active' : ''; ?>"
+						href="<?php echo esc_url(gdf_switch_locale_url($loc)); ?>"
+						hreflang="<?php echo esc_attr($loc); ?>"
+						lang="<?php echo esc_attr($loc); ?>"
+						<?php echo $loc === $current ? 'aria-current="true"' : ''; ?>
+					>
+						<?php echo esc_html($labels[$loc] ?? $loc); ?>
+					</a>
+				</li>
+			<?php endforeach; ?>
+		</ul>
+		<?php if ($rest !== []) : ?>
+			<details class="gdf-lang__more">
+				<summary class="gdf-lang__summary" aria-label="<?php echo esc_attr(gdf_t('Language.switchTo')); ?>">+</summary>
+				<ul class="gdf-lang__menu" role="list">
+					<?php foreach ($rest as $loc) : ?>
+						<li>
+							<a
+								href="<?php echo esc_url(gdf_switch_locale_url($loc)); ?>"
+								hreflang="<?php echo esc_attr($loc); ?>"
+								lang="<?php echo esc_attr($loc); ?>"
+								<?php echo $loc === $current ? 'aria-current="true"' : ''; ?>
+							>
+								<?php echo esc_html($labels[$loc] ?? $loc); ?>
+							</a>
+						</li>
+					<?php endforeach; ?>
+				</ul>
+			</details>
+		<?php endif; ?>
+	</nav>
+	<?php
+}
+
+/**
+ * Full product detail page (header → footer). Used by page-product.php
+ * and as a fallback from page-products.php when the dedicated file is missing live.
+ */
+function gdf_render_product_detail_page(): void
+{
+	$slug = gdf_current_product_slug();
+	if ($slug === '') {
+		global $wp_query;
+		$wp_query->set_404();
+		status_header(404);
+		nocache_headers();
+		include get_query_template('404');
+		return;
+	}
+
+	get_header();
+
+	$name = gdf_t('products.' . $slug . '.name');
+	$summary = gdf_t('products.' . $slug . '.summary');
+	$description = gdf_t('products.' . $slug . '.description');
+	$sizes = gdf_t('products.' . $slug . '.sizes');
+	$alt = gdf_t('products.' . $slug . '.imageAlt');
+	$primary = gdf_product_image($slug);
+	$secondary = gdf_imagery()['harvest'];
+	$inquire = gdf_t('Products.inquireAbout', ['name' => $name]);
+
+	gdf_page_hero($name, $summary);
+	?>
+	<section class="gdf-section gdf-product-detail">
+		<div class="gdf-wrap">
+			<p class="gdf-product-detail__back">
+				<a href="<?php echo esc_url(gdf_url('products')); ?>"><?php echo esc_html(gdf_t('Products.backToProducts')); ?></a>
+			</p>
+
+			<div class="gdf-product-detail__grid">
+				<div class="gdf-product-detail__media">
+					<figure>
+						<img src="<?php echo esc_url($primary); ?>" alt="<?php echo esc_attr($alt); ?>" width="1200" height="900" loading="eager" />
+					</figure>
+					<figure>
+						<img src="<?php echo esc_url($secondary); ?>" alt="" width="1200" height="900" loading="lazy" />
+						<figcaption><?php echo esc_html(gdf_t('Products.photoSlot')); ?></figcaption>
+					</figure>
+				</div>
+				<div class="gdf-product-detail__copy">
+					<p class="gdf-product-detail__lead"><?php echo esc_html($description); ?></p>
+
+					<div class="gdf-product-detail__block">
+						<h2><?php echo esc_html(gdf_t('Products.sizesTitle')); ?></h2>
+						<p><?php echo esc_html($sizes); ?></p>
+					</div>
+
+					<div class="gdf-product-detail__block">
+						<h2><?php echo esc_html(gdf_t('Products.samplesTitle')); ?></h2>
+						<p><?php echo esc_html(gdf_t('Products.samplesNote')); ?></p>
+					</div>
+
+					<p class="gdf-product-detail__cta">
+						<?php gdf_btn(gdf_url('contact'), $inquire, 'gold'); ?>
+					</p>
+				</div>
+			</div>
+		</div>
+	</section>
+	<?php
+	get_footer();
 }
 
 function gdf_icon(string $name): void
