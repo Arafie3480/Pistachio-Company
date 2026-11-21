@@ -11,7 +11,7 @@ get_header();
 
 $legal = gdf_brand_legal();
 $imagery = gdf_imagery();
-$slugs = gdf_config()['product_slugs'];
+$groups = gdf_config()['product_groups'];
 $pillars = [
 	['Home.pillar1Title', 'Home.pillar1Body'],
 	['Home.pillar2Title', 'Home.pillar2Body'],
@@ -62,22 +62,64 @@ $pillars = [
 	</div>
 </section>
 
-<section class="gdf-split">
-	<div class="gdf-wrap gdf-split__grid">
-		<div class="gdf-split__media">
-			<img src="<?php echo esc_url($imagery['product']); ?>" alt="<?php echo esc_attr(gdf_t('Home.productAlt')); ?>" />
-		</div>
-		<div>
+<section class="gdf-section gdf-home-catalog" id="varieties">
+	<div class="gdf-wrap">
+		<div style="max-width:42rem;">
 			<h2><?php echo esc_html(gdf_t('Home.shipmentTitle')); ?></h2>
-			<p><?php echo esc_html(gdf_t('Home.shipmentLead')); ?></p>
-			<ul class="gdf-list">
-				<?php foreach (array_slice($slugs, 0, 5) as $slug) : ?>
-					<li><?php echo esc_html(gdf_t('products.' . $slug . '.name')); ?></li>
-				<?php endforeach; ?>
-				<li style="color:var(--muted-foreground);"><?php echo esc_html(gdf_t('Home.kernelsRoasted')); ?></li>
-			</ul>
-			<p style="margin-top:2rem;"><?php gdf_btn(gdf_url('products'), gdf_t('Home.seeAll'), 'gold'); ?></p>
+			<div class="gdf-rule" aria-hidden="true"></div>
+			<p><?php echo esc_html(gdf_t('Home.catalogInShellLead')); ?></p>
 		</div>
+
+		<div class="gdf-home-catalog__block">
+			<h3 class="gdf-section-label"><?php echo esc_html(gdf_t('Home.catalogInShellTitle')); ?></h3>
+			<ul class="gdf-catalog-grid" role="list">
+				<?php foreach ($groups['inShell'] as $slug) :
+					$name = gdf_t('products.' . $slug . '.name');
+					$summary = gdf_t('products.' . $slug . '.summary');
+					$alt = gdf_t('products.' . $slug . '.imageAlt');
+					?>
+					<li>
+						<a class="gdf-catalog-card" href="<?php echo esc_url(gdf_product_url($slug)); ?>">
+							<span class="gdf-catalog-card__media">
+								<img src="<?php echo esc_url(gdf_product_image($slug)); ?>" alt="<?php echo esc_attr($alt); ?>" width="800" height="600" loading="lazy" />
+							</span>
+							<span class="gdf-catalog-card__body">
+								<span class="gdf-catalog-card__title"><?php echo esc_html($name); ?></span>
+								<span class="gdf-catalog-card__summary"><?php echo esc_html($summary); ?></span>
+								<span class="gdf-catalog-card__more"><?php echo esc_html(gdf_t('Products.viewDetails')); ?></span>
+							</span>
+						</a>
+					</li>
+				<?php endforeach; ?>
+			</ul>
+		</div>
+
+		<div class="gdf-home-catalog__block">
+			<h3 class="gdf-section-label"><?php echo esc_html(gdf_t('Home.catalogProcessedTitle')); ?></h3>
+			<p class="gdf-home-catalog__lead"><?php echo esc_html(gdf_t('Home.catalogProcessedLead')); ?></p>
+			<ul class="gdf-catalog-grid gdf-catalog-grid--pair" role="list">
+				<?php foreach ($groups['processed'] as $slug) :
+					$name = gdf_t('products.' . $slug . '.name');
+					$summary = gdf_t('products.' . $slug . '.summary');
+					$alt = gdf_t('products.' . $slug . '.imageAlt');
+					?>
+					<li>
+						<a class="gdf-catalog-card" href="<?php echo esc_url(gdf_product_url($slug)); ?>">
+							<span class="gdf-catalog-card__media">
+								<img src="<?php echo esc_url(gdf_product_image($slug)); ?>" alt="<?php echo esc_attr($alt); ?>" width="800" height="600" loading="lazy" />
+							</span>
+							<span class="gdf-catalog-card__body">
+								<span class="gdf-catalog-card__title"><?php echo esc_html($name); ?></span>
+								<span class="gdf-catalog-card__summary"><?php echo esc_html($summary); ?></span>
+								<span class="gdf-catalog-card__more"><?php echo esc_html(gdf_t('Products.viewDetails')); ?></span>
+							</span>
+						</a>
+					</li>
+				<?php endforeach; ?>
+			</ul>
+		</div>
+
+		<p style="margin-top:2.5rem;"><?php gdf_btn(gdf_url('products'), gdf_t('Home.seeAll'), 'gold'); ?></p>
 	</div>
 </section>
 

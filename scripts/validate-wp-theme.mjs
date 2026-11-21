@@ -17,6 +17,7 @@ const required = [
   "front-page.php",
   "page-about.php",
   "page-products.php",
+  "page-product.php",
   "page-contact.php",
   "page-privacy.php",
   "404.php",

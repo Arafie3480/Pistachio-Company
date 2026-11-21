@@ -134,6 +134,75 @@ function gdf_lang_switcher(): void
 	<?php
 }
 
+/**
+ * Full product detail page (header → footer). Used by page-product.php
+ * and as a fallback from page-products.php when the dedicated file is missing live.
+ */
+function gdf_render_product_detail_page(): void
+{
+	$slug = gdf_current_product_slug();
+	if ($slug === '') {
+		global $wp_query;
+		$wp_query->set_404();
+		status_header(404);
+		nocache_headers();
+		include get_query_template('404');
+		return;
+	}
+
+	get_header();
+
+	$name = gdf_t('products.' . $slug . '.name');
+	$summary = gdf_t('products.' . $slug . '.summary');
+	$description = gdf_t('products.' . $slug . '.description');
+	$sizes = gdf_t('products.' . $slug . '.sizes');
+	$alt = gdf_t('products.' . $slug . '.imageAlt');
+	$primary = gdf_product_image($slug);
+	$secondary = gdf_imagery()['harvest'];
+	$inquire = gdf_t('Products.inquireAbout', ['name' => $name]);
+
+	gdf_page_hero($name, $summary);
+	?>
+	<section class="gdf-section gdf-product-detail">
+		<div class="gdf-wrap">
+			<p class="gdf-product-detail__back">
+				<a href="<?php echo esc_url(gdf_url('products')); ?>"><?php echo esc_html(gdf_t('Products.backToProducts')); ?></a>
+			</p>
+
+			<div class="gdf-product-detail__grid">
+				<div class="gdf-product-detail__media">
+					<figure>
+						<img src="<?php echo esc_url($primary); ?>" alt="<?php echo esc_attr($alt); ?>" width="1200" height="900" loading="eager" />
+					</figure>
+					<figure>
+						<img src="<?php echo esc_url($secondary); ?>" alt="" width="1200" height="900" loading="lazy" />
+						<figcaption><?php echo esc_html(gdf_t('Products.photoSlot')); ?></figcaption>
+					</figure>
+				</div>
+				<div class="gdf-product-detail__copy">
+					<p class="gdf-product-detail__lead"><?php echo esc_html($description); ?></p>
+
+					<div class="gdf-product-detail__block">
+						<h2><?php echo esc_html(gdf_t('Products.sizesTitle')); ?></h2>
+						<p><?php echo esc_html($sizes); ?></p>
+					</div>
+
+					<div class="gdf-product-detail__block">
+						<h2><?php echo esc_html(gdf_t('Products.samplesTitle')); ?></h2>
+						<p><?php echo esc_html(gdf_t('Products.samplesNote')); ?></p>
+					</div>
+
+					<p class="gdf-product-detail__cta">
+						<?php gdf_btn(gdf_url('contact'), $inquire, 'gold'); ?>
+					</p>
+				</div>
+			</div>
+		</div>
+	</section>
+	<?php
+	get_footer();
+}
+
 function gdf_icon(string $name): void
 {
 	$icons = [

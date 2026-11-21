@@ -104,11 +104,20 @@ function gdf_render_site_content_page(): void
 			</table>
 
 			<h2><?php esc_html_e('Images (URLs)', 'green-diamond-farm'); ?></h2>
-			<p class="description"><?php esc_html_e('Replace stock URLs with owned photography when ready. Keep similar aspect ratios.', 'green-diamond-farm'); ?></p>
+			<p class="description"><?php esc_html_e('Replace stock URLs with owned photography when ready. Keep similar aspect ratios. Product photo fields feed home cards and product detail pages.', 'green-diamond-farm'); ?></p>
 			<table class="form-table" role="presentation">
-				<?php foreach (['hero', 'orchard', 'product', 'harvest'] as $key) : ?>
+				<?php
+				$img_keys = array_merge(
+					['hero', 'orchard', 'product', 'harvest'],
+					array_map(static fn(string $s): string => 'product_' . $s, gdf_config()['product_slugs'])
+				);
+				foreach ($img_keys as $key) :
+					$label = str_starts_with($key, 'product_')
+						? sprintf(/* translators: product slug */ __('Product photo — %s', 'green-diamond-farm'), substr($key, 8))
+						: ucfirst($key);
+					?>
 					<tr>
-						<th scope="row"><label for="gdf_img_<?php echo esc_attr($key); ?>"><?php echo esc_html(ucfirst($key)); ?></label></th>
+						<th scope="row"><label for="gdf_img_<?php echo esc_attr($key); ?>"><?php echo esc_html($label); ?></label></th>
 						<td>
 							<input class="large-text" type="url" name="gdf_imagery[<?php echo esc_attr($key); ?>]" id="gdf_img_<?php echo esc_attr($key); ?>" value="<?php echo esc_attr($imagery[$key] ?? ''); ?>" />
 						</td>

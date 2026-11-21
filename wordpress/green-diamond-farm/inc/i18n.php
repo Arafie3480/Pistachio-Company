@@ -68,9 +68,23 @@ function gdf_register_rewrites(): void
 {
 	$locales = implode('|', array_map('preg_quote', gdf_locales()));
 	$pages = 'about|products|contact|privacy';
+	$slugs = implode('|', array_map('preg_quote', gdf_config()['product_slugs']));
 
 	add_rewrite_tag('%gdf_lang%', '(' . $locales . ')');
-	add_rewrite_tag('%gdf_page%', '(' . $pages . ')');
+	add_rewrite_tag('%gdf_page%', '(' . $pages . '|product)');
+	add_rewrite_tag('%gdf_product%', '(' . $slugs . ')');
+
+	// Product detail — more specific rules first.
+	add_rewrite_rule(
+		'^(' . $locales . ')/products/(' . $slugs . ')/?$',
+		'index.php?gdf_lang=$matches[1]&gdf_page=product&gdf_product=$matches[2]',
+		'top'
+	);
+	add_rewrite_rule(
+		'^products/(' . $slugs . ')/?$',
+		'index.php?gdf_page=product&gdf_product=$matches[1]',
+		'top'
+	);
 
 	add_rewrite_rule(
 		'^(' . $locales . ')/(' . $pages . ')/?$',
@@ -87,6 +101,7 @@ function gdf_register_rewrites(): void
 add_filter('query_vars', static function (array $vars): array {
 	$vars[] = 'gdf_lang';
 	$vars[] = 'gdf_page';
+	$vars[] = 'gdf_product';
 	return $vars;
 });
 
@@ -105,6 +120,14 @@ function gdf_parse_locale_request(WP $wp): void
 	}
 
 	$page = isset($wp->query_vars['gdf_page']) ? (string) $wp->query_vars['gdf_page'] : '';
+	$product = isset($wp->query_vars['gdf_product']) ? (string) $wp->query_vars['gdf_product'] : '';
+	if ($product !== '' && gdf_is_product_slug($product)) {
+		$GLOBALS['gdf_product'] = $product;
+		$page = 'product';
+		$wp->query_vars['gdf_page'] = 'product';
+		$wp->query_vars['gdf_product'] = $product;
+	}
+
 	if ($page !== '') {
 		$GLOBALS['gdf_virtual_page'] = $page;
 		// Force a front-end request that templates can detect.
@@ -136,12 +159,49 @@ function gdf_url(string $page = 'home', ?string $locale = null): string
 }
 
 /**
+ * Localized URL for a single product detail page.
+ */
+function gdf_product_url(string $product_slug, ?string $locale = null): string
+{
+	$locale = $locale ?? gdf_locale();
+	$default = gdf_default_locale();
+	$product_slug = sanitize_title($product_slug);
+	if ($locale === $default) {
+		$path = '/products/' . $product_slug . '/';
+	} else {
+		$path = '/' . $locale . '/products/' . $product_slug . '/';
+	}
+	return home_url($path);
+}
+
+/**
+ * Active product slug on detail routes (empty otherwise).
+ */
+function gdf_current_product_slug(): string
+{
+	if (isset($GLOBALS['gdf_product']) && is_string($GLOBALS['gdf_product']) && gdf_is_product_slug($GLOBALS['gdf_product'])) {
+		return $GLOBALS['gdf_product'];
+	}
+	$q = get_query_var('gdf_product');
+	if (is_string($q) && gdf_is_product_slug($q)) {
+		return $q;
+	}
+	return '';
+}
+
+/**
  * Language switcher target for current logical page.
  */
 function gdf_switch_locale_url(string $target_locale): string
 {
 	$page = gdf_current_page_key();
-	return gdf_url($page, $target_locale);
+	if ($page === 'product') {
+		$slug = gdf_current_product_slug();
+		if ($slug !== '') {
+			return gdf_product_url($slug, $target_locale);
+		}
+	}
+	return gdf_url($page === 'product' ? 'products' : $page, $target_locale);
 }
 
 function gdf_current_page_key(): string

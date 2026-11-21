@@ -40,7 +40,11 @@
     "seeAll": "सभी उत्पाद",
     "ctaTitle": "आपूर्ति पर बात करने को तैयार?",
     "ctaLead": "लक्षित किस्म, मात्रा और गंतव्य भेजें। निर्यात डेस्क अगले कदमों के साथ जवाब देगा।",
-    "ctaButton": "हमसे संपर्क करें"
+    "ctaButton": "हमसे संपर्क करें",
+    "catalogInShellTitle": "शेल वाली किस्में",
+    "catalogInShellLead": "हर किस्म के लिए अलग फ़ोटो स्थान — साइज़ और विवरण के लिए टैप करें।",
+    "catalogProcessedTitle": "गिरी और रोस्टेड",
+    "catalogProcessedLead": "छिली गिरी और नमकीन-रोस्टेड लाइनें अलग से."
   },
   "About": {
     "metaTitle": "परिचय",
@@ -84,7 +88,14 @@
     "group": {
       "inShell": "छिलके वाले किस्में",
       "processed": "गिरियाँ और भुने हुए"
-    }
+    },
+    "viewDetails": "विवरण देखें",
+    "backToProducts": "सभी उत्पाद",
+    "sizesTitle": "साइज़ और ग्रेड",
+    "samplesTitle": "नमूना फ़ोटो",
+    "samplesNote": "अपनी फ़ार्म/उत्पाद फ़ोटो प्रकाशित होने तक प्लेसहोल्डर। Appearance → Site Content से URL बदलें।",
+    "inquireAbout": "{name} के बारे में पूछताछ",
+    "photoSlot": "फ़ोटो स्थान — पिस्ता चित्र जोड़ें"
   },
   "Contact": {
     "metaTitle": "संपर्क",
@@ -118,31 +129,52 @@
   "products": {
     "ahmad-aghaei": {
       "name": "Ahmad Aghaei",
-      "summary": "लंबी, सुंदर गिरी और परिष्कृत स्वाद — प्रीमियम रिटेल व उपहार बाज़ारों में पसंद।"
+      "summary": "लंबी, सुंदर गिरी और परिष्कृत स्वाद — प्रीमियम रिटेल व उपहार बाज़ारों में पसंद।",
+      "description": "Ahmad Aghaei is a long, elegant Iranian in-shell pistachio with a refined flavor. Buyers choose it for premium retail, gift packs, and markets that want a slender kernel look.",
+      "sizes": "Common counts: 20/22, 22/24, 24/26 per ounce. Confirm current crop grades with the export desk.",
+      "imageAlt": "Ahmad Aghaei in-shell pistachios"
     },
     "akbari": {
       "name": "Akbari",
-      "summary": "बड़े, लंबे दाने, मजबूत दृश्य उपस्थिति — उच्च-स्तरीय थोक खरीदारों के लिए मुख्य किस्म।"
+      "summary": "बड़े, लंबे दाने, मजबूत दृश्य उपस्थिति — उच्च-स्तरीय थोक खरीदारों के लिए मुख्य किस्म।",
+      "description": "Akbari is a large, elongated variety with strong visual presence on the shell. It is a staple for high-end wholesale and private-label programs.",
+      "sizes": "Common counts: 18/20, 20/22, 22/24 per ounce. Ask for available lots and packing.",
+      "imageAlt": "Akbari in-shell pistachios"
     },
     "fandoghi": {
       "name": "Fandoghi",
-      "summary": "गोल, बहुउपयोगी ईरानी पिस्ता — रोस्टिंग, पैकिंग और रोज़मर्रा के व्यापार के लिए विश्वसनीय मात्रा।"
+      "summary": "गोल, बहुउपयोगी ईरानी पिस्ता — रोस्टिंग, पैकिंग और रोज़मर्रा के व्यापार के लिए विश्वसनीय मात्रा।",
+      "description": "Fandoghi is the classic round Iranian pistachio — versatile volume for roasting, everyday retail packs, and steady wholesale demand.",
+      "sizes": "Common counts: 28/30, 30/32, 32/34 per ounce. Grades confirmed per shipment.",
+      "imageAlt": "Fandoghi in-shell pistachios"
     },
     "kaleh-ghouchi": {
       "name": "Kaleh Ghouchi",
-      "summary": "जंबो, बोल्ड आकार और उत्कृष्ट शेल आकर्षण — आकार व लुक को महत्व देने वाले बाज़ारों के लिए।"
+      "summary": "जंबो, बोल्ड आकार और उत्कृष्ट शेल आकर्षण — आकार व लुक को महत्व देने वाले बाज़ारों के लिए।",
+      "description": "Kaleh Ghouchi (Jumbo) has a bold shell shape and strong size appeal for markets that buy on appearance and caliber.",
+      "sizes": "Common counts: 18/20, 20/22 per ounce (jumbo focus). Confirm lot sizes with the desk.",
+      "imageAlt": "Kaleh Ghouchi jumbo pistachios"
     },
     "dahan-bast": {
       "name": "Dahan Bast",
-      "summary": "बंद-शेल पिस्ता, प्रोसेसिंग और गिरी उत्पादन के लिए जहाँ अखंडता मायने रखती है।"
+      "summary": "बंद-शेल पिस्ता, प्रोसेसिंग और गिरी उत्पादन के लिए जहाँ अखंडता मायने रखती है।",
+      "description": "Dahan Bast is closed-shell pistachio suited to processing and kernel production where shell integrity and clean cracking matter.",
+      "sizes": "Sized by lot for cracking / kernel yield. Specs confirmed with the export desk.",
+      "imageAlt": "Dahan Bast closed-shell pistachios"
     },
     "kernels": {
       "name": "गिरी",
-      "summary": "छिली हुई पिस्ता गिरी — मिष्ठान्न, आइसक्रीम, बेकरी और औद्योगिक उपयोग के लिए।"
+      "summary": "छिली हुई पिस्ता गिरी — मिष्ठान्न, आइसक्रीम, बेकरी और औद्योगिक उपयोग के लिए।",
+      "description": "Shelled pistachio kernels prepared for confectionery, ice cream, bakery, and industrial use — green diamond grade focus when available.",
+      "sizes": "Whole, broken, and grade mixes by buyer brief. Sample packs available on request.",
+      "imageAlt": "Shelled pistachio kernels"
     },
     "salted-roasted": {
       "name": "नमकीन व रोस्टेड",
-      "summary": "खाने के लिए तैयार रोस्टेड पिस्ता — नमकीन या सादा — रिटेल पैक और प्राइवेट-लेबल प्रोग्राम के लिए।"
+      "summary": "खाने के लिए तैयार रोस्टेड पिस्ता — नमकीन या सादा — रिटेल पैक और प्राइवेट-लेबल प्रोग्राम के लिए।",
+      "description": "Ready-to-eat roasted pistachios — salted or plain — for retail packs and private-label programs with clear packing options.",
+      "sizes": "Retail and bulk pack options. Salt level and roast profile confirmed per order.",
+      "imageAlt": "Salted and roasted pistachios"
     }
   },
   "A11y": {

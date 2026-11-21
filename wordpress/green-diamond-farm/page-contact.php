@@ -54,10 +54,8 @@ gdf_page_hero(gdf_t('Contact.title'), gdf_t('Contact.lead'));
 					<h2><?php echo esc_html(gdf_t('Contact.office')); ?></h2>
 					<?php if ($prefer_fa) : ?>
 						<p class="value" lang="fa" dir="rtl"><?php echo esc_html($contact['address_fa']); ?></p>
-						<p class="note" dir="ltr"><?php echo esc_html($contact['address_en']); ?></p>
 					<?php else : ?>
 						<p class="value"><?php echo esc_html($contact['address_en']); ?></p>
-						<p class="note" lang="fa" dir="rtl"><?php echo esc_html($contact['address_fa']); ?></p>
 					<?php endif; ?>
 					<p class="note"><?php echo esc_html(gdf_t('Contact.addressNote')); ?></p>
 				</div>

@@ -40,7 +40,11 @@
     "seeAll": "See all products",
     "ctaTitle": "Ready to inquire?",
     "ctaLead": "Send variety, approximate volume, and destination. We reply from the export desk.",
-    "ctaButton": "Email or WhatsApp"
+    "ctaButton": "Email or WhatsApp",
+    "catalogInShellTitle": "In-shell varieties",
+    "catalogInShellLead": "Each variety has its own space for a photo — tap for sizes and details.",
+    "catalogProcessedTitle": "Kernels & roasted",
+    "catalogProcessedLead": "Separate programs for shelled kernels and salted & roasted lines."
   },
   "About": {
     "metaTitle": "About",
@@ -84,7 +88,14 @@
     "group": {
       "inShell": "In-shell varieties",
       "processed": "Kernels & roasted"
-    }
+    },
+    "viewDetails": "View details",
+    "backToProducts": "All products",
+    "sizesTitle": "Sizes & grades",
+    "samplesTitle": "Sample photos",
+    "samplesNote": "Placeholder photography until owned farm/product shots are published. Replace URLs in Appearance → Site Content.",
+    "inquireAbout": "Inquire about {name}",
+    "photoSlot": "Photo space — add your pistachio image"
   },
   "Contact": {
     "metaTitle": "Contact",
@@ -118,31 +129,52 @@
   "products": {
     "ahmad-aghaei": {
       "name": "Ahmad Aghaei",
-      "summary": "Long, elegant kernels with a refined flavor profile — favored by premium retail and gift markets."
+      "summary": "Long, elegant kernels with a refined flavor profile — favored by premium retail and gift markets.",
+      "description": "Ahmad Aghaei is a long, elegant Iranian in-shell pistachio with a refined flavor. Buyers choose it for premium retail, gift packs, and markets that want a slender kernel look.",
+      "sizes": "Common counts: 20/22, 22/24, 24/26 per ounce. Confirm current crop grades with the export desk.",
+      "imageAlt": "Ahmad Aghaei in-shell pistachios"
     },
     "akbari": {
       "name": "Akbari",
-      "summary": "Large, elongated nuts with strong visual presence — a staple for high-end wholesale buyers."
+      "summary": "Large, elongated nuts with strong visual presence — a staple for high-end wholesale buyers.",
+      "description": "Akbari is a large, elongated variety with strong visual presence on the shell. It is a staple for high-end wholesale and private-label programs.",
+      "sizes": "Common counts: 18/20, 20/22, 22/24 per ounce. Ask for available lots and packing.",
+      "imageAlt": "Akbari in-shell pistachios"
     },
     "fandoghi": {
       "name": "Fandoghi",
-      "summary": "Round, versatile Iranian pistachio — reliable volume for roasting, packing, and everyday trade."
+      "summary": "Round, versatile Iranian pistachio — reliable volume for roasting, packing, and everyday trade.",
+      "description": "Fandoghi is the classic round Iranian pistachio — versatile volume for roasting, everyday retail packs, and steady wholesale demand.",
+      "sizes": "Common counts: 28/30, 30/32, 32/34 per ounce. Grades confirmed per shipment.",
+      "imageAlt": "Fandoghi in-shell pistachios"
     },
     "kaleh-ghouchi": {
       "name": "Kaleh Ghouchi",
-      "summary": "Jumbo, bold shape with excellent shell appeal — selected for markets that value size and look."
+      "summary": "Jumbo, bold shape with excellent shell appeal — selected for markets that value size and look.",
+      "description": "Kaleh Ghouchi (Jumbo) has a bold shell shape and strong size appeal for markets that buy on appearance and caliber.",
+      "sizes": "Common counts: 18/20, 20/22 per ounce (jumbo focus). Confirm lot sizes with the desk.",
+      "imageAlt": "Kaleh Ghouchi jumbo pistachios"
     },
     "dahan-bast": {
       "name": "Dahan Bast",
-      "summary": "Closed-shell pistachios suited to processing and kernel production where integrity matters."
+      "summary": "Closed-shell pistachios suited to processing and kernel production where integrity matters.",
+      "description": "Dahan Bast is closed-shell pistachio suited to processing and kernel production where shell integrity and clean cracking matter.",
+      "sizes": "Sized by lot for cracking / kernel yield. Specs confirmed with the export desk.",
+      "imageAlt": "Dahan Bast closed-shell pistachios"
     },
     "kernels": {
       "name": "Kernels",
-      "summary": "Shelled pistachio kernels prepared for confectionery, ice cream, bakery, and industrial use."
+      "summary": "Shelled pistachio kernels prepared for confectionery, ice cream, bakery, and industrial use.",
+      "description": "Shelled pistachio kernels prepared for confectionery, ice cream, bakery, and industrial use — green diamond grade focus when available.",
+      "sizes": "Whole, broken, and grade mixes by buyer brief. Sample packs available on request.",
+      "imageAlt": "Shelled pistachio kernels"
     },
     "salted-roasted": {
       "name": "Salted & roasted",
-      "summary": "Ready-to-eat roasted pistachios — salted or plain — for retail packs and private-label programs."
+      "summary": "Ready-to-eat roasted pistachios — salted or plain — for retail packs and private-label programs.",
+      "description": "Ready-to-eat roasted pistachios — salted or plain — for retail packs and private-label programs with clear packing options.",
+      "sizes": "Retail and bulk pack options. Salt level and roast profile confirmed per order.",
+      "imageAlt": "Salted and roasted pistachios"
     }
   },
   "A11y": {
